@@ -101,9 +101,15 @@ export function NetworkStatusPanel() {
       <div className="live-metrics">
         <div>
           <span>Finalized height</span>
-          <strong>{data ? data.height.toLocaleString("en-US") : "—"}</strong>
+          <strong>
+            {data?.height != null ? data.height.toLocaleString("en-US") : "—"}
+          </strong>
           <small>
-            {data ? "Last reported by the operator" : "Waiting for public data"}
+            {data?.height != null
+              ? "Last reported by the operator"
+              : data
+                ? "Not reported in this observation"
+                : "Waiting for public data"}
           </small>
         </div>
         <div>
@@ -138,12 +144,20 @@ export function NetworkStatusPanel() {
       {data && (
         <dl className="telemetry-details">
           <div>
+            <dt>Last reported operator state</dt>
+            <dd>{data.state}</dd>
+          </div>
+          <div>
             <dt>Observed by the operator</dt>
             <dd>{date(data.observed_at)}</dd>
           </div>
           <div>
             <dt>Last full verification</dt>
-            <dd>{date(data.last_full_verification_at)}</dd>
+            <dd>
+              {data.last_full_verification_at
+                ? date(data.last_full_verification_at)
+                : "Not reported"}
+            </dd>
           </div>
           <div>
             <dt>Software-key authorization ends</dt>
@@ -151,7 +165,7 @@ export function NetworkStatusPanel() {
           </div>
           <div>
             <dt>Reported state root</dt>
-            <dd className="hash">{data.state_root}</dd>
+            <dd className="hash">{data.state_root ?? "Not reported"}</dd>
           </div>
         </dl>
       )}

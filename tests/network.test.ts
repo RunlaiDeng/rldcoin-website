@@ -41,9 +41,30 @@ test("does not identify another network or invalid metrics as the Earth network"
     { observed_at: "2026-09-22T09:02:00Z" },
     { last_full_verification_at: "2026-09-22T09:02:00Z" },
     { heartbeat_interval_seconds: 0 },
+    { height: null },
+    { state_root: undefined },
+    { last_full_verification_at: null },
   ]) {
     assert.throws(() => parseNetworkStatus({ ...fixture, ...change }, now));
   }
+});
+test("a stopped feed may omit unavailable ledger fields without inventing zero values", () => {
+  const stopped = parseNetworkStatus(
+    {
+      ...fixture,
+      state: "STOPPED",
+      height: undefined,
+      state_root: undefined,
+      last_full_verification_at: null,
+    },
+    now,
+  );
+  assert.equal(stopped.height, null);
+  assert.equal(stopped.state_root, null);
+  assert.equal(stopped.last_full_verification_at, null);
+  assert.equal(networkHealth(stopped, now), "stopped");
+  assert.equal(networkHealth(stopped, now + 180_000), "stale");
+  assert.throws(() => parseNetworkStatus({ ...stopped, height: -1 }, now));
 });
 test("fresh operator telemetry does not hide a stopped heartbeat or stale full verification", () => {
   assert.equal(networkHealth({ ...fixture, state: "STOPPED" }, now), "stopped");
