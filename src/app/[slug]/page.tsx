@@ -990,8 +990,8 @@ function Resources() {
         ],
         [
           "Operations authorization",
-          "The published second operating authorization. It does not replace the original genesis.",
-          `${GENESIS}operations-authorization-2.json`,
+          "Published operating revisions, including the current signing authorization. The original genesis is retained.",
+          "https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/operating-revisions",
         ],
         [
           "Live network status",

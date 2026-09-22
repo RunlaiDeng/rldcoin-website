@@ -11,7 +11,9 @@ export type NetworkStatus = {
   operations_revision: number;
   profile: string;
   reward_issuance_enabled: boolean;
-  software_key_expires_at: string;
+  software_key_expires_at: string | null;
+  key_authorization_mode?: "UNTIL_REVOKED";
+  operations_authorization_sha256?: string;
   state_root: string | null;
   value_cap: string;
   zone_id: string;
@@ -32,6 +34,14 @@ export function parseNetworkStatus(
   if (!input || typeof input !== "object")
     throw new Error("Invalid network response");
   const v = input as Record<string, unknown>;
+  const continuing = v.key_authorization_mode === "UNTIL_REVOKED";
+  const authorizationValid = continuing
+    ? v.software_key_expires_at === null &&
+      integer(v.operations_revision, 5) &&
+      typeof v.operations_authorization_sha256 === "string" &&
+      /^[a-f0-9]{64}$/.test(v.operations_authorization_sha256)
+    : v.key_authorization_mode === undefined &&
+      isoDate(v.software_key_expires_at);
   if (
     v.zone_id !== ZONE ||
     v.manifest_sha256 !== MANIFEST ||
@@ -43,7 +53,7 @@ export function parseNetworkStatus(
     !isoDate(v.observed_at) ||
     (v.last_full_verification_at != null &&
       !isoDate(v.last_full_verification_at)) ||
-    !isoDate(v.software_key_expires_at) ||
+    !authorizationValid ||
     Date.parse(v.observed_at) > now + 60_000 ||
     (typeof v.last_full_verification_at === "string" &&
       Date.parse(v.last_full_verification_at) >
@@ -74,6 +84,12 @@ export function parseNetworkStatus(
     profile: v.profile,
     reward_issuance_enabled: v.reward_issuance_enabled,
     software_key_expires_at: v.software_key_expires_at,
+    ...(continuing
+      ? {
+          key_authorization_mode: "UNTIL_REVOKED",
+          operations_authorization_sha256: v.operations_authorization_sha256,
+        }
+      : {}),
     state_root: v.state_root ?? null,
     value_cap: v.value_cap,
     zone_id: v.zone_id,
@@ -83,7 +99,11 @@ export function networkHealth(
   data: NetworkStatus,
   now = Date.now(),
 ): "running" | "stale" | "expired" | "stopped" {
-  if (now >= Date.parse(data.software_key_expires_at)) return "expired";
+  if (
+    data.software_key_expires_at !== null &&
+    now >= Date.parse(data.software_key_expires_at)
+  )
+    return "expired";
   if (now - Date.parse(data.observed_at) > 120_000) return "stale";
   if (data.state !== "RUNNING") return "stopped";
   if (

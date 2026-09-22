@@ -86,3 +86,33 @@ test("software authorization expiry takes precedence over a running flag", () =>
     "expired",
   );
 });
+
+test("continuing authorization requires an explicit mode, revision and record digest", () => {
+  const continuing = {
+    ...fixture,
+    operations_revision: 5,
+    software_key_expires_at: null,
+    key_authorization_mode: "UNTIL_REVOKED",
+    operations_authorization_sha256: "c".repeat(64),
+  };
+  const parsed = parseNetworkStatus(continuing, now);
+  assert.equal(networkHealth(parsed, now), "running");
+  assert.equal(
+    networkHealth({ ...parsed, state: "AUTHORIZATION_REVOKED" }, now),
+    "stopped",
+  );
+  for (const change of [
+    { key_authorization_mode: undefined },
+    { key_authorization_mode: "unlimited" },
+    { software_key_expires_at: undefined },
+    { software_key_expires_at: fixture.software_key_expires_at },
+    { operations_revision: 4 },
+    { operations_authorization_sha256: undefined },
+    { operations_authorization_sha256: "invalid" },
+  ])
+    assert.throws(() => parseNetworkStatus({ ...continuing, ...change }, now));
+  assert.throws(() =>
+    parseNetworkStatus({ ...fixture, software_key_expires_at: null }, now),
+  );
+  assert.equal(networkHealth(parsed, now + 180_000), "stale");
+});

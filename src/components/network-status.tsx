@@ -160,8 +160,14 @@ export function NetworkStatusPanel() {
             </dd>
           </div>
           <div>
-            <dt>Software-key authorization ends</dt>
-            <dd>{date(data.software_key_expires_at)}</dd>
+            <dt>Signing authorization</dt>
+            <dd>
+              {data.key_authorization_mode === "UNTIL_REVOKED"
+                ? "No fixed expiry · owner may revoke"
+                : data.software_key_expires_at
+                  ? date(data.software_key_expires_at)
+                  : "Not reported"}
+            </dd>
           </div>
           <div>
             <dt>Reported state root</dt>
