@@ -1,0 +1,32 @@
+{
+  "name": "rldcoin-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The official Rldcoin website — a peer-to-peer transfer system for humanity's interstellar future.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "lucide-react": "1.47.0",
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "prettier": "3.9.8",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3"
+  }
+}
