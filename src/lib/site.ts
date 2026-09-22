@@ -104,7 +104,7 @@ export const faqs = [
   ],
   [
     "Is there a founder allocation or premine?",
-    "There is no personal or founder genesis allocation. The founder intends to earn at least 5 billion RLD through verified services before a broader promotional campaign. That goal is not a reserved share, a guaranteed reward, or a special right. At launch, earned service rewards are 0 RLD and rewards are disabled.",
+    "There is no personal or founder genesis allocation and no reserved founder share. The protocol design pays contributors for verified services from fixed reserves under shared rules. Service rewards are not yet enabled. Community contributions to source review, verification, documentation, and protocol development are welcome.",
   ],
   [
     "How does mining or earning RLD work?",
