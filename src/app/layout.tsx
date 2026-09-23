@@ -30,9 +30,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE,
-    images: ["/opengraph-image"],
   },
-  twitter: { card: "summary_large_image", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", images: ["/opengraph-image.png"] },
   robots: { index: true, follow: true },
 };
 export const viewport: Viewport = {
@@ -44,7 +43,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${dmSans.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${manrope.variable} ${dmSans.variable}`}
+    >
       <body>
         <Header />
         <main id="main">{children}</main>

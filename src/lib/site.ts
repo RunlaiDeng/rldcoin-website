@@ -32,13 +32,18 @@ export function pageMetadata(
       description,
       url: path,
       type: "website",
-      images: ["/opengraph-image"],
+      images: [
+        {
+          url: "/opengraph-image.png",
+          alt: "Rldcoin mission over an Earth horizon concept image",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | Rldcoin`,
       description,
-      images: ["/opengraph-image"],
+      images: ["/opengraph-image.png"],
     },
   };
 }

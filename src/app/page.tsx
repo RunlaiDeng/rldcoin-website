@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
@@ -14,8 +15,8 @@ import {
   Users,
 } from "lucide-react";
 import { Button, Eyebrow, TextLink } from "@/components/ui";
-import { InterstellarPaymentArt } from "@/components/orbit-art";
 import { TransferExplorer } from "@/components/transfer-explorer";
+import { HeroVideo } from "@/components/hero-video";
 import { faqs, pageMetadata, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
@@ -40,42 +41,66 @@ export default function Home() {
           }),
         }}
       />
-      <section className="hero">
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <Eyebrow>BUILDING PEER-TO-PEER PAYMENTS</Eyebrow>
-            <h1>
-              Payments for
-              <br />
-              humanity’s
-              <br />
-              <span>interstellar future.</span>
-            </h1>
-            <p>
-              Humanity will go further.
-              <br />
-              Payments should be able to follow.
-            </p>
-            <p className="hero-description">
-              Rldcoin’s goal is peer-to-peer payments for humanity across star
-              systems. Earth mining and local transfers come first; interstellar
-              routes are not live yet.
-            </p>
-            <div className="hero-actions">
-              <Button href="/get-started">Discover Rldcoin</Button>
-              <Link className="hero-secondary" href="/how-it-works">
-                How it works
-                <ArrowRight size={17} aria-hidden="true" />
-              </Link>
-            </div>
-            <a className="scroll-cue" href="#introduction">
-              <span>
-                <ArrowDown size={15} aria-hidden="true" />
-              </span>
-              A shared future starts here
-            </a>
+      <section className="cinematic-hero" aria-labelledby="home-mission-title">
+        <Image
+          className="cinematic-image cinematic-earth-image"
+          src="/images/earth-horizon-concept.png"
+          alt="Concept image of Earth from orbit, with a small future habitat against the vastness of space"
+          fill
+          sizes="100vw"
+          preload
+        />
+        <HeroVideo />
+        <div className="cinematic-shade" aria-hidden="true" />
+        <div className="container cinematic-hero-content">
+          <p className="cinematic-kicker">A MISSION FOR HUMANITY’S FUTURE</p>
+          <h1 id="home-mission-title">
+            Payments for
+            <br />
+            humanity’s
+            <br />
+            <span>interstellar future.</span>
+          </h1>
+          <p className="cinematic-lead">
+            The future may span star systems. People will need a way to exchange
+            value across distance and time.
+          </p>
+          <div className="cinematic-actions">
+            <Link className="cinematic-button" href="/about">
+              Explore the mission
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+            <Link className="cinematic-text-link" href="/network">
+              The Earth network
+              <ArrowRight size={17} aria-hidden="true" />
+            </Link>
           </div>
-          <InterstellarPaymentArt />
+          <p className="cinematic-status">
+            EARTH MINING AND LOCAL TRANSFERS TODAY
+            <span aria-hidden="true">/</span>
+            INTERSTELLAR ROUTES ARE NOT LIVE
+          </p>
+        </div>
+        <a className="cinematic-scroll" href="#mission">
+          <span>Discover the vision</span>
+          <ArrowDown size={18} aria-hidden="true" />
+        </a>
+      </section>
+      <section className="mission-statement" id="mission">
+        <div className="container mission-statement-inner">
+          <p className="mission-number">01 / WHY WE BUILD</p>
+          <h2>
+            A future across the stars needs a way for people to pay each other.
+          </h2>
+          <p>
+            Rldcoin is building the foundations for peer-to-peer payments
+            between future human communities. Ownership, verifiable history, and
+            communication delay shape the work from the beginning.
+          </p>
+          <Link href="/how-it-works">
+            Understand the design
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </Link>
         </div>
       </section>
       <div className="principle-strip">
@@ -106,14 +131,15 @@ export default function Home() {
             <div>
               <Eyebrow>MEET RLDCOIN</Eyebrow>
               <h2>
-                A bigger world.
-                <br />A different starting point.
+                The mission starts
+                <br />
+                with people.
               </h2>
             </div>
             <p>
-              The next chapter of human connection may span more than one
-              planet. We’re building the foundations for a payment system that
-              respects distance, delay, and the people on either side.
+              Understand the idea, inspect the work, and help build what comes
+              next. The permanent Earth network is the first step toward a much
+              longer journey.
             </p>
           </div>
           <div className="audience-grid">
@@ -157,6 +183,39 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="cinematic-chapter" aria-labelledby="horizon-title">
+        <Image
+          className="cinematic-image cinematic-frontier-image"
+          src="/images/future-settlement-concept.png"
+          alt="Concept image of two people beside a small habitat on a distant world at dawn"
+          fill
+          sizes="100vw"
+        />
+        <div
+          className="cinematic-shade cinematic-chapter-shade"
+          aria-hidden="true"
+        />
+        <div className="container cinematic-chapter-content">
+          <p className="cinematic-kicker">02 / THE HORIZON</p>
+          <h2 id="horizon-title">
+            Wherever humanity goes,
+            <br />
+            value should be able to follow.
+          </h2>
+          <p>
+            Building for this future starts on Earth. Transfers between star
+            systems remain a goal, and every route will need evidence that can
+            survive distance and delay.
+          </p>
+          <Link className="cinematic-button" href="/roadmap">
+            Follow the roadmap
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+          <span className="cinematic-concept-note">
+            FUTURE SCENARIO · CONCEPT IMAGE
+          </span>
         </div>
       </section>
       <section className="architecture-section">

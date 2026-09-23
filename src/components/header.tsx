@@ -61,17 +61,22 @@ export function Header() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <div className="announcement">
-        <Link href="/network">
-          <span className="status-dot" />
-          The first chapter is here.{" "}
-          <span className="announcement-extra">
-            Explore the permanent Earth genesis.
-          </span>
-          <ArrowRight size={14} aria-hidden="true" />
-        </Link>
-      </div>
-      <header className="site-header" ref={ref}>
+      {path !== "/" && (
+        <div className="announcement">
+          <Link href="/network">
+            <span className="status-dot" />
+            The first chapter is here.{" "}
+            <span className="announcement-extra">
+              Explore the permanent Earth genesis.
+            </span>
+            <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
+      )}
+      <header
+        className={`site-header${path === "/" ? " site-header-home" : ""}`}
+        ref={ref}
+      >
         <div className="container header-inner">
           <Link href="/" aria-label="Rldcoin home" onClick={closeNavigation}>
             <Logo />
