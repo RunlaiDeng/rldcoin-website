@@ -77,6 +77,8 @@ export default async function ContentPage({
       return <Resources />;
     case "privacy":
       return <Privacy />;
+    case "media-sources":
+      return <MediaSources />;
     default:
       notFound();
   }
@@ -1125,6 +1127,64 @@ function Privacy() {
             <a href={`${WEBSITE_REPOSITORY}/issues`}>website issue tracker</a>.
             Please do not include passwords, private keys, or other sensitive
             material in a public issue.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function MediaSources() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Media sources"
+        title="The images behind the journey."
+        description="Sources and credits for the real spacecraft, space-station, and rover imagery on the homepage."
+      />
+      <section className="section">
+        <div className="container narrow prose">
+          <h2>Earth from the International Space Station</h2>
+          <p>
+            The Earth footage and photographs come from the{" "}
+            <a href="https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm">
+              NASA HDEV camera recording
+            </a>
+            . The homepage uses two short excerpts, resized and cropped for the
+            layout.
+          </p>
+          <h2>Jupiter</h2>
+          <p>
+            The color-enhanced JunoCam photograph is{" "}
+            <a href="https://science.nasa.gov/photojournal/jupiters-colorful-cloud-belts/">
+              Jupiter’s Colorful Cloud Belts
+            </a>
+            . Image processing by Kevin M. Gill ({" "}
+            <a href="https://creativecommons.org/licenses/by/">CC BY</a>) using
+            images courtesy of NASA/JPL-Caltech/SwRI/MSSS. The homepage displays
+            it as a still photograph.
+          </p>
+          <h2>Earth aurora</h2>
+          <p>
+            The aurora time lapse is an excerpt from{" "}
+            <a href="https://commons.wikimedia.org/wiki/File:Earth_Illuminated-_ISS_Time-lapse_Photography.webm">
+              Earth Illuminated: ISS Time-lapse Photography
+            </a>
+            , assembled from NASA ISS photographs.
+          </p>
+          <h2>Mars</h2>
+          <p>
+            The rover camera footage is from{" "}
+            <a href="https://commons.wikimedia.org/wiki/File:Perseverance%27s_Mastcam-Z_Video_of_Ingenuity_Hovering.webm">
+              Perseverance’s Mastcam-Z Video of Ingenuity Hovering
+            </a>
+            , NASA/JPL-Caltech/ASU.
+          </p>
+          <h2>Context</h2>
+          <p>
+            These records show places and missions in our Solar System; they do
+            not depict an Rldcoin payment. NASA and its mission partners are not
+            affiliated with Rldcoin and do not endorse it.
           </p>
         </div>
       </section>

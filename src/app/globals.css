@@ -3285,8 +3285,7 @@ summary:focus-visible {
     rgba(7, 16, 24, 0.47)
   );
 }
-.mission-statement-inner,
-.mission-statement .mission-footage-credit {
+.mission-statement-inner {
   position: relative;
   z-index: 2;
 }
@@ -3351,18 +3350,6 @@ summary:focus-visible {
 .mission-statement + .principle-strip strong {
   color: #f1f5f6;
 }
-.mission-footage-credit {
-  color: #8399a4;
-  font-size: 11px;
-  line-height: 1.6;
-  margin-top: 75px;
-}
-.mission-footage-credit a {
-  color: #c3d2d8;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 .transfer-vision {
   background:
     radial-gradient(circle at 82% 45%, rgba(30, 67, 85, 0.45), transparent 46%),
@@ -3381,8 +3368,7 @@ summary:focus-visible {
     rgba(5, 14, 23, 0.5)
   );
 }
-.transfer-vision-grid,
-.transfer-vision .footage-credit {
+.transfer-vision-grid {
   position: relative;
   z-index: 2;
 }
@@ -3644,9 +3630,6 @@ summary:focus-visible {
   .mission-statement-inner > a {
     margin-top: 25px;
   }
-  .mission-footage-credit {
-    margin-top: 50px;
-  }
   .transfer-vision {
     padding: 90px 0;
   }
@@ -3697,8 +3680,7 @@ summary:focus-visible {
     rgba(5, 14, 22, 0.35)
   );
 }
-.earth-section .earth-grid,
-.earth-section .footage-credit {
+.earth-section .earth-grid {
   position: relative;
   z-index: 2;
 }
@@ -3727,8 +3709,7 @@ summary:focus-visible {
 .join-section::after {
   display: none;
 }
-.join-section > .container,
-.join-section .footage-credit {
+.join-section > .container {
   position: relative;
   z-index: 2;
 }
@@ -3751,21 +3732,6 @@ summary:focus-visible {
 }
 .join-section .button-secondary:hover {
   background: rgba(255, 255, 255, 0.15);
-}
-.footage-credit {
-  color: #c1d1d7;
-  font-size: 11px;
-  line-height: 1.6;
-  margin-top: 42px;
-}
-.footage-credit a {
-  color: #e6edf0;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.join-section .footage-credit {
-  font-size: 11px;
-  margin-top: 35px;
 }
 @media (prefers-reduced-motion: reduce) {
   .cinematic-scroll svg {

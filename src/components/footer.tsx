@@ -89,6 +89,7 @@ export function Footer() {
           <span>© 2026 Rldcoin. Open source. A shared future.</span>
           <div>
             <Link href="/privacy">Privacy</Link>
+            <Link href="/media-sources">Media sources</Link>
             <span>English</span>
             <span className="footer-wordmark">RLD</span>
           </div>

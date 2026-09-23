@@ -98,18 +98,6 @@ export default function Home() {
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </div>
-        <p className="container mission-footage-credit">
-          Earth seen from the International Space Station:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm">
-            NASA HDEV camera footage
-          </a>
-          . Jupiter photograph:{" "}
-          <a href="https://science.nasa.gov/photojournal/jupiters-colorful-cloud-belts/">
-            NASA/JPL-Caltech/SwRI/MSSS, processed by Kevin M. Gill (CC BY)
-          </a>
-          . Visual context only. NASA and its mission partners do not endorse
-          Rldcoin.
-        </p>
       </section>
       <div className="principle-strip">
         <div className="container">
@@ -249,13 +237,6 @@ export default function Home() {
             <p>Distance changes the timing. Evidence still has to arrive.</p>
           </div>
         </div>
-        <p className="container footage-credit">
-          Earth aurora:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Earth_Illuminated-_ISS_Time-lapse_Photography.webm">
-            NASA ISS photographs, shown as a time lapse
-          </a>
-          . The payment route above is a future concept.
-        </p>
       </section>
       <section className="architecture-section">
         <div className="container">
@@ -392,13 +373,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <p className="container footage-credit">
-          Earth seen from the International Space Station:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm">
-            NASA HDEV camera footage
-          </a>
-          .
-        </p>
       </section>
       <section className="section">
         <div className="container faq-preview">
@@ -451,13 +425,6 @@ export default function Home() {
             Open source · No token sale on this website
           </div>
         </div>
-        <p className="container footage-credit">
-          Mars rover footage:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Perseverance%27s_Mastcam-Z_Video_of_Ingenuity_Hovering.webm">
-            NASA Perseverance Mastcam-Z
-          </a>
-          .
-        </p>
       </section>
     </>
   );

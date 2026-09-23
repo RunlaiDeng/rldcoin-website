@@ -93,6 +93,10 @@ export const pages = {
     "Privacy",
     "How the Rldcoin website handles requests, network status, cookies, and external links.",
   ],
+  "media-sources": [
+    "Media sources",
+    "Sources and credits for the real planetary and space-station imagery on the Rldcoin homepage.",
+  ],
 } as const;
 
 export const faqs = [
