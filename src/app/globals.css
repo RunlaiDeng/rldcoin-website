@@ -298,7 +298,7 @@ summary:focus-visible {
   letter-spacing: 1.7px;
 }
 .hero h1 {
-  font-size: clamp(58px, 5.8vw, 82px);
+  font-size: clamp(55px, 5.2vw, 72px);
   line-height: 1.06;
   letter-spacing: -4.6px;
   font-weight: 520;
@@ -421,9 +421,15 @@ summary:focus-visible {
   letter-spacing: 1.4px;
   fill: #637c86;
 }
+.art-token {
+  font-family: var(--font-display), sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  fill: #976836;
+}
 .orbit-signal {
   animation: signal 4s ease-in-out infinite;
-  transform-origin: 554px 217px;
+  transform-origin: 377px 208px;
 }
 @keyframes signal {
   0%,
@@ -1838,7 +1844,7 @@ summary:focus-visible {
     min-height: 620px;
   }
   .hero h1 {
-    font-size: 65px;
+    font-size: 54px;
   }
   .hero-copy {
     padding-top: 55px;
@@ -1976,7 +1982,7 @@ summary:focus-visible {
     grid-template-columns: 1fr 1fr;
   }
   .hero h1 {
-    font-size: 56px;
+    font-size: 43px;
     letter-spacing: -3.2px;
   }
   .hero-copy > p:not(.eyebrow):not(.hero-description) {
@@ -2338,7 +2344,7 @@ summary:focus-visible {
     margin-bottom: 24px;
   }
   .hero h1 {
-    font-size: clamp(49px, 12.5vw, 69px);
+    font-size: clamp(42px, 11vw, 60px);
     letter-spacing: -3.2px;
     line-height: 1.08;
     margin-bottom: 23px;

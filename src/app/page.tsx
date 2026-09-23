@@ -14,7 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { Button, Eyebrow, TextLink } from "@/components/ui";
-import { OrbitArt } from "@/components/orbit-art";
+import { InterstellarPaymentArt } from "@/components/orbit-art";
 import { TransferExplorer } from "@/components/transfer-explorer";
 import { faqs, pageMetadata, SITE } from "@/lib/site";
 
@@ -45,9 +45,11 @@ export default function Home() {
           <div className="hero-copy">
             <Eyebrow>BUILDING PEER-TO-PEER PAYMENTS</Eyebrow>
             <h1>
-              For a future
+              Payments for
               <br />
-              beyond <span>Earth.</span>
+              humanity’s
+              <br />
+              <span>interstellar future.</span>
             </h1>
             <p>
               Humanity will go further.
@@ -73,7 +75,7 @@ export default function Home() {
               A shared future starts here
             </a>
           </div>
-          <OrbitArt />
+          <InterstellarPaymentArt />
         </div>
       </section>
       <div className="principle-strip">

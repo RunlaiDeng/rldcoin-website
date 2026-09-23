@@ -1,191 +1,234 @@
-export function OrbitArt() {
-  const stars = Array.from({ length: 68 }, (_, i) => ({
-    x: 28 + ((i * 137) % 650),
-    y: 35 + ((i * 89) % 490),
-    r: i % 6 === 0 ? 1.8 : 0.9,
+export function InterstellarPaymentArt() {
+  const stars = Array.from({ length: 58 }, (_, i) => ({
+    x: 28 + ((i * 137) % 660),
+    y: 28 + ((i * 89) % 500),
+    r: i % 7 === 0 ? 1.7 : 0.85,
   }));
+
   return (
     <div className="orbit-art">
       <svg
         viewBox="0 0 720 590"
         role="img"
-        aria-labelledby="orbit-title orbit-description"
+        aria-labelledby="payment-art-title payment-art-description"
       >
-        <title id="orbit-title">
-          Starting on Earth. Reaching toward future Zones.
+        <title id="payment-art-title">
+          A vision for payments between future human communities across star
+          systems
         </title>
-        <desc id="orbit-description">
-          An illustrated Earth surrounded by orbital paths and a distant future
-          Zone. This is a concept illustration, not a live network map.
+        <desc id="payment-art-description">
+          Concept illustration: Earth and a distant future world are separated
+          by space, with a dotted path carrying an RLD payment proof. The route
+          is a future goal and is not live.
         </desc>
         <defs>
-          <radialGradient id="space-glow">
-            <stop stopColor="#c9dce6" stopOpacity=".5" />
+          <radialGradient id="earth-glow">
+            <stop stopColor="#a9c7cd" stopOpacity=".36" />
             <stop offset="1" stopColor="#f7f9fa" stopOpacity="0" />
           </radialGradient>
-          <radialGradient id="earth-fill" cx="32%" cy="28%" r="75%">
-            <stop stopColor="#e3eef0" />
-            <stop offset=".57" stopColor="#bdced2" />
-            <stop offset=".88" stopColor="#66878e" />
-            <stop offset="1" stopColor="#224652" />
+          <radialGradient id="future-glow">
+            <stop stopColor="#e7cfb0" stopOpacity=".34" />
+            <stop offset="1" stopColor="#f7f9fa" stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="land-fill" x2="1" y2="1">
-            <stop stopColor="#a3b9b6" />
-            <stop offset="1" stopColor="#526f76" />
-          </linearGradient>
-          <radialGradient id="earth-shade" cx="28%" cy="25%" r="80%">
-            <stop offset=".42" stopColor="#0a2a37" stopOpacity="0" />
-            <stop offset="1" stopColor="#0a2a37" stopOpacity=".47" />
+          <radialGradient id="earth-fill" cx="30%" cy="24%" r="78%">
+            <stop stopColor="#e7f0ef" />
+            <stop offset=".53" stopColor="#a9c3c8" />
+            <stop offset=".82" stopColor="#557783" />
+            <stop offset="1" stopColor="#244754" />
           </radialGradient>
-          <clipPath id="earth-clip">
-            <circle cx="367" cy="290" r="165" />
-          </clipPath>
-          <filter
-            id="earth-shadow"
-            x="-40%"
-            y="-40%"
-            width="190%"
-            height="190%"
+          <radialGradient id="future-fill" cx="28%" cy="24%" r="80%">
+            <stop stopColor="#f8f1e4" />
+            <stop offset=".55" stopColor="#d6b995" />
+            <stop offset="1" stopColor="#856952" />
+          </radialGradient>
+          <linearGradient
+            id="payment-route"
+            x1="294"
+            y1="276"
+            x2="462"
+            y2="192"
+            gradientUnits="userSpaceOnUse"
           >
-            <feGaussianBlur stdDeviation="16" />
-          </filter>
+            <stop stopColor="#638998" />
+            <stop offset=".5" stopColor="#c98b48" />
+            <stop offset="1" stopColor="#b77d43" />
+          </linearGradient>
+          <clipPath id="earth-clip">
+            <circle cx="213" cy="351" r="117" />
+          </clipPath>
+          <clipPath id="future-clip">
+            <circle cx="528" cy="180" r="89" />
+          </clipPath>
         </defs>
-        <circle cx="370" cy="295" r="294" fill="url(#space-glow)" />
-        {stars.map((s, i) => (
+
+        <circle cx="218" cy="350" r="220" fill="url(#earth-glow)" />
+        <circle cx="528" cy="180" r="180" fill="url(#future-glow)" />
+        {stars.map((star, index) => (
           <circle
-            key={i}
-            cx={s.x}
-            cy={s.y}
-            r={s.r}
-            fill="#64808a"
-            opacity={i % 3 === 0 ? 0.5 : 0.2}
+            key={index}
+            cx={star.x}
+            cy={star.y}
+            r={star.r}
+            fill="#688793"
+            opacity={index % 4 === 0 ? ".5" : ".22"}
           />
         ))}
-        <g fill="none" stroke="#d2dce0">
+
+        <g fill="none" stroke="#cbd9de" strokeWidth="1">
+          <circle cx="213" cy="351" r="156" strokeDasharray="2 8" />
           <ellipse
-            cx="367"
-            cy="290"
-            rx="302"
-            ry="106"
-            transform="rotate(-31 367 290)"
+            cx="213"
+            cy="351"
+            rx="177"
+            ry="68"
+            transform="rotate(-26 213 351)"
           />
+          <circle cx="528" cy="180" r="122" strokeDasharray="2 7" />
           <ellipse
-            cx="367"
-            cy="290"
-            rx="248"
-            ry="216"
-            transform="rotate(-31 367 290)"
-            strokeDasharray="2 7"
+            cx="528"
+            cy="180"
+            rx="143"
+            ry="48"
+            transform="rotate(26 528 180)"
           />
-          <circle cx="367" cy="290" r="210" />
-          <path d="M54 450L674 96" strokeDasharray="3 7" />
-          <path d="M84 72L652 515" strokeDasharray="3 8" opacity=".5" />
+          <path d="M67 494L628 81" strokeDasharray="2 9" opacity=".6" />
         </g>
-        <ellipse
-          cx="385"
-          cy="452"
-          rx="119"
-          ry="15"
-          fill="#527680"
-          opacity=".18"
-          filter="url(#earth-shadow)"
+
+        <circle
+          cx="213"
+          cy="351"
+          r="122"
+          fill="none"
+          stroke="#dfe9eb"
+          strokeWidth="3"
+        />
+        <circle cx="213" cy="351" r="117" fill="url(#earth-fill)" />
+        <g clipPath="url(#earth-clip)">
+          <g fill="#698e91" opacity=".82">
+            <path d="M91 312L112 276 147 258 169 271 166 298 145 305 139 332 120 344 108 325Z" />
+            <path d="M163 274L183 252 218 240 240 259 266 267 272 296 252 304 243 325 217 320 205 344 180 332 176 310 157 303Z" />
+            <path d="M231 334L256 320 289 334 299 366 279 380 264 416 243 435 226 412 225 383 210 366Z" />
+            <path d="M115 384L142 372 155 388 178 394 197 423 185 450 156 441 143 415 122 408Z" />
+            <path d="M258 251L285 263 307 290 322 320 292 317 279 297Z" />
+          </g>
+          <g fill="none" stroke="#eff6f4" strokeWidth=".8" opacity=".43">
+            <ellipse cx="213" cy="351" rx="42" ry="117" />
+            <ellipse cx="213" cy="351" rx="86" ry="117" />
+            <ellipse cx="213" cy="351" rx="117" ry="35" />
+            <ellipse cx="213" cy="351" rx="117" ry="78" />
+          </g>
+          <path d="M98 351H328" stroke="#eff6f4" strokeOpacity=".38" />
+        </g>
+
+        <circle
+          cx="528"
+          cy="180"
+          r="94"
+          fill="none"
+          stroke="#eadfce"
+          strokeWidth="3"
+        />
+        <circle cx="528" cy="180" r="89" fill="url(#future-fill)" />
+        <g
+          clipPath="url(#future-clip)"
+          fill="none"
+          stroke="#fff7e9"
+          strokeOpacity=".38"
+        >
+          <path
+            d="M435 142C473 127 503 138 535 153S596 161 628 141"
+            strokeWidth="11"
+          />
+          <path
+            d="M438 188C486 169 508 188 541 207S599 222 621 207"
+            strokeWidth="16"
+          />
+          <path
+            d="M444 230C480 211 504 226 530 245S578 254 611 236"
+            strokeWidth="9"
+          />
+        </g>
+        <circle cx="567" cy="140" r="9" fill="#f7e9d1" opacity=".75" />
+
+        <path
+          d="M297 274C345 197 401 177 451 193"
+          fill="none"
+          stroke="#f8faf8"
+          strokeWidth="8"
+          opacity=".9"
+        />
+        <path
+          d="M297 274C345 197 401 177 451 193"
+          fill="none"
+          stroke="url(#payment-route)"
+          strokeWidth="2.6"
+          strokeDasharray="3 8"
+          strokeLinecap="round"
         />
         <circle
-          cx="367"
-          cy="290"
-          r="173"
-          fill="none"
-          stroke="#e2eaec"
-          strokeWidth="4"
+          cx="297"
+          cy="274"
+          r="5"
+          fill="#f9fbf8"
+          stroke="#648996"
+          strokeWidth="2"
         />
-        <circle cx="367" cy="290" r="165" fill="url(#earth-fill)" />
-        <g clipPath="url(#earth-clip)">
-          <g fill="url(#land-fill)" opacity=".77">
-            <path d="M220 209L247 177 288 163 296 145 335 136 376 147 375 169 347 178 342 198 319 198 301 216 275 218 263 239 245 236 241 216Z" />
-            <path d="M263 241L280 226 307 232 312 253 328 266 346 263 362 279 358 299 379 313 373 346 351 370 345 398 322 423 319 402 308 390 305 357 287 342 286 316 270 304 277 282 260 267Z" />
-            <path d="M383 140L430 143 477 167 481 190 447 202 428 192 414 204 394 197 403 175 385 163Z" />
-            <path d="M421 215L444 203 477 212 488 237 516 248 531 280 502 290 481 280 470 252 451 255 441 236Z" />
-            <path d="M423 247L455 257 475 286 466 319 450 347 429 354 420 332 407 314 403 284Z" />
-            <path d="M481 346L514 336 537 354 522 377 489 378Z" />
-            <path d="M226 398L256 414 297 424 321 435 367 439 410 430 446 439 467 456 211 461Z" />
-          </g>
-          <g fill="none" stroke="#eef5f5" strokeWidth=".7" opacity=".35">
-            <ellipse cx="367" cy="290" rx="54" ry="165" />
-            <ellipse cx="367" cy="290" rx="112" ry="165" />
-            <ellipse cx="367" cy="290" rx="153" ry="165" />
-            <ellipse cx="367" cy="290" rx="165" ry="46" />
-            <ellipse cx="367" cy="290" rx="165" ry="109" />
-            <path d="M202 290H532M367 124V456" />
-          </g>
-          <circle cx="367" cy="290" r="165" fill="url(#earth-shade)" />
-          <path
-            d="M248 288Q353 168 465 263M282 355Q376 251 465 263"
-            fill="none"
-            stroke="#f7f2df"
-            strokeWidth="1.1"
-            strokeDasharray="3 4"
-            opacity=".7"
-          />
-          <g fill="#fff">
-            <circle cx="248" cy="288" r="3" />
-            <circle cx="282" cy="355" r="3" />
-            <circle cx="465" cy="263" r="3" />
-          </g>
-        </g>
-        <path
-          d="M106 452C185 446 498 311 626 146"
-          fill="none"
-          stroke="#b6c4ca"
-          strokeWidth="1.2"
+        <circle
+          cx="451"
+          cy="193"
+          r="5"
+          fill="#f9fbf8"
+          stroke="#b77d43"
+          strokeWidth="2"
         />
-        <path
-          d="M481 278C546 232 596 186 626 146"
-          fill="none"
-          stroke="#cf9050"
-          strokeWidth="1.5"
-          strokeDasharray="4 5"
-        />
+
         <g className="orbit-signal">
-          <circle cx="554" cy="217" r="10" fill="#e2a35e" fillOpacity=".13" />
-          <circle cx="554" cy="217" r="4" fill="#cb8745" />
+          <circle
+            cx="377"
+            cy="208"
+            r="31"
+            fill="#fffdf9"
+            stroke="#cfb28e"
+            strokeWidth="1.5"
+          />
+          <circle cx="377" cy="208" r="24" fill="#f6efe4" stroke="#e1c5a0" />
+          <text x="377" y="215" textAnchor="middle" className="art-token">
+            R
+          </text>
         </g>
-        <circle cx="626" cy="146" r="23" fill="#f0e9de" stroke="#d9c3a5" />
-        <ellipse
-          cx="626"
-          cy="146"
-          rx="31"
-          ry="8"
-          transform="rotate(-30 626 146)"
-          fill="none"
-          stroke="#be9e72"
-        />
-        <g stroke="#78939c" fill="none">
-          <path d="M293 168L254 98H179" />
-          <circle cx="293" cy="168" r="5" fill="#fff" />
-          <path d="M493 390L552 433H627" />
-        </g>
-        <text x="84" y="74" className="art-kicker">
-          01 / THE BEGINNING
+        <path d="M386 240L426 283H490" fill="none" stroke="#9eb3ba" />
+        <text x="493" y="281" className="art-kicker">
+          PAYMENT PROOF
         </text>
-        <text x="84" y="97" className="art-title">
-          Earth Zone
+        <text x="493" y="301" className="art-caption">
+          FUTURE ROUTE
         </text>
-        <text x="530" y="464" className="art-kicker">
-          THE HORIZON
+
+        <path d="M137 256L105 145H45" fill="none" stroke="#829da6" />
+        <circle cx="137" cy="256" r="4" fill="#fff" stroke="#829da6" />
+        <text x="45" y="112" className="art-kicker">
+          01 / FIRST CHAPTER
         </text>
-        <text x="530" y="487" className="art-title">
-          Future Zones
+        <text x="45" y="136" className="art-title">
+          Earth network
         </text>
-        <text x="37" y="552" className="art-caption">
-          LOCAL CONSENSUS. A WIDER HORIZON.
+
+        <path d="M575 257L617 378H681" fill="none" stroke="#c6a27a" />
+        <circle cx="575" cy="257" r="4" fill="#fff" stroke="#c6a27a" />
+        <text x="520" y="406" className="art-kicker">
+          02 / THE HORIZON
         </text>
-        <text x="590" y="552" className="art-caption">
-          CONCEPT / 001
+        <text x="520" y="430" className="art-title">
+          Future community
         </text>
+
         <path d="M38 526H685" stroke="#d9e1e4" />
-        <g stroke="#8aa0a7" strokeWidth="1">
-          <path d="M91 303h10M96 298v10M538 93h8M542 89v8M609 354h10M614 349v10" />
-        </g>
+        <text x="38" y="552" className="art-caption">
+          INTERSTELLAR PAYMENT VISION · ROUTE NOT LIVE
+        </text>
+        <text x="595" y="552" className="art-caption">
+          CONCEPT / 002
+        </text>
       </svg>
     </div>
   );
