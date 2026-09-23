@@ -35,7 +35,7 @@ export function pageMetadata(
       images: [
         {
           url: "/opengraph-image.png",
-          alt: "Rldcoin mission over real night launch footage",
+          alt: "Rldcoin mission over a real view of Earth from the International Space Station",
         },
       ],
     },

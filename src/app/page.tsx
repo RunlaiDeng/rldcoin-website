@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
@@ -17,6 +16,7 @@ import {
 import { Button, Eyebrow, TextLink } from "@/components/ui";
 import { TransferExplorer } from "@/components/transfer-explorer";
 import { HeroVideo } from "@/components/hero-video";
+import { AmbientVideo } from "@/components/ambient-video";
 import { faqs, pageMetadata, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
@@ -42,17 +42,7 @@ export default function Home() {
         }}
       />
       <section className="cinematic-hero" aria-labelledby="home-mission-title">
-        <div className="cinematic-media">
-          <Image
-            className="cinematic-image cinematic-launch-poster"
-            src="/images/real-launch-poster.jpg"
-            alt="A real rocket launch at night, filmed from a fixed camera"
-            fill
-            sizes="100vw"
-            preload
-          />
-          <HeroVideo />
-        </div>
+        <HeroVideo />
         <div className="cinematic-shade" aria-hidden="true" />
         <div className="container cinematic-hero-content">
           <p className="cinematic-kicker">A MISSION FOR HUMANITY’S FUTURE</p>
@@ -89,6 +79,10 @@ export default function Home() {
         </a>
       </section>
       <section className="mission-statement" id="mission">
+        <AmbientVideo
+          src="/videos/earth-iss-station.mp4"
+          poster="/images/earth-iss-station.jpg"
+        />
         <div className="container mission-statement-inner">
           <p className="mission-number">01 / WHY WE BUILD</p>
           <h2>
@@ -105,12 +99,12 @@ export default function Home() {
           </Link>
         </div>
         <p className="container mission-footage-credit">
-          Launch footage:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Starlink_6-100_Launches_from_Cape_Canaveral_Space_Force_Station_(993274).webm">
-            U.S. Space Force / Gwendolyn Kurzen
+          Earth seen from the International Space Station:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm">
+            NASA HDEV camera footage
           </a>
-          . Visual context only; no affiliation with the launch provider or the
-          U.S. Space Force.
+          . Visual context only. NASA is not affiliated with and does not
+          endorse Rldcoin.
         </p>
       </section>
       <div className="principle-strip">
@@ -199,6 +193,10 @@ export default function Home() {
         className="transfer-vision"
         aria-labelledby="transfer-vision-title"
       >
+        <AmbientVideo
+          src="/videos/mars-descent.mp4"
+          poster="/images/mars-descent.jpg"
+        />
         <div className="container transfer-vision-grid">
           <div className="transfer-vision-copy">
             <p className="cinematic-kicker">02 / THE PAYMENT VISION</p>
@@ -224,7 +222,9 @@ export default function Home() {
             </div>
             <div className="transfer-route-stages">
               <div className="transfer-route-stage">
-                <span className="transfer-route-orb transfer-route-earth" />
+                <span className="transfer-route-symbol">
+                  <Globe2 size={43} strokeWidth={1} aria-hidden="true" />
+                </span>
                 <span className="transfer-route-step">01 / ORIGIN</span>
                 <strong>Earth</strong>
                 <span>A person signs locally</span>
@@ -234,7 +234,9 @@ export default function Home() {
                 <span>Signed proof crosses the delay</span>
               </div>
               <div className="transfer-route-stage">
-                <span className="transfer-route-orb transfer-route-destination" />
+                <span className="transfer-route-symbol">
+                  <Orbit size={43} strokeWidth={1} aria-hidden="true" />
+                </span>
                 <span className="transfer-route-step">02 / DESTINATION</span>
                 <strong>Another star system</strong>
                 <span>Proof is verified before receipt</span>
@@ -243,6 +245,14 @@ export default function Home() {
             <p>Distance changes the timing. Evidence still has to arrive.</p>
           </div>
         </div>
+        <p className="container footage-credit">
+          Actual Mars descent footage:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Perseverance_Rover%27s_Descent_and_Touchdown_on_Mars_Onboard_Camera_Views_.webm">
+            NASA Perseverance cameras
+          </a>
+          . Mars is in our Solar System; the payment route above is a future
+          concept.
+        </p>
       </section>
       <section className="architecture-section">
         <div className="container">
@@ -323,6 +333,10 @@ export default function Home() {
         </div>
       </section>
       <section className="earth-section">
+        <AmbientVideo
+          src="/videos/earth-iss-aurora.mp4"
+          poster="/images/earth-iss-aurora.jpg"
+        />
         <div className="container earth-grid">
           <div>
             <Eyebrow>THE FIRST CHAPTER</Eyebrow>
@@ -336,7 +350,9 @@ export default function Home() {
               September 22, 2026 — a published identity and a history to build
               upon.
             </p>
-            <Button href="/network">Explore the Earth network</Button>
+            <Button href="/network" light>
+              Explore the Earth network
+            </Button>
           </div>
           <div className="genesis-card">
             <div className="genesis-card-header">
@@ -373,6 +389,13 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <p className="container footage-credit">
+          Earth aurora:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Earth_Illuminated-_ISS_Time-lapse_Photography.webm">
+            NASA ISS photographs, shown as a time lapse
+          </a>
+          .
+        </p>
       </section>
       <section className="section">
         <div className="container faq-preview">
@@ -399,6 +422,10 @@ export default function Home() {
         </div>
       </section>
       <section className="join-section">
+        <AmbientVideo
+          src="/videos/mars-horizon.mp4"
+          poster="/images/mars-horizon.jpg"
+        />
         <div className="container">
           <div className="join-star" aria-hidden="true">
             ✳
@@ -421,6 +448,13 @@ export default function Home() {
             Open source · No token sale on this website
           </div>
         </div>
+        <p className="container footage-credit">
+          Mars rover footage:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Perseverance%27s_Mastcam-Z_Video_of_Ingenuity_Hovering.webm">
+            NASA Perseverance Mastcam-Z
+          </a>
+          .
+        </p>
       </section>
     </>
   );
