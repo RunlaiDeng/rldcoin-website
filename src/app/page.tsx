@@ -19,8 +19,8 @@ import { TransferExplorer } from "@/components/transfer-explorer";
 import { faqs, pageMetadata, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "A peer-to-peer future beyond Earth",
-  "Rldcoin is a peer-to-peer transfer system for humanity’s interstellar future. Starting on Earth. Designed to reach further.",
+  "Building peer-to-peer payments for the interstellar future",
+  "Rldcoin’s goal is peer-to-peer payments between future human communities across star systems. Earth mining and local transfers are the first step; interstellar routes are not live.",
   "/",
 );
 export default function Home() {
@@ -36,14 +36,14 @@ export default function Home() {
             url: SITE,
             inLanguage: "en",
             description:
-              "A peer-to-peer transfer system for humanity’s interstellar future.",
+              "Building peer-to-peer payments between future human communities across star systems.",
           }),
         }}
       />
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <Eyebrow>A PEER-TO-PEER TRANSFER SYSTEM</Eyebrow>
+            <Eyebrow>BUILDING PEER-TO-PEER PAYMENTS</Eyebrow>
             <h1>
               For a future
               <br />
@@ -52,11 +52,12 @@ export default function Home() {
             <p>
               Humanity will go further.
               <br />
-              Ownership should be able to follow.
+              Payments should be able to follow.
             </p>
             <p className="hero-description">
-              Rldcoin is being built for people to hold and transfer value
-              across Earth, space habitats, and the worlds still ahead.
+              Rldcoin’s long-term goal is peer-to-peer payments between human
+              communities across star systems. Earth mining and local transfers
+              are the first step; interstellar routes are not live yet.
             </p>
             <div className="hero-actions">
               <Button href="/get-started">Discover Rldcoin</Button>
@@ -109,7 +110,7 @@ export default function Home() {
             </div>
             <p>
               The next chapter of human connection may span more than one
-              planet. We’re building the foundations for a transfer system that
+              planet. We’re building the foundations for a payment system that
               respects distance, delay, and the people on either side.
             </p>
           </div>

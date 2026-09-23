@@ -20,11 +20,11 @@ const dmSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Rldcoin — A peer-to-peer future beyond Earth",
+    default: "Rldcoin — Building payments for humanity’s interstellar future",
     template: "%s | Rldcoin",
   },
   description:
-    "A peer-to-peer transfer system for humanity’s interstellar future. Starting on Earth, designed for ownership across distance and time.",
+    "Rldcoin’s goal is peer-to-peer payments between future human communities across star systems. The permanent Earth network is the first step; interstellar routes are not live.",
   openGraph: {
     siteName: "Rldcoin",
     type: "website",

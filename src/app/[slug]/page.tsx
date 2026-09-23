@@ -392,7 +392,7 @@ function Applications() {
       <PageHero
         eyebrow="Future applications"
         title="A wider world of possibilities."
-        description="A transfer system for places that cannot share a single, uninterrupted conversation. These are design scenarios, not active services."
+        description="Peer-to-peer payments across distant human communities are the goal. Earth local transfers are live at the protocol level; off-world scenarios remain future work."
       />
       <section className="section">
         <div className="container application-grid">
@@ -402,7 +402,7 @@ function Applications() {
               title: "Communities on Earth",
               label: "01 / THE FOUNDATION",
               text: "Begin with verifiable local transfers, ownership, recovery, and continuity. Build the operational confidence needed for wider participation.",
-              foot: "Current deployment: permanent genesis; payments not enabled.",
+              foot: "Current deployment: signed local transfers via the developer API; no consumer wallet yet.",
             },
             {
               icon: Orbit,
@@ -853,7 +853,7 @@ function About() {
       <PageHero
         eyebrow="About Rldcoin"
         title="A future worth building toward."
-        description="A peer-to-peer transfer system for humanity’s interstellar future. Starting on Earth, with the realities of distance designed in from the beginning."
+        description="Rldcoin’s long-term goal is peer-to-peer payments between future human communities across star systems. The permanent Earth network is the first step."
       />
       <section className="section">
         <div className="container editorial">
@@ -872,9 +872,9 @@ function About() {
               interrupted for long periods.
             </p>
             <p>
-              Rldcoin asks a practical question: how can ownership remain
-              verifiable, and transfers remain coherent, when the participants
-              cannot all share an immediate conversation?
+              Rldcoin asks a practical question: how can people pay each other
+              across star systems while ownership remains verifiable and the
+              participants cannot share an immediate conversation?
             </p>
             <p>
               The answer being developed begins with local Zones and

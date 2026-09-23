@@ -2,9 +2,13 @@
 
 The independent English website for **rldcoin.com**.
 
-Rldcoin is a peer-to-peer transfer system for humanity's interstellar future.
-This site introduces the architecture, explains the permanent Earth launch,
-links to published evidence, and provides a read-only network status display.
+Rldcoin's long-term goal is peer-to-peer payments between future human
+communities across star systems. The permanent Earth network begins that work
+with automatic mining and signed local transfers. Interstellar payment routes
+are not deployed yet.
+
+This site explains the goal and architecture, the Earth launch, published
+evidence, and read-only network status.
 
 ## Develop
 

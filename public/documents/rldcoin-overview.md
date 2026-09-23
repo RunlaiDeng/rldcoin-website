@@ -1,8 +1,10 @@
 # Rldcoin — Protocol overview
 
-A peer-to-peer transfer system for humanity's interstellar future.
+Rldcoin's long-term goal is peer-to-peer payments between future human
+communities across star systems. The permanent Earth network is the first step;
+interstellar payment routes are not deployed yet.
 
-Updated September 22, 2026. This introduction is not a complete protocol specification or an independent security assessment.
+Updated September 23, 2026. This introduction is not a complete protocol specification or an independent security assessment.
 
 ## Earth today
 

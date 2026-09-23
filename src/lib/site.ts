@@ -78,7 +78,7 @@ export const pages = {
   ],
   about: [
     "About Rldcoin",
-    "A peer-to-peer transfer system for humanity’s interstellar future. Starting on Earth, designed to reach further.",
+    "Rldcoin’s long-term goal is peer-to-peer payments between future human communities across star systems. The permanent Earth network is the first step.",
   ],
   resources: [
     "Resources",
@@ -93,7 +93,7 @@ export const pages = {
 export const faqs = [
   [
     "What is Rldcoin?",
-    "Rldcoin is a peer-to-peer transfer system being built for humanity’s interstellar future. It aims to preserve ownership and a continuous asset history across Earth, space habitats, spacecraft, and distant settlements. The first permanent Earth network is the starting point.",
+    "Rldcoin’s long-term goal is peer-to-peer payments between future human communities across star systems. It aims to preserve ownership and a continuous asset history across Earth, space habitats, spacecraft, and distant settlements. The permanent Earth network is the first step; interstellar payment routes are not deployed.",
   ],
   [
     "Is this a testnet?",
@@ -117,7 +117,7 @@ export const faqs = [
   ],
   [
     "What is a Zone?",
-    "A Zone is a region with its own ledger and local consensus. The architecture lets activity within a Zone be confirmed locally, while transfers to another Zone travel asynchronously. A future Zone could serve a community, habitat, or spacecraft. Only the Earth genesis is currently deployed.",
+    "A Zone is a region with its own ledger and local consensus. The planned architecture would confirm activity within each Zone locally, while transfers to another Zone travel asynchronously. A future Zone could serve a community, habitat, or spacecraft. Only Earth is currently deployed; cross-Zone transfers are disabled.",
   ],
   [
     "Does Rldcoin make interstellar payments instant?",

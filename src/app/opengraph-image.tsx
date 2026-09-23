@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-export const alt = "Rldcoin — A peer-to-peer future beyond Earth";
+export const alt = "Rldcoin — Building peer-to-peer payments for humanity’s interstellar future";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -34,7 +34,7 @@ export default function Image() {
         <span>beyond Earth.</span>
       </div>
       <div style={{ display: "flex", fontSize: 23, color: "#506773" }}>
-        A peer-to-peer transfer system for humanity’s interstellar future.
+        Building peer-to-peer payments for humanity’s interstellar future.
       </div>
       <div
         style={{
