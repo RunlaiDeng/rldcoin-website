@@ -36,7 +36,7 @@ npm run build
 
 ## Network telemetry
 
-The server fetches only `https://forum.rldcoin.com/v1/pow/status`, with a
+The server fetches only `https://api.rldcoin.com/v1/pow/status`, with a
 five-second timeout, no redirects, and a 16 KiB response limit. The expected
 Zone, original manifest, explicit adoption, and regional chain identity must match. Only explicitly recognized fields are
 returned. Successful responses may be cached for 30 seconds at the edge.

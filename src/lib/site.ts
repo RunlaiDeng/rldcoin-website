@@ -13,7 +13,7 @@ export const POW_ADOPTION =
   "16d2a4d3ba8dff33613a9127ffc7e540347d377066b367097b765e1472d01e02";
 export const POW_CHAIN =
   "dab6756c593608078a7d1f8cbdc8af7f447ffad6c506f6299262a26511ee586a";
-export const POW_STATUS = "https://forum.rldcoin.com/v1/pow/status";
+export const POW_STATUS = "https://api.rldcoin.com/v1/pow/status";
 export const ZONE = "zone-77bc978af4837a1e7971";
 export const GENESIS_ROOT =
   "37325242b485e9f4ee67ea6594bc0259d72883498bcd2bf55d76f1a9453533bf";
