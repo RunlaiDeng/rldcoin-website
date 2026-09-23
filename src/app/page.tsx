@@ -80,8 +80,8 @@ export default function Home() {
       </section>
       <section className="mission-statement" id="mission">
         <AmbientVideo
-          src="/videos/earth-iss-station.mp4"
-          poster="/images/earth-iss-station.jpg"
+          src="/videos/earth-iss-clouds.mp4"
+          poster="/images/earth-iss-clouds.jpg"
         />
         <div className="container mission-statement-inner">
           <p className="mission-number">01 / WHY WE BUILD</p>
@@ -103,8 +103,12 @@ export default function Home() {
           <a href="https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm">
             NASA HDEV camera footage
           </a>
-          . Visual context only. NASA is not affiliated with and does not
-          endorse Rldcoin.
+          . Jupiter photograph:{" "}
+          <a href="https://science.nasa.gov/photojournal/jupiters-colorful-cloud-belts/">
+            NASA/JPL-Caltech/SwRI/MSSS, processed by Kevin M. Gill (CC BY)
+          </a>
+          . Visual context only. NASA and its mission partners do not endorse
+          Rldcoin.
         </p>
       </section>
       <div className="principle-strip">
@@ -194,8 +198,8 @@ export default function Home() {
         aria-labelledby="transfer-vision-title"
       >
         <AmbientVideo
-          src="/videos/mars-descent.mp4"
-          poster="/images/mars-descent.jpg"
+          src="/videos/earth-iss-aurora.mp4"
+          poster="/images/earth-iss-aurora.jpg"
         />
         <div className="container transfer-vision-grid">
           <div className="transfer-vision-copy">
@@ -246,12 +250,11 @@ export default function Home() {
           </div>
         </div>
         <p className="container footage-credit">
-          Actual Mars descent footage:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Perseverance_Rover%27s_Descent_and_Touchdown_on_Mars_Onboard_Camera_Views_.webm">
-            NASA Perseverance cameras
+          Earth aurora:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Earth_Illuminated-_ISS_Time-lapse_Photography.webm">
+            NASA ISS photographs, shown as a time lapse
           </a>
-          . Mars is in our Solar System; the payment route above is a future
-          concept.
+          . The payment route above is a future concept.
         </p>
       </section>
       <section className="architecture-section">
@@ -334,8 +337,8 @@ export default function Home() {
       </section>
       <section className="earth-section">
         <AmbientVideo
-          src="/videos/earth-iss-aurora.mp4"
-          poster="/images/earth-iss-aurora.jpg"
+          src="/videos/earth-iss-day.mp4"
+          poster="/images/earth-iss-day.jpg"
         />
         <div className="container earth-grid">
           <div>
@@ -390,9 +393,9 @@ export default function Home() {
           </div>
         </div>
         <p className="container footage-credit">
-          Earth aurora:{" "}
-          <a href="https://commons.wikimedia.org/wiki/File:Earth_Illuminated-_ISS_Time-lapse_Photography.webm">
-            NASA ISS photographs, shown as a time lapse
+          Earth seen from the International Space Station:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm">
+            NASA HDEV camera footage
           </a>
           .
         </p>

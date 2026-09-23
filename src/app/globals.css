@@ -3082,7 +3082,7 @@ summary:focus-visible {
 }
 .cinematic-media {
   position: absolute;
-  inset: 0 0 0 28%;
+  inset: 0;
   overflow: hidden;
   isolation: isolate;
   z-index: -2;
@@ -3097,14 +3097,6 @@ summary:focus-visible {
   opacity: 1;
   z-index: 1;
 }
-.cinematic-scene-jupiter {
-  background: #020409;
-}
-.cinematic-scene-jupiter .cinematic-image,
-.cinematic-scene-jupiter .cinematic-video {
-  object-fit: contain;
-  object-position: center right;
-}
 .cinematic-image {
   object-fit: cover;
 }
@@ -3115,55 +3107,6 @@ summary:focus-visible {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-}
-.cinematic-scene-controls {
-  position: absolute;
-  top: 125px;
-  right: max(56px, calc((100vw - 1248px) / 2));
-  width: min(260px, calc(100vw - 48px));
-  z-index: 3;
-  color: #fff;
-  text-align: right;
-  text-shadow: 0 1px 9px rgba(0, 0, 0, 0.85);
-}
-.cinematic-scene-tabs {
-  display: grid;
-  gap: 2px;
-}
-.cinematic-scene-tabs button {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  align-items: center;
-  width: 100%;
-  padding: 8px 0;
-  border: 0;
-  border-right: 2px solid rgba(255, 255, 255, 0.35);
-  padding-right: 12px;
-  color: #e5ebec;
-  background: transparent;
-  font: inherit;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-}
-.cinematic-scene-tabs button.is-active {
-  color: #fff;
-  border-right-color: #e2b179;
-  font-weight: 750;
-}
-.cinematic-scene-tabs button span {
-  color: #d5ac7c;
-  font-size: 9px;
-}
-.cinematic-scene-controls > a {
-  display: block;
-  margin-top: 12px;
-  font-size: 10px;
-  line-height: 1.5;
-  color: #d6e5e9;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 .cinematic-shade {
   position: absolute;
@@ -3433,9 +3376,9 @@ summary:focus-visible {
 .transfer-vision::before {
   background: linear-gradient(
     90deg,
-    rgba(5, 14, 23, 0.9),
-    rgba(5, 14, 23, 0.72) 55%,
-    rgba(5, 14, 23, 0.62)
+    rgba(5, 14, 23, 0.82),
+    rgba(5, 14, 23, 0.62) 55%,
+    rgba(5, 14, 23, 0.5)
   );
 }
 .transfer-vision-grid,
@@ -3636,9 +3579,6 @@ summary:focus-visible {
     padding-top: 125px;
     padding-bottom: 44px;
   }
-  .cinematic-media {
-    left: 0;
-  }
   .cinematic-shade {
     background:
       linear-gradient(
@@ -3826,32 +3766,6 @@ summary:focus-visible {
 .join-section .footage-credit {
   font-size: 11px;
   margin-top: 35px;
-}
-@media (max-width: 600px) {
-  .cinematic-scene-controls {
-    top: 85px;
-    right: 20px;
-    width: min(230px, calc(100vw - 40px));
-  }
-  .cinematic-scene-tabs {
-    grid-template-columns: 1fr 1fr;
-    gap: 0 6px;
-  }
-  .cinematic-scene-tabs button {
-    font-size: 9px;
-    gap: 4px;
-    padding: 5px 4px;
-    justify-content: center;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  }
-  .cinematic-scene-tabs button.is-active {
-    border-bottom-color: #e2b179;
-  }
-  .cinematic-scene-controls > a {
-    font-size: 9px;
-    margin-top: 8px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .cinematic-scroll svg {

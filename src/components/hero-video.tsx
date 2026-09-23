@@ -5,38 +5,27 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const scenes = [
   {
-    name: "Earth / ISS",
-    detail: "Earth from the ISS · continuous camera footage",
+    name: "Earth",
     video: "/videos/earth-iss-day.mp4",
     poster: "/images/earth-iss-day.jpg",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Earth_Views_from_the_International_Space_Station.webm",
     className: "earth",
   },
   {
-    name: "Jupiter / Voyager 1",
-    detail: "Jupiter · Voyager 1 photographs · time lapse",
-    video: "/videos/voyager-jupiter.mp4",
-    poster: "/images/voyager-jupiter.jpg",
-    source: "https://science.nasa.gov/resource/voyager-blue-movie/",
+    name: "Jupiter",
+    video: null,
+    poster: "/images/juno-jupiter-color.jpg",
     className: "jupiter",
   },
   {
-    name: "Mars / Perseverance",
-    detail: "Mars · Perseverance rover · real camera video",
+    name: "Mars",
     video: "/videos/mars-horizon.mp4",
     poster: "/images/mars-horizon.jpg",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Perseverance%27s_Mastcam-Z_Video_of_Ingenuity_Hovering.webm",
     className: "mars",
   },
   {
-    name: "Earth / Aurora",
-    detail: "Earth aurora · ISS photographs · time lapse",
+    name: "Aurora",
     video: "/videos/earth-iss-aurora.mp4",
     poster: "/images/earth-iss-aurora.jpg",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Earth_Illuminated-_ISS_Time-lapse_Photography.webm",
     className: "aurora",
   },
 ] as const;
@@ -108,71 +97,56 @@ export function HeroVideo() {
     [motionEnabled, visible],
   );
 
+  useEffect(() => {
+    if (!motionEnabled || !visible || scenes[active].video) return;
+    const timer = setTimeout(() => {
+      void showScene((active + 1) % scenes.length);
+    }, 7000);
+    return () => clearTimeout(timer);
+  }, [active, motionEnabled, visible, showScene]);
+
   return (
-    <>
-      <div className="cinematic-media" ref={hero}>
-        {scenes.map((scene, index) => (
-          <div
-            className={`cinematic-scene cinematic-scene-${scene.className}${active === index ? " is-active" : ""}`}
-            key={scene.name}
-            aria-hidden="true"
-          >
-            <Image
-              className="cinematic-image"
-              src={scene.poster}
-              alt=""
-              fill
-              sizes="100vw"
-              preload={index === 0}
-            />
-            {motionEnabled && (
-              <video
-                ref={(element) => {
-                  videos.current[index] = element;
-                }}
-                className="cinematic-video"
-                src={scene.video}
-                poster={scene.poster}
-                muted
-                playsInline
-                preload={
-                  index === active || index === (active + 1) % scenes.length
-                    ? "auto"
-                    : "none"
-                }
-                disablePictureInPicture
-                onEnded={() => {
-                  if (activeRef.current === index && visible) {
-                    void showScene((index + 1) % scenes.length);
-                  }
-                }}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-      <div className="cinematic-scene-controls">
+    <div className="cinematic-media" ref={hero}>
+      {scenes.map((scene, index) => (
         <div
-          className="cinematic-scene-tabs"
-          aria-label="Real planetary footage"
+          className={`cinematic-scene cinematic-scene-${scene.className}${active === index ? " is-active" : ""}`}
+          key={scene.name}
+          aria-hidden="true"
         >
-          {scenes.map((scene, index) => (
-            <button
-              type="button"
-              key={scene.name}
-              className={active === index ? "is-active" : ""}
-              aria-pressed={active === index}
-              onClick={() => void showScene(index)}
-            >
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {scene.name}
-            </button>
-          ))}
+          <Image
+            className="cinematic-image"
+            src={scene.poster}
+            alt=""
+            fill
+            sizes="100vw"
+            preload={index === 0}
+            loading={index === 0 ? undefined : "eager"}
+          />
+          {motionEnabled && scene.video && (
+            <video
+              ref={(element) => {
+                videos.current[index] = element;
+              }}
+              className="cinematic-video"
+              src={scene.video}
+              poster={scene.poster}
+              muted
+              playsInline
+              preload={
+                index === active || index === (active + 1) % scenes.length
+                  ? "auto"
+                  : "none"
+              }
+              disablePictureInPicture
+              onEnded={() => {
+                if (activeRef.current === index && visible) {
+                  void showScene((index + 1) % scenes.length);
+                }
+              }}
+            />
+          )}
         </div>
-        <a href={scenes[active].source} target="_blank" rel="noreferrer">
-          {scenes[active].detail} ↗
-        </a>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
