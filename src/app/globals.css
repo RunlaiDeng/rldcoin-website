@@ -3035,10 +3035,10 @@ summary:focus-visible {
   color: #f6f8fa;
 }
 .site-header-home .brand {
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 3px;
-  padding: 0 5px;
-  box-sizing: content-box;
+  background: transparent;
+}
+.site-header-home .brand-image {
+  filter: brightness(0) invert(1);
 }
 .site-header-home .navigation > a:not(.nav-cta):hover {
   color: #efc48e;
@@ -3228,6 +3228,9 @@ summary:focus-visible {
 .mission-statement {
   background: #0d1720;
   color: #f5f8f9;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   padding: clamp(95px, 11vw, 175px) 0;
   position: relative;
   isolation: isolate;
@@ -3317,27 +3320,14 @@ summary:focus-visible {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.mission-statement + .principle-strip {
-  background: #111e29;
-  border-color: rgba(255, 255, 255, 0.13);
-}
-.mission-statement + .principle-strip .container > div {
-  border-color: rgba(255, 255, 255, 0.13);
-}
-.mission-statement + .principle-strip svg {
-  color: #b3c9d2;
-}
-.mission-statement + .principle-strip span {
-  color: #a7bac3;
-}
-.mission-statement + .principle-strip strong {
-  color: #f1f5f6;
-}
 .transfer-vision {
   background:
     radial-gradient(circle at 82% 45%, rgba(30, 67, 85, 0.45), transparent 46%),
     #071119;
   color: #f7f9fa;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   padding: clamp(100px, 10vw, 165px) 0;
   position: relative;
   isolation: isolate;
@@ -3384,7 +3374,7 @@ summary:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: rgba(12, 27, 38, 0.94);
+  background: rgba(12, 27, 38, 0.58);
   border: 1px solid rgba(202, 223, 233, 0.22);
 }
 .transfer-route-header {
@@ -3653,6 +3643,9 @@ summary:focus-visible {
 .earth-section {
   background: #07121a;
   color: #f3f7f7;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   isolation: isolate;
 }
 .earth-section::before {
@@ -3673,11 +3666,29 @@ summary:focus-visible {
   color: #f3f7f7;
 }
 .earth-section .genesis-card {
-  color: #10232c;
+  color: #f3f7f7;
+  background: rgba(8, 20, 29, 0.58);
+  border-color: rgba(229, 240, 244, 0.35);
+  box-shadow: none;
+  margin-right: 0;
+}
+.earth-section .genesis-card-header,
+.earth-section .genesis-card-header > span:last-child,
+.earth-section .genesis-card-main svg,
+.earth-section .genesis-card-rows span {
+  color: #c4d5dc;
+}
+.earth-section .genesis-card-rows > div,
+.earth-section .genesis-card > a {
+  border-color: rgba(229, 240, 244, 0.2);
 }
 .join-section {
   background: #0b151d;
+  border-top: 0;
   color: #f3f7f7;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   isolation: isolate;
 }
 .join-section::before {

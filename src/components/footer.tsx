@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./ui";
 import { GENESIS, RELEASE, REPOSITORY, WEBSITE_REPOSITORY } from "@/lib/site";
@@ -42,6 +45,10 @@ const columns = [
   ],
 ] as const;
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/") return null;
+
   return (
     <footer className="footer">
       <div className="container">

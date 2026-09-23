@@ -4,20 +4,13 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  Code2,
-  Fingerprint,
   Globe2,
-  KeyRound,
   Orbit,
-  Radio,
-  ShieldCheck,
-  Users,
 } from "lucide-react";
-import { Button, Eyebrow, TextLink } from "@/components/ui";
-import { TransferExplorer } from "@/components/transfer-explorer";
+import { Button, Eyebrow } from "@/components/ui";
 import { HeroVideo } from "@/components/hero-video";
 import { AmbientVideo } from "@/components/ambient-video";
-import { faqs, pageMetadata, SITE } from "@/lib/site";
+import { pageMetadata, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Building peer-to-peer payments for the interstellar future",
@@ -62,8 +55,8 @@ export default function Home() {
               Explore the mission
               <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
-            <Link className="cinematic-text-link" href="/network">
-              The Earth network
+            <Link className="cinematic-text-link" href="/get-started">
+              Start on Earth
               <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
@@ -93,92 +86,10 @@ export default function Home() {
             between future human communities. Ownership, verifiable history, and
             communication delay shape the work from the beginning.
           </p>
-          <Link href="/how-it-works">
-            Understand the design
+          <Link href="/applications">
+            Explore future communities
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
-        </div>
-      </section>
-      <div className="principle-strip">
-        <div className="container">
-          <div>
-            <KeyRound aria-hidden="true" />
-            <span>
-              Your keys.<strong>Your ownership.</strong>
-            </span>
-          </div>
-          <div>
-            <Globe2 aria-hidden="true" />
-            <span>
-              Local consensus.<strong>Independent regions.</strong>
-            </span>
-          </div>
-          <div>
-            <Radio aria-hidden="true" />
-            <span>
-              Across distance.<strong>Through time.</strong>
-            </span>
-          </div>
-        </div>
-      </div>
-      <section className="section" id="introduction">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <Eyebrow>MEET RLDCOIN</Eyebrow>
-              <h2>
-                The mission starts
-                <br />
-                with people.
-              </h2>
-            </div>
-            <p>
-              Understand the idea, inspect the work, and help build what comes
-              next. The permanent Earth network is the first step toward a much
-              longer journey.
-            </p>
-          </div>
-          <div className="audience-grid">
-            {[
-              {
-                icon: Users,
-                number: "01",
-                title: "For individuals",
-                text: "Understand a future where your assets move with you, wherever life takes you.",
-                href: "/individuals",
-                link: "Explore ownership",
-              },
-              {
-                icon: Code2,
-                number: "02",
-                title: "For developers",
-                text: "Explore the protocol, inspect the evidence, and help build the foundations.",
-                href: "/developers",
-                link: "Start building",
-              },
-              {
-                icon: Orbit,
-                number: "03",
-                title: "For a wider world",
-                text: "From communities on Earth to habitats and settlements beyond it.",
-                href: "/applications",
-                link: "See the possibilities",
-              },
-            ].map(({ icon: Icon, ...card }) => (
-              <Link className="audience-card" href={card.href} key={card.title}>
-                <div className="card-top">
-                  <Icon size={30} strokeWidth={1.4} aria-hidden="true" />
-                  <span>{card.number}</span>
-                </div>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-                <span className="card-link">
-                  {card.link}
-                  <ArrowUpRight size={18} aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
       <section
@@ -238,84 +149,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="architecture-section">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <Eyebrow light>DESIGNED AROUND DISTANCE</Eyebrow>
-              <h2>
-                Think locally.
-                <br />
-                Transfer beyond.
-              </h2>
-            </div>
-            <div>
-              <p>
-                A single conversation cannot happen instantly across
-                light-years. Rldcoin separates local confirmation from
-                communication between regions, called Zones.
-              </p>
-              <TextLink href="/how-it-works">
-                Understand the architecture
-              </TextLink>
-            </div>
-          </div>
-          <TransferExplorer />
-        </div>
-      </section>
-      <section className="section foundations">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <Eyebrow>PRINCIPLES THAT TRAVEL</Eyebrow>
-              <h2>
-                Distance changes.
-                <br />
-                The fundamentals don’t.
-              </h2>
-            </div>
-            <p>
-              The same asset should never be spendable in two places. Ownership,
-              evidence, and a fixed supply are the foundation of every future
-              route.
-            </p>
-          </div>
-          <div className="feature-grid">
-            {[
-              {
-                icon: KeyRound,
-                title: "Ownership by authorization",
-                text: "Owners control their keys. Transfers require their authorization, wherever the journey begins.",
-              },
-              {
-                icon: Fingerprint,
-                title: "Evidence before acceptance",
-                text: "A destination verifies a transfer’s history and finality before making an asset spendable.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "One conserved supply",
-                text: "Moving between Zones changes an asset’s location. It does not multiply the supply.",
-              },
-              {
-                icon: Radio,
-                title: "Built for interrupted contact",
-                text: "Explicit transfer states preserve what is known while the next message is still on its way.",
-              },
-            ].map(({ icon: Icon, title, text }) => (
-              <div className="feature" key={title}>
-                <Icon size={25} strokeWidth={1.5} aria-hidden="true" />
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            ))}
-          </div>
-          <p className="section-footnote">
-            Architecture goals guide development. Operational interstellar
-            routes are future work.
-          </p>
-        </div>
-      </section>
       <section className="earth-section">
         <AmbientVideo
           src="/videos/earth-iss-day.mp4"
@@ -371,30 +204,6 @@ export default function Home() {
               Inspect the identity & live status
               <ArrowUpRight size={17} aria-hidden="true" />
             </Link>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container faq-preview">
-          <div>
-            <Eyebrow>A LITTLE CLARITY</Eyebrow>
-            <h2>
-              Good questions.
-              <br />
-              Clear answers.
-            </h2>
-            <TextLink href="/faq">All frequently asked questions</TextLink>
-          </div>
-          <div className="faq-list">
-            {[faqs[1], faqs[2], faqs[3], faqs[8]].map(([question, answer]) => (
-              <details key={question}>
-                <summary>
-                  {question}
-                  <span aria-hidden="true">+</span>
-                </summary>
-                <p>{answer}</p>
-              </details>
-            ))}
           </div>
         </div>
       </section>
