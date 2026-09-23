@@ -1,42 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
-export function Logo({ small = false }: { small?: boolean }) {
+export function Logo() {
   return (
-    <span className={`brand ${small ? "brand-small" : ""}`}>
-      <svg
-        width="39"
-        height="39"
-        viewBox="0 0 40 40"
-        fill="none"
-        aria-hidden="true"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          r="17"
-          stroke="currentColor"
-          strokeWidth="1.4"
-        />
-        <path
-          d="M14 29V11H21C28 11 28 21 21 21H14M21 21L28 29"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M3 29C12 33 35 16 36 10"
-          stroke="var(--accent)"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-        />
-        <circle cx="35" cy="11" r="3" fill="var(--accent)" />
-      </svg>
-      <span>
-        rldcoin<span className="brand-period">.</span>
-      </span>
+    <span className="brand">
+      <Image
+        className="brand-image"
+        src="/brand/rldcoin-logo-primary.png"
+        alt=""
+        width={180}
+        height={60}
+        loading="eager"
+      />
     </span>
   );
 }

@@ -167,18 +167,14 @@ summary:focus-visible {
   gap: 40px;
 }
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--ink);
-  font-family: var(--font-display), sans-serif;
-  font-size: 30px;
-  font-weight: 720;
-  letter-spacing: -1.6px;
-  line-height: 1;
+  display: block;
+  width: 180px;
+  height: 60px;
 }
-.brand-period {
-  color: var(--accent);
+.brand-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .navigation {
   display: flex;
@@ -1745,21 +1741,14 @@ summary:focus-visible {
   gap: 80px;
 }
 .editorial-symbol {
-  font-family: var(--font-display), sans-serif;
-  font-size: 190px;
-  font-weight: 400;
-  color: #cfdddd;
-  position: relative;
-  line-height: 1.2;
-  display: inline-block;
-  margin-top: 15px;
+  display: block;
+  width: clamp(140px, 16vw, 210px);
+  margin-top: 24px;
 }
-.editorial-symbol > span {
-  font-size: 85px;
-  color: #ceb08a;
-  position: absolute;
-  right: -15px;
-  top: 80px;
+.editorial-symbol img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .large-prose h2 {
   font-size: 33px;
@@ -1837,9 +1826,6 @@ summary:focus-visible {
     gap: 10px;
     margin-left: 0;
   }
-  .brand {
-    font-size: 28px;
-  }
   .hero-grid {
     min-height: 620px;
   }
@@ -1886,9 +1872,6 @@ summary:focus-visible {
   .footer-columns {
     gap: 20px;
   }
-  .footer-brand .brand {
-    font-size: 27px;
-  }
   .footer-coordinates {
     font-size: 7px;
     letter-spacing: 0.6px;
@@ -1923,9 +1906,6 @@ summary:focus-visible {
   }
   .header-inner {
     height: 76px;
-  }
-  .brand {
-    font-size: 28px;
   }
   .menu-toggle {
     display: grid;
@@ -2321,11 +2301,8 @@ summary:focus-visible {
     height: 71px;
   }
   .brand {
-    font-size: 27px;
-  }
-  .brand > svg {
-    width: 34px;
-    height: 34px;
+    width: 155px;
+    height: auto;
   }
   .navigation {
     top: 71px;
@@ -3056,6 +3033,12 @@ summary:focus-visible {
 .site-header-home .brand,
 .site-header-home .menu-toggle {
   color: #f6f8fa;
+}
+.site-header-home .brand {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 3px;
+  padding: 0 5px;
+  box-sizing: content-box;
 }
 .site-header-home .navigation > a:not(.nav-cta):hover {
   color: #efc48e;

@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     url: SITE,
   },
   twitter: { card: "summary_large_image", images: ["/opengraph-image.png"] },
+  icons: {
+    icon: "/brand/rldcoin-coin-logo.png",
+    apple: "/brand/rldcoin-coin-logo.png",
+  },
   robots: { index: true, follow: true },
 };
 export const viewport: Viewport = {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowRight,
@@ -862,7 +863,12 @@ function About() {
           <aside>
             <Eyebrow>THE IDEA</Eyebrow>
             <span className="editorial-symbol" aria-hidden="true">
-              R<span>↗</span>
+              <Image
+                src="/brand/rldcoin-coin-logo.png"
+                alt=""
+                width={210}
+                height={210}
+              />
             </span>
           </aside>
           <div className="prose large-prose">
