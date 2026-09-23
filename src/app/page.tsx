@@ -267,12 +267,12 @@ export default function Home() {
                 <strong>22 September 2026</strong>
               </div>
               <div>
-                <span>Initial phase</span>
-                <strong>Zero-value heartbeats</strong>
+                <span>Current consensus</span>
+                <strong>Regional proof of work</strong>
               </div>
               <div>
                 <span>Payments & rewards</span>
-                <strong>Not enabled</strong>
+                <strong>Mining & local transfers</strong>
               </div>
               <div>
                 <span>Controlling owners</span>

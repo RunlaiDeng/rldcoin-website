@@ -36,32 +36,34 @@ npm run build
 
 ## Network telemetry
 
-The server fetches only `https://forum.rldcoin.com/genesis/status.json`, with a
+The server fetches only `https://forum.rldcoin.com/v1/pow/status`, with a
 five-second timeout, no redirects, and a 16 KiB response limit. The expected
-Zone and manifest commitment must match. Only explicitly recognized fields are
+Zone, original manifest, explicit adoption, and regional chain identity must match. Only explicitly recognized fields are
 returned. Successful responses may be cached for 30 seconds at the edge.
 
 The browser refreshes every 30 seconds while visible. An observation older than
-two minutes, a full verification older than two heartbeat periods plus two
-minutes, an expired software-key authorization, or a failed refresh cannot be
-presented as confirmed running. Retained observations keep their timestamps and
-are explicitly labeled when refresh fails. This is operator-reported telemetry,
-not an independent cryptographic verifier.
+two minutes, stale hashing progress, unavailable storage, exhausted block capacity,
+or a failed refresh cannot be presented as active mining. Random block discovery
+is not a fixed heartbeat deadline. Exact decimal strings retain full integer
+precision, including amounts below one RLD. Retained observations keep their
+timestamps. This is operator telemetry, not an independent cryptographic verifier.
 
 No wallet connectivity, transactions, registration, analytics, tracking cookies,
 or secrets are used by the site. Fonts are bundled locally.
 
 ## Content authority
 
-The permanent Earth genesis was established on September 22, 2026 under
-`P1_REMOTE_ZERO_VALUE_V1`. At this initial stage there is one controlling owner,
-no personal genesis allocation, no active rewards, and no enabled payments.
-Future interstellar capabilities are described as design goals.
+The permanent Earth genesis was established on September 22, 2026. The regional
+PoW adoption explicitly replaces the original heartbeat-only rules, retaining
+its complete authenticated predecessor history. The current release enables
+mining and signed local transfers without personal allocation. One owner operates
+the launch deployment. Cross-region settlement and a consumer wallet remain work
+in progress; no deployed interstellar route is claimed.
 
 Authoritative public records:
 
 - https://forum.rldcoin.com/genesis/
-- https://github.com/RunlaiDeng/rldcoin-genesis/releases/tag/earth-genesis-20260922
+- https://github.com/RunlaiDeng/rldcoin-genesis/releases/tag/earth-pow-v0.3.0
 
 The protocol source lives in the **named runtime source release asset**. This
 website is a separate repository and does not include node/private operator data.

@@ -1,10 +1,10 @@
-import { GENESIS } from "@/lib/site";
+import { POW_STATUS } from "@/lib/site";
 import { parseNetworkStatus } from "@/lib/network";
 
 export const dynamic = "force-dynamic";
 export async function GET() {
   try {
-    const result = await fetch(`${GENESIS}status.json`, {
+    const result = await fetch(POW_STATUS, {
       cache: "no-store",
       signal: AbortSignal.timeout(5000),
       redirect: "error",

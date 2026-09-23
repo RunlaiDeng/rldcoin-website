@@ -2,7 +2,7 @@
 
 - This is the independent English website for rldcoin.com, not the protocol/node repository or the wallet application.
 - Use the published genesis records and versioned protocol release as sources. Never copy private keys, local evidence, backups, operator files, or node data into this repository.
-- The permanent Earth genesis is established (2026-09-22); launch scope is one owner, zero-value heartbeats, no payments or rewards. Interstellar operation is a goal, not a deployed service. Update claims only from new verified release evidence.
+- The permanent Earth genesis is established (2026-09-22). The explicit regional PoW adoption enables mining and signed local transfers; one owner currently operates the deployment. Published pow-v1 records contain the retained legacy history, adoption and qualification evidence. Cross-region transfers and a consumer wallet remain unfinished. Update claims only from verified release evidence.
 - Keep the network status feed read-only, bounded, pinned to the expected network, timestamped, and explicit about stale/unavailable data. It is operator telemetry, not independent verification.
 - All navigation and calls to action must lead to real content. Do not add token-sale, wallet-connect, consumer-wallet-download, or price features without an authorized implementation.
 - Verify the production build, status freshness/error paths, desktop/mobile navigation, and changed page rendering. Use the existing focused network tests when modifying status handling.

@@ -78,8 +78,8 @@ export function Footer() {
         <div className="footer-stage">
           <span className="status-dot" />
           <p>
-            Permanent Earth network · Initial zero-value phase. Payments and
-            service rewards are not enabled.
+            Permanent Earth network · Regional PoW mining and local transfers.
+            Interstellar routes are under development.
           </p>
           <Link href="/network">
             View status <ArrowRightSmall />

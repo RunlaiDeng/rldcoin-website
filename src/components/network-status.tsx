@@ -4,17 +4,18 @@ import { useCallback, useEffect, useState } from "react";
 import { Activity, ArrowUpRight, RefreshCw } from "lucide-react";
 import {
   networkHealth,
+  formatRld,
   parseNetworkStatus,
   type NetworkStatus,
 } from "@/lib/network";
-import { GENESIS } from "@/lib/site";
+import { POW_STATUS } from "@/lib/site";
 
-const date = (v: string) =>
+const date = (v: number) =>
   new Intl.DateTimeFormat("en-GB", {
     dateStyle: "medium",
     timeStyle: "medium",
     timeZone: "UTC",
-  }).format(new Date(v)) + " UTC";
+  }).format(new Date(v * 1000)) + " UTC";
 export function NetworkStatusPanel() {
   const [data, setData] = useState<NetworkStatus | null>(null);
   const [error, setError] = useState(false);
@@ -33,8 +34,7 @@ export function NetworkStatusPanel() {
       const body = await response.json();
       const next = parseNetworkStatus(body.data);
       setData((previous) =>
-        previous &&
-        Date.parse(previous.observed_at) > Date.parse(next.observed_at)
+        previous && previous.observed_at_unix > next.observed_at_unix
           ? previous
           : next,
       );
@@ -72,14 +72,12 @@ export function NetworkStatusPanel() {
   const label = error
     ? "Update unavailable"
     : health === "running"
-      ? "Heartbeat running"
-      : health === "expired"
-        ? "Authorization expired"
-        : health === "stale"
-          ? "Status is out of date"
-          : health === "stopped"
-            ? "Network not reporting running"
-            : "Checking public status";
+      ? "Automatic mining active"
+      : health === "stale"
+        ? "Status is out of date"
+        : health === "stopped"
+          ? "Mining not reporting active"
+          : "Checking public status";
   return (
     <section className="live-panel" aria-label="Earth network status">
       <div className="live-panel-top">
@@ -100,88 +98,72 @@ export function NetworkStatusPanel() {
       </div>
       <div className="live-metrics">
         <div>
-          <span>Finalized height</span>
+          <span>Chain height</span>
           <strong>
-            {data?.height != null ? data.height.toLocaleString("en-US") : "—"}
+            {data ? BigInt(data.height).toLocaleString("en-US") : "—"}
           </strong>
-          <small>
-            {data?.height != null
-              ? "Last reported by the operator"
-              : data
-                ? "Not reported in this observation"
-                : "Waiting for public data"}
-          </small>
+          <small>Selected branch · probabilistic confirmation</small>
         </div>
         <div>
-          <span>Heartbeat interval</span>
+          <span>Target block interval</span>
           <strong>
-            {data ? `${data.heartbeat_interval_seconds / 60}` : "—"}
-            <em>{data ? " min" : ""}</em>
+            10<em> min</em>
           </strong>
-          <small>Consensus heartbeat</small>
+          <small>Actual discovery time varies</small>
         </div>
         <div>
-          <span>Controlling owners</span>
-          <strong>{data ? data.control_group_count : "—"}</strong>
-          <small>Independent operators are a later milestone</small>
+          <span>Issued RLD</span>
+          <strong>{data ? formatRld(data.emitted_runlai) : "—"}</strong>
+          <small>Includes rewards awaiting maturity</small>
         </div>
         <div>
-          <span>Payment phase</span>
-          <strong className="metric-word">
+          <span>Node hash rate</span>
+          <strong>
             {data
-              ? data.value_cap === "VALUE_CAP_0"
-                ? "Zero value"
-                : "Review status"
+              ? data.average_hashes_per_second.toLocaleString("en-US")
               : "—"}
+            <em>{data ? " H/s" : ""}</em>
           </strong>
-          <small>
-            {data
-              ? `Rewards ${data.reward_issuance_enabled ? "reported enabled · review release" : "not enabled"}`
-              : "Status has not been loaded"}
-          </small>
+          <small>Average since this node started</small>
         </div>
       </div>
       {data && (
         <dl className="telemetry-details">
           <div>
-            <dt>Last reported operator state</dt>
-            <dd>{data.state}</dd>
+            <dt>Observed by this node</dt>
+            <dd>{date(data.observed_at_unix)}</dd>
           </div>
           <div>
-            <dt>Observed by the operator</dt>
-            <dd>{date(data.observed_at)}</dd>
-          </div>
-          <div>
-            <dt>Last full verification</dt>
+            <dt>Latest hashing progress</dt>
             <dd>
-              {data.last_full_verification_at
-                ? date(data.last_full_verification_at)
+              {data.last_hash_at_unix
+                ? date(data.last_hash_at_unix)
                 : "Not reported"}
             </dd>
           </div>
           <div>
-            <dt>Signing authorization</dt>
-            <dd>
-              {data.key_authorization_mode === "UNTIL_REVOKED"
-                ? "No fixed expiry · owner may revoke"
-                : data.software_key_expires_at
-                  ? date(data.software_key_expires_at)
-                  : "Not reported"}
-            </dd>
+            <dt>Unissued reserve</dt>
+            <dd>{formatRld(data.unissued_runlai)} RLD</dd>
+          </div>
+          <div>
+            <dt>Mining operation</dt>
+            <dd>No scheduled expiry · owner can stop the node</dd>
+          </div>
+          <div>
+            <dt>Cross-region transfers</dt>
+            <dd>Under development · not enabled</dd>
           </div>
           <div>
             <dt>Reported state root</dt>
-            <dd className="hash">{data.state_root ?? "Not reported"}</dd>
+            <dd className="hash">{data.state_root}</dd>
           </div>
         </dl>
       )}
-      {(error || health === "stale" || health === "expired") && (
+      {(error || health === "stale") && (
         <p className="status-warning" role="status">
           {error
-            ? "We could not refresh the public feed. Any figures above are the last received observation, not confirmation that the network is running."
-            : health === "expired"
-              ? "The reported software-key authorization has expired. A new authorization must be reviewed before treating the network as active."
-              : "The observation or full verification is too old to confirm current operation. Inspect the public feed for more detail."}
+            ? "We could not refresh the public feed. Figures above retain their original observation time and do not confirm current operation."
+            : "This observation is too old to confirm current mining. Inspect the public feed for more detail."}
         </p>
       )}
       <div className="live-panel-bottom">
@@ -202,7 +184,7 @@ export function NetworkStatusPanel() {
             />
             {loading ? "Refreshing" : "Refresh"}
           </button>
-          <a href={`${GENESIS}status.json`}>
+          <a href={POW_STATUS}>
             View source
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>

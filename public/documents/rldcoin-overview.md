@@ -2,77 +2,43 @@
 
 A peer-to-peer transfer system for humanity's interstellar future.
 
-Published September 22, 2026. This is an introductory summary, not a complete
-protocol specification or an independent security assessment.
+Updated September 22, 2026. This introduction is not a complete protocol specification or an independent security assessment.
 
-## Goal
+## Earth today
 
-Preserve verifiable ownership and continuous asset history across Earth, space
-habitats, spacecraft, and distant settlements separated by long communication
-delays and interrupted contact. Information must still reach its destination;
-local consensus cannot remove physical communication delay.
+The permanent Earth genesis is retained. An explicit, incompatible regional PoW adoption binds its complete certified heartbeat history and terminal checkpoint. It replaces the predecessor's heartbeat-only consensus rules; the original constitution and genesis are preserved as historical records, not rewritten to claim they contained PoW issuance.
 
-## Zones and transfers
+The regional node performs automatic SHA-256d mining, validates signed local transfers, stores blocks durably, and selects the valid branch with greatest accumulated work. PoW confirmations are probabilistic: a stronger valid branch can replace earlier blocks and their rewards. The launch deployment is operated by one owner; separate machines do not constitute independent operation.
 
-A Zone maintains its own ledger and consensus. The intended cross-Zone lifecycle:
+## RLD and mining
 
-1. The sender authorizes a destination-bound transfer.
-2. The source finalizes it and locks the asset.
-3. A proof travels by relays, delay-tolerant networks, or carried media.
-4. The destination verifies finality, validity, and asset history.
-5. A finalized import makes the asset spendable at the destination.
-6. A receipt returns asynchronously to close the source-side record.
+- Fixed supply: 100,000,000,000 RLD, shared across the intended system.
+- Smallest unit: runlai; 1 RLD = 10^24 runlai.
+- Personal allocation at genesis and adoption: zero.
+- The old unused service reserves become one unissued mining reserve.
+- Initial subsidy: 250,000 RLD per valid selected block.
+- Target block interval: 600 seconds; actual discovery time varies.
+- Each 200,000-block era distributes half the remaining reserve, with exact integer tail accounting.
+- Rewards mature after 100 additional local blocks. Fees go to the block's miner.
+- Every miner follows the same rules; no one is guaranteed a reward or share.
 
-Incomplete or conflicting evidence leaves a transfer pending or quarantined.
-Elapsed time alone cannot authorize the source to unlock the asset. Upgrades and
-recovery must preserve asset lineage and prevent two spendable copies.
+The source release contains the node and developer transaction API. A consumer wallet remains in development. Mining needs only a receiving public key; keep its secret key under your own control.
 
-## Asset and supply
+## Future regional settlement
 
-- Symbol: RLD
-- Smallest unit: runlai
-- Conversion: 1 RLD = 10^24 runlai
-- Fixed supply: 100,000,000,000 RLD = 10^35 runlai
-- Genesis reserves: 1% startup services, 9% continuity/archiving/migration,
-  90% verified demand matching
-- Personal/founder genesis allocation: zero
+Regions are intended to confirm their own local activity while proofs travel asynchronously through delayed or disconnected links. Transmission alone does not prove a payment valid. The planned route is source locking, authenticated export proof, unique destination import, and an asynchronous receipt.
 
-The design pays verified protocol services from fixed reserves. Admission
-proof-of-work does not itself issue coins or confer validation authority.
+The design still needs qualified source-checkpoint trust, PoW reorganization handling, duplicate rejection, delayed receipts, and supply-budget transfer. Elapsed time alone cannot unlock a source amount already imported elsewhere. A new region cannot create another copy of the total reserve.
 
-## Permanent Earth genesis
+Cross-region transfers are disabled in the current release. No actual interstellar route is claimed. Local consensus cannot eliminate physical communication delay.
 
-- Established: September 22, 2026
-- Zone: zone-77bc978af4837a1e7971
-- Canonical manifest commitment:
-  874066fe96d12bfa42cc316f5387cc8f4df649f794b43e2ee724b8029b0abf33
-- Profile: P1_REMOTE_ZERO_VALUE_V1
-- One controlling owner across two hosts
-- Payments and service rewards: not enabled
-- Initial software-key exception ends October 7, 2026, at 16:00 UTC,
-  without automatic renewal
+## Verification and participation
 
-The permanent identity is not a disposable test network. Its initial operating
-scope is zero-value heartbeats. It does not establish independent operation,
-independent review, physical offline custody, or a live interstellar route.
-
-## Delivery
-
-P0 candidate qualification and P1 permanent genesis are complete within their
-stated scopes. P2 external observation, P3 open contribution, P4 authority
-handover, P5 restricted Earth payments, and P6 interstellar transfer engineering
-remain later milestones. Cross-Zone engineering can progress alongside Earth
-stages; value activation and individual routes retain their own conditions.
-
-## Authoritative public resources
+Verify both the original manifest pin and the explicit PoW adoption. Run the exact versioned source or published executable, replay the retained history, and validate peer blocks locally. A status page is operator telemetry rather than an independent proof.
 
 - Website: https://rldcoin.com
-- Current status and identity: https://rldcoin.com/network
-- Genesis records: https://forum.rldcoin.com/genesis/
-- Versioned source and artifacts:
-  https://github.com/RunlaiDeng/rldcoin-genesis/releases/tag/earth-genesis-20260922
+- Public status: https://rldcoin.com/network
+- Published evidence: https://forum.rldcoin.com/genesis/
+- Node guide: https://github.com/RunlaiDeng/rldcoin-genesis/blob/main/pow-v1/NODE-GUIDE.md
+- PoW release: https://github.com/RunlaiDeng/rldcoin-genesis/releases/tag/earth-pow-v0.3.0
 - Community: https://forum.rldcoin.com/
-
-Use the named runtime source asset for the full protocol tree. Read its exact
-specifications and operating material, verify checksums, and distinguish the
-canonical manifest commitment from a JSON file's byte checksum.

@@ -5,10 +5,15 @@ export const GENESIS = "https://forum.rldcoin.com/genesis/";
 export const REPOSITORY = "https://github.com/RunlaiDeng/rldcoin-genesis";
 export const WEBSITE_REPOSITORY =
   "https://github.com/RunlaiDeng/rldcoin-website";
-export const RELEASE = `${REPOSITORY}/releases/tag/earth-genesis-20260922`;
-export const DOWNLOAD = `${REPOSITORY}/releases/download/earth-genesis-20260922`;
+export const RELEASE = `${REPOSITORY}/releases/tag/earth-pow-v0.3.0`;
+export const DOWNLOAD = `${REPOSITORY}/releases/download/earth-pow-v0.3.0`;
 export const MANIFEST =
   "874066fe96d12bfa42cc316f5387cc8f4df649f794b43e2ee724b8029b0abf33";
+export const POW_ADOPTION =
+  "16d2a4d3ba8dff33613a9127ffc7e540347d377066b367097b765e1472d01e02";
+export const POW_CHAIN =
+  "dab6756c593608078a7d1f8cbdc8af7f447ffad6c506f6299262a26511ee586a";
+export const POW_STATUS = "https://forum.rldcoin.com/v1/pow/status";
 export const ZONE = "zone-77bc978af4837a1e7971";
 export const GENESIS_ROOT =
   "37325242b485e9f4ee67ea6594bc0259d72883498bcd2bf55d76f1a9453533bf";
@@ -92,23 +97,23 @@ export const faqs = [
   ],
   [
     "Is this a testnet?",
-    "No. The permanent Earth network was established on September 22, 2026. It has a published genesis identity and retained history. Its current operating phase is deliberately limited to zero-value heartbeats: payments and service rewards are not enabled. Development networks and simulations are separate from this permanent identity.",
+    "No. The permanent Earth network was established on September 22, 2026. It has a published genesis identity and retained history. Earth now uses explicitly adopted regional proof-of-work rules for automatic mining and signed local transfers. The original genesis and certified heartbeat history remain published. Development networks and simulations are separate from this permanent identity.",
   ],
   [
     "Can I send, receive, or buy RLD today?",
-    "Payments are not enabled on the current Earth network, and this website does not offer a token sale or exchange. The wallet and node software in the source release are developer tools; a public payment-ready wallet is not yet available. Check the network status and roadmap before treating any feature as active.",
+    "The Earth node accepts valid signed local transfers of mature RLD. Mining rewards mature after 100 additional blocks. The current release is a command-line node and developer transaction API; a consumer wallet is still to come. This website offers no token sale or exchange.",
   ],
   [
     "What is the total supply?",
-    "The fixed supply is 100,000,000,000 RLD. One RLD contains 10²⁴ runlai, the smallest unit. Genesis places the supply in protocol reserves: 1% for startup services, 9% for continuity, archiving and migration, and 90% for verified demand matching. Creating a Zone or copying a ledger does not create more RLD.",
+    "The fixed supply is 100,000,000,000 RLD. One RLD contains 10²⁴ runlai, the smallest unit. The PoW adoption moves the original unused service reserves into one unissued mining reserve, with no personal allocation. Miners earn new RLD only through valid work on the selected chain. Creating a Zone or copying a ledger does not create more RLD.",
   ],
   [
     "Is there a founder allocation or premine?",
-    "There is no personal or founder genesis allocation and no reserved founder share. The protocol design pays contributors for verified services from fixed reserves under shared rules. Service rewards are not yet enabled. Community contributions to source review, verification, documentation, and protocol development are welcome.",
+    "There is no personal or founder genesis allocation and no reserved founder share. The launch operator and later miners follow the same public work, reward, and maturity rules. Early mining before wider participation can concentrate ownership; no participant is guaranteed a share. Community contributions to source review, verification, documentation, and protocol development are welcome.",
   ],
   [
     "How does mining or earning RLD work?",
-    "The existing design pays for verified protocol services from fixed reserves. Admission proof-of-work helps regulate access; performing that computation does not itself mint RLD, produce a reward, or grant validation authority. Reward activation requires the later contribution and security milestones.",
+    "Run the released node with mining enabled and your receiving public key. It automatically searches for SHA-256d blocks. Valid blocks on the selected greatest-work branch earn a subsidy and included fees. The initial subsidy is 250,000 RLD, with a ten-minute target interval and a 200,000-block reward era. Actual rewards depend on competition and luck; discarded-branch rewards disappear.",
   ],
   [
     "What is a Zone?",
@@ -124,7 +129,7 @@ export const faqs = [
   ],
   [
     "Is the network decentralized today?",
-    "The current launch is controlled by one owner across two hosts. Separate processes or machines do not establish independent governance. Independent operators, independent security review, wider participation, and transfers of validation authority remain later milestones.",
+    "The current launch is controlled by one owner across two hosts. Separate processes or machines do not establish independent governance. Independent miners, broader hash-power distribution, and independent security review remain important next steps. Anyone adopting the published PoW rules can validate and mine without the founder’s signing keys.",
   ],
   [
     "How can I verify the genesis?",
@@ -132,6 +137,6 @@ export const faqs = [
   ],
   [
     "How can I participate now?",
-    "Read the architecture, inspect the published source and evidence, reproduce verification work in an isolated environment, and discuss implementation questions in the community forum. Participation today does not promise a reward or grant permission to activate payments.",
+    "Read the architecture, inspect the published source and evidence, reproduce verification work in an isolated environment, and discuss implementation questions in the community forum. You can also build the released node, verify the pinned adoption, connect to the public Earth peer, and enable mining with your own receiving key. Running a node alone does not guarantee a block reward.",
   ],
 ] as const;

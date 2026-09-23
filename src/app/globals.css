@@ -1425,12 +1425,13 @@ summary:focus-visible {
 }
 .live-metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-block: 1px solid var(--line);
   padding: 25px 35px;
   background: #f2f6f5;
 }
 .live-metrics > div {
+  min-width: 0;
   padding: 0 25px;
   border-right: 1px solid #d8e2e3;
   display: flex;
@@ -1448,6 +1449,7 @@ summary:focus-visible {
   color: #647c87;
 }
 .live-metrics strong {
+  overflow-wrap: anywhere;
   font-size: 38px;
   font-family: var(--font-display), sans-serif;
   font-weight: 500;
@@ -2875,7 +2877,8 @@ summary:focus-visible {
     font-size: 10px;
   }
   .live-metrics strong {
-    font-size: 35px;
+    font-size: clamp(20px, 6vw, 28px);
+    letter-spacing: -0.6px;
   }
   .live-metrics strong.metric-word {
     font-size: 21px;

@@ -118,7 +118,7 @@ function GetStarted() {
     },
     {
       title: "Know the current chapter",
-      text: "Earth has a permanent genesis. Its initial phase runs zero-value heartbeats. Public payments, service rewards, and independent operation are later milestones.",
+      text: "Earth has a permanent genesis and a regional PoW release. Automatic mining and signed local transfers are available; independent participation and interstellar routes are the next chapters.",
       href: "/network",
       label: "Inspect the network",
       icon: Globe2,
@@ -131,10 +131,10 @@ function GetStarted() {
       icon: FileCheck2,
     },
     {
-      title: "Join the work",
-      text: "Discuss the design, review the code, or reproduce verification in an isolated environment. Questions and careful review are useful contributions today.",
-      href: "https://forum.rldcoin.com/",
-      label: "Visit the community",
+      title: "Run a node or mine",
+      text: "Verify the published adoption, connect an Earth peer, and enable the miner with your own receiving public key. Keep the secret key in your custody.",
+      href: "https://github.com/RunlaiDeng/rldcoin-genesis/blob/main/pow-v1/NODE-GUIDE.md",
+      label: "Follow the node guide",
       icon: Users,
     },
   ];
@@ -148,9 +148,9 @@ function GetStarted() {
       <section className="section">
         <div className="container narrow">
           <Note title="Where the network stands today">
-            The permanent Earth network is established. Payments and rewards are
-            not enabled, and there is no public payment-ready wallet or token
-            sale on this website.
+            The Earth node now supports automatic PoW mining and signed local
+            transfers. Use the published node guide to join. A consumer wallet
+            is still in development; this website offers no token sale.
           </Note>
           <div className="step-list">
             {steps.map((step, i) => (
@@ -343,9 +343,9 @@ function Individuals() {
           <Note title="Wallet availability">
             There is no public payment-ready Rldcoin wallet at this launch
             stage. Wallet and node components in the source release are
-            development tools, and the permanent network does not accept value
-            transfers. This website never asks you to connect a wallet or enter
-            a private key.
+            developer tools with a signed local transaction API. Mining rewards
+            require 100 additional blocks before they can be spent. This website
+            never asks you to connect a wallet or enter a private key.
           </Note>
         </div>
       </section>
@@ -374,9 +374,9 @@ function Individuals() {
             </p>
             <h3>Follow activation, not promises</h3>
             <p>
-              Payment support and service rewards require explicit later
-              milestones. Follow the official records to see what has actually
-              been enabled.
+              Local PoW payments and mining follow the published adoption rules.
+              Cross-region transfers remain disabled until their proofs,
+              recovery rules, and reorganization handling are qualified.
             </p>
             <TextLink href="/roadmap">See the delivery roadmap</TextLink>
           </div>
@@ -485,13 +485,13 @@ function Developers() {
               <pre>
                 <code>
                   {
-                    "# From the published source archive\n# Requires the pinned Rust toolchain\n\ncargo build --locked --release \\\n  -p rld-node -p rld-signer \\\n  -p rld-witness -p rld-cli\n\ncargo test --locked --workspace"
+                    "# From the published source archive\n# Requires the pinned Rust toolchain\n\ncargo build --locked --release -p rld-pow\ncargo test --locked --release -p rld-pow\n\n# Follow NODE-GUIDE.md in the release to join"
                   }
                 </code>
               </pre>
               <p>
-                These commands build and test locally. They do not authorize a
-                permanent launch or enable payments.
+                Build and test locally, then follow the release’s node guide to
+                pin the existing network, connect a peer, and enable mining.
               </p>
             </div>
           </div>
@@ -502,8 +502,8 @@ function Developers() {
                 "Protocol types, ledgers, transactions, transfer proofs, and verification.",
               ],
               [
-                "rld-node",
-                "Persistent Zone state, read APIs, synchronization, and recovery.",
+                "rld-pow / rldpow",
+                "Automatic mining, signed local transfers, durable blocks, greatest-work selection, and peer synchronization.",
               ],
               [
                 "rld-signer / rld-witness",
@@ -528,8 +528,8 @@ function Developers() {
             Download the named runtime source and binary assets from the
             release. GitHub’s automatically generated source archive of the
             publication repository contains records, not the full protocol tree.
-            The initial binary bundle is Linux x86-64; later operating revisions
-            are recorded separately.
+            The PoW release includes Linux x86-64 and macOS Apple Silicon
+            executables, the exact source snapshot, and adoption records.
           </Note>
         </div>
       </section>
@@ -578,7 +578,7 @@ function Developers() {
             </div>
           </div>
           <div className="hero-actions">
-            <Button href={`${DOWNLOAD}/rldcoin-runtime-source-445e27b.tar.gz`}>
+            <Button href={`${DOWNLOAD}/rldcoin-pow-source-v0.3.0.tar.gz`}>
               Download protocol source
             </Button>
             <Button href="https://forum.rldcoin.com/" secondary>
@@ -606,12 +606,13 @@ function Network() {
       <section className="section network-section">
         <div className="container">
           <NetworkStatusPanel />
-          <Note title="Permanent identity. Initial operating phase.">
-            The Earth network launched on September 22, 2026 under the remote
-            zero-value profile. It has one controlling owner across two hosts,
-            no personal genesis allocation, no active rewards, and no enabled
-            payments. Independent operators, independent security review, and
-            hardware custody remain later work.
+          <Note title="Permanent identity. Regional proof of work.">
+            Earth began on September 22, 2026 with a retained zero-value
+            history. The published PoW adoption explicitly replaces those
+            consensus rules and enables mining rewards and signed local
+            transfers. There is no personal allocation. One owner currently
+            operates the deployment; independent participation and review remain
+            ahead.
           </Note>
           <div className="section-heading genesis-heading">
             <div>
@@ -646,8 +647,8 @@ function Network() {
               <dd className="hash">{GENESIS_ROOT}</dd>
             </div>
             <div>
-              <dt>Launch profile</dt>
-              <dd className="hash">P1_REMOTE_ZERO_VALUE_V1</dd>
+              <dt>Current consensus</dt>
+              <dd className="hash">RLD_REGIONAL_POW_V1</dd>
             </div>
           </dl>
           <p className="section-footnote">
@@ -696,32 +697,24 @@ function Network() {
             <p>1 RLD = 10²⁴ runlai</p>
           </div>
           <div>
-            <div
-              className="reserve-bar"
-              aria-label="Reserves: 1 percent startup, 9 percent continuity, 90 percent demand matching"
-            >
-              <i />
-              <i />
-              <i />
-            </div>
             <div className="reserve-rows">
               <div>
-                <strong>1%</strong>
-                <span>Startup services</span>
+                <strong>0</strong>
+                <span>Personal allocation at genesis or adoption</span>
               </div>
               <div>
-                <strong>9%</strong>
-                <span>Continuity, archiving & migration</span>
+                <strong>250,000</strong>
+                <span>RLD initial block subsidy</span>
               </div>
               <div>
-                <strong>90%</strong>
-                <span>Verified demand matching</span>
+                <strong>100</strong>
+                <span>Additional blocks before rewards are spendable</span>
               </div>
             </div>
             <p className="section-footnote">
-              Genesis supply is held in protocol reserves. Admission work does
-              not issue coins. Service rewards require the later contribution
-              and activation milestones.
+              Valid PoW blocks release RLD from the fixed unissued reserve. Each
+              200,000-block era distributes half the remaining reserve. Fees go
+              to miners. New regions cannot duplicate the supply.
             </p>
             <TextLink href="/faq">Understand supply and rewards</TextLink>
           </div>
@@ -738,46 +731,34 @@ function Network() {
 }
 const milestones = [
   [
-    "P0",
-    "Foundation qualified",
-    "Completed",
-    "Candidate qualification established the source baseline, relevant verification, recovery work, and upgrade requirements.",
+    "A",
+    "A permanent Earth identity",
+    "Established",
+    "Published genesis, retained certified history, recoverable custody, and encrypted backups. The original birth records remain immutable.",
   ],
   [
-    "P1",
-    "A permanent Earth genesis",
-    "Completed · remote zero-value profile",
-    "Published genesis identity and artifacts, authorized operation, same-history recovery, encrypted backups, and a separate-host observer. One owner remains in control.",
+    "B–D",
+    "Automatic regional mining",
+    "Released · explicit PoW adoption",
+    "Real SHA-256d blocks, fixed-supply rewards, mature signed transfers, durable recovery, peer synchronization, and a public node guide.",
   ],
   [
-    "P2",
-    "Independent observation",
+    "E",
+    "Practical local payments",
+    "In progress",
+    "Make offline signing, transaction preparation, maturity, confirmations, fee selection, and recovery accessible in a usable wallet.",
+  ],
+  [
+    "F",
+    "Asynchronous regional settlement",
     "Ahead",
-    "External operators install on their own equipment, verify synchronization, replace peers, and recover without founder keys or accounts.",
+    "Qualify source locking, authenticated proofs, unique import, delayed receipts, source reorganizations, interrupted links, and shared supply budgets.",
   ],
   [
-    "P3",
-    "Open contribution",
-    "Ahead",
-    "Complete the path from verified service delivery to contribution records, bounded budgets, and eligible rewards. Admission computation alone does not earn RLD.",
-  ],
-  [
-    "P4",
-    "Transfer of authority",
-    "Ahead",
-    "Qualify dynamic membership, broader validation authority, independent operators and clients, and operational recovery across fault domains.",
-  ],
-  [
-    "P5",
-    "Restricted Earth payments",
-    "Ahead",
-    "Enable limited local value only after the applicable security, wallet, fee, monitoring, and recovery conditions have been satisfied.",
-  ],
-  [
-    "P6",
-    "Interstellar transfer engineering",
-    "Ahead · work can progress alongside Earth stages",
-    "Qualify asynchronous multi-Zone transfers, delays, disconnection, carried proofs, receipt handling, and long-term recovery. Each real-value route requires its own authorization and evidence.",
+    "G",
+    "Open and resilient operation",
+    "Ongoing work",
+    "Recruit independent operators and reviewers, broaden hash-power distribution, qualify long-term storage and upgrades, and eventually deploy real distant routes.",
   ],
 ] as const;
 function Roadmap() {
@@ -790,7 +771,7 @@ function Roadmap() {
       />
       <section className="section">
         <div className="container narrow">
-          <p className="updated-label">DELIVERY STATUS / 22 SEPTEMBER 2026</p>
+          <p className="updated-label">DELIVERY STATUS / 23 SEPTEMBER 2026</p>
           <div className="roadmap">
             {milestones.map(([id, title, status, description], i) => (
               <article
@@ -806,7 +787,7 @@ function Roadmap() {
                   </span>
                   <h2>{title}</h2>
                   <p>{description}</p>
-                  {id === "P1" && (
+                  {id === "B–D" && (
                     <TextLink href="/network">
                       Inspect the permanent genesis
                     </TextLink>
@@ -912,10 +893,11 @@ function About() {
               and an initial operational foundation.
             </p>
             <p>
-              Today, one owner controls the launch. Payments and rewards remain
-              disabled. Independent operation, broader validation authority, and
-              qualified interstellar routes are milestones to be earned through
-              engineering and evidence.
+              Earth now runs regional proof of work with automatic mining and
+              signed local transfers. One owner operates the launch deployment.
+              Independent participation, wider hash-power distribution, and
+              qualified interstellar routes require further engineering and
+              evidence.
             </p>
             <h2>Built in the open.</h2>
             <p>
@@ -954,7 +936,7 @@ function Resources() {
         ],
         [
           "Roadmap",
-          "The evidence-led delivery stages from P0 through P6.",
+          "The path from Earth mining to asynchronous regional settlement.",
           "/roadmap",
         ],
         [
@@ -989,9 +971,9 @@ function Resources() {
           `${DOWNLOAD}/SHA256SUMS`,
         ],
         [
-          "Operations authorization",
-          "Published operating revisions, including the current signing authorization. The original genesis is retained.",
-          "https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/operating-revisions",
+          "PoW rule adoption",
+          "Explicit PoW rule adoption, full predecessor history, and verification records.",
+          "https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/pow-v1",
         ],
         [
           "Live network status",
@@ -1005,14 +987,24 @@ function Resources() {
       label: "03 / SOURCE & TOOLS",
       items: [
         [
+          "Run a node or enable mining",
+          "Step-by-step verification, peer connection, wallet custody, and automatic mining.",
+          "https://github.com/RunlaiDeng/rldcoin-genesis/blob/main/pow-v1/NODE-GUIDE.md",
+        ],
+        [
+          "macOS Apple Silicon executable",
+          "The regional PoW node and automatic miner for Apple Silicon.",
+          `${DOWNLOAD}/rldpow-macos-arm64-v0.3.0.tar.gz`,
+        ],
+        [
           "Protocol source archive",
-          "Full named runtime source snapshot 445e27b, published with the genesis release.",
-          `${DOWNLOAD}/rldcoin-runtime-source-445e27b.tar.gz`,
+          "Full source snapshot for the regional PoW v0.3.0 release.",
+          `${DOWNLOAD}/rldcoin-pow-source-v0.3.0.tar.gz`,
         ],
         [
           "Linux x86-64 executables",
-          "The initial node, signer, witness, and command-line release bundle. For development and verification.",
-          `${DOWNLOAD}/rldcoin-linux-x86_64-445e27b.tar.gz`,
+          "The regional PoW node with an optional automatic miner.",
+          `${DOWNLOAD}/rldpow-linux-x86_64-v0.3.0.tar.gz`,
         ],
         [
           "All release assets",
