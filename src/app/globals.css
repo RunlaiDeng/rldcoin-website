@@ -3537,11 +3537,11 @@ summary:focus-visible {
     background:
       linear-gradient(
         0deg,
-        rgba(3, 8, 14, 0.98) 0%,
-        rgba(3, 8, 14, 0.87) 53%,
-        rgba(3, 8, 14, 0.44) 100%
+        rgba(3, 8, 14, 0.96) 0%,
+        rgba(3, 8, 14, 0.75) 53%,
+        rgba(3, 8, 14, 0.25) 100%
       ),
-      linear-gradient(90deg, rgba(3, 8, 14, 0.52), transparent);
+      linear-gradient(90deg, rgba(3, 8, 14, 0.45), transparent);
   }
   .cinematic-kicker {
     font-size: 10px;
