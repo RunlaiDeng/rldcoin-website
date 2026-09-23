@@ -55,9 +55,9 @@ export default function Home() {
               Payments should be able to follow.
             </p>
             <p className="hero-description">
-              Rldcoin’s long-term goal is peer-to-peer payments between human
-              communities across star systems. Earth mining and local transfers
-              are the first step; interstellar routes are not live yet.
+              Rldcoin’s goal is peer-to-peer payments for humanity across star
+              systems. Earth mining and local transfers come first; interstellar
+              routes are not live yet.
             </p>
             <div className="hero-actions">
               <Button href="/get-started">Discover Rldcoin</Button>
