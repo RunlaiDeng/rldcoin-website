@@ -42,15 +42,17 @@ export default function Home() {
         }}
       />
       <section className="cinematic-hero" aria-labelledby="home-mission-title">
-        <Image
-          className="cinematic-image cinematic-earth-image"
-          src="/images/earth-horizon-concept.png"
-          alt="Concept image of Earth from orbit, with a small future habitat against the vastness of space"
-          fill
-          sizes="100vw"
-          preload
-        />
-        <HeroVideo />
+        <div className="cinematic-media">
+          <Image
+            className="cinematic-image cinematic-launch-poster"
+            src="/images/real-launch-poster.jpg"
+            alt="A real rocket launch at night, filmed from a fixed camera"
+            fill
+            sizes="100vw"
+            preload
+          />
+          <HeroVideo />
+        </div>
         <div className="cinematic-shade" aria-hidden="true" />
         <div className="container cinematic-hero-content">
           <p className="cinematic-kicker">A MISSION FOR HUMANITY’S FUTURE</p>
@@ -102,6 +104,14 @@ export default function Home() {
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </div>
+        <p className="container mission-footage-credit">
+          Launch footage:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Starlink_6-100_Launches_from_Cape_Canaveral_Space_Force_Station_(993274).webm">
+            U.S. Space Force / Gwendolyn Kurzen
+          </a>
+          . Visual context only; no affiliation with the launch provider or the
+          U.S. Space Force.
+        </p>
       </section>
       <div className="principle-strip">
         <div className="container">
@@ -185,37 +195,53 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="cinematic-chapter" aria-labelledby="horizon-title">
-        <Image
-          className="cinematic-image cinematic-frontier-image"
-          src="/images/future-settlement-concept.png"
-          alt="Concept image of two people beside a small habitat on a distant world at dawn"
-          fill
-          sizes="100vw"
-        />
-        <div
-          className="cinematic-shade cinematic-chapter-shade"
-          aria-hidden="true"
-        />
-        <div className="container cinematic-chapter-content">
-          <p className="cinematic-kicker">02 / THE HORIZON</p>
-          <h2 id="horizon-title">
-            Wherever humanity goes,
-            <br />
-            value should be able to follow.
-          </h2>
-          <p>
-            Building for this future starts on Earth. Transfers between star
-            systems remain a goal, and every route will need evidence that can
-            survive distance and delay.
-          </p>
-          <Link className="cinematic-button" href="/roadmap">
-            Follow the roadmap
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
-          <span className="cinematic-concept-note">
-            FUTURE SCENARIO · CONCEPT IMAGE
-          </span>
+      <section
+        className="transfer-vision"
+        aria-labelledby="transfer-vision-title"
+      >
+        <div className="container transfer-vision-grid">
+          <div className="transfer-vision-copy">
+            <p className="cinematic-kicker">02 / THE PAYMENT VISION</p>
+            <h2 id="transfer-vision-title">A payment across star systems.</h2>
+            <p>
+              One person sends locally. A signed proof travels across the
+              communication gap. A future community verifies it before value can
+              be received.
+            </p>
+            <Link className="cinematic-button" href="/how-it-works">
+              Explore the design
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <div
+            className="transfer-route"
+            role="img"
+            aria-label="Future concept: a person on Earth sends a signed payment proof across the distance to a human community in another star system, where it is verified before receipt"
+          >
+            <div className="transfer-route-header">
+              <span>INTERSTELLAR PAYMENT / FUTURE CONCEPT</span>
+              <span>NOT LIVE</span>
+            </div>
+            <div className="transfer-route-stages">
+              <div className="transfer-route-stage">
+                <span className="transfer-route-orb transfer-route-earth" />
+                <span className="transfer-route-step">01 / ORIGIN</span>
+                <strong>Earth</strong>
+                <span>A person signs locally</span>
+              </div>
+              <div className="transfer-route-distance">
+                <span className="transfer-route-track" />
+                <span>Signed proof crosses the delay</span>
+              </div>
+              <div className="transfer-route-stage">
+                <span className="transfer-route-orb transfer-route-destination" />
+                <span className="transfer-route-step">02 / DESTINATION</span>
+                <strong>Another star system</strong>
+                <span>Proof is verified before receipt</span>
+              </div>
+            </div>
+            <p>Distance changes the timing. Evidence still has to arrive.</p>
+          </div>
         </div>
       </section>
       <section className="architecture-section">

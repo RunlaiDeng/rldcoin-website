@@ -3070,8 +3070,7 @@ summary:focus-visible {
   color: var(--ink);
 }
 
-.cinematic-hero,
-.cinematic-chapter {
+.cinematic-hero {
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -3081,9 +3080,15 @@ summary:focus-visible {
 .cinematic-hero {
   min-height: 100svh;
 }
+.cinematic-media {
+  position: absolute;
+  inset: 0 0 0 28%;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: -2;
+}
 .cinematic-image {
   object-fit: cover;
-  z-index: -2;
 }
 .cinematic-video {
   position: absolute;
@@ -3091,11 +3096,7 @@ summary:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 52%;
-  z-index: -2;
-}
-.cinematic-earth-image {
-  object-position: center 52%;
+  z-index: 1;
 }
 .cinematic-shade {
   position: absolute;
@@ -3297,57 +3298,159 @@ summary:focus-visible {
 .mission-statement + .principle-strip strong {
   color: #f1f5f6;
 }
+.mission-footage-credit {
+  color: #8399a4;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 75px;
+}
+.mission-footage-credit a {
+  color: #c3d2d8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
-.cinematic-chapter {
-  min-height: max(760px, 83svh);
-}
-.cinematic-frontier-image {
-  object-position: center 58%;
-}
-.cinematic-chapter-shade {
+.transfer-vision {
   background:
-    linear-gradient(
-      90deg,
-      rgba(4, 10, 17, 0.91) 0%,
-      rgba(4, 10, 17, 0.75) 37%,
-      rgba(4, 10, 17, 0.12) 81%
-    ),
-    linear-gradient(0deg, rgba(4, 10, 17, 0.72), transparent 52%);
+    radial-gradient(circle at 82% 45%, rgba(30, 67, 85, 0.45), transparent 46%),
+    #071119;
+  color: #f7f9fa;
+  padding: clamp(100px, 10vw, 165px) 0;
 }
-.cinematic-chapter-content {
-  position: relative;
-  min-height: max(760px, 83svh);
+.transfer-vision-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(55px, 7vw, 112px);
+}
+.transfer-vision h2 {
+  color: #fff;
+  font-size: clamp(45px, 4.8vw, 72px);
+  font-weight: 680;
+  line-height: 1.06;
+  letter-spacing: -0.046em;
+}
+.transfer-vision-copy > p:not(.cinematic-kicker) {
+  max-width: 540px;
+  color: #e0e8ed;
+  margin-top: 27px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.transfer-vision .cinematic-button {
+  margin-top: 38px;
+}
+.transfer-route {
+  min-height: 500px;
+  padding: 31px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(12, 27, 38, 0.94);
+  border: 1px solid rgba(202, 223, 233, 0.22);
+}
+.transfer-route-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #c7d5db;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+}
+.transfer-route-header span:last-child {
+  color: #efba83;
+  white-space: nowrap;
+}
+.transfer-route-stages {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 45px 0;
+}
+.transfer-route-stage {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
-  padding-top: 140px;
-  padding-bottom: 86px;
+  min-width: 0;
 }
-.cinematic-chapter h2 {
-  max-width: 875px;
-  color: #fff;
-  font-size: clamp(44px, 4.4vw, 68px);
-  font-weight: 680;
-  line-height: 1.05;
-  letter-spacing: -0.046em;
+.transfer-route-orb {
+  display: block;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 28px;
+  border-radius: 50%;
 }
-.cinematic-chapter-content > p:not(.cinematic-kicker) {
-  max-width: 600px;
-  color: #e0e8ed;
-  margin-top: 22px;
-  font-size: 17px;
-  line-height: 1.65;
+.transfer-route-earth {
+  background: radial-gradient(
+    circle at 32% 29%,
+    #a1d8e5,
+    #4c91ab 31%,
+    #123848 61%,
+    #061923 80%
+  );
+  box-shadow:
+    0 0 0 1px #8dbccb,
+    0 0 46px #4c91ab45;
 }
-.cinematic-chapter .cinematic-button {
-  margin-top: 30px;
+.transfer-route-destination {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f3d6a1,
+    #b88858 33%,
+    #594633 63%,
+    #1e2022 81%
+  );
+  box-shadow:
+    0 0 0 1px #ccaa7b,
+    0 0 46px #c9975b45;
 }
-.cinematic-concept-note {
-  color: #c3cbd0;
+.transfer-route-step {
+  color: #dfb481;
   font-size: 10px;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.13em;
-  margin-top: 42px;
+}
+.transfer-route-stage strong {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.2;
+  margin-top: 9px;
+}
+.transfer-route-stage > span:last-child {
+  color: #aabec8;
+  font-size: 12px;
+  line-height: 1.45;
+  margin-top: 9px;
+}
+.transfer-route-distance {
+  align-self: start;
+  color: #aac0ca;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  padding-top: 46px;
+}
+.transfer-route-track {
+  display: block;
+  height: 2px;
+  margin: 0 -16px 17px;
+  background: repeating-linear-gradient(
+    90deg,
+    #dcad72 0 6px,
+    transparent 6px 14px
+  );
+  box-shadow: 0 0 19px #dca6658a;
+}
+.transfer-route > p {
+  border-top: 1px solid rgba(202, 223, 233, 0.17);
+  padding-top: 22px;
+  color: #c7d5db;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 @media (max-height: 700px) and (min-width: 601px) {
@@ -3413,7 +3516,11 @@ summary:focus-visible {
   .mission-number {
     margin: 0 0 25px;
   }
-  .cinematic-chapter h2 {
+  .transfer-vision-grid {
+    grid-template-columns: 1fr;
+  }
+  .transfer-vision h2 {
+    max-width: 750px;
     font-size: clamp(42px, 5.4vw, 58px);
   }
 }
@@ -3423,11 +3530,8 @@ summary:focus-visible {
     padding-top: 125px;
     padding-bottom: 44px;
   }
-  .cinematic-earth-image {
-    object-position: 70% center;
-  }
-  .cinematic-video {
-    object-position: 70% center;
+  .cinematic-media {
+    left: 0;
   }
   .cinematic-shade {
     background:
@@ -3494,33 +3598,43 @@ summary:focus-visible {
   .mission-statement-inner > a {
     margin-top: 25px;
   }
-  .cinematic-chapter,
-  .cinematic-chapter-content {
-    min-height: 720px;
+  .mission-footage-credit {
+    margin-top: 50px;
   }
-  .cinematic-frontier-image {
-    object-position: 69% center;
+  .transfer-vision {
+    padding: 90px 0;
   }
-  .cinematic-chapter-shade {
-    background: linear-gradient(
-      0deg,
-      rgba(4, 10, 17, 0.95),
-      rgba(4, 10, 17, 0.62) 58%,
-      rgba(4, 10, 17, 0.19)
-    );
-  }
-  .cinematic-chapter-content {
-    padding-top: 120px;
-    padding-bottom: 48px;
-  }
-  .cinematic-chapter h2 {
+  .transfer-vision h2 {
     font-size: clamp(37px, 9.4vw, 51px);
   }
-  .cinematic-chapter-content > p:not(.cinematic-kicker) {
+  .transfer-vision-copy > p:not(.cinematic-kicker) {
     font-size: 15px;
   }
-  .cinematic-concept-note {
-    margin-top: 30px;
+  .transfer-route {
+    min-height: 0;
+    padding: 23px;
+  }
+  .transfer-route-stages {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 35px 0;
+  }
+  .transfer-route-distance {
+    padding: 0 0 0 22px;
+    margin-left: 44px;
+    min-height: 60px;
+    border-left: 1px dashed #dcad72;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+  .transfer-route-track {
+    display: none;
+  }
+  .transfer-route-orb {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 20px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

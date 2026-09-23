@@ -22,8 +22,8 @@ export function HeroVideo() {
   return (
     <video
       className="cinematic-video"
-      src="/videos/rldcoin-mission-loop.mp4"
-      poster="/images/earth-horizon-concept.png"
+      src="/videos/real-launch-loop.mp4"
+      poster="/images/real-launch-poster.jpg"
       autoPlay
       muted
       loop

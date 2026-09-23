@@ -35,7 +35,7 @@ export function pageMetadata(
       images: [
         {
           url: "/opengraph-image.png",
-          alt: "Rldcoin mission over an Earth horizon concept image",
+          alt: "Rldcoin mission over real night launch footage",
         },
       ],
     },
