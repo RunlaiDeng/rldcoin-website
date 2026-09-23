@@ -63,6 +63,9 @@ its complete authenticated predecessor history. The current release enables
 mining and signed local transfers without personal allocation. One owner operates
 the launch deployment. Cross-region settlement and a consumer wallet remain work
 in progress; no deployed interstellar route is claimed.
+The transaction API can accept a signed transfer as pending, but the ten-minute
+average PoW block target is not a seconds-scale confirmation. A separately
+qualified prefunded local payment layer is planned, not yet released.
 
 Authoritative public records:
 

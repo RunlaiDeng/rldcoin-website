@@ -299,7 +299,7 @@ export default function Home() {
             <TextLink href="/faq">All frequently asked questions</TextLink>
           </div>
           <div className="faq-list">
-            {[faqs[1], faqs[2], faqs[7], faqs[5]].map(([question, answer]) => (
+            {[faqs[1], faqs[2], faqs[3], faqs[8]].map(([question, answer]) => (
               <details key={question}>
                 <summary>
                   {question}

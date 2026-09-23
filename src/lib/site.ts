@@ -104,6 +104,10 @@ export const faqs = [
     "The Earth node accepts valid signed local transfers of mature RLD. Mining rewards mature after 100 additional blocks. The current release is a command-line node and developer transaction API; a consumer wallet is still to come. This website offers no token sale or exchange.",
   ],
   [
+    "Does a local payment take ten minutes?",
+    "A signed transfer can be accepted by the current node quickly, but that only makes it pending. The target is one block every ten minutes on average; the first on-chain confirmation can arrive sooner or later, and a stronger chain can still replace it. The 100-block maturity rule applies to newly mined rewards, not ordinary transfers. Rldcoin aims for a separately qualified, prefunded payment layer that gives a verifiable local receipt within seconds. That layer and a consumer wallet are not available today.",
+  ],
+  [
     "What is the total supply?",
     "The fixed supply is 100,000,000,000 RLD. One RLD contains 10²⁴ runlai, the smallest unit. The PoW adoption moves the original unused service reserves into one unissued mining reserve, with no personal allocation. Miners earn new RLD only through valid work on the selected chain. Creating a Zone or copying a ledger does not create more RLD.",
   ],

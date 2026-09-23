@@ -12,6 +12,8 @@ The permanent Earth genesis is retained. An explicit, incompatible regional PoW 
 
 The regional node performs automatic SHA-256d mining, validates signed local transfers, stores blocks durably, and selects the valid branch with greatest accumulated work. PoW confirmations are probabilistic: a stronger valid branch can replace earlier blocks and their rewards. The launch deployment is operated by one owner; separate machines do not constitute independent operation.
 
+A signed transfer may be accepted by the node quickly but remains pending until included in a selected block. The target interval is ten minutes on average, not a fixed payment time. A separate prefunded local payment layer is planned for seconds-scale receipts; it is not available in this release. The 100-block maturity rule applies to newly mined rewards, not ordinary transfers.
+
 ## RLD and mining
 
 - Fixed supply: 100,000,000,000 RLD, shared across the intended system.

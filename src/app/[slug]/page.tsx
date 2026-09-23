@@ -746,7 +746,7 @@ const milestones = [
     "E",
     "Practical local payments",
     "In progress",
-    "Make offline signing, transaction preparation, maturity, confirmations, fee selection, and recovery accessible in a usable wallet.",
+    "Make signing, confirmations and recovery usable in a wallet; separately qualify prefunded, noncustodial local payments with a verifiable receipt within seconds.",
   ],
   [
     "F",
