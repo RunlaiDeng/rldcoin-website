@@ -967,7 +967,7 @@ function Resources() {
         ],
         [
           "Release checksums",
-          "SHA-256 checksums for the named release assets.",
+          "SHA-256 checksums for the original release assets; the updated network archive has a separate checksum below.",
           `${DOWNLOAD}/SHA256SUMS`,
         ],
         [
@@ -990,6 +990,16 @@ function Resources() {
           "Run a node or enable mining",
           "Step-by-step verification, peer connection, wallet custody, and automatic mining.",
           "https://github.com/RunlaiDeng/rldcoin-genesis/blob/main/pow-v1/NODE-GUIDE.md",
+        ],
+        [
+          "Current network records archive",
+          "Genesis, adoption and public records with the api.rldcoin.com peer address.",
+          `${DOWNLOAD}/rldcoin-pow-network-v1-api-rldcoin-com.tar.gz`,
+        ],
+        [
+          "Current network archive checksum",
+          "SHA-256 checksum for the archive with the dedicated API endpoint.",
+          `${DOWNLOAD}/SHA256SUMS.api-rldcoin-com`,
         ],
         [
           "macOS Apple Silicon executable",
