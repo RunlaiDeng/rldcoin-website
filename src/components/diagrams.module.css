@@ -1,0 +1,917 @@
+.atlas {
+  --atlas-ink: #163b50;
+  --atlas-muted: #607b8b;
+  background: #ffffff;
+  color: var(--atlas-ink);
+  border: 1px solid #dce5ea;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px #1234480c;
+}
+.atlasHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 38px 42px 27px;
+}
+.overline {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+.atlasHeading .overline {
+  color: #5e7d8e;
+}
+.atlasHeading h2 {
+  font-size: clamp(26px, 3vw, 37px);
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+  margin-top: 12px;
+  color: #163b50;
+}
+.conceptTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  padding: 7px 11px;
+  border: 1px solid #d4e0e7;
+  border-radius: 20px;
+  color: #5e7888;
+  white-space: nowrap;
+}
+.conceptTag::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border: 1px solid #7395a7;
+  border-radius: 50%;
+}
+.layerTabs {
+  display: flex;
+  gap: 6px;
+  margin: 0 42px;
+  border-bottom: 1px solid #dce5ea;
+}
+.layerTabs button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #607b8c;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 14px 18px 14px 0;
+  margin-right: 12px;
+  font-size: 13px;
+}
+.layerTabs button span {
+  font-size: 10px;
+  color: #75909f;
+  letter-spacing: 1px;
+}
+.layerTabs button[aria-selected="true"] {
+  color: #163b50;
+  border-bottom-color: #4d7b93;
+}
+.atlas button:focus-visible,
+.relayCore:focus-visible {
+  outline: 2px solid #997442;
+  outline-offset: 5px;
+}
+.desktopMap {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mobileMap {
+  display: none;
+}
+.mapCoordinate {
+  fill: #748f9e;
+  font:
+    9px var(--font-body),
+    sans-serif;
+  letter-spacing: 1.6px;
+}
+.mapCoordinate path {
+  fill: none;
+  stroke: #adbfca;
+  stroke-width: 0.7;
+}
+.networkField {
+  transition: opacity 0.35s;
+}
+.interruptedField {
+  opacity: 0.38;
+}
+.localNetwork {
+  fill: #597d92;
+  stroke: #a0b7c3;
+  stroke-width: 0.7;
+}
+.localNetwork path {
+  fill: none;
+  opacity: 0.5;
+}
+.relayCore {
+  color: #315b71;
+  cursor: default;
+}
+.relayCore[role="button"] {
+  cursor: pointer;
+}
+.coreHalo {
+  fill: none;
+  stroke: #9cb6c6;
+  stroke-width: 0.65;
+  stroke-opacity: 0.3;
+}
+.selectedCore .coreHalo,
+.relayCore:hover .coreHalo {
+  stroke-opacity: 1;
+  stroke: #426f88;
+}
+.networkName {
+  fill: #173e53;
+  font:
+    500 18px var(--font-display),
+    sans-serif;
+  letter-spacing: -0.4px;
+}
+.networkKind {
+  fill: #688290;
+  font:
+    8px var(--font-body),
+    sans-serif;
+  letter-spacing: 1.4px;
+}
+.contactUnderlay {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 9;
+}
+.contactLine {
+  fill: none;
+  stroke: #628aa0;
+  stroke-width: 1.4;
+}
+.brokenContact .contactLine {
+  stroke: #ab8050;
+  stroke-dasharray: 4 6;
+  opacity: 0.65;
+}
+.evidenceTrace {
+  fill: none;
+  stroke: #b48b53;
+  stroke-width: 3;
+  stroke-dasharray: 13 230;
+  stroke-dashoffset: 245;
+  animation: trace-contact 1.2s ease-in-out both;
+}
+@keyframes trace-contact {
+  from {
+    stroke-dashoffset: 245;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+.atlasLegend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 28px;
+  padding: 4px 30px 28px;
+  color: #617c8c;
+  font-size: 11px;
+}
+.atlasLegend > span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.atlasLegend i {
+  display: block;
+  width: 11px;
+  height: 11px;
+}
+.fieldKey {
+  border: 1px solid #789eb1;
+  border-radius: 50%;
+  background: #6ca1b31a;
+}
+.relayKey {
+  border: 2px solid #527d94;
+  border-radius: 50%;
+}
+.atlasLegend .contactKey {
+  height: 1px;
+  width: 17px;
+  background: #628aa0;
+}
+.atlasLegend .evidenceKey {
+  width: 6px;
+  height: 6px;
+  background: #b48b53;
+  border-radius: 50%;
+}
+.atlasTools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 19px 32px;
+  border-top: 1px solid #dce5ea;
+  background: #f8fafb;
+}
+.atlasTools p {
+  color: #526e7e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.relayToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #315c74;
+  padding: 9px 12px;
+  white-space: nowrap;
+  background: #ffffff;
+  border: 1px solid #cbdbe5;
+  border-radius: 4px;
+}
+.relayToggle:hover {
+  border-color: #769caf;
+  background: #f1f6f9;
+}
+.relayToggle[aria-pressed="true"] {
+  color: #906834;
+  border-color: #c5a77e;
+}
+.inspector {
+  margin-top: 22px;
+  border: 1px solid #dce5e9;
+  border-radius: 9px;
+  background: #fbfcfd;
+  overflow: hidden;
+}
+.networkPicker {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dce5e9;
+  padding: 0 24px;
+}
+.networkPicker button {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 15px 17px;
+  color: #536975;
+  font-size: 12px;
+}
+.networkPicker button span {
+  color: #69818f;
+  margin-right: 8px;
+  font-size: 9px;
+}
+.networkPicker button[aria-pressed="true"] {
+  color: #153d53;
+  border-color: #1f607e;
+  background: #edf3f6;
+}
+.networkDetail {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 30px;
+  gap: 36px;
+  align-items: center;
+  padding: 30px 40px;
+}
+.networkDetail .overline {
+  color: #527489;
+  font-size: 9px;
+}
+.networkDetail h3 {
+  margin-top: 6px;
+  font-size: 23px;
+}
+.networkDetail p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.detailArrow {
+  color: #849fab;
+}
+.figureNote {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 18px;
+}
+.figureNote p {
+  font-size: 11px;
+  line-height: 1.8;
+  max-width: 850px;
+}
+.figureNote button {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+  color: #546e7d;
+  font-size: 11px;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+.preview {
+  margin: 38px 0 0;
+}
+.preview .atlasHeading {
+  padding: 24px 32px 0;
+  align-items: center;
+}
+.atlasCaption {
+  border-top: 1px solid #dce5ea;
+  padding: 20px 32px;
+  color: #5c7787;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.transfer {
+  margin-top: 44px;
+  border: 1px solid #d2e0e8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.transferFigure {
+  position: relative;
+  background: #ffffff;
+  padding: 26px 32px 0;
+}
+.transferFigureTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #486878;
+}
+.transferFigureTop .overline {
+  font-size: 9px;
+}
+.transferFigureTop > span:last-child {
+  font-size: 10px;
+  color: #5f7583;
+}
+.transferMap {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.mobileTransferMap {
+  display: none;
+}
+.transferMap text {
+  font-family: var(--font-body), sans-serif;
+}
+.transferTitle {
+  font-family: var(--font-display), sans-serif !important;
+  font-size: 21px;
+  font-weight: 500;
+  fill: #153c50;
+  letter-spacing: -0.5px;
+}
+.transferSub {
+  font-size: 11px;
+  fill: #546e7d;
+}
+.transferKicker {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  fill: #537589;
+}
+.transferBadge {
+  font-size: 10px;
+  font-weight: 500;
+  fill: #24536b;
+}
+.journeyLine {
+  stroke: #648c9e;
+  stroke-width: 1.4;
+  fill: none;
+}
+.journeyPending {
+  stroke-dasharray: 3 6;
+  opacity: 0.6;
+}
+.returnLine {
+  stroke: #b78e58;
+  fill: none;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 6;
+}
+.transferTabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #f9fbfc;
+}
+.transferTabs button {
+  border: 0;
+  border-right: 1px solid #d2e0e8;
+  border-top: 2px solid transparent;
+  background: none;
+  padding: 21px 20px;
+  text-align: left;
+  color: #5f7888;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.transferTabs button:last-child {
+  border-right: 0;
+}
+.transferTabs button > span {
+  display: grid;
+  place-items: center;
+  border: 1px solid #bacfdb;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  font-size: 9px;
+}
+.transferTabs button[aria-selected="true"] {
+  color: #153b51;
+  border-top-color: #4a7992;
+  background: #edf4f8;
+}
+.transferTabs button[aria-selected="true"] > span {
+  color: #305e77;
+  border-color: #8eafc2;
+}
+.transferExplanation {
+  display: flex;
+  gap: 18px;
+  padding: 32px 38px;
+  background: #ffffff;
+}
+.transferExplanation > svg {
+  color: #aa8050;
+  margin-top: 4px;
+}
+.transferExplanation .overline {
+  color: #678492;
+  font-size: 9px;
+}
+.transferExplanation h3 {
+  color: #173e53;
+  font-size: 24px;
+  margin-top: 8px;
+}
+.transferExplanation p {
+  color: #526e7e;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 12px;
+  max-width: 850px;
+}
+.transferCaption {
+  padding: 18px 30px;
+  color: #637d8d;
+  background: #f8fafb;
+  font-size: 11px;
+  line-height: 1.8;
+  border-top: 1px solid #d5e2e9;
+}
+@media (max-width: 850px) {
+  .atlasHeading {
+    padding: 28px 26px 22px;
+  }
+  .layerTabs {
+    margin: 0 26px;
+  }
+  .layerTabs button {
+    font-size: 11px;
+    gap: 7px;
+    margin-right: 5px;
+    padding-right: 12px;
+  }
+  .networkDetail {
+    padding: 26px;
+    gap: 20px;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  .detailArrow {
+    display: none;
+  }
+  .networkPicker {
+    padding: 0 10px;
+  }
+  .networkPicker button {
+    padding-inline: 12px;
+  }
+  .transferTabs button {
+    padding: 17px 12px;
+    gap: 8px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 600px) {
+  .atlas {
+    border-radius: 9px;
+  }
+  .atlasHeading {
+    padding: 24px 20px 20px;
+    gap: 15px;
+  }
+  .atlasHeading h2 {
+    font-size: 27px;
+    letter-spacing: -0.8px;
+  }
+  .atlasHeading .overline {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+  .conceptTag {
+    font-size: 8px;
+    gap: 5px;
+    padding: 6px 8px;
+  }
+  .layerTabs {
+    margin-inline: 18px;
+    gap: 7px;
+    justify-content: space-between;
+  }
+  .layerTabs button {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 12px 0;
+    font-size: 10px;
+    margin-right: 0;
+  }
+  .desktopMap {
+    display: none;
+  }
+  .mobileMap {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .networkName {
+    font-size: 13px;
+  }
+  .networkKind {
+    font-size: 6px;
+    letter-spacing: 0.9px;
+  }
+  .atlasLegend {
+    justify-content: flex-start;
+    gap: 12px 20px;
+    padding: 4px 20px 22px;
+    font-size: 9px;
+  }
+  .atlasTools {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 19px 20px;
+  }
+  .atlasTools p {
+    font-size: 11px;
+  }
+  .relayToggle {
+    min-height: 40px;
+  }
+  .networkPicker {
+    padding: 8px;
+    gap: 4px;
+  }
+  .networkPicker button {
+    padding: 10px 9px;
+    font-size: 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+  }
+  .networkPicker button[aria-pressed="true"] {
+    border-color: #bad0dc;
+  }
+  .networkPicker button span {
+    margin-right: 5px;
+  }
+  .networkDetail {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 22px;
+  }
+  .networkDetail p {
+    font-size: 13px;
+  }
+  .figureNote {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .figureNote p {
+    font-size: 10px;
+  }
+  .figureNote button {
+    min-height: 36px;
+  }
+  .preview .atlasHeading {
+    padding: 20px 18px 0;
+  }
+  .atlasCaption {
+    font-size: 11px;
+    padding: 19px 22px;
+  }
+  .transferFigure {
+    padding: 20px 18px 0;
+  }
+  .transferFigureTop {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .transferFigureTop .overline {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .transferFigureTop > span:last-child {
+    font-size: 8px;
+    text-align: right;
+  }
+  .desktopTransferMap {
+    display: none;
+  }
+  .mobileTransferMap {
+    display: block;
+  }
+  .transferTitle {
+    font-size: 19px;
+  }
+  .transferSub {
+    font-size: 11px;
+  }
+  .transferTabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .transferTabs button {
+    min-height: 60px;
+    border-bottom: 1px solid #d2e0e8;
+  }
+  .transferTabs button:nth-child(2) {
+    border-right: 0;
+  }
+  .transferTabs button:nth-child(n + 3) {
+    border-bottom: 0;
+  }
+  .transferExplanation {
+    padding: 26px 22px;
+    gap: 13px;
+  }
+  .transferExplanation > svg {
+    width: 18px;
+  }
+  .transferExplanation h3 {
+    font-size: 22px;
+  }
+  .transferExplanation p {
+    font-size: 13px;
+  }
+  .transferCaption {
+    padding: 18px 22px;
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .networkField {
+    transition: none;
+  }
+  .evidenceTrace {
+    animation: none;
+    opacity: 0;
+  }
+}
+.technicalFrame {
+  margin: 32px 0;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.technicalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #000;
+  color: #000;
+  font-size: 11px;
+}
+.technicalHeader > span:first-child {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+.figureOpen {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  background: none;
+  position: relative;
+  text-align: left;
+}
+.figureOpen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.expandMark {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  color: #000;
+  box-shadow: 0 3px 10px #00000008;
+}
+.figureOpen:hover .expandMark {
+  background: #fff;
+  border-color: #000;
+}
+.technicalFrame figcaption {
+  padding: 0 20px 20px;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.technicalFrame figcaption a {
+  display: inline-block;
+  color: #000;
+  font-size: 10px;
+  margin-left: 9px;
+  border-bottom: 1px solid #000;
+}
+.figureDialog {
+  width: min(94vw, 1160px);
+  max-width: none;
+  max-height: 90dvh;
+  padding: 0;
+  border: 1px solid #000;
+  border-radius: 12px;
+  box-shadow: 0 24px 120px #00000070;
+  background: #fff;
+  color: #000;
+}
+.figureDialog::backdrop {
+  background: #00000070;
+  backdrop-filter: blur(5px);
+}
+.figureDialogHead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #000;
+}
+.figureDialogHead .overline {
+  font-size: 8px;
+  color: #000;
+}
+.figureDialogHead h2 {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+  margin-top: 7px;
+}
+.zoomControls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.zoomControls button {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.zoomControls button:disabled {
+  border-style: dashed;
+  cursor: default;
+}
+.zoomControls > span {
+  font-size: 10px;
+  width: 36px;
+  text-align: center;
+  color: #000;
+}
+.zoomControls button:last-child {
+  margin-left: 10px;
+}
+.figureDialogCanvas {
+  overflow: auto;
+  padding: 25px;
+  max-height: 65dvh;
+}
+.figureDialogCanvas img {
+  display: block;
+  min-width: 660px;
+  max-width: none;
+}
+.figureDialogCaption {
+  padding: 20px 28px;
+  border-top: 1px solid #000;
+  font-size: 12px;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .technicalFrame {
+    margin-inline: -6px;
+  }
+  .technicalHeader {
+    padding: 12px 13px;
+    font-size: 10px;
+    gap: 10px;
+  }
+  .figureOpen {
+    padding: 10px;
+  }
+  .expandMark {
+    right: 17px;
+    bottom: 17px;
+    width: 27px;
+    height: 27px;
+  }
+  .technicalFrame figcaption {
+    padding: 0 14px 15px;
+    font-size: 11px;
+  }
+  .figureDialog {
+    width: 96vw;
+    border-radius: 8px;
+  }
+  .figureDialogHead {
+    padding: 18px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .figureDialogHead h2 {
+    font-size: 21px;
+  }
+  .zoomControls button {
+    width: 40px;
+    height: 40px;
+  }
+  .figureDialogCanvas {
+    padding: 15px;
+    max-height: 55dvh;
+  }
+  .figureDialogCaption {
+    padding: 17px 20px;
+    font-size: 11px;
+  }
+}
+.explorer {
+  min-width: 0;
+}
+.highlightRoute .contactLine {
+  stroke: #a77d48;
+}
+@media print {
+  .technicalFrame {
+    break-inside: avoid;
+  }
+  .expandMark {
+    display: none;
+  }
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="470" height="281" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 281" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Rldcoin: channel</title>
+	<desc>Funded escrow, signed payment states, a stale-close challenge and settlement.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="470" height="281"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-281)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="470" height="281" rx="6" ry="6" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<g transform=" matrix(1,0,0,1,0,14)">
+				<text x="112.5667" y="236" style="font-family: Helvetica-Bold; font-size: 8.3px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,472) scale(1,-1)">FUNDED PAYMENT, SIGNED SEQUENCES, AND CHALLENGE</text>
+				<text x="21.043750000000003" y="211" style="font-family: Helvetica-Bold; font-size: 7.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,422) scale(1,-1)">OFF-CHAIN STATE</text>
+				<rect x="9" y="142" width="99" height="59" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="43.5606" y="184" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,368) scale(1,-1)">Escrow</text>
+				<text x="39.6936" y="169" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,338) scale(1,-1)">mature coin</text>
+				<text x="33.8904" y="157" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,314) scale(1,-1)">locked capacity</text>
+				<rect x="119" y="142" width="99" height="59" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="145.1522" y="184" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,368) scale(1,-1)">Fee reserve</text>
+				<text x="146.8892" y="169" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,338) scale(1,-1)">separate coin</text>
+				<text x="140.8808" y="157" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,314) scale(1,-1)">bound to channel</text>
+				<rect x="236" y="142" width="101" height="59" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="272.4972" y="184" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,368) scale(1,-1)">State n</text>
+				<text x="259.986" y="169" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,338) scale(1,-1)">A + B signatures</text>
+				<text x="263.4924" y="157" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,314) scale(1,-1)">invoice receipt</text>
+				<rect x="352" y="142" width="108" height="59" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="384.874" y="184" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,368) scale(1,-1)">State n + 1</text>
+				<text x="379.3852" y="169" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,338) scale(1,-1)">higher sequence</text>
+				<text x="379.486" y="157" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,314) scale(1,-1)">A + B signatures</text>
+				<path d="M 337,172 L 352,172 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="345 168, 352 172, 345 176" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<rect x="12" y="41" width="124" height="68" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="38.291599999999995" y="92" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,184) scale(1,-1)">Close with state n</text>
+				<text x="43.3892" y="77" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,154) scale(1,-1)">2016-block window</text>
+				<text x="54.7904" y="65" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,130) scale(1,-1)">is now open</text>
+				<rect x="172" y="41" width="124" height="68" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="193.5036" y="92" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,184) scale(1,-1)">Challenge with n + 1</text>
+				<text x="203.5836" y="77" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,154) scale(1,-1)">higher signed state</text>
+				<text x="205.3872" y="65" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,130) scale(1,-1)">uses reserved fee</text>
+				<rect x="332" y="41" width="124" height="68" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="382.5634" y="92" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,184) scale(1,-1)">Settle</text>
+				<text x="365.1856" y="77" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,154) scale(1,-1)">highest valid state</text>
+				<text x="358.7848" y="65" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,130) scale(1,-1)">return unused reserve</text>
+				<path d="M 276,142 L 276,125 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 276,125 L 72,125 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 72,125 L 72,109 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="68 116, 72 109, 76 116" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 406,142 L 406,116 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 406,116 L 234,116 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 234,116 L 234,109 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="230 116, 234 109, 238 116" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 136,75 L 172,75 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="165 71, 172 75, 165 79" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 296,75 L 332,75 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="325 71, 332 75, 325 79" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<text x="112.64874999999999" y="18" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,36) scale(1,-1)">Receiver verifies funding and keeps the latest state before acknowledging</text>
+			</g>
+		</g>
+	</g>
+</svg>

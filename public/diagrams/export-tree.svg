@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="470" height="285" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 285" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Rldcoin: export tree</title>
+	<desc>A target export and its siblings recompute an ordered export commitment.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="470" height="285"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-285)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="470" height="285" rx="6" ry="6" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<g transform=" matrix(1,0,0,1,0,14)">
+				<text x="105.15710000000001" y="240" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,480) scale(1,-1)">ORDERED EXPORT MEMBERSHIP IN A CLAIMED SOURCE STATE</text>
+				<rect x="167" y="199" width="136" height="28" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="194.7844" y="211.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,422) scale(1,-1)">claimed source state root</text>
+				<rect x="167" y="161" width="136" height="28" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="203.5936" y="173.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,346) scale(1,-1)">source commitment</text>
+				<rect x="195" y="121" width="80" height="25" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="217.792" y="131.5" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,263) scale(1,-1)">export root</text>
+				<path d="M 235,146 L 235,161 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="231 154, 235 161, 239 154" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 235,189 L 235,199 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="231 192, 235 199, 239 192" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<rect x="77" y="78" width="102" height="26" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+				<text x="105.392" y="89.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,178) scale(1,-1)">H(leaf0, leaf1)</text>
+				<rect x="291" y="78" width="102" height="26" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="319.392" y="89.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,178) scale(1,-1)">H(leaf2, leaf3)</text>
+				<path d="M 128,104 L 128,113 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 128,113 L 215,113 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 215,113 L 215,121 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="211 114, 215 121, 219 114" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 342,104 L 342,113 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 342,113 L 255,113 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 255,113 L 255,121 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="251 114, 255 121, 259 114" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<rect x="14" y="39" width="105" height="25" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+				<text x="58.6952" y="49.5" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,99) scale(1,-1)">leaf0</text>
+				<rect x="126" y="39" width="105" height="25" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+				<text x="170.6952" y="49.5" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,99) scale(1,-1)">leaf1</text>
+				<rect x="238" y="39" width="105" height="25" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="272.4892" y="49.5" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,99) scale(1,-1)">target leaf2</text>
+				<rect x="350" y="39" width="105" height="25" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+				<text x="394.6952" y="49.5" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,99) scale(1,-1)">leaf3</text>
+				<path d="M 66,64 L 66,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 66,71 L 102,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 102,71 L 102,78 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="98 71, 102 78, 106 71" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 178,64 L 178,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 178,71 L 153,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 153,71 L 153,78 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="149 71, 153 78, 157 71" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 290,64 L 290,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 290,71 L 316,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 316,71 L 316,78 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="312 71, 316 78, 320 71" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 402,64 L 402,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 402,71 L 367,71 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<path d="M 367,71 L 367,78 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="363 71, 367 78, 371 71" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<text x="137.7314" y="23" style="font-family: Helvetica; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,46) scale(1,-1)">Proof: target record + index/count + leaf3 + H(leaf0, leaf1)</text>
+				<text x="122.8696" y="10" style="font-family: Helvetica-Bold; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,20) scale(1,-1)">Membership alone does not establish PoW ancestry or finality</text>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="470" height="288" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 288" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Rldcoin: contact silence</title>
+	<desc>Two silent outcomes require the same response: retain the export lock and seek evidence.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="470" height="288"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-288)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="470" height="288" rx="6" ry="6" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<g transform=" matrix(1,0,0,1,0,14)">
+				<text x="120.8724" y="244" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,488) scale(1,-1)">CONTACT GAPS DELAY EVIDENCE, NOT LEDGER RULES</text>
+				<rect x="10" y="157" width="133" height="67" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="51.060599999999994" y="207" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,414) scale(1,-1)">Source Zone</text>
+				<text x="31.6836" y="192" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,384) scale(1,-1)">export removes spendability</text>
+				<text x="33.2856" y="180" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,360) scale(1,-1)">12 confirmations incl. block</text>
+				<text x="40.284" y="168" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,336) scale(1,-1)">proof durably recorded</text>
+				<rect x="169" y="157" width="132" height="67" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="199.2916" y="207" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,414) scale(1,-1)">Courier / contacts</text>
+				<text x="202.9924" y="192" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,384) scale(1,-1)">store, carry, forward</text>
+				<text x="205.39" y="180" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,360) scale(1,-1)">wait for usable link</text>
+				<text x="202.3912" y="168" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,336) scale(1,-1)">retry same export ID</text>
+				<rect x="327" y="157" width="133" height="67" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="359.4296" y="207" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,414) scale(1,-1)">Destination Zone</text>
+				<text x="357.6872" y="192" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,384) scale(1,-1)">verify source evidence</text>
+				<text x="357.2876" y="180" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,360) scale(1,-1)">import ID at most once</text>
+				<text x="351.776" y="168" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,336) scale(1,-1)">spend at import height + 6</text>
+				<path d="M 143,190 L 162,190 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="164 187.5, 169 190, 164 192.5" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 301,190 L 320,190 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="322 187.5, 327 190, 322 192.5" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<text x="108.88569999999999" y="139" style="font-family: Helvetica-Bold; font-size: 7.8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,278) scale(1,-1)">AFTER SOURCE FINALITY, SILENCE HAS TWO POSSIBLE CAUSES</text>
+				<rect x="11" y="35" width="129" height="88" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="35.3438" y="106" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,212) scale(1,-1)">Source sees silence</text>
+				<text x="37.879999999999995" y="91" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,182) scale(1,-1)">no authenticated import</text>
+				<text x="46.6928" y="79" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,158) scale(1,-1)">or maturity receipt</text>
+				<text x="55.2896" y="67" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,134) scale(1,-1)">has returned</text>
+				<rect x="174" y="81" width="125" height="42" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="220.4014" y="106" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,212) scale(1,-1)">World A</text>
+				<text x="206.2888" y="91" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,182) scale(1,-1)">proof never arrived</text>
+				<rect x="174" y="35" width="125" height="42" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="220.4014" y="60" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,120) scale(1,-1)">World B</text>
+				<text x="203.0884" y="45" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,90) scale(1,-1)">imported; receipt lost</text>
+				<rect x="333" y="35" width="126" height="88" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="355.3818" y="106" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,212) scale(1,-1)">Same safe response</text>
+				<text x="368.5896" y="91" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,182) scale(1,-1)">retain export lock</text>
+				<text x="353.5812" y="79" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,158) scale(1,-1)">seek evidence / retry proof</text>
+				<text x="367.9848" y="67" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,134) scale(1,-1)">no timeout refund</text>
+				<path d="M 140,90 L 157,90 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 157,90 L 157,102 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 157,102 L 174,102 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="167 98, 174 102, 167 106" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 140,69 L 157,69 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 157,69 L 157,56 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 157,56 L 174,56 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="167 52, 174 56, 167 60" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 299,102 L 315,102 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 315,102 L 315,88 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 315,88 L 333,88 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="326 84, 333 88, 326 92" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 299,56 L 315,56 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 315,56 L 315,70 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 315,70 L 333,70 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="326 66, 333 70, 326 74" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<text x="133.4374" y="14" style="font-family: Helvetica-Bold; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,28) scale(1,-1)">A missing transport receipt cannot establish non-import</text>
+			</g>
+		</g>
+	</g>
+</svg>
