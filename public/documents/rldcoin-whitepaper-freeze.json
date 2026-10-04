@@ -1,0 +1,38 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-FREEZE-RECEIPT",
+  "status": "FROZEN_AFTER_INDEPENDENT_REVIEW",
+  "frozen_at_utc": "2026-10-04T16:33:57.237466+00:00",
+  "title": "Rldcoin: A Peer-to-Peer Payment System Across Delayed Regions",
+  "publication_version_label": null,
+  "audit_commit": "425acdd4e6cf8d13dde4042b74ce72e0f8bbd7eb",
+  "audit_parent": "dc8b979f2b50bf6c4b9d7b2800eadd091536e0a7",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "c906076c09bb01fedd179d2b3a2ccfbf2bd168fa093ccb15842381783d69a6c0",
+    "bytes": 167363
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "f825439e6e18aa96245bc6fb65fc03f98a1071fa6d31ecff65c696dc4f6da8e4",
+    "bytes": 167465,
+    "pages": 39
+  },
+  "independent_review": "Parent reviewed all material controls and both final corrections before freeze.",
+  "changes_to_frozen_body_require_explicit_owner_decision": true,
+  "future_protocol_suite_key_epoch_evolution_required": true,
+  "qualification": "Normative design only; no mainnet, complete protocol or physical stellar-route qualification.",
+  "official_whitepaper_url": "https://rldcoin.com/whitepaper",
+  "official_pdf_url": "https://rldcoin.com/documents/rldcoin-whitepaper.pdf",
+  "files_in_audit_commit": [
+    "public/documents/rldcoin-whitepaper.md",
+    "scripts/build-whitepaper.py",
+    "src/app/whitepaper/page.tsx",
+    "src/app/page.tsx",
+    "src/app/[slug]/page.tsx",
+    "src/app/research/page.tsx",
+    "DEPLOYMENT.md",
+    "public/documents/rldcoin-whitepaper.pdf",
+    "AGENTS.md"
+  ],
+  "private_scratch_excluded": true
+}
