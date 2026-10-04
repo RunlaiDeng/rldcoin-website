@@ -11,6 +11,7 @@ import {
 import { Button, Eyebrow, TextLink } from "@/components/ui";
 import { HeroVideo } from "@/components/hero-video";
 import { RelayAtlasPreview } from "@/components/relay-atlas";
+import { PublicEvidence } from "@/components/public-evidence";
 import { pageMetadata, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
@@ -51,8 +52,8 @@ export default function Home() {
             <span>For humanity’s future.</span>
           </h1>
           <p className="cinematic-lead">
-            Rldcoin is building an interstellar peer-to-peer payment system for
-            the future of humanity.
+            Local payments in each community. Verifiable value carried between
+            them, even when communication takes time.
           </p>
           <div className="cinematic-actions">
             <Link className="cinematic-button" href="/get-started">
@@ -62,6 +63,9 @@ export default function Home() {
             <a className="cinematic-text-link" href="#what-is-rldcoin">
               What is Rldcoin? <ArrowRight size={17} aria-hidden="true" />
             </a>
+            <Link className="cinematic-text-link" href="/whitepaper">
+              Read the white paper <ArrowRight size={17} aria-hidden="true" />
+            </Link>
           </div>
           <p className="home-reality">
             Research prototypes and a value-free Earth testnet today.
@@ -95,13 +99,13 @@ export default function Home() {
             {[
               {
                 icon: KeyRound,
-                title: "Payments you authorize",
-                text: "Your signing keys authorize a payment. Learning how to protect them is the first step toward controlling your funds.",
+                title: "Owner-authorized payments",
+                text: "The target binds each payment to its actual owner and verified inputs. Keys, native review and durable custody work together.",
               },
               {
                 icon: Code2,
-                title: "Rules you can inspect",
-                text: "The software and network rules are public. Developers and node operators can inspect the code and verify the ledger.",
+                title: "Evidence you can verify",
+                text: "Regional nodes replay authenticated history and reject duplicate imports. Couriers carry that evidence without authority to issue money.",
               },
               {
                 icon: Globe2,
@@ -146,25 +150,25 @@ export default function Home() {
                 icon: BookOpen,
                 n: "01",
                 title: "For individuals",
-                text: "Understand ownership, discover what is available today, and learn what to know before a first payment.",
+                text: "Understand ownership, payment states and the limits of today’s no-value fixtures.",
                 href: "/individuals",
                 link: "Learn the essentials",
               },
               {
-                icon: Code2,
+                icon: Users,
                 n: "02",
-                title: "For developers",
-                text: "Explore testnet source, reproduce a ground result, or contribute to the mandatory protocol requirements.",
-                href: "/developers",
-                link: "Start building",
+                title: "For businesses",
+                text: "Explore local commerce, invoice binding and the verification a future settlement service would require.",
+                href: "/businesses",
+                link: "Explore payment acceptance",
               },
               {
-                icon: Users,
+                icon: Code2,
                 n: "03",
-                title: "Join the discussion",
-                text: "Share a reproducible result or a concrete question in Nodes & Development. Start with the participation guide.",
-                href: "/developers#participate",
-                link: "How to participate",
+                title: "For developers",
+                text: "Inspect exact source, reproduce a ground observation and review the remaining protocol requirements.",
+                href: "/developers",
+                link: "Start with verification",
               },
             ].map(({ icon: Icon, n, title, text, href, link }) => (
               <article className="path-card" key={n}>
@@ -235,15 +239,14 @@ export default function Home() {
             </article>
             <article>
               <span className="progress-label">PUBLIC GROUND CANDIDATE</span>
-              <h3>Reproduce revision 26</h3>
+              <h3>Choose an exact experiment</h3>
               <p>
-                Inspect page-by-page payment history, reviewed wallet inputs,
-                fresh-directory ledger recovery and finite network evidence.
-                Long-history execution, independent operation and physical
-                routes remain open.
+                Verify a named source and its published limits. Explore native
+                payments, relay, wallet review or history recovery in fresh
+                no-value fixture directories, then retain the actual result.
               </p>
-              <TextLink href="/developers#reproduce-v26">
-                Start reproducing
+              <TextLink href="/run-a-node">
+                Choose a test-node experiment
               </TextLink>
             </article>
             <article>
@@ -261,15 +264,54 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PublicEvidence />
+      <section className="section soft-section home-paper">
+        <div className="container two-column">
+          <div>
+            <Eyebrow>THE DESIGN / WHITE PAPER 1.12</Eyebrow>
+            <h2>
+              A payment system
+              <br />
+              across delayed regions.
+            </h2>
+            <p className="section-lead">
+              Seventeen sections explain ownership, regional consensus,
+              asynchronous transfers and the mandatory acceptance contract.
+            </p>
+          </div>
+          <div className="prose">
+            <p>
+              The target conserves one currency across local ledgers. Each
+              normally started full node should discover neighbors and relay
+              evidence, while each region independently verifies the value it
+              accepts.
+            </p>
+            <p>
+              The paper states the conditions for safety and delivery. Current
+              ground prototypes, independent qualification and physical-route
+              operation remain distinct.
+            </p>
+            <div className="guide-next-links">
+              <Button href="/whitepaper">Read online</Button>
+              <Button href="/documents/rldcoin-whitepaper.pdf" secondary>
+                Download PDF
+              </Button>
+            </div>
+            <TextLink href="/you-need-to-know">
+              What you need to know before a payment
+            </TextLink>
+          </div>
+        </div>
+      </section>
       <section className="home-next-step">
         <div className="container">
           <div>
             <Eyebrow light>YOUR NEXT STEP</Eyebrow>
             <h2>Get to know Rldcoin.</h2>
-            <p>Start with the basics. Find your place in the project.</p>
+            <p>Read, reproduce, review or join the conversation.</p>
           </div>
-          <Button href="/get-started" light>
-            Get started
+          <Button href="/participate" light>
+            Find your way to contribute
           </Button>
         </div>
       </section>

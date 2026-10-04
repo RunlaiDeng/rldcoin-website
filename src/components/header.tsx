@@ -5,30 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "./ui";
-
-const groups = [
-  {
-    name: "Introduction",
-    links: [
-      ["About Rldcoin", "/about"],
-      ["How it works", "/how-it-works"],
-      ["The node network", "/node-network"],
-      ["For individuals", "/individuals"],
-      ["Future applications", "/applications"],
-      ["White paper", "/whitepaper"],
-    ],
-  },
-  {
-    name: "Resources",
-    links: [
-      ["Resource library", "/resources"],
-      ["For developers", "/developers"],
-      ["Research & evidence", "/research"],
-      ["The roadmap", "/roadmap"],
-      ["Frequently asked questions", "/faq"],
-    ],
-  },
-];
+import { navigation } from "@/lib/site";
 export function Header() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLElement>(null);
@@ -40,10 +17,19 @@ export function Header() {
         (event instanceof PointerEvent &&
           !ref.current?.contains(event.target as Node))
       ) {
+        const returnFocus =
+          event instanceof KeyboardEvent
+            ? ref.current?.querySelector<HTMLElement>(
+                ref.current.querySelector(".navigation-open")
+                  ? ".menu-toggle"
+                  : "details[open] > summary",
+              )
+            : null;
         setOpen(false);
         ref.current
           ?.querySelectorAll("details[open]")
           .forEach((el) => el.removeAttribute("open"));
+        returnFocus?.focus();
       }
     }
     document.addEventListener("pointerdown", close);
@@ -89,7 +75,7 @@ export function Header() {
               if ((e.target as HTMLElement).closest("a")) closeNavigation();
             }}
           >
-            {groups.map((group) => (
+            {navigation.map((group) => (
               <details
                 className="nav-dropdown"
                 key={group.name}
@@ -117,12 +103,14 @@ export function Header() {
               href="/network"
               aria-current={path === "/network" ? "page" : undefined}
             >
-              The network
+              Network
             </Link>
-            <a href="https://forum.rldcoin.com/">
-              Community
-              <ArrowUpRight size={12} aria-hidden="true" />
-            </a>
+            <Link
+              href="/faq"
+              aria-current={path === "/faq" ? "page" : undefined}
+            >
+              FAQ
+            </Link>
             <Link className="nav-cta" href="/get-started">
               Get started
               <ArrowUpRight size={15} aria-hidden="true" />

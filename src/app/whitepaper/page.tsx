@@ -77,10 +77,12 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            This paper distinguishes regional payment rules, asynchronous evidence
-            transport, and mandatory interstellar requirements I1–I12.
-            See <Link href="/network">network status</Link> for time-stamped
-            operator telemetry.
+            This paper distinguishes regional payment rules, asynchronous
+            evidence transport, and mandatory interstellar requirements I1–I12.
+            See <Link href="/network">network &amp; qualification</Link> for
+            reviewed public ground evidence and a separate operator-telemetry
+            link. For a shorter introduction, start with{" "}
+            <Link href="/you-need-to-know">what you need to know</Link>.
           </p>
         </div>
       </section>

@@ -1,23 +1,34 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./ui";
-import { TESTNET, REPOSITORY, WEBSITE_REPOSITORY } from "@/lib/site";
+import {
+  TESTNET,
+  REPOSITORY,
+  WEBSITE_REPOSITORY,
+  CONTENT_REVIEW_DATE,
+  WHITEPAPER_VERSION,
+} from "@/lib/site";
 
 const columns = [
   [
     "Discover",
     [
       ["About Rldcoin", "/about"],
+      ["Getting started", "/get-started"],
       ["How it works", "/how-it-works"],
+      ["You need to know", "/you-need-to-know"],
       ["For individuals", "/individuals"],
+      ["For businesses", "/businesses"],
       ["Future applications", "/applications"],
+      ["Wallets & ownership", "/wallets"],
       ["White paper", "/whitepaper"],
     ],
   ],
   [
     "Resources",
     [
-      ["Get started", "/get-started"],
+      ["Payment states", "/payments"],
+      ["Vocabulary", "/vocabulary"],
       ["For developers", "/developers"],
       ["Research", "/research"],
       ["FAQ", "/faq"],
@@ -37,7 +48,8 @@ const columns = [
     "Participate",
     [
       ["Community forum", "https://forum.rldcoin.com/"],
-      ["Reproduce public v26", "/developers#reproduce-v26"],
+      ["Ways to contribute", "/participate"],
+      ["Run a test node", "/run-a-node"],
       ["Participation & disclosure", "/developers#participate"],
       ["Improve this website", WEBSITE_REPOSITORY],
       ["Resource library", "/resources"],
@@ -81,8 +93,8 @@ export function Footer() {
         <div className="footer-stage">
           <span className="status-dot" />
           <p>
-            Value-free testnet · New mainnet pending · Physical interstellar
-            routes unqualified.
+            Value-free testnet · No mainnet · White paper {WHITEPAPER_VERSION} ·
+            Content reviewed {CONTENT_REVIEW_DATE}.
           </p>
           <Link href="/network">
             View status <ArrowRightSmall />

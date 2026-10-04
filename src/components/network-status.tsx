@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { TESTNET, REGIONAL_CYCLE } from "@/lib/site";
+import { TESTNET, REGIONAL_CYCLE, CONTENT_REVIEW_DATE } from "@/lib/site";
 
 export function NetworkStatusPanel() {
   return (
@@ -11,8 +11,9 @@ export function NetworkStatusPanel() {
         <div>
           <span className="eyebrow plain">EARTH / VALUE-FREE TESTNET</span>
           <h2>
-            Testing first.
-            <br />A fresh mainnet next.
+            No-value research.
+            <br />
+            Qualification continues.
           </h2>
         </div>
         <div className="live-badge is-pending">
@@ -60,7 +61,7 @@ export function NetworkStatusPanel() {
           </dd>
         </div>
         <div>
-          <dt>Autonomous regional candidate</dt>
+          <dt>Historical v16 regional candidate</dt>
           <dd>
             Twelve local nodes completed Earth–Proxima–Andromeda–Earth, with
             every Earth node stopped during onward and return exports. Exact
@@ -80,7 +81,10 @@ export function NetworkStatusPanel() {
         </div>
       </dl>
       <div className="live-panel-bottom">
-        <p>Test currency has no value. A new mainnet has not launched.</p>
+        <p>
+          Content reviewed {CONTENT_REVIEW_DATE}. This is a development summary,
+          not a live availability monitor.
+        </p>
         <a href={TESTNET}>
           Testnet code &amp; evidence{" "}
           <ArrowUpRight size={14} aria-hidden="true" />

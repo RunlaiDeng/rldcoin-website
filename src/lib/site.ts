@@ -14,10 +14,54 @@ export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const MAINTAINER_PROFILE = "https://forum.rldcoin.com/user/runlaideng";
 
-export const REGIONAL_CYCLE = `${REPOSITORY}/tree/dd02da67a8945cc7c953810ab39bb6949d8e518a/research/2026-10-01/regional-native-archive-v16`;
 export const CURRENT_PLAN = `${REPOSITORY}/blob/main/MASTER_PLAN.md`;
 export const WEBSITE_REPOSITORY =
   "https://github.com/RunlaiDeng/rldcoin-website";
+export const WHITEPAPER_VERSION = "1.12";
+export const CONTENT_REVIEW_DATE = "4 October 2026";
+// Reviewed public evidence; newer private experiments are not website evidence.
+export const EVIDENCE_REVISION = "74f16276605823e8c84b67a66d5ff23134a86c8a";
+export const PUBLIC_RESEARCH = `${REPOSITORY}/tree/${EVIDENCE_REVISION}/research`;
+export const CURRENT_CYCLE = `${PUBLIC_RESEARCH}/2026-10-04/regional-joint-loop-cycle-v54`;
+export const CURRENT_FAULT = `${PUBLIC_RESEARCH}/2026-10-04/regional-joint-loop-fault-v55`;
+export const CURRENT_RUNTIME = `${PUBLIC_RESEARCH}/2026-10-04/regional-joint-loop-v53`;
+export const REGIONAL_CYCLE = `${PUBLIC_RESEARCH}/2026-10-01/regional-native-archive-v16`;
+
+export const navigation = [
+  {
+    name: "Introduction",
+    links: [
+      ["Getting started", "/get-started"],
+      ["How it works", "/how-it-works"],
+      ["You need to know", "/you-need-to-know"],
+      ["For individuals", "/individuals"],
+      ["For businesses", "/businesses"],
+      ["Wallets & ownership", "/wallets"],
+      ["White paper", "/whitepaper"],
+    ],
+  },
+  {
+    name: "Resources",
+    links: [
+      ["Resource library", "/resources"],
+      ["Payment states", "/payments"],
+      ["Vocabulary", "/vocabulary"],
+      ["Research & evidence", "/research"],
+      ["Roadmap", "/roadmap"],
+      ["About Rldcoin", "/about"],
+    ],
+  },
+  {
+    name: "Participate",
+    links: [
+      ["Ways to contribute", "/participate"],
+      ["For developers", "/developers"],
+      ["Running a test node", "/run-a-node"],
+      ["Nodes & relays", "/node-network"],
+      ["Community forum", "https://forum.rldcoin.com/"],
+    ],
+  },
+] as const;
 export function pageMetadata(
   title: string,
   description: string,
@@ -49,6 +93,34 @@ export function pageMetadata(
 }
 
 export const pages = {
+  "you-need-to-know": [
+    "You need to know",
+    "Testnet availability, payment finality, custody, communication delays and the limits to understand before using Rldcoin.",
+  ],
+  businesses: [
+    "Rldcoin for businesses",
+    "Plan for recipient-verified payments, local settlement and asynchronous regional transfers. Business payment services remain a future goal.",
+  ],
+  wallets: [
+    "Wallets & ownership",
+    "Understand owner signatures, payment review, encrypted backups and the qualification required for a future Rldcoin wallet.",
+  ],
+  payments: [
+    "Understanding a payment",
+    "Follow owner authorization, source export, finality, delivery, unique import and recipient maturity.",
+  ],
+  vocabulary: [
+    "Rldcoin vocabulary",
+    "Plain definitions of the regional ledgers, finality, custody and evidence used in white paper 1.12.",
+  ],
+  participate: [
+    "Participate in Rldcoin",
+    "Read, reproduce, review and contribute to a peer-to-peer payment design through public source and the community.",
+  ],
+  "run-a-node": [
+    "Running a test node",
+    "Choose a published no-value fixture, verify its exact source and reproduce a node experiment in an isolated environment.",
+  ],
   "get-started": [
     "Get started",
     "Your first steps into Rldcoin: understand the design, explore the value-free testnet, and join the discussion.",
@@ -100,6 +172,23 @@ export const pages = {
 } as const;
 
 export const faqs = [
+  [
+    "Is Rldcoin a live currency I can buy or use?",
+    "No mainnet has launched. Current testnets and ground candidates have no monetary value. There is no token sale or qualified consumer wallet. Test keys, rewards and balances never become mainnet authority or assets.",
+  ],
+  [
+    "Does local autonomy mean spending through every partition?",
+    "No. A sufficiently connected local region should progress while distant regions are disconnected. Mutually isolated groups cannot both safely finalize conflicting spends. A group without its adopted finality resources must stop dependent actions and preserve the evidence.",
+  ],
+  [
+    "Are the white paper’s timing and signatures universal?",
+    "No. The Earth reference profile uses a 600-second average PoW interval and four unanimous checkpoint signatures. Separately signed BFT ground candidates use three-of-four prepare and commit votes with durable locks. Each region must adopt its exact consensus, maturity and epoch rules; another candidate cannot silently lower them.",
+  ],
+  [
+    "What do the latest reviewed public results show?",
+    "At the 4 October 2026 publication snapshot, v54 records a successful ordinary three-region return on the pinned v53 runtime. The subsequent v55 finite fault scope failed its restored-contact import and maturity deadline. Separate stopped authentication preserved the failed state; it did not make that scope pass. Newer local experiments are outside this reviewed public snapshot.",
+  ],
+
   [
     "Can value move onward and return to an earlier region?",
     "This is mandatory in the target protocol. Imported value can be spent locally or exported again only under the exporting region’s recognized finality and authenticated ancestry. A return is a new export and unique import, never release of the first debit. Ground candidates exercise cyclic transfers; full protocol and independent qualification remain open.",

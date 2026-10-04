@@ -22,12 +22,16 @@ import { Button, Eyebrow, Note, PageHero, TextLink } from "@/components/ui";
 import { TransferExplorer } from "@/components/transfer-explorer";
 import { RelayAtlasPreview } from "@/components/relay-atlas";
 import { NetworkStatusPanel } from "@/components/network-status";
+import { LearningPage } from "@/components/learning-page";
+import { PublicEvidence } from "@/components/public-evidence";
+import { learning } from "@/lib/learning";
 import {
   TESTNET,
   CURRENT_PLAN,
   GROUND_CANDIDATE,
   GROUND_RAW,
   PUBLIC_SOURCE_REVISION,
+  PUBLIC_RESEARCH,
   GROUND_PATH,
   DEVELOPER_FORUM,
   MAINTAINER_PROFILE,
@@ -57,6 +61,7 @@ export default async function ContentPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (Object.hasOwn(learning, slug)) return <LearningPage slug={slug} />;
   switch (slug) {
     case "get-started":
       return <GetStarted />;
@@ -122,10 +127,10 @@ function GetStarted() {
       icon: BookOpen,
     },
     {
-      title: "Know the current chapter",
-      text: "Development continues on a value-free testnet. A future mainnet requires its own signed zero-issuance genesis and qualified release.",
-      href: "/network",
-      label: "Inspect the network",
+      title: "Know the rules and limits",
+      text: "Understand no-value fixtures, owner custody, local finality and why a delivery receipt or timeout cannot establish a spendable balance.",
+      href: "/you-need-to-know",
+      label: "What you need to know",
       icon: Globe2,
     },
     {
@@ -138,8 +143,8 @@ function GetStarted() {
     {
       title: "Reproduce a public ground candidate",
       text: "Inspect and reproduce the candidate in an isolated test environment. There is no mainnet mining or payment service.",
-      href: "/developers#reproduce-v26",
-      label: "Follow the public reproduction guide",
+      href: "/run-a-node",
+      label: "Choose a test-node experiment",
       icon: Users,
     },
   ];
@@ -153,9 +158,9 @@ function GetStarted() {
       <section className="section">
         <div className="container narrow">
           <Note title="Where the network stands today">
-            Development continues on a
-            separate testnet; its currency has no monetary value. A new mainnet
-            requires a fresh signed zero-issuance genesis after qualification.
+            Development continues on a separate testnet; its currency has no
+            monetary value. A new mainnet requires a fresh signed zero-issuance
+            genesis after qualification.
           </Note>
           <div className="step-list">
             {steps.map((step, i) => (
@@ -170,6 +175,19 @@ function GetStarted() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="section soft-section">
+        <div className="container guide-next-links">
+          <Button href="/individuals" secondary>
+            For individuals
+          </Button>
+          <Button href="/businesses" secondary>
+            For businesses
+          </Button>
+          <Button href="/developers" secondary>
+            For developers
+          </Button>
         </div>
       </section>
       <Closing
@@ -229,9 +247,11 @@ function HowItWorks() {
             onward as contacts become available.
           </p>
           <p>
-            That connection pattern has a separately started ground prototype.
-            Real contacts, physical adapters and long-disconnection regional
-            operation still need qualification.
+            A separately started contact-spool prototype exercises transport;
+            separately admitted regional candidates integrate relay into their
+            ordinary node lifecycle. The existing Earth testnet still uses
+            explicit peers. Physical adapters, sustained service and long-term
+            disconnection still need qualification.
           </p>
           <TextLink href="/node-network">
             Explore progressive discovery and relays
@@ -247,6 +267,9 @@ function HowItWorks() {
             Explore the intended lifecycle below.
           </p>
           <TransferExplorer />
+          <TextLink href="/payments">
+            Read every payment state and its checks
+          </TextLink>
         </div>
       </section>
       <section className="section">
@@ -274,8 +297,12 @@ function HowItWorks() {
                 "Missing, conflicting, or unsupported evidence leaves a transfer pending or quarantined. A timeout is not proof that the destination did not import it.",
               ],
               [
+                "Local autonomy, local constraints",
+                "Remote disconnection must not require Earth approval of local payments. A local group without its adopted finality resources stops dependent settlement.",
+              ],
+              [
                 "Continuous history",
-                "Upgrades, recovery, and changes in cryptography must preserve the established history and asset lineage.",
+                "The target requires authenticated continuity through recovery and cryptographic evolution. Incompatible present candidates use fresh genesis and never migrate old value.",
               ],
             ].map(([title, text]) => (
               <div key={title}>
@@ -304,6 +331,49 @@ function HowItWorks() {
             still need qualification. Ground candidates and diagrams do not
             establish an operating physical interstellar route.
           </Note>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container narrow">
+          <Eyebrow>THE EARTH REFERENCE PROFILE</Eyebrow>
+          <h2>Parameters belong to an adopted region.</h2>
+          <dl className="parameter-grid">
+            <div>
+              <dt>Supply cap</dt>
+              <dd>100 billion RLD</dd>
+            </div>
+            <div>
+              <dt>Integer unit</dt>
+              <dd>1 RLD = 10²⁴ runlai</dd>
+            </div>
+            <div>
+              <dt>Initial allocation</dt>
+              <dd>Zero</dd>
+            </div>
+            <div>
+              <dt>Target block interval</dt>
+              <dd>600 seconds on average</dd>
+            </div>
+            <div>
+              <dt>Reward maturity</dt>
+              <dd>100 successor blocks</dd>
+            </div>
+            <div>
+              <dt>Import maturity</dt>
+              <dd>6 successor blocks</dd>
+            </div>
+          </dl>
+          <Note title="Reference profile and BFT candidates are distinct">
+            The paper’s PoW reference uses four unanimous checkpoint signers and
+            a twelve-block checkpoint count including the checkpoint block.
+            Separately signed BFT candidates use three-of-four prepare and
+            commit votes with durable locks. A regional threshold, interval or
+            maturity cannot change merely because another candidate uses
+            different rules.
+          </Note>
+          <TextLink href="/whitepaper#5-proof-of-work-and-network-selection">
+            Read the exact reference rules
+          </TextLink>
         </div>
       </section>
       <Closing href="/developers" label="Explore the protocol" />
@@ -352,6 +422,14 @@ function Individuals() {
             and protection against old-backup rollback remain open. This website
             never asks for a private key or wallet connection.
           </Note>
+          <div className="guide-next-links">
+            <Button href="/wallets" secondary>
+              Understand wallet custody
+            </Button>
+            <Button href="/payments" secondary>
+              Follow the recipient’s payment
+            </Button>
+          </div>
         </div>
       </section>
       <section className="section soft-section">
@@ -384,7 +462,7 @@ function Individuals() {
               signed adoption, qualified finality and wallet recovery, and
               independent operational evidence.
             </p>
-            <TextLink href="/roadmap">See the delivery roadmap</TextLink>
+            <TextLink href="/you-need-to-know">What you need to know</TextLink>
           </div>
         </div>
       </section>
@@ -442,6 +520,16 @@ function Applications() {
           ))}
         </div>
       </section>
+      <section className="section soft-section">
+        <div className="container narrow">
+          <h2>Planning a payment service?</h2>
+          <p className="page-lead">
+            Explore invoice binding, recipient verification and the acceptance
+            states a future merchant integration would need.
+          </p>
+          <TextLink href="/businesses">Rldcoin for businesses</TextLink>
+        </div>
+      </section>
       <Closing
         title="The architecture begins with constraints."
         text="See how Rldcoin approaches distance, delay, and verifiable ownership."
@@ -460,12 +548,13 @@ function Developers() {
         description="The protocol is open to inspection. Start with the exact source, follow the evidence, and help turn long-term requirements into verifiable engineering."
       >
         <div className="hero-actions">
-          <Button href="#reproduce-v26">Reproduce public v26</Button>
+          <Button href="/run-a-node">Choose a test-node experiment</Button>
           <Button href="/whitepaper" secondary>
             Read the white paper
           </Button>
         </div>
       </PageHero>
+      <PublicEvidence />
       <section className="section">
         <div className="container">
           <div className="two-column">
@@ -614,14 +703,14 @@ function Developers() {
           <span id="reproduce-v20" aria-hidden="true" />
           <span id="reproduce-v21" aria-hidden="true" />
           <span id="reproduce-v25" aria-hidden="true" />
-          <Eyebrow>PUBLIC REPRODUCTION / REVISION 26</Eyebrow>
+          <Eyebrow>HISTORICAL REPRODUCTION / REVISION 26</Eyebrow>
           <h2>Replay payment history one complete page at a time.</h2>
           <p className="page-lead">
             The explicitly signed segmented candidate retains immutable event
-            pages and fully verifies their payment history from genesis.
-            Wallets review the original signing inputs; private ledger recovery
-            checks a separately retained latest head. Evidence hashes alone
-            never authorize a payment.
+            pages and fully verifies their payment history from genesis. Wallets
+            review the original signing inputs; private ledger recovery checks a
+            separately retained latest head. Evidence hashes alone never
+            authorize a payment.
           </p>
           <Note title="Finite local payment and recovery checks passed">
             An ordinary node persisted 1,029 blocks and 1,025 signed payments,
@@ -635,9 +724,9 @@ function Developers() {
           </Note>
           <ol className="prose">
             <li>
-              Verify the 254-file manifest and checksums. Coverage includes
-              139 distinct native tests and 60 process tests: 138 native tests
-              ran from the frozen source, and the long-store test ran against
+              Verify the 254-file manifest and checksums. Coverage includes 139
+              distinct native tests and 60 process tests: 138 native tests ran
+              from the frozen source, and the long-store test ran against
               byte-identical native source. Checked release builds and strict
               checks passed. Each page holds 16 events; the 4,096-file / 256 MiB
               archive, complete-evidence and 64-checkpoint bounds remain.
@@ -706,23 +795,33 @@ tar -xzf source.tar.gz -C source-v26
               v26 checksums
             </TextLink>
             {" · "}
-            <TextLink href="https://github.com/RunlaiDeng/rldcoin-genesis/tree/019dcc54d0414bf74d17066799666c492d738dde/research/2026-10-02/regional-native-history-recovery-v21">
+            <TextLink
+              href={`${PUBLIC_RESEARCH}/2026-10-02/regional-native-history-recovery-v21`}
+            >
               Historical v21 ledger recovery
             </TextLink>
             {" · "}
-            <TextLink href="https://github.com/RunlaiDeng/rldcoin-genesis/tree/019dcc54d0414bf74d17066799666c492d738dde/research/2026-10-01/regional-native-paged-history-v20">
+            <TextLink
+              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-paged-history-v20`}
+            >
               Historical v20 paging result
             </TextLink>
             {" · "}
-            <TextLink href="https://github.com/RunlaiDeng/rldcoin-genesis/tree/019dcc54d0414bf74d17066799666c492d738dde/research/2026-10-01/regional-native-bft-shared-evidence-v19">
+            <TextLink
+              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-bft-shared-evidence-v19`}
+            >
               Historical v19 fault result
             </TextLink>
             {" · "}
-            <TextLink href="https://github.com/RunlaiDeng/rldcoin-genesis/tree/019dcc54d0414bf74d17066799666c492d738dde/research/2026-10-01/regional-native-prefix-replay-v18">
+            <TextLink
+              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-prefix-replay-v18`}
+            >
               Historical v18 fault failure
             </TextLink>
             {" · "}
-            <TextLink href="https://github.com/RunlaiDeng/rldcoin-genesis/tree/019dcc54d0414bf74d17066799666c492d738dde/research/2026-10-01/regional-native-bft-fault-recovery-v17">
+            <TextLink
+              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-bft-fault-recovery-v17`}
+            >
               Historical v17 fault result
             </TextLink>
           </p>
@@ -799,6 +898,7 @@ function Network() {
         title="Test on Earth. Qualify every step."
         description="Development uses a fresh testnet with public fixture keys and no monetary value. A new mainnet has not launched."
       />
+      <PublicEvidence />
       <section className="section network-section">
         <div className="container">
           <NetworkStatusPanel />
@@ -934,9 +1034,7 @@ function Roadmap() {
       />
       <section className="section">
         <div className="container narrow">
-          <p className="updated-label">
-            QUALIFICATION STATUS / 30 SEPTEMBER 2026
-          </p>
+          <p className="updated-label">CONTENT REVIEW / 4 OCTOBER 2026</p>
           <Note title="Development phase">
             Ground candidates implement parts of the design. Document alignment
             is established; full protocol qualification, new-mainnet
@@ -1013,6 +1111,16 @@ function FAQ() {
           </div>
         </div>
       </section>
+      <section className="section soft-section">
+        <div className="container guide-next-links">
+          <Button href="/you-need-to-know" secondary>
+            Key limitations
+          </Button>
+          <Button href="/vocabulary" secondary>
+            Vocabulary
+          </Button>
+        </div>
+      </section>
       <Closing
         title="Keep the conversation going."
         text="Bring your questions and ideas to the Rldcoin community."
@@ -1078,6 +1186,19 @@ function About() {
               independent qualification mandatory. Ground candidates exercise
               parts of this design. None of I1–I12 is fully qualified yet.
             </p>
+            <h2>One currency. Regional verification.</h2>
+            <p>
+              Authorized regions bind one currency root while applying their own
+              explicitly adopted consensus. The target cap is 100 billion RLD,
+              with zero initial allocation and 10²⁴ runlai per RLD. Additional
+              regions do not issue a second reserve. Each import, onward export
+              and return must preserve exact value and authenticated ancestry.
+            </p>
+            <p>
+              Courier discovery cannot authorize a region or a payment. Actual
+              contacts carry evidence; no always-online Earth directory or
+              simultaneous global balance is required.
+            </p>
             <h2>Built in the open.</h2>
             <p>
               The protocol source and verification artifacts are published for
@@ -1133,6 +1254,26 @@ function Resources() {
           CURRENT_PLAN,
         ],
         [
+          "You need to know",
+          "Availability, custody, finality and communication limits before a payment.",
+          "/you-need-to-know",
+        ],
+        [
+          "Payment states",
+          "Owner authorization through unique import, maturity and onward export.",
+          "/payments",
+        ],
+        [
+          "Vocabulary",
+          "Plain definitions of the white paper’s terms.",
+          "/vocabulary",
+        ],
+        [
+          "Wallets & ownership",
+          "Payment review and the remaining custody and recovery gates.",
+          "/wallets",
+        ],
+        [
           "Questions & answers",
           "Testnet, supply, wallets and ways to participate today.",
           "/faq",
@@ -1149,14 +1290,14 @@ function Resources() {
           TESTNET,
         ],
         [
-          "Public v26 ground candidate",
-          "Private ledger images, fresh-directory recovery, new finite fault evidence and retained failures; no monetary value.",
+          "Historical v26 ground candidate",
+          "Segmented history and private recovery observations; separate bounded BFT evidence and retained failures. No monetary value.",
           GROUND_CANDIDATE,
         ],
         [
-          "Reproduce and contribute",
-          "Exact local commands, forum participation steps, feedback template and private disclosure guidance.",
-          "/developers#reproduce-v26",
+          "Run a test node and contribute",
+          "Choose an exact fixture, follow the published commands and share sanitized findings.",
+          "/run-a-node",
         ],
         [
           "Network & qualification",
@@ -1180,7 +1321,6 @@ function Resources() {
         ],
       ],
     },
-
   ];
   return (
     <>
@@ -1189,6 +1329,7 @@ function Resources() {
         title="Explore. Inspect. Understand."
         description="The current design, testnet source and qualification evidence."
       />
+      <PublicEvidence />
       <section className="section">
         <div className="container">
           {sections.map((section) => (
@@ -1217,8 +1358,8 @@ function Resources() {
           <Note title="Download with context">
             Use the fresh testnet guide and verify exact source commitments and
             checksums in an isolated environment. Test keys are public and test
-            currency has no value. Testnet evidence does not authorize a
-            mainnet or establish independent qualification.
+            currency has no value. Testnet evidence does not authorize a mainnet
+            or establish independent qualification.
           </Note>
         </div>
       </section>
@@ -1240,7 +1381,7 @@ function Privacy() {
       />
       <section className="section">
         <div className="container narrow prose">
-          <p className="updated-label">LAST UPDATED / 30 SEPTEMBER 2026</p>
+          <p className="updated-label">LAST REVIEWED / 4 OCTOBER 2026</p>
           <h2>No account or wallet connection</h2>
           <p>
             This website has no account registration, payment form, wallet
@@ -1260,9 +1401,9 @@ function Privacy() {
           </p>
           <p>
             The network page displays the development phase and qualification
-            limits, with links to public testnet telemetry. It does not
-            poll a mainnet or retain cached mainnet status. Testnet telemetry
-            is an operator observation, not independent verification.
+            limits, with links to public testnet telemetry. It does not poll a
+            mainnet or retain cached mainnet status. Testnet telemetry is an
+            operator observation, not independent verification.
           </p>
           <h2>External services</h2>
           <p>

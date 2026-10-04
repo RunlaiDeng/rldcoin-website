@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
+import { PublicEvidence } from "@/components/public-evidence";
 import { NodeMeshExplorer } from "@/components/node-mesh-explorer";
 import { REGIONAL_CYCLE, pageMetadata, REPOSITORY } from "@/lib/site";
 
@@ -25,6 +26,7 @@ export default function NodeNetwork() {
           <NodeMeshExplorer />
         </div>
       </section>
+      <PublicEvidence />
       <section className="section soft-section">
         <div className="container">
           <div className="section-heading">
@@ -72,7 +74,7 @@ export default function NodeNetwork() {
       </section>
       <section className="section">
         <div className="container narrow">
-          <Eyebrow>GROUND PROTOTYPE · 30 SEPTEMBER 2026</Eyebrow>
+          <Eyebrow>HISTORICAL GROUND PROTOTYPE · 30 SEPTEMBER 2026</Eyebrow>
           <h2>A connection pattern tested on Earth.</h2>
           <p className="page-lead">
             Three real local processes, labelled Earth, Proxima Centauri and
@@ -96,7 +98,7 @@ export default function NodeNetwork() {
           </div>
           <h3>Automatic relay in the regional fixture candidate.</h3>
           <p>
-            Revision 15 starts relay and local BFT within the ordinary native
+            Revision 16 starts relay and local BFT within the ordinary native
             node lifecycle. Twelve local nodes use pinned TLS neighbors to
             complete Earth–Proxima–Andromeda–Earth. All Earth processes stop
             while remote regions import, mature and export value onward and
@@ -105,7 +107,9 @@ export default function NodeNetwork() {
             and exact frozen-source reproduction preserve this ground result.
           </p>
           <div className="hero-actions">
-            <Button href={REGIONAL_CYCLE}>Inspect the autonomous cycle</Button>
+            <Button href={REGIONAL_CYCLE}>
+              Inspect the historical v16 cycle
+            </Button>
           </div>
           <Note title="A future physical network needs more">
             The prototype has configured adjacent contacts, signed discovery,
@@ -139,9 +143,8 @@ export default function NodeNetwork() {
             .
           </p>
           <p>
-            Qualification continues on a value-free testnet; a mainnet has
-            not launched.{" "}
-            <Link href="/roadmap">Follow the roadmap</Link>.
+            Qualification continues on a value-free testnet; a mainnet has not
+            launched. <Link href="/roadmap">Follow the roadmap</Link>.
           </p>
         </div>
       </section>

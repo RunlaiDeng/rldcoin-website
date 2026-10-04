@@ -22,6 +22,8 @@ Open http://localhost:3000. Before deployment:
 ```sh
 npm test
 npm run build
+# With a production server running locally:
+node scripts/check-site.mjs http://127.0.0.1:3100
 ```
 
 ## Structure
@@ -30,7 +32,10 @@ npm run build
 - `src/app/[slug]/page.tsx`: statically generated introductions, network,
   resources, roadmap, FAQ, and privacy pages.
 - `src/lib/network.ts`: exact amount formatting.
-- `src/lib/site.ts`: current links, metadata, and FAQ content.
+- `src/lib/site.ts`: shared navigation, metadata, reviewed public evidence pins and FAQ content.
+- `src/lib/learning.ts` and `src/components/learning-page.tsx`: seven educational guides with contents navigation and source links.
+- `src/components/public-evidence.tsx`: reviewed v54 ordinary success and v55 finite fault failure on the exact v53 runtime.
+- `scripts/check-site.mjs`: rendered sitemap, metadata, local link and anchor audit.
 - `src/app/whitepaper/page.tsx`: online paper from the same Markdown source as the PDF.
 - `src/components`: navigation, original orbital artwork, transfer explainer,
   and status display.
@@ -51,7 +56,7 @@ Current content sources:
 - https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/earth/testnet-20260930
 - https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/research/2026-09-30
 
-The public v26 reproduction entry is pinned to publication commit
+The historical public v26 reproduction entry is pinned to publication commit
 `40d5e7a216b2f89033bcfb11671ff311a3b8ab75` and links the 254-file segmented checkpoint and
 paged-event candidate. Its 139 distinct native tests comprise 138 frozen tests
 and one long-store test against byte-identical native workspace source; 60 frozen
@@ -68,6 +73,15 @@ Generated private images and signer/wallet/caller state are excluded. Archive,
 complete-evidence and permanent-index capacities remain bounded. BFT long history,
 independent latest anchors, power loss and cross-device signing custody remain
 open. Test balances never migrate. The historical autonomous-cycle link stays v16.
+
+The website’s reviewed public evidence snapshot is publication commit
+`74f16276605823e8c84b67a66d5ff23134a86c8a`. The exact v53 runtime underlies
+v54’s successful ordinary return and v55’s **failed** subsequent finite fault
+scope. The separate stopped audit authenticates retained state and cannot
+change the failed outcome. Newer private experiments are outside this snapshot.
+The new guides cover key limitations, businesses, wallets, payment states,
+vocabulary, participation and test-node setup; each links its claims to white
+paper 1.12 and scoped public packages.
 
 None of I1–I12 is fully qualified. Ground candidates, exact release adoption,
 independent operations and physical-route evidence have separate scopes.

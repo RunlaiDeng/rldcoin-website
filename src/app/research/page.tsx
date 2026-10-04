@@ -1,3 +1,4 @@
+import { PublicEvidence } from "@/components/public-evidence";
 import { ArrowUpRight } from "lucide-react";
 import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
 import {
@@ -140,6 +141,7 @@ export default function Research() {
           </Button>
         </div>
       </PageHero>
+      <PublicEvidence />
       <section className="section">
         <div className="container">
           <div className="section-heading">
@@ -152,7 +154,7 @@ export default function Research() {
               </h2>
             </div>
             <p>
-              The white paper contains 24 references. These six reading paths
+              The white paper contains 25 references. These six reading paths
               connect selected sources to specific design questions. Citing a
               paper does not validate Rldcoin.
             </p>
@@ -216,17 +218,18 @@ export default function Research() {
             </p>
           </div>
           <p>
-            <strong>Public v26 snapshot.</strong> The signed segmented
-            candidate persists 1,029 ordinary-node blocks and 1,025 signed
-            payments, with native wallet review and exact private fresh-target
-            ledger recovery. A separate process test reaches 361 blocks with
-            cross-region return and permanent duplicate-import refusal. Coverage
-            includes 139 distinct native tests and 60 process tests; the long
-            store test used byte-identical native source alongside 138 frozen
-            native tests. The latest guide separately records its new
-            twelve-node BFT cycle and finite fault observations. Complete proof
-            and archive capacities remain bounded. BFT long history, independent
-            latest anchors, power-loss and signing custody remain open.
+            <strong>Historical public v26 snapshot.</strong> The signed
+            segmented candidate persists 1,029 ordinary-node blocks and 1,025
+            signed payments, with native wallet review and exact private
+            fresh-target ledger recovery. A separate process test reaches 361
+            blocks with cross-region return and permanent duplicate-import
+            refusal. Coverage includes 139 distinct native tests and 60 process
+            tests; the long store test used byte-identical native source
+            alongside 138 frozen native tests. That historical guide separately
+            records its twelve-node BFT cycle and finite fault observations.
+            Complete proof and archive capacities remain bounded. BFT long
+            history, independent latest anchors, power-loss and signing custody
+            remain open.
           </p>
           <p>
             <a href={GROUND_CANDIDATE}>
