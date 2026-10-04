@@ -86,7 +86,7 @@ def page_frame(canvas, doc):
     canvas.line(24 * mm, 21 * mm, width - 24 * mm, 21 * mm)
     canvas.setFont("Times-Roman", 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(24 * mm, 16 * mm, "Rldcoin · 30 September 2026 · Version 1.11")
+    canvas.drawString(24 * mm, 16 * mm, "Rldcoin · 4 October 2026 · Version 1.12")
     canvas.drawRightString(width - 24 * mm, 16 * mm, str(doc.page))
     canvas.restoreState()
 
@@ -134,7 +134,7 @@ def main():
         rightMargin=24 * mm, leftMargin=24 * mm,
         topMargin=23 * mm, bottomMargin=27 * mm,
         title=title, author="Runlai Deng",
-        subject="Rldcoin technical white paper, version 1.11",
+        subject="Rldcoin technical white paper, version 1.12",
     )
     doc.build(story, onFirstPage=page_frame, onLaterPages=page_frame)
     print(OUTPUT)

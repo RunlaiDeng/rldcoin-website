@@ -1,6 +1,6 @@
 # Rldcoin — Protocol and node-network overview
 
-Updated 30 September 2026. Read the [white paper 1.11](https://rldcoin.com/whitepaper) for the full design and [node network](https://rldcoin.com/node-network) for the connection model.
+Updated 4 October 2026. Read the [white paper 1.12](https://rldcoin.com/whitepaper) for the full design and [node network](https://rldcoin.com/node-network) for the connection model.
 
 Rldcoin aims at peer-to-peer payments among future human communities: locally verified ownership, payment during remote disconnection, and conserved value that can move onward or return through asynchronous contacts. Every normally started full network node must discover and relay by default in the target architecture; this is not yet native default behavior. Implementation and operating status are reported separately on the [network page](https://rldcoin.com/network).
 
@@ -22,7 +22,7 @@ Historical Earth source rules use SHA-256d work, signed transfers, durable repla
 
 Development uses a fresh testnet with public fixture keys and no monetary value. No active mainnet is offered. A future mainnet needs a fresh signed zero-issuance genesis. Test balances never migrate into a mainnet.
 
-White paper 1.11 and the master plan share mandatory requirements I1–I12 alongside the A–G foundations. None of I1–I12 is fully qualified. Document alignment, complete protocol qualification, new-mainnet authorization and physical-route qualification are distinct stages.
+White paper 1.12 and the master plan share mandatory requirements I1–I12 alongside the A–G foundations. None of I1–I12 is fully qualified. Document alignment, complete protocol qualification, new-mainnet authorization and physical-route qualification are distinct stages.
 
 ## Inspect and reproduce
 

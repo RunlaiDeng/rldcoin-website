@@ -3,7 +3,7 @@
 The independent English website for **rldcoin.com**.
 
 Rldcoin’s target is locally autonomous peer-to-peer payment between authorized
-regions across delayed contacts. Content follows white paper 1.11 and its
+regions across delayed contacts. Content follows white paper 1.12 and its
 mandatory I1–I12 acceptance requirements. Development uses a fresh value-free
 testnet; a mainnet has not launched. Test balances and keys never become
 mainnet assets or authority.

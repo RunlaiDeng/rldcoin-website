@@ -130,7 +130,7 @@ function GetStarted() {
     },
     {
       title: "Follow the evidence",
-      text: "Read white paper 1.11, inspect testnet fixtures and source commitments, and compare the ground evidence with the mandatory acceptance conditions.",
+      text: "Read white paper 1.12, inspect testnet fixtures and source commitments, and compare the ground evidence with the mandatory acceptance conditions.",
       href: "/resources",
       label: "Browse official resources",
       icon: FileCheck2,
@@ -810,7 +810,7 @@ function Network() {
           </Note>
           <div className="section-heading genesis-heading">
             <div>
-              <Eyebrow>WHITE PAPER 1.11</Eyebrow>
+              <Eyebrow>WHITE PAPER 1.12</Eyebrow>
               <h2>Defined goals. Evidence still required.</h2>
             </div>
             <p>
@@ -930,7 +930,7 @@ function Roadmap() {
       <PageHero
         eyebrow="The roadmap"
         title="A defined purpose. Mandatory steps."
-        description="White paper 1.11 and the master plan define I1–I12 alongside the A–G foundations. No requirement is fully qualified; progress follows evidence, not a promised calendar."
+        description="White paper 1.12 and the master plan define I1–I12 alongside the A–G foundations. No requirement is fully qualified; progress follows evidence, not a promised calendar."
       />
       <section className="section">
         <div className="container narrow">
@@ -1073,7 +1073,7 @@ function About() {
               zero-issuance genesis. Old and test balances never migrate.
             </p>
             <p>
-              White paper 1.11 makes local autonomy, conserved onward and return
+              White paper 1.12 makes local autonomy, conserved onward and return
               transfers, native relay discovery, long-term preservation and
               independent qualification mandatory. Ground candidates exercise
               parts of this design. None of I1–I12 is fully qualified yet.
@@ -1108,7 +1108,7 @@ function Resources() {
       label: "01 / WHITE PAPER & REQUIREMENTS",
       items: [
         [
-          "Rldcoin white paper 1.11",
+          "Rldcoin white paper 1.12",
           "The target protocol, mandatory I1–I12 requirements and references. Read online or download the PDF.",
           "/whitepaper",
         ],

@@ -87,7 +87,7 @@ export const pages = {
   ],
   resources: [
     "Resources",
-    "White paper 1.11, current testnet source and reproducible ground evidence.",
+    "White paper 1.12, current testnet source and reproducible ground evidence.",
   ],
   privacy: [
     "Privacy",
