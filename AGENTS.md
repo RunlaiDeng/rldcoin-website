@@ -19,3 +19,17 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Frozen whitepaper
+
+The owner-approved final whitepaper has no publication version label. Its canonical
+Markdown SHA-256 is `c906076c09bb01fedd179d2b3a2ccfbf2bd168fa093ccb15842381783d69a6c0`;
+the frozen PDF SHA-256 is `f825439e6e18aa96245bc6fb65fc03f98a1071fa6d31ecff65c696dc4f6da8e4`.
+Do not autonomously edit, relabel or regenerate these two frozen artifacts, including
+regenerating the PDF from unchanged text. Protocol, algorithm and key/epoch versions
+remain mandatory. Future defects/progress belong in separate implementation/risk
+records; report material problems and stop affected unsafe claims. A body correction
+requires an explicit owner decision. The immutable publication receipt is
+`public/documents/rldcoin-whitepaper-freeze.json`; it binds the audit commit and
+content hashes. Website/implementation maintenance cannot lower its normative
+acceptance requirements or convert fixture balances/keys into mainnet authority.

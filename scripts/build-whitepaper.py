@@ -42,8 +42,8 @@ styles = {
         "author", fontName="Times-Roman", fontSize=10, leading=14,
         alignment=TA_CENTER, textColor=TEXT, spaceAfter=2,
     ),
-    "version": ParagraphStyle(
-        "version", fontName="Times-Roman", fontSize=8.5, leading=12,
+    "date": ParagraphStyle(
+        "date", fontName="Times-Roman", fontSize=8.5, leading=12,
         alignment=TA_CENTER, textColor=MUTED, spaceAfter=16,
     ),
     "abstract": ParagraphStyle(
@@ -86,7 +86,7 @@ def page_frame(canvas, doc):
     canvas.line(24 * mm, 21 * mm, width - 24 * mm, 21 * mm)
     canvas.setFont("Times-Roman", 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(24 * mm, 16 * mm, "Rldcoin · 4 October 2026 · Version 1.13")
+    canvas.drawString(24 * mm, 16 * mm, "Rldcoin · 4 October 2026")
     canvas.drawRightString(width - 24 * mm, 16 * mm, str(doc.page))
     canvas.restoreState()
 
@@ -98,7 +98,7 @@ def main():
     story = [Paragraph(escape(title), styles["title"])]
     for line in lines[2:5]:
         story.append(Paragraph(escape(line.strip()), styles["author"]))
-    story.append(Paragraph(escape(lines[5].strip()), styles["version"]))
+    story.append(Paragraph(escape(lines[5].strip()), styles["date"]))
 
     blocks = re.split(r"\n\s*\n", "\n".join(lines[7:]).strip())
     in_references = False
@@ -134,7 +134,7 @@ def main():
         rightMargin=24 * mm, leftMargin=24 * mm,
         topMargin=23 * mm, bottomMargin=27 * mm,
         title=title, author="Runlai Deng",
-        subject="Rldcoin technical white paper, version 1.13",
+        subject="Rldcoin technical white paper",
     )
     doc.build(story, onFirstPage=page_frame, onLaterPages=page_frame)
     print(OUTPUT)

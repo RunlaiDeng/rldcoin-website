@@ -62,7 +62,7 @@ export default function Whitepaper() {
       <section className="whitepaper-hero">
         <div className="container narrow">
           <p className="eyebrow plain">
-            TECHNICAL PAPER · VERSION 1.13 · 4 OCTOBER 2026
+            TECHNICAL PAPER · 4 OCTOBER 2026
           </p>
           <h1>Rldcoin: A Peer-to-Peer Payment System Across Delayed Regions</h1>
           <p className="whitepaper-byline">
@@ -78,7 +78,7 @@ export default function Whitepaper() {
           </div>
           <p className="whitepaper-context">
             This paper distinguishes regional payment rules, asynchronous
-            evidence transport, and mandatory interstellar requirements I1–I12.
+            evidence transport, normative transition rules, the risk register, and embedded acceptance gates.
             See <Link href="/network">network &amp; qualification</Link> for
             reviewed public ground evidence and a separate operator-telemetry
             link. For a shorter introduction, start with{" "}

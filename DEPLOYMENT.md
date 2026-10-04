@@ -38,7 +38,7 @@ alone does not prove that the production alias serves the new content.
 
 ## Content and operating status
 
-White paper 1.13, dated 4 October 2026, is the current design source. It distinguishes current Ed25519 quantum exposure from proposed post-quantum migration and treats the 100-million-year horizon as a generational continuity objective, not verified algorithm security. The reviewed
+White paper, dated 4 October 2026, is the normative design authority for the unlaunched project. The final paper has no publication version label. Freeze its reviewed body only after independent review and verification; record the canonical/PDF content hashes and audit commit in an immutable release receipt. Future progress and defects belong in separate implementation/risk records; changes to the frozen body require the owner's explicit decision. Protocol, suite and epoch versioning remains mandatory. It distinguishes current Ed25519 quantum exposure from proposed post-quantum migration and treats the 100-million-year horizon as a generational continuity objective, not verified algorithm security. The reviewed
 public evidence snapshot is `74f16276605823e8c84b67a66d5ff23134a86c8a`: v54's
 ordinary return passed; v55's subsequent finite fault scope failed. The stopped
 audit does not change that outcome. Historical v26 and v16 guides remain scoped
