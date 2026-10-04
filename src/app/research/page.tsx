@@ -12,7 +12,7 @@ import {
 
 export const metadata = pageMetadata(
   "Research & evidence",
-  "The primary sources, implementation limits, progressive relay prototype, and open research questions behind Rldcoin white paper 1.12.",
+  "The primary sources, implementation limits, progressive relay prototype, and open research questions behind Rldcoin white paper 1.13.",
   "/research",
 );
 const topics = [
@@ -132,7 +132,7 @@ export default function Research() {
       <PageHero
         eyebrow="Research & evidence"
         title="A longer horizon starts with harder questions."
-        description="Explore the work behind white paper 1.12: distributed systems, space networking, payment safety, and the limits of the current implementation."
+        description="Explore the work behind white paper 1.13: distributed systems, space networking, payment safety, and the limits of the current implementation."
       >
         <div className="hero-actions">
           <Button href="/whitepaper">Read the white paper</Button>
@@ -192,7 +192,7 @@ export default function Research() {
           <h2>Evidence has a scope.</h2>
           <div className="research-limits">
             <p>
-              <strong>Target requirements.</strong> White paper 1.12 and the
+              <strong>Target requirements.</strong> White paper 1.13 and the
               master plan require local autonomy, conserved onward and return
               value, recognized regional finality, default node relay and
               recipient-verifiable states. None of I1–I12 is fully qualified.

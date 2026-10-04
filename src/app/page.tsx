@@ -268,7 +268,7 @@ export default function Home() {
       <section className="section soft-section home-paper">
         <div className="container two-column">
           <div>
-            <Eyebrow>THE DESIGN / WHITE PAPER 1.12</Eyebrow>
+            <Eyebrow>THE DESIGN / WHITE PAPER 1.13</Eyebrow>
             <h2>
               A payment system
               <br />

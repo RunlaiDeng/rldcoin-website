@@ -62,7 +62,7 @@ export default function Whitepaper() {
       <section className="whitepaper-hero">
         <div className="container narrow">
           <p className="eyebrow plain">
-            TECHNICAL PAPER · VERSION 1.12 · 4 OCTOBER 2026
+            TECHNICAL PAPER · VERSION 1.13 · 4 OCTOBER 2026
           </p>
           <h1>Rldcoin: A Peer-to-Peer Payment System Across Delayed Regions</h1>
           <p className="whitepaper-byline">

@@ -38,7 +38,7 @@ alone does not prove that the production alias serves the new content.
 
 ## Content and operating status
 
-White paper 1.12, dated 4 October 2026, is the current design source. The reviewed
+White paper 1.13, dated 4 October 2026, is the current design source. It distinguishes current Ed25519 quantum exposure from proposed post-quantum migration and treats the 100-million-year horizon as a generational continuity objective, not verified algorithm security. The reviewed
 public evidence snapshot is `74f16276605823e8c84b67a66d5ff23134a86c8a`: v54's
 ordinary return passed; v55's subsequent finite fault scope failed. The stopped
 audit does not change that outcome. Historical v26 and v16 guides remain scoped
