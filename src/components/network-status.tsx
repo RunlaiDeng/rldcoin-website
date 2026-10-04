@@ -74,9 +74,11 @@ export function NetworkStatusPanel() {
         <div>
           <dt>Release conditions</dt>
           <dd>
-            Complete applicable A–G and I1–I12 acceptance, independent review
-            and custody, wallet recovery, exact signed zero-issuance genesis and
-            verified deployment. Physical routes require separate evidence.
+            Complete S1–S18 and applicable R1–R24 operational obligations,
+            embedded A–G, I1–I12, N1–N10 and P1–P8 acceptance, independent
+            review and custody, wallet recovery, exact signed zero-issuance
+            genesis and verified deployment. Physical routes require separate
+            evidence.
           </dd>
         </div>
       </dl>

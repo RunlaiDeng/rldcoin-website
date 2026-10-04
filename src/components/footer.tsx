@@ -6,7 +6,6 @@ import {
   REPOSITORY,
   WEBSITE_REPOSITORY,
   CONTENT_REVIEW_DATE,
-  WHITEPAPER_VERSION,
 } from "@/lib/site";
 
 const columns = [
@@ -22,6 +21,10 @@ const columns = [
       ["Future applications", "/applications"],
       ["Wallets & ownership", "/wallets"],
       ["White paper", "/whitepaper"],
+      [
+        "Publication freeze receipt",
+        "/documents/rldcoin-whitepaper-freeze.json",
+      ],
     ],
   ],
   [
@@ -93,8 +96,8 @@ export function Footer() {
         <div className="footer-stage">
           <span className="status-dot" />
           <p>
-            Value-free testnet · No mainnet · White paper {WHITEPAPER_VERSION} ·
-            Content reviewed {CONTENT_REVIEW_DATE}.
+            Value-free testnet · No mainnet · Final white paper · Content
+            reviewed {CONTENT_REVIEW_DATE}.
           </p>
           <Link href="/network">
             View status <ArrowRightSmall />

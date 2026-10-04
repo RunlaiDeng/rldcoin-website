@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { Button, Eyebrow, Note, PageHero, TextLink } from "./ui";
 import { learning } from "@/lib/learning";
-import { CONTENT_REVIEW_DATE, WHITEPAPER_VERSION } from "@/lib/site";
+import { CONTENT_REVIEW_DATE } from "@/lib/site";
 
 export function LearningPage({ slug }: { slug: string }) {
   const guide = learning[slug];
@@ -25,7 +25,7 @@ export function LearningPage({ slug }: { slug: string }) {
             ))}
             <Link className="guide-paper-link" href="/whitepaper">
               <BookOpen size={18} aria-hidden="true" />
-              White paper {WHITEPAPER_VERSION}
+              Final white paper
             </Link>
           </nav>
           <div className="guide-body">
@@ -61,9 +61,10 @@ export function LearningPage({ slug }: { slug: string }) {
             >
               <Eyebrow>Read the source</Eyebrow>
               <p>
-                Based on white paper {WHITEPAPER_VERSION}, especially its
-                implementation reading guide and mandatory acceptance contract.
-                Published experiments have their own source and scope.
+                Based on the final white paper, including its normative
+                architecture, risk obligations and embedded implementation
+                acceptance contract. Published experiments have their own source
+                and scope.
               </p>
               <ul>
                 {guide.references.map(([label, href]) => (

@@ -24,7 +24,7 @@ node scripts/check-site.mjs http://127.0.0.1:3100
 
 This audits every sitemap page, one main heading, distinct titles, canonical
 URLs, local navigation targets, exact anchors and a genuine 404. The current
-site has 23 content pages. Browser verification additionally checks desktop and
+site has 23 content pages. Run the complete audit after every site-wide content release; verify that the final paper remains 21 chapters, 39 references and 39 PDF pages and that its approved MD/PDF hashes are unchanged. Browser verification additionally checks desktop and
 mobile navigation, new guide rendering, table-of-contents anchors, the existing
 relay/transfer illustrations, reduced-motion behavior and console errors.
 
@@ -48,6 +48,8 @@ The website has no mainnet feed or `/api/network` handler. The network page is a
 reviewed development summary, with a separate link to operator testnet telemetry.
 It is not a live availability monitor or independent verification. No account,
 wallet connection, analytics or tracking cookies are implemented; fonts are local.
+
+Site-wide explanations follow the frozen architecture, 24 risk records and operational obligations, and embedded A–G/I1–I12/N1–N10/P1–P8 gates. Historical public fixtures retain their exact failures and source bindings; no private development result becomes website evidence without separate publication review. English is the only implemented language.
 
 A website release cannot initialize a ledger, authorize a mainnet, migrate test
 balances, change signing custody or qualify a physical interstellar route.

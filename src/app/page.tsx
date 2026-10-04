@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -32,7 +33,7 @@ export default function Home() {
             url: SITE,
             inLanguage: "en",
             description:
-              "An interstellar peer-to-peer payment system being developed for the future of humanity.",
+              "An interstellar peer-to-peer payment design with a final normative white paper and no-value research prototypes. No mainnet or physical interstellar payment service is qualified.",
           }),
         }}
       />
@@ -275,8 +276,9 @@ export default function Home() {
               across delayed regions.
             </h2>
             <p className="section-lead">
-              Seventeen sections explain ownership, regional consensus,
-              asynchronous transfers and the mandatory acceptance contract.
+              Twenty-one chapters explain ownership, independent regional
+              finality, asynchronous transfers, 24 risk records and embedded
+              release gates.
             </p>
           </div>
           <div className="prose">
@@ -303,6 +305,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <WhitepaperAlignment topic="home" />
       <section className="home-next-step">
         <div className="container">
           <div>

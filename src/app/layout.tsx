@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Rldcoin",
   },
   description:
-    "Rldcoin is building an interstellar peer-to-peer payment system for the future of humanity. Development uses a value-free Earth testnet; a new mainnet and physical interstellar routes remain unqualified.",
+    "Rldcoin is building an interstellar peer-to-peer payment system for the future of humanity. The final white paper defines independent regional finality, conserved transfers and explicit risk and acceptance obligations. Development uses no-value fixtures; mainnet and physical routes remain unqualified.",
   openGraph: {
     siteName: "Rldcoin",
     type: "website",

@@ -1,3 +1,5 @@
+import { designTopics, routeTopics } from "./whitepaper-design";
+
 import {
   CURRENT_RUNTIME,
   CURRENT_CYCLE,
@@ -51,7 +53,7 @@ export const learning: Record<string, Guide> = {
         id: "payment-states",
         title: "A receipt has a specific meaning",
         paragraphs: [
-          "A submitted request, an included transaction, a finalized export, a transport receipt, a unique destination import and a mature recipient output are separate states. A courier’s acknowledgment proves durable transport custody within its tested scope; it does not prove that the recipient ledger accepted the payment.",
+          "A submitted request, an included transaction, a finalized export, a transport receipt, a unique destination import and a mature recipient output are separate states. A courier’s acknowledgment states acceptance under its declared custody contract and tested scope; it does not prove that the recipient ledger accepted the payment.",
           "Import maturity permits a local spend under that region’s rules. Onward export additionally requires recognized finality for both imported provenance and the new debit. A historical record proof does not show current spendability.",
         ],
       },
@@ -74,7 +76,7 @@ export const learning: Record<string, Guide> = {
         id: "profiles",
         title: "Regional rules are explicitly adopted",
         paragraphs: [
-          "The paper’s Earth reference profile uses proof of work and four unanimous checkpoint signatures. Separately admitted BFT candidates use three-of-four prepare and commit votes with durable locks. The latter is a different protocol profile, not permission to lower the reference threshold. Block time, maturity and epoch rules belong to the region’s signed admission.",
+          "The target baseline requires independent Byzantine regional finality, n = 3f + 1 and 2f + 1 approved votes with a reviewed locking/view-change protocol. PoW and four unanimous checkpoint signatures describe the historical Earth reference profile. A new adoption needs complete signed consensus, epoch and maturity rules; it cannot retroactively alter existing genesis. Same-owner BFT fixtures remain separately scoped engineering evidence.",
         ],
       },
       {
@@ -134,7 +136,7 @@ export const learning: Record<string, Guide> = {
         id: "accounting",
         title: "Account for the same value once",
         paragraphs: [
-          "The source debit precedes destination credit. Import does not issue new RLD, and a retained export record is evidence rather than an additional balance. Accounting must distinguish spendable outputs, escrow and unresolved exports on compatible selected histories; disconnection prevents an instantly current global view.",
+          "The source debit precedes destination credit. Import does not issue new RLD, and a retained export record is evidence rather than an additional balance. Accounting must distinguish all unspent outputs (including immature or quarantined value), escrow and every selected-history export debit awaiting unique destination credit, even before finality, with non-overlapping buckets and fees assigned once; disconnection prevents an instantly current global view.",
           "An onward or return journey is a new finalized export and unique import. A returned receipt never releases the original source debit.",
         ],
       },
@@ -303,7 +305,7 @@ export const learning: Record<string, Guide> = {
     eyebrow: "Vocabulary",
     title: "A shared language for a delayed network.",
     description:
-      "The terms used in white paper 1.12, explained in their payment and verification context.",
+      "The terms used in the final white paper, explained in their payment and verification context.",
     context:
       "Definitions explain the design. They do not certify that a software release or route satisfies it.",
     sections: [
@@ -365,7 +367,7 @@ export const learning: Record<string, Guide> = {
           ],
           [
             "Quarantine",
-            "A retained restriction on affected value when authenticated conflicts or missing dependencies make acceptance unsafe.",
+            "An enforced restriction on every affected provenance descendant, including local payments, fees and channels. Any disputed input taints the entire mixed output; unsafe new value transitions stop while liabilities and evidence remain retained.",
           ],
           [
             "Validator epoch",
@@ -396,7 +398,7 @@ export const learning: Record<string, Guide> = {
           ],
           [
             "Latest head",
-            "A separately retained commitment used to detect some old-state restores. If all state and heads roll back together, independent freshness is not established.",
+            "A retained commitment used to detect some old-state restores. Signing after recovery requires a surviving independent fresh monotonic witness; if all state and heads roll back together, inspection remains read-only and signing/spending refuses.",
           ],
           [
             "Ground candidate",
@@ -533,3 +535,15 @@ export const learning: Record<string, Guide> = {
     ],
   },
 };
+
+// Route-specific summaries extend each existing guide and its on-page navigation.
+for (const [slug, guide] of Object.entries(learning)) {
+  for (const key of routeTopics[slug] ?? []) {
+    const topic = designTopics[key];
+    guide.sections.push({
+      id: topic.id,
+      title: topic.title,
+      paragraphs: [...topic.paragraphs],
+    });
+  }
+}

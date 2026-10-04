@@ -18,15 +18,15 @@ export function PublicEvidence() {
         <div className="section-heading">
           <div>
             <Eyebrow>
-              PUBLIC EVIDENCE / {CONTENT_REVIEW_DATE.toUpperCase()}
+              HISTORICAL PUBLIC EVIDENCE / {CONTENT_REVIEW_DATE.toUpperCase()}
             </Eyebrow>
             <h2 id="evidence-title">Read the result and its limits.</h2>
           </div>
           <p>
-            These reviewed public observations use the same pinned v53 runtime.
-            Ordinary-cycle success and the subsequent failed fault scope are
-            separate results. Newer local work is outside this publication
-            snapshot.
+            These historical reviewed public observations use the same pinned
+            v53 runtime. Ordinary-cycle success and the subsequent failed fault
+            scope are separate results. Newer local work is outside this
+            publication snapshot.
           </p>
         </div>
         <div className="evidence-grid">
@@ -61,9 +61,9 @@ export function PublicEvidence() {
         </div>
         <div className="evidence-footnote">
           <p>
-            Same host and controller, no monetary value. These results do not
-            qualify sustained BFT service, independent custody, long history,
-            physical routes or all I1–I12.
+            Historical fixture results: same host and controller, no monetary
+            value. These results do not qualify sustained BFT service,
+            independent custody, long history, physical routes or all I1–I12.
           </p>
           <div>
             <TextLink href={CURRENT_RUNTIME}>Pinned runtime & source</TextLink>

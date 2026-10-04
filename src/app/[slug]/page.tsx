@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
@@ -190,6 +191,7 @@ function GetStarted() {
           </Button>
         </div>
       </section>
+      <WhitepaperAlignment topic="get-started" />
       <Closing
         title="More curious about the technical side?"
         text="Start with the published Rust source and genesis evidence."
@@ -335,7 +337,7 @@ function HowItWorks() {
       </section>
       <section className="section">
         <div className="container narrow">
-          <Eyebrow>THE EARTH REFERENCE PROFILE</Eyebrow>
+          <Eyebrow>HISTORICAL EARTH REFERENCE PROFILE</Eyebrow>
           <h2>Parameters belong to an adopted region.</h2>
           <dl className="parameter-grid">
             <div>
@@ -363,19 +365,22 @@ function HowItWorks() {
               <dd>6 successor blocks</dd>
             </div>
           </dl>
-          <Note title="Reference profile and BFT candidates are distinct">
-            The paper’s PoW reference uses four unanimous checkpoint signers and
-            a twelve-block checkpoint count including the checkpoint block.
-            Separately signed BFT candidates use three-of-four prepare and
-            commit votes with durable locks. A regional threshold, interval or
-            maturity cannot change merely because another candidate uses
-            different rules.
+          <Note title="Historical reference and target baseline are distinct">
+            Sections 5–9 describe historical PoW with four unanimous checkpoint
+            signers and a twelve-block count including the checkpoint block. The
+            target baseline is independently operated Byzantine regional
+            finality under S3, with n = 3f + 1 and 2f + 1 approved votes plus a
+            reviewed locking/view-change protocol. A new adoption must bind its
+            complete consensus, epoch and maturity profile; it cannot alter an
+            already signed genesis retroactively. Ground BFT fixtures remain
+            unqualified.
           </Note>
           <TextLink href="/whitepaper#5-proof-of-work-and-network-selection">
             Read the exact reference rules
           </TextLink>
         </div>
       </section>
+      <WhitepaperAlignment topic="how-it-works" />
       <Closing href="/developers" label="Explore the protocol" />
     </>
   );
@@ -466,6 +471,7 @@ function Individuals() {
           </div>
         </div>
       </section>
+      <WhitepaperAlignment topic="individuals" />
       <Closing href="/get-started" label="Get started" />
     </>
   );
@@ -530,6 +536,7 @@ function Applications() {
           <TextLink href="/businesses">Rldcoin for businesses</TextLink>
         </div>
       </section>
+      <WhitepaperAlignment topic="applications" />
       <Closing
         title="The architecture begins with constraints."
         text="See how Rldcoin approaches distance, delay, and verifiable ownership."
@@ -882,6 +889,7 @@ Scope: local fixture / existing Earth testnet`}</code>
           </div>
         </div>
       </section>
+      <WhitepaperAlignment topic="developers" />
       <Closing
         title="Every claim should have a record."
         href="/network"
@@ -914,8 +922,9 @@ function Network() {
               <h2>Defined goals. Evidence still required.</h2>
             </div>
             <p>
-              The paper and master plan share mandatory requirements I1–I12.
-              Full protocol qualification, new-mainnet authorization and each
+              The final paper supplies the normative architecture, risk
+              obligations and embedded implementation and release gates. Full
+              protocol qualification, new-mainnet authorization and each
               physical route require distinct evidence.
             </p>
           </div>
@@ -937,8 +946,8 @@ function Network() {
                 "/roadmap",
               ],
               [
-                "Public master plan",
-                "Versioned goals and acceptance requirements.",
+                "Public implementation plan",
+                "Public implementation plan; subordinate to the final white paper.",
                 CURRENT_PLAN,
               ],
             ].map(([title, text, href]) => (
@@ -954,6 +963,7 @@ function Network() {
           </div>
         </div>
       </section>
+      <WhitepaperAlignment topic="network" />
       <Closing
         title="Follow the requirements and evidence."
         href="/roadmap"
@@ -976,7 +986,7 @@ const milestones = [
   [
     "I3",
     "Unique issuance and conservation",
-    "Bind the supply cap, integer units and zero initial allocation. Preserve issued value across outputs, escrow, in-transit exports, fees and recovery.",
+    "Bind the supply cap, integer units and zero initial allocation. Preserve mutually exclusive U/E/T value, including pre-finality selected export debits, unique destination credit, exact fees, orphan reversal and checked integer issuance.",
   ],
   [
     "I4",
@@ -996,7 +1006,7 @@ const milestones = [
   [
     "I7",
     "Regional finality and trust evolution",
-    "Qualify local fault tolerance, durable signer locks, epoch transitions and conflict quarantine. Four fixture keys under one owner do not establish independent BFT.",
+    "Qualify the independent BFT baseline, persisted locks, reviewed view changes, old/new epoch prefix and lock handoff, and full descendant quarantine. Four fixture keys under one owner do not establish independent BFT.",
   ],
   [
     "I8",
@@ -1030,16 +1040,16 @@ function Roadmap() {
       <PageHero
         eyebrow="The roadmap"
         title="A defined purpose. Mandatory steps."
-        description="White paper and the master plan define I1–I12 alongside the A–G foundations. No requirement is fully qualified; progress follows evidence, not a promised calendar."
+        description="The final white paper embeds S1–S18, R1–R24, I1–I12 and the A–G, N1–N10 and P1–P8 gates. No requirement is fully qualified; progress follows evidence, not a promised calendar."
       />
       <section className="section">
         <div className="container narrow">
           <p className="updated-label">CONTENT REVIEW / 4 OCTOBER 2026</p>
           <Note title="Development phase">
-            Ground candidates implement parts of the design. Document alignment
-            is established; full protocol qualification, new-mainnet
-            authorization and physical-route qualification remain unfinished.
-            Old and test balances never migrate into a future mainnet.
+            Ground candidates implement parts of the design. The final design is
+            frozen; full protocol qualification, new-mainnet authorization and
+            physical-route qualification remain unfinished. Old and test
+            balances never migrate into a future mainnet.
           </Note>
           <div className="roadmap">
             {milestones.map(([id, title, description]) => (
@@ -1067,8 +1077,9 @@ function Roadmap() {
             </Button>
           </div>
           <Note title="Separate acceptance stages">
-            A reviewed protocol version must pass its applicable foundations and
-            I1–I12 within stated fault, capacity and verification limits. A new
+            An authenticated executable profile must satisfy S1–S18 and the
+            applicable R1–R24 obligations, A–G, I1–I12, N1–N10 and P1–P8 gates
+            within declared fault, load, verification and horizon limits. A new
             Earth mainnet additionally needs exact signed adoption and a
             zero-issuance genesis. A physical route needs measured contacts,
             capacity and independent operating evidence. Tests or telemetry
@@ -1076,6 +1087,7 @@ function Roadmap() {
           </Note>
         </div>
       </section>
+      <WhitepaperAlignment topic="roadmap" />
       <Closing href="/research" label="Explore research & evidence" />
     </>
   );
@@ -1121,6 +1133,7 @@ function FAQ() {
           </Button>
         </div>
       </section>
+      <WhitepaperAlignment topic="faq" />
       <Closing
         title="Keep the conversation going."
         text="Bring your questions and ideas to the Rldcoin community."
@@ -1183,8 +1196,11 @@ function About() {
             <p>
               White paper makes local autonomy, conserved onward and return
               transfers, native relay discovery, long-term preservation and
-              independent qualification mandatory. Ground candidates exercise
-              parts of this design. None of I1–I12 is fully qualified yet.
+              independent qualification mandatory. Sections 18–21 add explicit
+              authority, risk obligations, recovery, funding, embedded release
+              gates and a 100-million-year continuity objective. Ground
+              candidates exercise parts of the design; none of I1–I12 is fully
+              qualified yet.
             </p>
             <h2>One currency. Regional verification.</h2>
             <p>
@@ -1214,6 +1230,7 @@ function About() {
           </div>
         </div>
       </section>
+      <WhitepaperAlignment topic="about" />
       <Closing
         title="Start with the idea. Follow the evidence."
         href="/get-started"
@@ -1230,8 +1247,13 @@ function Resources() {
       items: [
         [
           "Rldcoin white paper",
-          "The target protocol, mandatory I1–I12 requirements and references. Read online or download the PDF.",
+          "The final 21-chapter design, normative architecture, 24 risk records, embedded acceptance gates and 39 references. Read online or download the frozen PDF.",
           "/whitepaper",
+        ],
+        [
+          "Publication freeze receipt",
+          "The audit commit and exact frozen Markdown/PDF hashes; implementation versions continue separately.",
+          "/documents/rldcoin-whitepaper-freeze.json",
         ],
         [
           "How it works",
@@ -1245,12 +1267,12 @@ function Resources() {
         ],
         [
           "Mandatory roadmap",
-          "The twelve requirements and separate protocol, mainnet and physical-route gates.",
+          "The twelve requirements plus normative, operational and native/pre-mainnet gates; distinct protocol, deployment and physical-route acceptance.",
           "/roadmap",
         ],
         [
-          "Public master plan",
-          "Versioned purpose and acceptance contract.",
+          "Public implementation plan",
+          "Public implementation plan; it cannot override the frozen white paper.",
           CURRENT_PLAN,
         ],
         [
@@ -1363,6 +1385,7 @@ function Resources() {
           </Note>
         </div>
       </section>
+      <WhitepaperAlignment topic="resources" />
       <Closing
         title="Knowledge grows through conversation."
         href="https://forum.rldcoin.com/"
@@ -1388,6 +1411,19 @@ function Privacy() {
             connection, or private-key input. It does not use advertising
             trackers or analytics scripts, and it does not set application
             cookies or store preferences in browser storage.
+          </p>
+          <h2>Public ledger privacy is a separate question</h2>
+          <p>
+            The final protocol design is a publicly verifiable pseudonymous
+            ledger. Amounts, provenance and route/timing metadata may identify
+            participants. Encryption protects only its declared scope and cannot
+            erase information already disclosed or hide required verification
+            and incident dependencies from validators. Anonymity and qualified
+            privacy mechanisms are not offered by this website. Read{" "}
+            <Link href="/whitepaper#18-normative-architecture-and-transition-rules">
+              S15 in the final architecture
+            </Link>
+            .
           </p>
           <h2>Hosting and network status</h2>
           <p>

@@ -8,19 +8,19 @@ const steps = [
   {
     title: "Lock at the source",
     label: "01 / SOURCE AUTHORIZATION",
-    text: "The sender authorizes an export that removes the asset from local spending. In the Earth reference profile, a source checkpoint needs 12 confirmations including its block and all four finality signatures.",
+    text: "The sender authorizes an atomic debit with destination-bound identity. Its value is counted in transit even before finality; import requires adopted source finality and full ancestry. The target uses reviewed independent BFT. Historical Earth checkpoints use 12 confirmations and four signatures.",
     icon: LockKeyhole,
   },
   {
     title: "Carry the proof",
     label: "02 / SUCCESSIVE CONTACTS",
-    text: "Signed evidence travels through available relays. Each relay can retain it across a contact gap. A transport acknowledgment establishes delivery, not payment finality.",
+    text: "Signed evidence travels through available relays. Each relay can retain it across a contact gap. A transport acknowledgment states custody under its declared retention contract; it establishes neither unique import nor spendable value.",
     icon: Radio,
   },
   {
     title: "Verify and receive",
     label: "03 / LOCAL ACCEPTANCE",
-    text: "The destination verifies the source proof and rejects duplicate imports. In the Earth reference profile, the recipient can spend at the import height plus six blocks. That maturity rule is separate from destination finality.",
+    text: "The destination atomically verifies complete admitted history and records permanent unique import with its credit. Spendability follows its authenticated profile; disputed descendants remain quarantined. Historical Earth imports mature after six successor blocks; this is separate from export finality.",
     icon: Fingerprint,
   },
   {

@@ -1,3 +1,4 @@
+import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
 import { PublicEvidence } from "@/components/public-evidence";
 import { ArrowUpRight } from "lucide-react";
 import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
@@ -78,7 +79,7 @@ const topics = [
     n: "04",
     title: "Fast payment needs local protection",
     status: "CHANNEL QUALIFICATION",
-    text: "A funded channel can exchange signed states without waiting for each block. Its dispute deadline still requires a timely local response; a years-distant watchtower cannot supply one.",
+    text: "The target channel requires funded local challenge protection, a non-extending deadline and incident handling for conflicting same-sequence states. Qualified restart freshness and monitoring remain necessary; a reserve cannot guarantee fee affordability or overcome censorship. A years-distant watchtower cannot meet the local deadline.",
     question:
       "Can a recipient recover the latest state and challenge an old close before the deadline?",
     sources: [
@@ -93,7 +94,7 @@ const topics = [
     n: "05",
     title: "A transfer must conserve value",
     status: "PROTOCOL INVARIANT",
-    text: "A source debit and destination credit must refer to the same unique export. A missing receipt cannot authorize a second spend. Safe cancellation needs an adopted exclusion rule.",
+    text: "Atomic source debit and unique destination credit must preserve non-overlapping U/E/T, including selected pre-finality export debits. Rooted causal ancestry and complete descendant quarantine are mandatory. Baseline cancellation is excluded; a missing receipt cannot authorize a second spend.",
     question:
       "Can every compatible history account for spendable, escrowed, and in-transit value?",
     sources: [
@@ -142,6 +143,7 @@ export default function Research() {
         </div>
       </PageHero>
       <PublicEvidence />
+      <WhitepaperAlignment topic="research" />
       <section className="section">
         <div className="container">
           <div className="section-heading">
@@ -154,9 +156,9 @@ export default function Research() {
               </h2>
             </div>
             <p>
-              The white paper contains 25 references. These six reading paths
-              connect selected sources to specific design questions. Citing a
-              paper does not validate Rldcoin.
+              The final white paper contains 39 references. These six reading
+              paths connect selected sources to specific design questions.
+              Citing a paper does not validate Rldcoin.
             </p>
           </div>
           <div className="research-grid">
@@ -192,9 +194,10 @@ export default function Research() {
           <h2>Evidence has a scope.</h2>
           <div className="research-limits">
             <p>
-              <strong>Target requirements.</strong> White paper and the
-              master plan require local autonomy, conserved onward and return
-              value, recognized regional finality, default node relay and
+              <strong>Target requirements.</strong> The final normative
+              architecture, risk obligations and embedded acceptance gates
+              require local autonomy, conserved onward and return value,
+              recognized regional finality, default node relay and
               recipient-verifiable states. None of I1–I12 is fully qualified.
             </p>
             <p>

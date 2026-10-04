@@ -155,7 +155,7 @@ export function RelayNetworkArt({
               not physical signal range. Positions and travel times are not to
               scale.
               {interrupted
-                ? " The station contact is paused and evidence stays queued."
+                ? " The station contact is paused; admitted evidence remains subject to its declared retention and resource policy."
                 : ""}
             </desc>
             <defs>

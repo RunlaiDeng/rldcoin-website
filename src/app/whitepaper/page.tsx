@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Rldcoin white paper",
-  "Runlai Deng's technical paper on Rldcoin regional payments, asynchronous settlement, interstellar communication limits, mandatory acceptance conditions, and regional rules.",
+  "The final 21-chapter Rldcoin white paper: independent regional finality, conserved transfers, 24 risk records, embedded acceptance gates and 39 references. Mainnet qualification remains open.",
   "/whitepaper",
 );
 
@@ -61,9 +61,7 @@ export default function Whitepaper() {
     <div className="whitepaper-document">
       <section className="whitepaper-hero">
         <div className="container narrow">
-          <p className="eyebrow plain">
-            TECHNICAL PAPER · 4 OCTOBER 2026
-          </p>
+          <p className="eyebrow plain">TECHNICAL PAPER · 4 OCTOBER 2026</p>
           <h1>Rldcoin: A Peer-to-Peer Payment System Across Delayed Regions</h1>
           <p className="whitepaper-byline">
             Runlai Deng ·{" "}
@@ -78,8 +76,9 @@ export default function Whitepaper() {
           </div>
           <p className="whitepaper-context">
             This paper distinguishes regional payment rules, asynchronous
-            evidence transport, normative transition rules, the risk register, and embedded acceptance gates.
-            See <Link href="/network">network &amp; qualification</Link> for
+            evidence transport, normative transition rules, the risk register,
+            and embedded acceptance gates. See{" "}
+            <Link href="/network">network &amp; qualification</Link> for
             reviewed public ground evidence and a separate operator-telemetry
             link. For a shorter introduction, start with{" "}
             <Link href="/you-need-to-know">what you need to know</Link>.

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
 import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
 import { PublicEvidence } from "@/components/public-evidence";
 import { NodeMeshExplorer } from "@/components/node-mesh-explorer";
@@ -18,7 +19,7 @@ export default function NodeNetwork() {
         <PageHero
           eyebrow="THE NODE NETWORK"
           title="A network. Then a connection."
-          description="Each community begins locally. Neighboring relays connect those networks, carrying evidence from one contact to the next. A new station or moving habitat can extend the path."
+          description="Each community begins locally. In the target, normally started full nodes relay within declared custody, capacity and funding limits. A station or moving habitat can extend the path through actual contacts; physical routes remain unqualified."
         />
       </div>
       <section className="section node-atlas-section">
@@ -64,9 +65,11 @@ export default function NodeNetwork() {
             <div className="feature">
               <h3>Resume after silence</h3>
               <p>
-                Interrupted links leave evidence queued. Restart restores
-                retained state. Discovery, an advertised route, destination
-                receipt and spendable value have separate meanings.
+                The target retains accepted evidence across contact gaps within
+                declared custody, capacity and funding rules. Restart recovery
+                must establish authentic current state. Discovery, an advertised
+                route, destination receipt and spendable value have separate
+                meanings.
               </p>
             </div>
           </div>
@@ -123,6 +126,7 @@ export default function NodeNetwork() {
           </Note>
         </div>
       </section>
+      <WhitepaperAlignment topic="node-network" />
       <section className="section soft-section">
         <div className="container narrow">
           <h2>Distance sets the pace.</h2>
@@ -134,8 +138,9 @@ export default function NodeNetwork() {
             causal light-time bound.
           </p>
           <p>
-            These are distance scales, not measured Rldcoin routes. Million-year
-            operation also needs new evidence for cryptography, archives,
+            These are distance scales, not measured Rldcoin routes. The
+            100-million-year continuity objective is not a lifetime guarantee;
+            operation needs continuing evidence for cryptography, archives,
             institutions and changing endpoints.{" "}
             <a href="https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/">
               NASA distance reference

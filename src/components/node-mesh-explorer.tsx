@@ -104,7 +104,7 @@ export function NodeMeshExplorer() {
           <p aria-live="polite">
             <Radio size={15} aria-hidden="true" />
             {interrupted
-              ? "Station contact paused. Evidence stays queued."
+              ? "Concept: contact paused; admitted evidence stays under its custody contract."
               : layer === "networks"
                 ? "Every network begins with its own community."
                 : layer === "journey"

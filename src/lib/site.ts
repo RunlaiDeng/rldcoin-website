@@ -17,7 +17,7 @@ export const MAINTAINER_PROFILE = "https://forum.rldcoin.com/user/runlaideng";
 export const CURRENT_PLAN = `${REPOSITORY}/blob/main/MASTER_PLAN.md`;
 export const WEBSITE_REPOSITORY =
   "https://github.com/RunlaiDeng/rldcoin-website";
-export const WHITEPAPER_VERSION = "1.12";
+export const WHITEPAPER_FREEZE = "/documents/rldcoin-whitepaper-freeze.json";
 export const CONTENT_REVIEW_DATE = "4 October 2026";
 // Reviewed public evidence; newer private experiments are not website evidence.
 export const EVIDENCE_REVISION = "74f16276605823e8c84b67a66d5ff23134a86c8a";
@@ -38,6 +38,10 @@ export const navigation = [
       ["For businesses", "/businesses"],
       ["Wallets & ownership", "/wallets"],
       ["White paper", "/whitepaper"],
+      [
+        "Architecture & risk rules",
+        "/whitepaper#18-normative-architecture-and-transition-rules",
+      ],
     ],
   },
   {
@@ -103,7 +107,7 @@ export const pages = {
   ],
   wallets: [
     "Wallets & ownership",
-    "Understand owner signatures, payment review, encrypted backups and the qualification required for a future Rldcoin wallet.",
+    "Owner-authorized payments, independently witnessed restore freshness, preauthorized recovery and inheritance, and the remaining wallet qualification gates.",
   ],
   payments: [
     "Understanding a payment",
@@ -111,7 +115,7 @@ export const pages = {
   ],
   vocabulary: [
     "Rldcoin vocabulary",
-    "Plain definitions of the regional ledgers, finality, custody and evidence used in white paper 1.12.",
+    "Plain definitions of the regional ledgers, finality, custody and evidence used in the final white paper.",
   ],
   participate: [
     "Participate in Rldcoin",
@@ -127,7 +131,7 @@ export const pages = {
   ],
   "how-it-works": [
     "How Rldcoin works",
-    "Local consensus. Asynchronous transfers. Verifiable ownership across regions separated by communication delay.",
+    "Independent regional BFT is the target baseline. Explore atomic conserved transfers, causal ancestry, descendant quarantine and the separate historical Earth profile.",
   ],
   individuals: [
     "Rldcoin for individuals",
@@ -147,7 +151,7 @@ export const pages = {
   ],
   roadmap: [
     "The road ahead",
-    "The mandatory I1–I12 requirements for locally autonomous payments, conserved regional transfers, and independent qualification.",
+    "The final design authority: S1–S18, R1–R24, I1–I12 and embedded A–G, N1–N10 and P1–P8 gates. Full qualification remains open.",
   ],
   faq: [
     "Frequently asked questions",
@@ -159,7 +163,7 @@ export const pages = {
   ],
   resources: [
     "Resources",
-    "White paper 1.12, current testnet source and reproducible ground evidence.",
+    "The final white paper, normative architecture, risk obligations, acceptance gates and reproducible no-value ground evidence.",
   ],
   privacy: [
     "Privacy",
@@ -182,11 +186,11 @@ export const faqs = [
   ],
   [
     "Are the white paper’s timing and signatures universal?",
-    "No. The Earth reference profile uses a 600-second average PoW interval and four unanimous checkpoint signatures. Separately signed BFT ground candidates use three-of-four prepare and commit votes with durable locks. Each region must adopt its exact consensus, maturity and epoch rules; another candidate cannot silently lower them.",
+    "No. The target baseline requires independent Byzantine regional finality with n = 3f + 1 and 2f + 1 approved votes, plus a reviewed locking and view-change protocol. The 600-second PoW interval and four-of-four checkpoint rule are the historical Earth reference profile. Existing signed genesis rules cannot change retroactively; same-owner three-of-four BFT fixtures do not establish independent qualification.",
   ],
   [
     "What do the latest reviewed public results show?",
-    "At the 4 October 2026 publication snapshot, v54 records a successful ordinary three-region return on the pinned v53 runtime. The subsequent v55 finite fault scope failed its restored-contact import and maturity deadline. Separate stopped authentication preserved the failed state; it did not make that scope pass. Newer local experiments are outside this reviewed public snapshot.",
+    "At the historical 4 October 2026 public evidence snapshot, v54 records a successful ordinary three-region return on the pinned v53 runtime. The subsequent v55 finite fault scope failed its restored-contact import and maturity deadline. Separate stopped authentication preserved the failed state; it did not make that scope pass. Newer local experiments are outside this reviewed public snapshot.",
   ],
 
   [
@@ -195,7 +199,7 @@ export const faqs = [
   ],
   [
     "What would count as completing the protocol?",
-    "An exact version must pass the A–G foundations and all I1–I12 requirements within published fault, capacity and verification limits, with independent evidence. Document alignment alone is insufficient. New-mainnet adoption additionally needs a signed zero-issuance genesis and verified deployment; physical routes require separate measurements. None of I1–I12 is fully qualified today.",
+    "An exact authenticated executable profile must pass the embedded A–G, I1–I12, N1–N10 and P1–P8 gates, the applicable S1–S18 rules and R1–R24 operational obligations within declared fault, load and horizon limits, with independent evidence. Document alignment alone is insufficient. New-mainnet adoption additionally needs a signed zero-issuance genesis and verified deployment; physical routes require separate measurements. None of I1–I12 is fully qualified today.",
   ],
   [
     "Will starting a node extend the network?",
@@ -227,11 +231,11 @@ export const faqs = [
   ],
   [
     "Is there a founder allocation or premine?",
-    "The white paper requires zero initial allocation and no reserved founder share. Future miners must follow the same adopted work, reward and maturity rules; no participant is guaranteed a share. A new mainnet has not launched. Source review, testnet verification and protocol development are ways to participate today.",
+    "The white paper requires zero initial allocation and no reserved founder share. Any future origin reward participant must follow the same authenticated consensus, exact integer issuance and maturity rules; no participant is guaranteed a share. The historical PoW profile does not define every future implementation. A new mainnet has not launched. Source review, testnet verification and protocol development are ways to participate today.",
   ],
   [
-    "How does mining or earning RLD work?",
-    "Developers can reproduce the fresh testnet with public fixture keys and worthless rewards. A future mainnet needs its own accepted release, signed genesis and mining parameters. Rewards depend on competition and luck; test rewards never migrate.",
+    "How do origin rewards work?",
+    "Developers can reproduce the fresh testnet with public fixture keys and worthless rewards. A future mainnet needs its accepted executable profile, signed zero-issuance genesis, consensus and exact integer reward rules. The historical PoW profile involves competition and luck; new adopted consensus may differ. Reward eligibility is not a guaranteed income; test rewards never migrate.",
   ],
   [
     "What is a Zone?",
@@ -267,6 +271,26 @@ export const faqs = [
   ],
   [
     "Are post-quantum signatures already adopted?",
-    "No. The research edition discusses migration to standardized post-quantum signatures, but no qualified algorithm migration or new-mainnet adoption is established. Preserving authority and history across a cryptographic upgrade is a separate protocol and operational task.",
+    "No. The final design requires authenticated suite, key and epoch evolution, downgrade rejection and proactive renewal; it discusses standardized post-quantum signatures but no qualified algorithm migration or new-mainnet adoption is established. Preserving authority and history across a cryptographic upgrade is a separate protocol and operational task.",
+  ],
+  [
+    "Does the frozen paper guarantee 100 million years of operation?",
+    "No. Continuous ownership and authentic history over 100 million years is the objective. Hardware, archives, institutions, cryptography and physical contacts require ongoing renewal and independent evidence. The paper is frozen; software profiles and keys must continue to evolve under authenticated rules.",
+  ],
+  [
+    "What if disputed value has already been paid locally?",
+    "The baseline follows its provenance through every descendant, including local payments, split/merge, change, fees and channels. Any mixed output with disputed lineage is entirely quarantined. Accounted value is retained but new affected spending stops until the pre-adopted recovery authority and complete replay permit resumption.",
+  ],
+  [
+    "Can an old encrypted backup restore spending by itself?",
+    "No. A surviving independent fresh monotonic witness must establish current signing state. If all state and heads rolled back together, the wallet remains read-only and refuses signing or spending. Lost-owner recovery or inheritance also requires a policy authorized before the loss.",
+  ],
+  [
+    "Who pays for relay, archives and recovery?",
+    "The signed adoption declares service budgets, minimum duties, payers, reserves and insolvency or safe-stop rules. The baseline requires bounded relay in normal full-node startup; it does not promise unlimited unpaid transit or permanent free storage. Exhaustion cannot erase monetary evidence.",
+  ],
+  [
+    "How is every exported amount accounted for?",
+    "On compatible selected histories, I = U + E + T with non-overlapping buckets. T includes selected source debits even before finality until unique destination credit. Orphaned unfinalized debits reverse atomically; finalized debits cannot be ordinarily reorganized. Fees are assigned once, and import requires finalized complete ancestry.",
   ],
 ] as const;
