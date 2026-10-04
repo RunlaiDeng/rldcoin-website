@@ -1,6 +1,6 @@
-# Rldcoin — Final design and implementation overview
+# Rldcoin — Protocol overview and implementation records
 
-Reviewed 4 October 2026. The [final white paper](https://rldcoin.com/whitepaper) is the normative authority: 21 chapters, 18 architecture rules, 24 risk records with operational obligations, embedded acceptance gates and 39 references. The [frozen PDF](https://rldcoin.com/documents/rldcoin-whitepaper.pdf) and [publication receipt](https://rldcoin.com/documents/rldcoin-whitepaper-freeze.json) bind the approved text to hashes and its audit commit. This overview is a maintained explanation, not a replacement for the paper.
+Reviewed 4 October 2026. The [white paper](https://rldcoin.com/whitepaper) is the normative authority: 21 chapters, 18 architecture rules, 24 risk records with operational obligations, embedded acceptance gates and 39 references. The [canonical PDF](https://rldcoin.com/documents/rldcoin-whitepaper.pdf) and [publication receipt](https://rldcoin.com/documents/rldcoin-whitepaper-freeze.json) bind the approved text to hashes and its audit commit. The paper specifies required capabilities and protocol rules. This maintained overview separates that design from implementation status; dated wording moved out of the paper is retained in [implementation records](/documents/rldcoin-implementation-status.md).
 
 ## Purpose and current availability
 

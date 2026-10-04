@@ -1,11 +1,11 @@
-// Summaries of the frozen design; never implementation-completion claims.
+// Protocol requirements; implementation progress is recorded separately.
 export const designTopics = {
   authority: {
     id: "final-design-authority",
-    title: "One frozen design; separately qualified releases",
+    title: "Protocol requirements and independently qualified profiles",
     paragraphs: [
-      "The final white paper has 21 chapters and 39 references. Sections 18–21 state the normative architecture, 24 risk records and operational obligations, embedded acceptance gates and continuity rules. Current code, a mutable plan or an older fixture cannot lower that contract.",
-      "The frozen publication has no version label. Its content hashes and audit commit are recorded separately. Executable protocol profiles, cryptographic suites, validator and key epochs still require authenticated versions, activation and renewed qualification when their assumptions change. Freezing the paper does not freeze the software or approve a mainnet.",
+      "The white paper specifies required capabilities, protocol rules, trust assumptions and conformance conditions. Its 21 chapters and 39 references include 18 architecture rules, 24 risk records, authenticated adoption requirements and protocol continuity. An implementation must satisfy this contract rather than narrow the goal to its existing behavior.",
+      "Executable protocol profiles, cryptographic suites, validator and key epochs require authenticated versions, activation and renewed qualification when their assumptions change. Publication hashes are recorded separately; the paper is a specification, while implementation progress and operating evidence belong in independent records.",
     ],
   },
   consensus: {
@@ -14,7 +14,7 @@ export const designTopics = {
     paragraphs: [
       "The target uses independently operated Byzantine regional finality: n = 3f + 1 equal-weight validators, at most f Byzantine, and at least 2f + 1 distinct approved votes for each required quorum. A reviewed locking and view-change protocol, persisted signing intent and atomic installation of certified history are required; counting signatures is insufficient.",
       "Progress needs the adopted local synchrony and available honest quorum. A local partition lacking quorum stops dependent finalization, imports and onward exports. A new epoch must bind an old-epoch closed prefix and a new-epoch acknowledgment of the identical prefix and carried locks. Copied signer custody cannot run in parallel.",
-      "The PoW timing, four-of-four checkpoints and block delays in sections 5–9 are the historical Earth reference profile. They do not constrain a new target adoption or retroactively change an existing signed genesis. Same-owner BFT fixtures do not establish independent fault tolerance.",
+      "The PoW timing, four-of-four checkpoints and block delays in sections 5–9 are the proof-of-work regional reference profile. They do not constrain a new target adoption or retroactively change an existing signed genesis. Same-owner BFT fixtures do not establish independent fault tolerance.",
     ],
   },
   "authority-roles": {
@@ -84,7 +84,7 @@ export const designTopics = {
     paragraphs: [
       "The goal is continuous ownership and authentic history across 100 million years of changing hardware, societies and cryptography. It is an objective, not a proven operating lifetime or guarantee. Long silence can outlast institutions, archives, keys, contacts and accepted assumptions.",
       "The adopted release needs independent archives and verifiers, corruption and disaster recovery, repair and migration procedures, authenticated suite/key/epoch succession and proactive renewal before old evidence becomes unsafe. Revocation travels causally; a remote party cannot know an unseen update. An unverifiable or expired chain of authority stops affected new value transitions while records remain inspectable.",
-      "Implementation defects, experiments and changing risks are tracked in separate records under the frozen design. Material changes, incidents, exhausted resources or exceeded fault/load/horizon bounds trigger scoped requalification; they do not authorize weakening the contract.",
+      "Implementation defects, experiments and changing risks are tracked in separate records under the protocol requirements. Material changes, incidents, exhausted resources or exceeded fault/load/horizon bounds trigger scoped requalification; they do not authorize weakening the contract.",
     ],
   },
   qualification: {

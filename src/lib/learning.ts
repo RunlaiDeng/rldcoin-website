@@ -291,7 +291,7 @@ export const learning: Record<string, Guide> = {
       ],
       [
         "White paper · composed target protocol",
-        "/whitepaper#17-target-protocol-composition-and-qualification",
+        "/whitepaper#17-protocol-composition-and-assumptions",
       ],
       ["Published ordinary return cycle · v54", CURRENT_CYCLE],
     ],

@@ -23,8 +23,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Frozen whitepaper
 
 The owner-approved final whitepaper has no publication version label. Its canonical
-Markdown SHA-256 is `c906076c09bb01fedd179d2b3a2ccfbf2bd168fa093ccb15842381783d69a6c0`;
-the frozen PDF SHA-256 is `f825439e6e18aa96245bc6fb65fc03f98a1071fa6d31ecff65c696dc4f6da8e4`.
+Markdown SHA-256 is `2ba62421583c60d0d35d295ff859eef558f2d372ea191d2a2dc828bb3e0b477b`;
+the frozen PDF SHA-256 is `c59f9fe8e09e972b25c88626a1468298d9a16fc2343387412973df1829447e14`.
 Do not autonomously edit, relabel or regenerate these two frozen artifacts, including
 regenerating the PDF from unchanged text. Protocol, algorithm and key/epoch versions
 remain mandatory. Future defects/progress belong in separate implementation/risk
@@ -33,3 +33,8 @@ requires an explicit owner decision. The immutable publication receipt is
 `public/documents/rldcoin-whitepaper-freeze.json`; it binds the audit commit and
 content hashes. Website/implementation maintenance cannot lower its normative
 acceptance requirements or convert fixture balances/keys into mainnet authority.
+
+The owner explicitly authorized the 4 October 2026 editorial revision separating
+required protocol capabilities from development and publication status. That revision
+preserves all normative IDs and obligations; future autonomous body changes remain
+prohibited without an explicit owner decision. Development records are separate.

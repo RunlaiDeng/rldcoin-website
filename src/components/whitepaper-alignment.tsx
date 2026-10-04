@@ -33,7 +33,7 @@ export function WhitepaperAlignment({ topic }: { topic: string }) {
           <TextLink href="/whitepaper#19-risk-register-and-falsifiable-controls">
             Risk register
           </TextLink>
-          <TextLink href="/whitepaper#20-embedded-acceptance-gates-and-launch-decisions">
+          <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
             Acceptance gates
           </TextLink>
         </div>

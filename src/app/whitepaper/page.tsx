@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Rldcoin white paper",
-  "The final 21-chapter Rldcoin white paper: independent regional finality, conserved transfers, 24 risk records, embedded acceptance gates and 39 references. Mainnet qualification remains open.",
+  "The 21-chapter Rldcoin protocol specification: independent regional finality, conserved transfers, 24 risk records, embedded acceptance gates and 39 references. Required capabilities, assumptions and conformance conditions.",
   "/whitepaper",
 );
 
@@ -75,11 +75,11 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            This paper distinguishes regional payment rules, asynchronous
+            This paper specifies required regional payment capabilities, asynchronous
             evidence transport, normative transition rules, the risk register,
             and embedded acceptance gates. See{" "}
             <Link href="/network">network &amp; qualification</Link> for
-            reviewed public ground evidence and a separate operator-telemetry
+            implementation status, reviewed public evidence and a separate operator-telemetry
             link. For a shorter introduction, start with{" "}
             <Link href="/you-need-to-know">what you need to know</Link>.
           </p>
