@@ -1,27 +1,30 @@
 import type { Metadata } from "next";
 
 export const SITE = "https://rldcoin.com";
-export const REPOSITORY = "https://github.com/RunlaiDeng/rldcoin-genesis";
-export const TESTNET = `${REPOSITORY}/tree/main/earth/testnet-20260930`;
+export const REPOSITORY = "https://github.com/RunlaiDeng/rldcoin";
+// Immutable historical evidence uses its original publication history.
+export const HISTORICAL_REPOSITORY =
+  "https://github.com/RunlaiDeng/rldcoin-genesis";
+export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TESTNET.md`;
 // Public publication snapshot; never point reproduction at private development.
 export const PUBLIC_SOURCE_REVISION =
   "40d5e7a216b2f89033bcfb11671ff311a3b8ab75";
 export const GROUND_PATH =
   "research/2026-10-02/regional-native-segmented-paged-events-v26";
-export const GROUND_CANDIDATE = `${REPOSITORY}/tree/${PUBLIC_SOURCE_REVISION}/${GROUND_PATH}`;
+export const GROUND_CANDIDATE = `${HISTORICAL_REPOSITORY}/tree/${PUBLIC_SOURCE_REVISION}/${GROUND_PATH}`;
 export const GROUND_RAW = `https://raw.githubusercontent.com/RunlaiDeng/rldcoin-genesis/${PUBLIC_SOURCE_REVISION}/${GROUND_PATH}`;
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const MAINTAINER_PROFILE = "https://forum.rldcoin.com/user/runlaideng";
 
-export const CURRENT_PLAN = `${REPOSITORY}/blob/main/MASTER_PLAN.md`;
+export const CURRENT_PLAN = `${REPOSITORY}/blob/main/docs/RLDCOIN_MASTER_PLAN.md`;
 export const WEBSITE_REPOSITORY =
   "https://github.com/RunlaiDeng/rldcoin-website";
 export const WHITEPAPER_FREEZE = "/documents/rldcoin-whitepaper-freeze.json";
 export const CONTENT_REVIEW_DATE = "4 October 2026";
 // Reviewed public evidence; newer private experiments are not website evidence.
 export const EVIDENCE_REVISION = "74f16276605823e8c84b67a66d5ff23134a86c8a";
-export const PUBLIC_RESEARCH = `${REPOSITORY}/tree/${EVIDENCE_REVISION}/research`;
+export const PUBLIC_RESEARCH = `${HISTORICAL_REPOSITORY}/tree/${EVIDENCE_REVISION}/research`;
 export const CURRENT_CYCLE = `${PUBLIC_RESEARCH}/2026-10-04/regional-joint-loop-cycle-v54`;
 export const CURRENT_FAULT = `${PUBLIC_RESEARCH}/2026-10-04/regional-joint-loop-fault-v55`;
 export const CURRENT_RUNTIME = `${PUBLIC_RESEARCH}/2026-10-04/regional-joint-loop-v53`;

@@ -48,7 +48,7 @@ At public evidence commit `74f16276605823e8c84b67a66d5ff23134a86c8a`, the [v54 o
 
 - [Architecture](https://rldcoin.com/how-it-works), [payments](https://rldcoin.com/payments), [wallets](https://rldcoin.com/wallets) and [limits](https://rldcoin.com/you-need-to-know)
 - [Node and relay model](https://rldcoin.com/node-network), [research](https://rldcoin.com/research) and [mandatory roadmap](https://rldcoin.com/roadmap)
-- [Current development summary](https://rldcoin.com/network) and [public no-value testnet](https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/earth/testnet-20260930)
+- [Current development summary](https://rldcoin.com/network) and [public no-value testnet guide](https://github.com/RunlaiDeng/rldcoin/blob/main/docs/operations/EARTH_FRESH_TESTNET.md)
 - [Test-node guide](https://rldcoin.com/run-a-node), [developer reproduction](https://rldcoin.com/developers) and [participation](https://rldcoin.com/participate)
 
 Operator telemetry is not independent verification. No mainnet or physical interstellar route is qualified by this website.

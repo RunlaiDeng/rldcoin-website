@@ -52,9 +52,15 @@ Operator telemetry is not independent verification.
 Current content sources:
 
 - `public/documents/rldcoin-whitepaper.md`: target architecture, I1–I12 and acceptance stages.
-- https://github.com/RunlaiDeng/rldcoin-genesis/blob/main/MASTER_PLAN.md
-- https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/earth/testnet-20260930
+- https://github.com/RunlaiDeng/rldcoin/blob/main/docs/RLDCOIN_MASTER_PLAN.md
+- https://github.com/RunlaiDeng/rldcoin/blob/main/docs/operations/EARTH_FRESH_TESTNET.md
 - https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/research/2026-09-30
+
+Current protocol development is hosted at https://github.com/RunlaiDeng/rldcoin.
+Historical publication commits, source downloads and qualification evidence remain
+in `RunlaiDeng/rldcoin-genesis`; keep that repository available until those exact
+commits and paths have a verified replacement. Git directory migration alone does
+not migrate the historical evidence layout.
 
 The historical public v26 reproduction entry is pinned to publication commit
 `40d5e7a216b2f89033bcfb11671ff311a3b8ab75` and links the 254-file segmented checkpoint and
