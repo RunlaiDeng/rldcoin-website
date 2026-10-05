@@ -1,9 +1,6 @@
 import { designTopics, routeTopics } from "./whitepaper-design";
 
 import {
-  CURRENT_RUNTIME,
-  CURRENT_CYCLE,
-  CURRENT_FAULT,
   TESTNET,
   REPOSITORY,
   WEBSITE_REPOSITORY,
@@ -93,7 +90,6 @@ export const learning: Record<string, Guide> = {
         "/whitepaper#13-security-analysis-and-economic-recovery",
       ],
       ["Network & qualification", "/network"],
-      ["Published finite fault outcome · v55", CURRENT_FAULT],
     ],
     next: [
       ["Follow a payment", "/payments"],
@@ -220,10 +216,6 @@ export const learning: Record<string, Guide> = {
         "White paper · recovery",
         "/whitepaper#12-recovery-and-protocol-evolution",
       ],
-      [
-        "Historical v26 wallet and recovery evidence",
-        "/developers#reproduce-v26",
-      ],
     ],
     next: [
       ["What you need to know", "/you-need-to-know"],
@@ -293,7 +285,6 @@ export const learning: Record<string, Guide> = {
         "White paper · composed target protocol",
         "/whitepaper#17-protocol-composition-and-assumptions",
       ],
-      ["Published ordinary return cycle · v54", CURRENT_CYCLE],
     ],
     next: [
       ["Explore the transfer diagram", "/how-it-works"],
@@ -486,21 +477,21 @@ export const learning: Record<string, Guide> = {
         title: "01 / Choose an explicit experiment",
         paragraphs: [
           "The fresh Earth testnet and regional ground candidates have distinct identities, rules and evidence. The former uses explicit peer bridges. Regional candidates integrate relay and admitted local BFT into their normal fixture lifecycle. A separately started mesh demo tests transport only.",
-          "Use the exact guide for the question you want to investigate. The pinned v53 runtime underlies the separate v54 ordinary return cycle and v55 failed finite fault scope. The older v26 guide remains available for segmented history and recovery research.",
+          "Start with the current testnet guide and protocol repository. Identify the exact source and admission rules for the experiment you intend to run; historical observations do not qualify a changed source.",
         ],
       },
       {
         id: "verify",
         title: "02 / Verify the named source package",
         paragraphs: [
-          "Compare the complete source-manifest inventory and SHA256SUMS before unpacking source.tar.gz. Pin the publication commit and its stated toolchain. GitHub’s automatic publication-repository archive is not the exact runtime source package. A checksum identifies reviewed bytes, not authorized ledger state.",
+          "Pin the source commit and its stated toolchain. Review the source commitments and checksums provided for the chosen experiment. A commit or checksum identifies source bytes, not authorized ledger state.",
         ],
       },
       {
         id: "isolate",
         title: "03 / Use fresh private fixture directories",
         paragraphs: [
-          "Follow the chosen guide’s actual startup commands, keys and literal neighbor configuration. Keep transport pins, native journals, voting custody, owner custody and separate caller heads in their intended directories. Incompatible candidates require fresh genesis/currency; never convert old custody or migrate value.",
+          "Review the intended startup commands, keys and literal neighbor configuration before starting an experiment. Keep transport pins, native journals, voting custody, owner custody and separate caller heads in their intended directories. Incompatible candidates require fresh genesis/currency; never convert old custody or migrate value.",
           "Do not learn endpoints, TLS pins or consensus membership from advertisements. The configured neighbor establishes the first contact; farther discovery never grants ledger or signing authority.",
         ],
       },
@@ -521,13 +512,7 @@ export const learning: Record<string, Guide> = {
         ],
       },
     ],
-    references: [
-      ["Fresh Earth testnet guide", TESTNET],
-      ["Pinned v53 runtime and reproduction instructions", CURRENT_RUNTIME],
-      ["v54 ordinary cycle", CURRENT_CYCLE],
-      ["v55 failed finite fault scope", CURRENT_FAULT],
-      ["Historical v26 reproduction guide", "/developers#reproduce-v26"],
-    ],
+    references: [["Fresh Earth testnet guide", TESTNET]],
     next: [
       ["Understand nodes & relays", "/node-network"],
       ["Developer tools", "/developers"],

@@ -42,13 +42,13 @@ Section 20 embeds A–G, I1–I12, N1–N10 and P1–P8 gates plus pre-mainnet d
 
 ### Historical reviewed public evidence
 
-At public evidence commit `74f16276605823e8c84b67a66d5ff23134a86c8a`, the [v54 ordinary cycle](https://github.com/RunlaiDeng/rldcoin-genesis/tree/74f16276605823e8c84b67a66d5ff23134a86c8a/research/2026-10-04/regional-joint-loop-cycle-v54) passed with pinned v53 runtime. The [v55 finite fault scope](https://github.com/RunlaiDeng/rldcoin-genesis/tree/74f16276605823e8c84b67a66d5ff23134a86c8a/research/2026-10-04/regional-joint-loop-fault-v55) failed its restored-contact import/maturity deadline. Separate stopped checks preserved that failure. Same host/controller results do not establish independent operation, sustained BFT, long history or physical routes; newer local work is outside this historical public snapshot.
+At public evidence commit `74f16276605823e8c84b67a66d5ff23134a86c8a`, the v54 ordinary cycle passed with pinned v53 runtime. The v55 finite fault scope failed its restored-contact import/maturity deadline. Separate stopped checks preserved that failure. Same host/controller results do not establish independent operation, sustained BFT, long history or physical routes; newer local work is outside this historical public snapshot.
 
 ## Inspect the actual scope
 
 - [Architecture](https://rldcoin.com/how-it-works), [payments](https://rldcoin.com/payments), [wallets](https://rldcoin.com/wallets) and [limits](https://rldcoin.com/you-need-to-know)
 - [Node and relay model](https://rldcoin.com/node-network), [research](https://rldcoin.com/research) and [mandatory roadmap](https://rldcoin.com/roadmap)
 - [Current development summary](https://rldcoin.com/network) and [public no-value testnet guide](https://github.com/RunlaiDeng/rldcoin/blob/main/docs/operations/EARTH_FRESH_TESTNET.md)
-- [Test-node guide](https://rldcoin.com/run-a-node), [developer reproduction](https://rldcoin.com/developers) and [participation](https://rldcoin.com/participate)
+- [Test-node guide](https://rldcoin.com/run-a-node), [developer resources](https://rldcoin.com/developers) and [participation](https://rldcoin.com/participate)
 
 Operator telemetry is not independent verification. No mainnet or physical interstellar route is qualified by this website.

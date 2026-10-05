@@ -1,11 +1,5 @@
-import {
-  CURRENT_CYCLE,
-  CURRENT_FAULT,
-  CURRENT_RUNTIME,
-  CONTENT_REVIEW_DATE,
-  PUBLIC_RESEARCH,
-} from "@/lib/site";
-import { Eyebrow, TextLink } from "./ui";
+import { CONTENT_REVIEW_DATE } from "@/lib/site";
+import { Eyebrow } from "./ui";
 
 export function PublicEvidence() {
   return (
@@ -20,13 +14,13 @@ export function PublicEvidence() {
             <Eyebrow>
               HISTORICAL PUBLIC EVIDENCE / {CONTENT_REVIEW_DATE.toUpperCase()}
             </Eyebrow>
-            <h2 id="evidence-title">Read the result and its limits.</h2>
+            <h2 id="evidence-title">Historical results and their limits.</h2>
           </div>
           <p>
-            These historical reviewed public observations use the same pinned
-            v53 runtime. Ordinary-cycle success and the subsequent failed fault
-            scope are separate results. Newer local work is outside this
-            publication snapshot.
+            These historical observations used the same v53 runtime.
+            Ordinary-cycle success and the subsequent failed fault scope are
+            separate results. Newer local work is outside this publication
+            snapshot.
           </p>
         </div>
         <div className="evidence-grid">
@@ -39,9 +33,6 @@ export function PublicEvidence() {
               authenticated all twelve journals and recipient observations;
               issued 300 = liquid 300 + unresolved exports 0.
             </p>
-            <TextLink href={CURRENT_CYCLE}>
-              Read the exact cycle report
-            </TextLink>
           </article>
           <article>
             <span className="evidence-label evidence-label-failed">
@@ -54,9 +45,6 @@ export function PublicEvidence() {
               authentication preserved the original owner requests and private
               state. It neither recovered the run nor changed the failure.
             </p>
-            <TextLink href={CURRENT_FAULT}>
-              Read the failure and stopped checks
-            </TextLink>
           </article>
         </div>
         <div className="evidence-footnote">
@@ -65,10 +53,6 @@ export function PublicEvidence() {
             value. These results do not qualify sustained BFT service,
             independent custody, long history, physical routes or all I1–I12.
           </p>
-          <div>
-            <TextLink href={CURRENT_RUNTIME}>Pinned runtime & source</TextLink>
-            <TextLink href={PUBLIC_RESEARCH}>Public research archive</TextLink>
-          </div>
         </div>
       </div>
     </section>

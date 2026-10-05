@@ -29,11 +29,6 @@ import { learning } from "@/lib/learning";
 import {
   TESTNET,
   CURRENT_PLAN,
-  GROUND_CANDIDATE,
-  GROUND_RAW,
-  PUBLIC_SOURCE_REVISION,
-  PUBLIC_RESEARCH,
-  GROUND_PATH,
   DEVELOPER_FORUM,
   MAINTAINER_PROFILE,
   pages,
@@ -573,31 +568,16 @@ function Developers() {
                 Evidence throughout.
               </h2>
               <p className="section-lead">
-                The testnet publication includes exact source, public fixture
-                records, verification tools and explicit qualification gaps.
+                The protocol repository contains development source and
+                verification tools. The testnet guide records its distinct
+                identity and qualification gaps.
               </p>
             </div>
-            <div className="code-panel">
-              <div>
-                <span />
-                <span />
-                <span />
-                <small>LOCAL DEVELOPMENT</small>
-              </div>
-              <pre>
-                <code>
-                  {
-                    "# From the fresh testnet source archive\n# Requires the pinned Rust toolchain\n\ncargo build --locked --release --bins -p rld-cli -p rld-pow -p rld-value-successor\ncargo test --locked -p rld-value-successor --lib\n\n# Follow earth/testnet-20260930/README.md\n# Public fixture keys; test currency has no value"
-                  }
-                </code>
-              </pre>
-              <p>
-                Reproduce the fresh testnet in a separate directory. Fixture
-                rewards, balances and signing keys have no monetary value.
-              </p>
-              <TextLink href={`${REPOSITORY}/tree/main/earth/testnet-20260930`}>
-                Use the fresh testnet guide
-              </TextLink>
+            <div className="hero-actions">
+              <Button href={REPOSITORY}>Inspect current protocol source</Button>
+              <Button href={TESTNET} secondary>
+                Read the testnet guide
+              </Button>
             </div>
           </div>
           <div className="module-list">
@@ -634,12 +614,11 @@ function Developers() {
               Run and inspect the supplemental discovery and relay prototype
             </TextLink>
           </p>
-          <Note title="Use the exact testnet source">
-            Follow the testnet README and verify source-manifest.json and
-            SHA256SUMS before using source.tar.gz. GitHub’s automatically
-            generated archive of the publication repository is not the exact
-            runtime source package. Public fixture keys confer no mainnet
-            authority.
+          <Note title="Bind experiments to their source">
+            Record the exact source commit, toolchain and fixture rules before
+            running an isolated experiment. Public fixture keys confer no
+            mainnet authority, and historical results do not qualify changed
+            code.
           </Note>
         </div>
       </section>
@@ -688,150 +667,11 @@ function Developers() {
             </div>
           </div>
           <div className="hero-actions">
-            <Button
-              href={`${REPOSITORY}/raw/refs/heads/main/earth/testnet-20260930/source.tar.gz`}
-            >
-              Download testnet source
-            </Button>
+            <Button href={REPOSITORY}>Browse current protocol source</Button>
             <Button href={DEVELOPER_FORUM} secondary>
               Nodes &amp; Development
             </Button>
           </div>
-        </div>
-      </section>
-      <section className="section" id="reproduce-v26">
-        <div className="container narrow">
-          <span id="reproduce-v14" aria-hidden="true" />
-          <span id="reproduce-v15" aria-hidden="true" />
-          <span id="reproduce-v16" aria-hidden="true" />
-          <span id="reproduce-v17" aria-hidden="true" />
-          <span id="reproduce-v18" aria-hidden="true" />
-          <span id="reproduce-v19" aria-hidden="true" />
-          <span id="reproduce-v20" aria-hidden="true" />
-          <span id="reproduce-v21" aria-hidden="true" />
-          <span id="reproduce-v25" aria-hidden="true" />
-          <Eyebrow>HISTORICAL REPRODUCTION / REVISION 26</Eyebrow>
-          <h2>Replay payment history one complete page at a time.</h2>
-          <p className="page-lead">
-            The explicitly signed segmented candidate retains immutable event
-            pages and fully verifies their payment history from genesis. Wallets
-            review the original signing inputs; private ledger recovery checks a
-            separately retained latest head. Evidence hashes alone never
-            authorize a payment.
-          </p>
-          <Note title="Finite local payment and recovery checks passed">
-            An ordinary node persisted 1,029 blocks and 1,025 signed payments,
-            then restored its exact ledger into a fresh private directory. A
-            separate process test reached 361 blocks with a cross-region return,
-            original debit preservation and duplicate-import refusal. These
-            segmented tests use four unanimous validators. The separate
-            twelve-node BFT cycle uses its original bounded profile; its results
-            are recorded in the pinned guide. Neither observation qualifies BFT
-            long history, independent latest-state custody or physical routes.
-          </Note>
-          <ol className="prose">
-            <li>
-              Verify the 254-file manifest and checksums. Coverage includes 139
-              distinct native tests and 60 process tests: 138 native tests ran
-              from the frozen source, and the long-store test ran against
-              byte-identical native source. Checked release builds and strict
-              checks passed. Each page holds 16 events; the 4,096-file / 256 MiB
-              archive, complete-evidence and 64-checkpoint bounds remain.
-            </li>
-            <li>
-              Build all binaries with Rust 1.98.0 and the pinned Python
-              requirements. Use fresh private fixture directories and a cycle;
-              prior currency and old or test balances never migrate. Keep all
-              keys, configurations, signer heads and wallet/node state private.
-            </li>
-            <li>
-              Run the separate cycle verifier after all owned nodes stop. If
-              continuing with the fault profile, retain every failed report and
-              fixture. The full-profile verifier refuses a failed run. Local
-              deadlines never refund a debit or delete pending evidence.
-            </li>
-          </ol>
-          <div className="code-panel">
-            <div>
-              <span />
-              <span />
-              <span />
-              <small>PINNED PUBLIC SOURCE / LOCAL FIXTURES ONLY</small>
-            </div>
-            <pre>
-              <code>{String.raw`git clone https://github.com/RunlaiDeng/rldcoin-genesis.git rldcoin-public
-cd rldcoin-public
-git checkout --detach ${PUBLIC_SOURCE_REVISION}
-cd ${GROUND_PATH}
-shasum -a 256 -c SHA256SUMS
-mkdir source-v26
-tar -xzf source.tar.gz -C source-v26
-
-# Follow the pinned README's fresh-genesis cycle commands
-# then the fault profile, stopped-state checks and private-image restore audit.
-# Preserve old private states, interrupted runs and fault failures.`}</code>
-            </pre>
-            <p>
-              These experiments use worthless public fixtures on one host under
-              one controller. Independent operations, full BFT reconfiguration,
-              long-term archives and cryptography, complete wallets, channels
-              and physical routes remain open. No I1–I12 requirement is fully
-              qualified.
-            </p>
-          </div>
-          <div className="hero-actions">
-            <Button href={GROUND_CANDIDATE}>Read the pinned v26 guide</Button>
-            <Button href={`${GROUND_RAW}/source.tar.gz`} secondary>
-              Download v26 source
-            </Button>
-            <Button
-              href={`${GROUND_CANDIDATE}/README.md#reproduce-the-observed-path`}
-              secondary
-            >
-              Starting path &amp; commands
-            </Button>
-          </div>
-          <p>
-            <TextLink href={TESTNET}>Existing Earth testnet guide</TextLink>
-            {" · "}
-            <TextLink href={`${GROUND_CANDIDATE}/source-manifest.json`}>
-              v26 source manifest
-            </TextLink>
-            {" · "}
-            <TextLink href={`${GROUND_CANDIDATE}/SHA256SUMS`}>
-              v26 checksums
-            </TextLink>
-            {" · "}
-            <TextLink
-              href={`${PUBLIC_RESEARCH}/2026-10-02/regional-native-history-recovery-v21`}
-            >
-              Historical v21 ledger recovery
-            </TextLink>
-            {" · "}
-            <TextLink
-              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-paged-history-v20`}
-            >
-              Historical v20 paging result
-            </TextLink>
-            {" · "}
-            <TextLink
-              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-bft-shared-evidence-v19`}
-            >
-              Historical v19 fault result
-            </TextLink>
-            {" · "}
-            <TextLink
-              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-prefix-replay-v18`}
-            >
-              Historical v18 fault failure
-            </TextLink>
-            {" · "}
-            <TextLink
-              href={`${PUBLIC_RESEARCH}/2026-10-01/regional-native-bft-fault-recovery-v17`}
-            >
-              Historical v17 fault result
-            </TextLink>
-          </p>
         </div>
       </section>
       <section className="section soft-section" id="participate">
@@ -1312,11 +1152,6 @@ function Resources() {
           TESTNET,
         ],
         [
-          "Historical v26 ground candidate",
-          "Segmented history and private recovery observations; separate bounded BFT evidence and retained failures. No monetary value.",
-          GROUND_CANDIDATE,
-        ],
-        [
           "Run a test node and contribute",
           "Choose an exact fixture, follow the published commands and share sanitized findings.",
           "/run-a-node",
@@ -1327,14 +1162,9 @@ function Resources() {
           "/network",
         ],
         [
-          "Discovery and relay prototype",
-          "Supplemental ground mesh code, requirements and reproducible drill.",
-          `${REPOSITORY}/tree/main/research/2026-09-30/mesh`,
-        ],
-        [
-          "Regional ledger candidates",
-          "Ground evidence for local autonomy, onward/return transfers, signer epochs and conflict isolation; full qualification remains open.",
-          `${REPOSITORY}/tree/main/research/2026-09-30`,
+          "Protocol source",
+          "Current protocol code and development records; qualification remains separate.",
+          REPOSITORY,
         ],
         [
           "Website source",

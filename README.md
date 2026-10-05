@@ -54,40 +54,11 @@ Current content sources:
 - `public/documents/rldcoin-whitepaper.md`: target architecture, I1–I12 and acceptance stages.
 - https://github.com/RunlaiDeng/rldcoin/blob/main/docs/RLDCOIN_MASTER_PLAN.md
 - https://github.com/RunlaiDeng/rldcoin/blob/main/docs/operations/EARTH_FRESH_TESTNET.md
-- https://github.com/RunlaiDeng/rldcoin-genesis/tree/main/research/2026-09-30
 
 Current protocol development is hosted at https://github.com/RunlaiDeng/rldcoin.
-Historical publication commits, source downloads and qualification evidence remain
-in `RunlaiDeng/rldcoin-genesis`; keep that repository available until those exact
-commits and paths have a verified replacement. Git directory migration alone does
-not migrate the historical evidence layout.
-
-The historical public v26 reproduction entry is pinned to publication commit
-`40d5e7a216b2f89033bcfb11671ff311a3b8ab75` and links the 254-file segmented checkpoint and
-paged-event candidate. Its 139 distinct native tests comprise 138 frozen tests
-and one long-store test against byte-identical native workspace source; 60 frozen
-process tests pass. Ordinary native storage reaches 1,029 blocks / 1,025 signed
-payments and exact cold/private fresh-target ledger recovery. The real CLI test
-reaches 361 blocks with cross-region return and permanent duplicate-import refusal.
-A separate twelve-node bounded BFT cycle and 762.388-second fresh fault profile
-pass; stopped cold audits and private recovery reports accompany the publication.
-The unanimous segmented and original BFT profiles retain distinct authority and
-history bounds. Prior transport checks use identical source and were not rerun.
-`/developers#reproduce-v26` links commit-pinned source, manifests and checksums;
-old anchors and v21/20/19/18/17 historical evidence links are retained.
-Generated private images and signer/wallet/caller state are excluded. Archive,
-complete-evidence and permanent-index capacities remain bounded. BFT long history,
-independent latest anchors, power loss and cross-device signing custody remain
-open. Test balances never migrate. The historical autonomous-cycle link stays v16.
-
-The website’s reviewed public evidence snapshot is publication commit
-`74f16276605823e8c84b67a66d5ff23134a86c8a`. The exact v53 runtime underlies
-v54’s successful ordinary return and v55’s **failed** subsequent finite fault
-scope. The separate stopped audit authenticates retained state and cannot
-change the failed outcome. Newer private experiments are outside this snapshot.
-The new guides cover key limitations, businesses, wallets, payment states,
-vocabulary, participation and test-node setup; each links its claims to white
-paper 1.12 and scoped public packages.
+Historical archive links, source downloads and reproduction examples have
+been removed from the website at the owner's request. Current development
+source and the testnet guide remain available through the links above.
 
 None of I1–I12 is fully qualified. Ground candidates, exact release adoption,
 independent operations and physical-route evidence have separate scopes.
@@ -117,5 +88,3 @@ wording, branding, orbital artwork, and layouts are original; no Bitcoin logos,
 site assets, or payment claims are copied. Source code: Apache-2.0.
 Manrope and DM Sans fonts: SIL Open Font License (distributed by Fontsource).
 Lucide icons: ISC License. Dependency license files remain in their packages.
-
-Revision 16 separately reproduces V3/TCP-V4 bounded archives, 78 transport and 36 process/HTTP checks, 24 native replays and complete cold archive authentication. Three real SIGKILL boundaries preserve exact evidence. Power loss, sustained load/faults, cross-host operation and independent custody remain unqualified. Prior guide anchors remain available.

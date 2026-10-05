@@ -2,14 +2,7 @@ import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
 import { PublicEvidence } from "@/components/public-evidence";
 import { ArrowUpRight } from "lucide-react";
 import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
-import {
-  pageMetadata,
-  REPOSITORY,
-  TESTNET,
-  CURRENT_PLAN,
-  GROUND_CANDIDATE,
-  REGIONAL_CYCLE,
-} from "@/lib/site";
+import { pageMetadata, TESTNET, CURRENT_PLAN } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Research & evidence",
@@ -43,10 +36,6 @@ const topics = [
     question:
       "Can both directions recover without losing evidence or exhausting storage?",
     sources: [
-      [
-        "Node mesh code and ground drill",
-        `${REPOSITORY}/tree/main/research/2026-09-30/mesh`,
-      ],
       [
         "Bundle Protocol v7 · RFC 9171",
         "https://www.rfc-editor.org/rfc/rfc9171.html",
@@ -206,10 +195,9 @@ export default function Research() {
               cyclic returns, persistent signing, epoch handoff and conflict
               isolation. The revision 16 candidate integrates default TLS relay
               and automatic local BFT: twelve local nodes complete the value
-              cycle while all Earth nodes stop during remote execution. The
-              exact frozen source reproduces recipient maturity and 15
-              conservation checks. These remain bounded ground results under one
-              controller.
+              cycle while all Earth nodes stop during remote execution. Recorded
+              checks preserved recipient maturity and 15 conservation checks.
+              These remain bounded ground results under one controller.
             </p>
             <p>
               <strong>Mandatory work.</strong> Sustained native relay and
@@ -228,16 +216,11 @@ export default function Research() {
             blocks with cross-region return and permanent duplicate-import
             refusal. Coverage includes 139 distinct native tests and 60 process
             tests; the long store test used byte-identical native source
-            alongside 138 frozen native tests. That historical guide separately
-            records its twelve-node BFT cycle and finite fault observations.
-            Complete proof and archive capacities remain bounded. BFT long
-            history, independent latest anchors, power-loss and signing custody
-            remain open.
-          </p>
-          <p>
-            <a href={GROUND_CANDIDATE}>
-              Inspect the pinned v26 source and reports
-            </a>
+            alongside 138 frozen native tests. Separate historical observations
+            covered a twelve-node BFT cycle and finite fault scope. Complete
+            proof and archive capacities remain bounded. BFT long history,
+            independent latest anchors, power-loss and signing custody remain
+            open.
           </p>
           <Note title="Candidates do not inherit release qualification">
             Earlier source-refresh and storage behavior is historical. New
@@ -247,20 +230,11 @@ export default function Research() {
             Test assets and public fixture keys never authorize real value.
           </Note>
           <div className="hero-actions">
-            <Button href={REGIONAL_CYCLE}>
-              Reproduce the three-region cycle
-            </Button>
             <Button href={CURRENT_PLAN} secondary>
               Read the master plan
             </Button>
-            <Button
-              href={`${REPOSITORY}/tree/main/research/2026-09-30`}
-              secondary
-            >
-              Inspect the evidence & tools
-            </Button>
             <Button href="/developers" secondary>
-              Reproduce and contribute
+              Inspect current development
             </Button>
             <Button href={TESTNET} secondary>
               Inspect testnet qualification

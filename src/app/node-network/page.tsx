@@ -3,14 +3,13 @@ import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
 import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
 import { PublicEvidence } from "@/components/public-evidence";
 import { NodeMeshExplorer } from "@/components/node-mesh-explorer";
-import { REGIONAL_CYCLE, pageMetadata, REPOSITORY } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Nodes that extend the network",
   "Progressive neighbor discovery, multi-hop evidence relay and durable recovery across future regions. Explore the ground prototype and physical limits.",
   "/node-network",
 );
-const MESH = `${REPOSITORY}/tree/main/research/2026-09-30/mesh`;
 
 export default function NodeNetwork() {
   return (
@@ -94,7 +93,6 @@ export default function NodeNetwork() {
             ledger acceptance was not exercised in this drill.
           </p>
           <div className="hero-actions">
-            <Button href={MESH}>Inspect code and reproduce</Button>
             <Button href="/whitepaper" secondary>
               Read the white paper
             </Button>
@@ -107,13 +105,8 @@ export default function NodeNetwork() {
             while remote regions import, mature and export value onward and
             back. Earth resumes, then verifies and matures a new return import;
             the first source debit remains spent. Fifteen conservation checks
-            and exact frozen-source reproduction preserve this ground result.
+            were recorded for this historical ground result.
           </p>
-          <div className="hero-actions">
-            <Button href={REGIONAL_CYCLE}>
-              Inspect the historical v16 cycle
-            </Button>
-          </div>
           <Note title="A future physical network needs more">
             The prototype has configured adjacent contacts, signed discovery,
             bounded storage and automatic relay. Physical radio or laser links,

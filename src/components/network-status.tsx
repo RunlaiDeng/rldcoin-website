@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { TESTNET, REGIONAL_CYCLE, CONTENT_REVIEW_DATE } from "@/lib/site";
+import { TESTNET, CONTENT_REVIEW_DATE } from "@/lib/site";
 
 export function NetworkStatusPanel() {
   return (
@@ -64,11 +64,11 @@ export function NetworkStatusPanel() {
           <dt>Historical v16 regional candidate</dt>
           <dd>
             Twelve local nodes completed Earth–Proxima–Andromeda–Earth, with
-            every Earth node stopped during onward and return exports. Exact
-            frozen-source reproduction preserves recipient maturity and all 15
-            conservation checks. The archive candidate also preserves exact
-            custody across three process-crash boundaries. Same host and
-            controller; power loss and physical routes remain unqualified.
+            every Earth node stopped during onward and return exports. Recorded
+            checks preserved recipient maturity and all 15 conservation checks.
+            The archive candidate also preserves exact custody across three
+            process-crash boundaries. Same host and controller; power loss and
+            physical routes remain unqualified.
           </dd>
         </div>
         <div>
@@ -93,9 +93,6 @@ export function NetworkStatusPanel() {
         </a>
         <a href="https://api.rldcoin.com/v1/testnet/earth/status">
           Testnet status <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
-        <a href={REGIONAL_CYCLE}>
-          Three-region evidence <ArrowUpRight size={14} aria-hidden="true" />
         </a>
       </div>
     </section>
