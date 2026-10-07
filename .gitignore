@@ -10,3 +10,9 @@ artifacts/
 
 __pycache__/
 *.pyc
+
+# Local instructions and development records are not publication material.
+/AGENTS.md
+/tmp/
+/docs/WHITEPAPER_112_LOCAL_REVIEW.md
+/docs/WEBSITE_RESEARCH_EDITION.md

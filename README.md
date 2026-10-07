@@ -1,90 +1,93 @@
 # Rldcoin website
 
-The independent English website for **rldcoin.com**.
+The English public information website for [rldcoin.com](https://rldcoin.com).
 
-Rldcoin’s target is locally autonomous peer-to-peer payment between authorized
-regions across delayed contacts. Content follows white paper 1.12 and its
-mandatory I1–I12 acceptance requirements. Development uses a fresh value-free
-testnet; a mainnet has not launched. Test balances and keys never become
-mainnet assets or authority.
+## What is this repository?
 
-## Develop
+This repository contains the website, educational guides, interactive relay and
+transfer illustrations, and the [white paper reader](https://rldcoin.com/whitepaper).
+Rldcoin is being developed as a peer-to-peer payment system across delayed
+regions. The [protocol and node code](https://github.com/RunlaiDeng/rldcoin)
+is maintained in a separate repository.
 
-Use Node.js 24 and npm:
+No mainnet has launched. Current testnets and ground candidates have no monetary
+value and do not establish complete protocol qualification or an operational
+interstellar route. The website implements no wallet connection or transactions.
+
+## Development
+
+Use **Node.js 24** and npm. The site uses Next.js App Router, React, TypeScript,
+and CSS, with locally bundled Manrope and DM Sans fonts and Lucide icons.
+Dependency versions are pinned in [package-lock.json](package-lock.json).
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. Before deployment:
+Open [http://localhost:3000](http://localhost:3000).
+
+## Checks and production build
 
 ```sh
 npm test
 npm run build
-# With a production server running locally:
+npm run typecheck
+npm run start -- --hostname 127.0.0.1 --port 3100
+```
+
+With that production server running, use a second terminal:
+
+```sh
 node scripts/check-site.mjs http://127.0.0.1:3100
 ```
 
-## Structure
+The existing test checks exact RLD amount formatting. The rendered-site audit
+checks sitemap pages, headings, titles, canonical URLs, local links, anchors and
+a missing-page response. For page changes, also check desktop and mobile
+navigation, keyboard operation, reduced motion and browser errors.
 
-- `src/app/page.tsx`: home page.
-- `src/app/[slug]/page.tsx`: statically generated introductions, network,
-  resources, roadmap, FAQ, and privacy pages.
-- `src/lib/network.ts`: exact amount formatting.
-- `src/lib/site.ts`: shared navigation, metadata, reviewed public evidence pins and FAQ content.
-- `src/lib/learning.ts` and `src/components/learning-page.tsx`: seven educational guides with contents navigation and source links.
-- `src/components/public-evidence.tsx`: reviewed v54 ordinary success and v55 finite fault failure on the exact v53 runtime.
-- `scripts/check-site.mjs`: rendered sitemap, metadata, local link and anchor audit.
-- `src/app/whitepaper/page.tsx`: online paper from the same Markdown source as the PDF.
-- `src/components`: navigation, original orbital artwork, transfer explainer,
-  and status display.
-- `public/documents/rldcoin-overview.md`: downloadable English overview.
-- `public/documents/rldcoin-whitepaper.md` and `.pdf`: full paper and downloadable edition; regenerate the PDF with `scripts/build-whitepaper.py`.
+## Repository layout
 
-## Network status and content authority
+| Path | Purpose |
+| --- | --- |
+| [src/app](src/app) | Pages, shared layout, styles, metadata and sitemap |
+| [src/components](src/components) | Navigation, media, educational figures and interactive explorers |
+| [src/lib](src/lib) | Shared content, evidence links, learning guides and amount formatting |
+| [public](public) | Published documents, diagrams, brand assets, photographs and video |
+| [tests](tests) | Focused website tests |
+| [scripts/check-site.mjs](scripts/check-site.mjs) | Production-site link and metadata audit |
 
-The network page describes testnet qualification and links to public testnet
-telemetry. The obsolete mainnet feed, identity pins and status parser have
-been removed; `/api/network` has no handler.
-Operator telemetry is not independent verification.
+## Content maintenance
 
-Current content sources:
+The [canonical white paper](public/documents/rldcoin-whitepaper.md), its
+[PDF](public/documents/rldcoin-whitepaper.pdf) and the immutable
+[publication receipt](public/documents/rldcoin-whitepaper-freeze.json) are frozen.
+Do not relabel, edit or regenerate them without an explicit owner decision.
+Keep development status and risk updates separate from the normative paper.
 
-- `public/documents/rldcoin-whitepaper.md`: target architecture, I1–I12 and acceptance stages.
-- https://github.com/RunlaiDeng/rldcoin/blob/main/docs/RLDCOIN_MASTER_PLAN.md
-- https://github.com/RunlaiDeng/rldcoin/blob/main/docs/operations/EARTH_FRESH_TESTNET.md
+Public claims must match published sources and retain their scope and failures.
+The network page links to operator testnet telemetry; this is not independent
+verification. Test balances and keys never become mainnet assets or authority.
+Keep private keys, node data, operator files, backups and local development logs
+out of this repository.
 
-Current protocol development is hosted at https://github.com/RunlaiDeng/rldcoin.
-Historical archive links, source downloads and reproduction examples have
-been removed from the website at the owner's request. Current development
-source and the testnet guide remain available through the links above.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for release checks and the existing Vercel Git
+integration. A push to `main` can trigger a website deployment; DNS is managed
+by the owner.
 
-None of I1–I12 is fully qualified. Ground candidates, exact release adoption,
-independent operations and physical-route evidence have separate scopes.
-Resources contains current testnet and separately scoped ground-candidate
-material. Obsolete mainnet records and downloads are excluded. Do not include private node, operator or wallet data in this site.
+## Contributing
 
-The website provides no wallet connectivity, transactions, registration,
-analytics or tracking cookies. Fonts are bundled locally.
+Use [issues](https://github.com/RunlaiDeng/rldcoin-website/issues) for public
+website bugs and [pull requests](https://github.com/RunlaiDeng/rldcoin-website/pulls)
+for proposed changes. Include the purpose, affected pages and relevant checks.
+Protocol implementation work belongs in the
+[protocol repository](https://github.com/RunlaiDeng/rldcoin).
 
-## Deploy
+## License and media
 
-Vercel project: `rldcoin-website`, under `tradergalaxs-projects`.
-
-```sh
-vercel link --yes --project rldcoin-website --scope tradergalaxs-projects
-vercel --prod --scope tradergalaxs-projects
-```
-
-Vercel uses the Next.js preset and Node.js 24. The owner configures external DNS
-for `rldcoin.com`; `www.rldcoin.com` redirects to the apex domain. See
-`DEPLOYMENT.md` for verified delivery details after initial publication.
-
-## Design and licenses
-
-The educational structure takes inspiration from bitcoin.org. All Rldcoin
-wording, branding, orbital artwork, and layouts are original; no Bitcoin logos,
-site assets, or payment claims are copied. Source code: Apache-2.0.
-Manrope and DM Sans fonts: SIL Open Font License (distributed by Fontsource).
-Lucide icons: ISC License. Dependency license files remain in their packages.
+Website source code is licensed under [Apache-2.0](LICENSE). Bundled fonts use
+the SIL Open Font License and Lucide icons use the ISC License; notices are in
+[licenses](licenses). Photographs and videos have separate source and usage
+details in [MEDIA_SOURCES.md](MEDIA_SOURCES.md). Spacecraft imagery does not
+depict a Rldcoin transaction or imply endorsement by the missions involved.
