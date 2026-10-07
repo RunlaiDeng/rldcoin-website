@@ -106,13 +106,13 @@ export function Header() {
               Network
             </Link>
             <Link
-              href="/faq"
-              aria-current={path === "/faq" ? "page" : undefined}
+              href="/developers"
+              aria-current={path === "/developers" ? "page" : undefined}
             >
-              FAQ
+              Development
             </Link>
-            <Link className="nav-cta" href="/get-started">
-              Get started
+            <Link className="nav-cta" href="/whitepaper">
+              White paper
               <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
           </nav>

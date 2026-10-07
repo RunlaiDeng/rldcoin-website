@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Rldcoin",
   },
   description:
-    "Rldcoin is building an interstellar peer-to-peer payment system for the future of humanity. The final white paper defines independent regional finality, conserved transfers and explicit risk and acceptance obligations. Development uses no-value fixtures; mainnet and physical routes remain unqualified.",
+    "Rldcoin is a peer-to-peer payment design across delayed regions. Read the white paper, understand the required capabilities and explore no-value development. No mainnet or physical interstellar route is qualified.",
   openGraph: {
     siteName: "Rldcoin",
     type: "website",
@@ -61,7 +61,7 @@ export default function RootLayout({
             aria-label="Network release status"
           >
             <strong>Testnet only. No active mainnet.</strong> Testnet currency
-            has no monetary value. <a href="/network">View current status</a>
+            has no monetary value. <a href="/network">Development scope</a>
           </aside>
           {children}
         </main>

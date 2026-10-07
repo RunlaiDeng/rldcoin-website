@@ -1,40 +1,18 @@
 import Link from "next/link";
-import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  Code2,
-  Download,
-  FileCheck2,
-  Fingerprint,
-  Globe2,
-  KeyRound,
-  Layers,
-  LockKeyhole,
-  Orbit,
-  Radio,
-  ShieldCheck,
-  Users,
-} from "lucide-react";
 import { Button, Eyebrow, Note, PageHero, TextLink } from "@/components/ui";
 import { TransferExplorer } from "@/components/transfer-explorer";
-import { RelayAtlasPreview } from "@/components/relay-atlas";
-import { NetworkStatusPanel } from "@/components/network-status";
-import { LearningPage } from "@/components/learning-page";
 import { PublicEvidence } from "@/components/public-evidence";
-import { learning } from "@/lib/learning";
+import { NetworkStatusPanel } from "@/components/network-status";
 import {
-  TESTNET,
-  CURRENT_PLAN,
+  CONTENT_REVIEW_DATE,
   DEVELOPER_FORUM,
-  MAINTAINER_PROFILE,
   pages,
   pageMetadata,
   REPOSITORY,
+  TESTNET,
   WEBSITE_REPOSITORY,
+  WHITEPAPER_FREEZE,
   faqs,
 } from "@/lib/site";
 
@@ -57,28 +35,21 @@ export default async function ContentPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  if (Object.hasOwn(learning, slug)) return <LearningPage slug={slug} />;
   switch (slug) {
-    case "get-started":
-      return <GetStarted />;
+    case "about":
+      return <About />;
     case "how-it-works":
       return <HowItWorks />;
-    case "individuals":
-      return <Individuals />;
-    case "applications":
-      return <Applications />;
+    case "you-need-to-know":
+      return <Safety />;
     case "developers":
       return <Developers />;
     case "network":
       return <Network />;
-    case "roadmap":
-      return <Roadmap />;
-    case "faq":
-      return <FAQ />;
-    case "about":
-      return <About />;
     case "resources":
       return <Resources />;
+    case "faq":
+      return <FAQ />;
     case "privacy":
       return <Privacy />;
     case "media-sources":
@@ -88,1088 +59,449 @@ export default async function ContentPage({
   }
 }
 
-function Closing({
-  title = "The next step is understanding.",
-  text = "Explore the ideas and evidence behind Rldcoin.",
-  href = "/resources",
-  label = "Explore resources",
-}: {
-  title?: string;
-  text?: string;
-  href?: string;
-  label?: string;
-}) {
-  return (
-    <section className="closing">
-      <div className="container">
-        <div>
-          <h2>{title}</h2>
-          <p>{text}</p>
-        </div>
-        <Button href={href} light>
-          {label}
-        </Button>
-      </div>
-    </section>
-  );
-}
-function GetStarted() {
-  const steps = [
-    {
-      title: "Meet Rldcoin",
-      text: "Learn what Rldcoin is, why the project starts on Earth, and how its long-term vision reaches future human communities.",
-      href: "/about",
-      label: "Get to know Rldcoin",
-      icon: BookOpen,
-    },
-    {
-      title: "Know the rules and limits",
-      text: "Understand no-value fixtures, owner custody, local finality and why a delivery receipt or timeout cannot establish a spendable balance.",
-      href: "/you-need-to-know",
-      label: "What you need to know",
-      icon: Globe2,
-    },
-    {
-      title: "Follow the evidence",
-      text: "Read white paper, inspect testnet fixtures and source commitments, and compare the ground evidence with the mandatory acceptance conditions.",
-      href: "/resources",
-      label: "Browse official resources",
-      icon: FileCheck2,
-    },
-    {
-      title: "Reproduce a public ground candidate",
-      text: "Inspect and reproduce the candidate in an isolated test environment. There is no mainnet mining or payment service.",
-      href: "/run-a-node",
-      label: "Choose a test-node experiment",
-      icon: Users,
-    },
-  ];
-  return (
-    <>
-      <PageHero
-        eyebrow="Get started"
-        title="A new horizon. A clear first step."
-        description="You don’t need to know the protocol to understand the vision. Start with the essentials, then choose your own path."
-      />
-      <section className="section">
-        <div className="container narrow">
-          <Note title="Where the network stands today">
-            Development continues on a separate testnet; its currency has no
-            monetary value. A new mainnet requires a fresh signed zero-issuance
-            genesis after qualification.
-          </Note>
-          <div className="step-list">
-            {steps.map((step, i) => (
-              <div className="step-item" key={step.title}>
-                <span className="step-number">0{i + 1}</span>
-                <div>
-                  <step.icon size={25} strokeWidth={1.5} aria-hidden="true" />
-                  <h2>{step.title}</h2>
-                  <p>{step.text}</p>
-                  <TextLink href={step.href}>{step.label}</TextLink>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container guide-next-links">
-          <Button href="/individuals" secondary>
-            For individuals
-          </Button>
-          <Button href="/businesses" secondary>
-            For businesses
-          </Button>
-          <Button href="/developers" secondary>
-            For developers
-          </Button>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="get-started" />
-      <Closing
-        title="More curious about the technical side?"
-        text="Start with the published Rust source and genesis evidence."
-        href="/developers"
-        label="For developers"
-      />
-    </>
-  );
-}
-function HowItWorks() {
-  return (
-    <>
-      <PageHero
-        eyebrow="How it works"
-        title="Local trust. A longer reach."
-        description="Interstellar distance changes the problem. Rldcoin is designed around separate regions that verify locally and communicate asynchronously."
-      />
-      <section className="section">
-        <div className="container">
-          <div className="two-column">
-            <div>
-              <Eyebrow>01 / THE ZONE</Eyebrow>
-              <h2>
-                A local ledger.
-                <br />
-                Its own consensus.
-              </h2>
-            </div>
-            <div className="prose">
-              <p>
-                A <strong>Zone</strong> maintains a ledger and local consensus.
-                Its participants confirm local activity without waiting for a
-                distant star system. The architecture is intended to support
-                regions that cannot depend on an always-reachable Earth clearing
-                service.
-              </p>
-              <p>
-                A Zone could one day serve a community, a habitat, or a
-                spacecraft. Earth is the first test environment; all regions
-                need their own operational and security qualification.
-              </p>
-            </div>
-          </div>
-          <RelayAtlasPreview />
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container narrow">
-          <Eyebrow>THE NODE MESH</Eyebrow>
-          <h2>New nodes extend the path.</h2>
-          <p className="page-lead">
-            Local networks connect through neighboring relays. A planetary
-            community, a station and a mobile habitat can each extend the path.
-            Signed information helps discover farther regions; evidence moves
-            onward as contacts become available.
-          </p>
-          <p>
-            A separately started contact-spool prototype exercises transport;
-            separately admitted regional candidates integrate relay into their
-            ordinary node lifecycle. The existing Earth testnet still uses
-            explicit peers. Physical adapters, sustained service and long-term
-            disconnection still need qualification.
-          </p>
-          <TextLink href="/node-network">
-            Explore progressive discovery and relays
-          </TextLink>
-        </div>
-      </section>
-      <section className="architecture-section">
-        <div className="container">
-          <Eyebrow light>02 / THE JOURNEY</Eyebrow>
-          <h2>A transfer carries evidence.</h2>
-          <p className="section-lead">
-            Each step establishes what the next region is allowed to accept.
-            Explore the intended lifecycle below.
-          </p>
-          <TransferExplorer />
-          <TextLink href="/payments">
-            Read every payment state and its checks
-          </TextLink>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container two-column">
-          <div>
-            <Eyebrow>03 / THE INVARIANTS</Eyebrow>
-            <h2>
-              What distance
-              <br />
-              must never change.
-            </h2>
-          </div>
-          <div className="principle-list">
-            {[
-              [
-                "Authorization",
-                "A sender must authorize the transfer. Possession of a copy of the ledger does not confer ownership.",
-              ],
-              [
-                "A single spendable location",
-                "The source locks the asset before export. The destination accepts it only after verifying the required evidence.",
-              ],
-              [
-                "Explicit uncertainty",
-                "Missing, conflicting, or unsupported evidence leaves a transfer pending or quarantined. A timeout is not proof that the destination did not import it.",
-              ],
-              [
-                "Local autonomy, local constraints",
-                "Remote disconnection must not require Earth approval of local payments. A local group without its adopted finality resources stops dependent settlement.",
-              ],
-              [
-                "Continuous history",
-                "The target requires authenticated continuity through recovery and cryptographic evolution. Incompatible present candidates use fresh genesis and never migrate old value.",
-              ],
-            ].map(([title, text]) => (
-              <div key={title}>
-                <ShieldCheck size={21} aria-hidden="true" />
-                <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container narrow">
-          <h2>Distance still takes time.</h2>
-          <p className="page-lead">
-            No protocol removes the need for information to arrive. A local
-            confirmation, an exported proof, a destination import, and a
-            returned receipt are different events.
-          </p>
-          <Note title="Architecture, not a claim of live interstellar service">
-            The target requires local payments during remote disconnection,
-            onward export and actual value return between authorized regions.
-            Native discovery, finality, durable recovery and independent review
-            still need qualification. Ground candidates and diagrams do not
-            establish an operating physical interstellar route.
-          </Note>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container narrow">
-          <Eyebrow>HISTORICAL EARTH REFERENCE PROFILE</Eyebrow>
-          <h2>Parameters belong to an adopted region.</h2>
-          <dl className="parameter-grid">
-            <div>
-              <dt>Supply cap</dt>
-              <dd>100 billion RLD</dd>
-            </div>
-            <div>
-              <dt>Integer unit</dt>
-              <dd>1 RLD = 10²⁴ runlai</dd>
-            </div>
-            <div>
-              <dt>Initial allocation</dt>
-              <dd>Zero</dd>
-            </div>
-            <div>
-              <dt>Target block interval</dt>
-              <dd>600 seconds on average</dd>
-            </div>
-            <div>
-              <dt>Reward maturity</dt>
-              <dd>100 successor blocks</dd>
-            </div>
-            <div>
-              <dt>Import maturity</dt>
-              <dd>6 successor blocks</dd>
-            </div>
-          </dl>
-          <Note title="Historical reference and target baseline are distinct">
-            Sections 5–9 describe historical PoW with four unanimous checkpoint
-            signers and a twelve-block count including the checkpoint block. The
-            target baseline is independently operated Byzantine regional
-            finality under S3, with n = 3f + 1 and 2f + 1 approved votes plus a
-            reviewed locking/view-change protocol. A new adoption must bind its
-            complete consensus, epoch and maturity profile; it cannot alter an
-            already signed genesis retroactively. Ground BFT fixtures remain
-            unqualified.
-          </Note>
-          <TextLink href="/whitepaper#5-proof-of-work-and-network-selection">
-            Read the exact reference rules
-          </TextLink>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="how-it-works" />
-      <Closing href="/developers" label="Explore the protocol" />
-    </>
-  );
-}
-function Individuals() {
-  return (
-    <>
-      <PageHero
-        eyebrow="For individuals"
-        title="Your journey. Your ownership."
-        description="A future in which moving to a new region does not mean giving up the ability to verify and control what you own."
-      />
-      <section className="section">
-        <div className="container">
-          <div className="feature-grid three">
-            {[
-              {
-                icon: KeyRound,
-                title: "Control begins with keys",
-                text: "The design puts payment authorization with the owner. A wallet should help you understand what you sign, protect your keys, and recover safely.",
-              },
-              {
-                icon: Fingerprint,
-                title: "Know what has happened",
-                text: "A wallet should distinguish locked funds, a proof in transit, a verified import, and a returned receipt. “Sent” must not conceal a pending journey.",
-              },
-              {
-                icon: Globe2,
-                title: "Move between regions",
-                text: "A future transfer is bound to a real destination Zone. The recipient can use the asset locally after a valid unique import and the destination’s maturity rule.",
-              },
-            ].map(({ icon: Icon, title, text }) => (
-              <div className="feature" key={title}>
-                <Icon size={29} strokeWidth={1.5} aria-hidden="true" />
-                <h2>{title}</h2>
-                <p>{text}</p>
-              </div>
-            ))}
-          </div>
-          <Note title="Wallet availability">
-            A test wallet has exercised encrypted backup recovery and signed
-            transfers with worthless test currency. A qualified consumer mainnet
-            wallet is not available. Hardware signing, recovery across devices
-            and protection against old-backup rollback remain open. This website
-            never asks for a private key or wallet connection.
-          </Note>
-          <div className="guide-next-links">
-            <Button href="/wallets" secondary>
-              Understand wallet custody
-            </Button>
-            <Button href="/payments" secondary>
-              Follow the recipient’s payment
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container two-column">
-          <div>
-            <Eyebrow>BEFORE YOUR FIRST TRANSFER</Eyebrow>
-            <h2>
-              Learn the basics
-              <br />
-              before the balance.
-            </h2>
-          </div>
-          <div className="prose">
-            <h3>Know the network</h3>
-            <p>
-              Verify the genesis identity, software release, and current
-              operating phase. A similar name or logo does not establish a
-              network’s identity.
-            </p>
-            <h3>Understand custody</h3>
-            <p>
-              Keys authorize ownership. Future wallet releases must make backup
-              and recovery practical, and preserve the distinction between a
-              public address and secret signing material.
-            </p>
-            <h3>Follow activation, not promises</h3>
-            <p>
-              Testnet and ground candidates exercise local transfers, exports,
-              imports and recovery. A future real-value service requires exact
-              signed adoption, qualified finality and wallet recovery, and
-              independent operational evidence.
-            </p>
-            <TextLink href="/you-need-to-know">What you need to know</TextLink>
-          </div>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="individuals" />
-      <Closing href="/get-started" label="Get started" />
-    </>
-  );
-}
-function Applications() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Future applications"
-        title="A wider world of possibilities."
-        description="Peer-to-peer payments across distant human communities are the goal. Local and cross-region capabilities are being qualified on a value-free testnet."
-      />
-      <section className="section">
-        <div className="container application-grid">
-          {[
-            {
-              icon: Globe2,
-              title: "Communities on Earth",
-              label: "01 / THE FOUNDATION",
-              text: "Begin with verifiable local transfers, ownership, recovery, and continuity. Build the operational confidence needed for wider participation.",
-              foot: "Testnet transfers and wallet recovery are exercised; no qualified mainnet consumer service.",
-            },
-            {
-              icon: Orbit,
-              title: "Habitats and settlements",
-              label: "02 / LOCAL INDEPENDENCE",
-              text: "A future habitat could maintain its own ledger and confirm local activity while messages to other regions are delayed or unavailable.",
-              foot: "Future deployment scenario.",
-            },
-            {
-              icon: Radio,
-              title: "Spacecraft in transit",
-              label: "03 / A MOVING REGION",
-              text: "A spacecraft could operate as a Zone, carrying the evidence needed to maintain ownership through long periods away from other regions.",
-              foot: "Requires route, continuity, and recovery qualification.",
-            },
-            {
-              icon: Layers,
-              title: "Distant star systems",
-              label: "04 / A LONGER HORIZON",
-              text: "Transfers would arrive as verifiable evidence, possibly carried through relays or physical media. The destination independently decides whether it has enough evidence to accept.",
-              foot: "Long-term objective; no physical interstellar route is deployed.",
-            },
-          ].map(({ icon: Icon, title, label, text, foot }) => (
-            <article className="application-card" key={title}>
-              <Icon size={42} strokeWidth={1} aria-hidden="true" />
-              <Eyebrow>{label}</Eyebrow>
-              <h2>{title}</h2>
-              <p>{text}</p>
-              <small>{foot}</small>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container narrow">
-          <h2>Planning a payment service?</h2>
-          <p className="page-lead">
-            Explore invoice binding, recipient verification and the acceptance
-            states a future merchant integration would need.
-          </p>
-          <TextLink href="/businesses">Rldcoin for businesses</TextLink>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="applications" />
-      <Closing
-        title="The architecture begins with constraints."
-        text="See how Rldcoin approaches distance, delay, and verifiable ownership."
-        href="/how-it-works"
-        label="How it works"
-      />
-    </>
-  );
-}
-function Developers() {
-  return (
-    <>
-      <PageHero
-        eyebrow="For developers"
-        title="Build for what comes next."
-        description="The protocol is open to inspection. Start with the exact source, follow the evidence, and help turn long-term requirements into verifiable engineering."
-      >
-        <div className="hero-actions">
-          <Button href="/run-a-node">Choose a test-node experiment</Button>
-          <Button href="/whitepaper" secondary>
-            Read the white paper
-          </Button>
-        </div>
-      </PageHero>
-      <PublicEvidence />
-      <section className="section">
-        <div className="container">
-          <div className="two-column">
-            <div>
-              <Eyebrow>THE STACK</Eyebrow>
-              <h2>
-                Rust at the core.
-                <br />
-                Evidence throughout.
-              </h2>
-              <p className="section-lead">
-                The protocol repository contains development source and
-                verification tools. The testnet guide records its distinct
-                identity and qualification gaps.
-              </p>
-            </div>
-            <div className="hero-actions">
-              <Button href={REPOSITORY}>Inspect current protocol source</Button>
-              <Button href={TESTNET} secondary>
-                Read the testnet guide
-              </Button>
-            </div>
-          </div>
-          <div className="module-list">
-            {[
-              [
-                "rld-core",
-                "Protocol types, ledgers, transactions, transfer proofs, and verification.",
-              ],
-              [
-                "rld-pow",
-                "Shared proof-of-work, reward and transition types; Earth runtime behavior is implemented in the successor nodes.",
-              ],
-              [
-                "rld-value-successor",
-                "Earth source and destination nodes, signing tools, payment and settlement logic.",
-              ],
-              [
-                "rld-cli / rld-earth-genesis",
-                "Key and signature tools plus the direct genesis builder.",
-              ],
-              [
-                "vectors / tools / formal",
-                "Test vectors, verification programs, and formal models.",
-              ],
-            ].map(([name, desc]) => (
-              <div key={name}>
-                <code>{name}</code>
-                <p>{desc}</p>
-              </div>
-            ))}
-          </div>
-          <p>
-            <TextLink href="/node-network">
-              Run and inspect the supplemental discovery and relay prototype
-            </TextLink>
-          </p>
-          <Note title="Bind experiments to their source">
-            Record the exact source commit, toolchain and fixture rules before
-            running an isolated experiment. Public fixture keys confer no
-            mainnet authority, and historical results do not qualify changed
-            code.
-          </Note>
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <Eyebrow>START WITH VERIFICATION</Eyebrow>
-              <h2>
-                Useful work starts
-                <br />
-                with a precise question.
-              </h2>
-            </div>
-            <p>
-              Reproducible findings help the project move forward. Public source
-              availability does not mean the protocol has received an
-              independent security audit.
-            </p>
-          </div>
-          <div className="feature-grid three">
-            <div className="feature">
-              <FileCheck2 />
-              <h3>Reproduce a result</h3>
-              <p>
-                Record the exact release, toolchain, inputs, commands, and
-                output. Distinguish simulations from real network evidence.
-              </p>
-            </div>
-            <div className="feature">
-              <LockKeyhole />
-              <h3>Review a boundary</h3>
-              <p>
-                Inspect authorization, duplicate imports, replay, incomplete
-                proofs, and recovery behavior. Use an isolated environment.
-              </p>
-            </div>
-            <div className="feature">
-              <Code2 />
-              <h3>Discuss an improvement</h3>
-              <p>
-                Bring a concrete issue or design question to Nodes &amp;
-                Development. Use the feedback template below and keep all
-                private signing and recovery material off the forum.
-              </p>
-            </div>
-          </div>
-          <div className="hero-actions">
-            <Button href={REPOSITORY}>Browse current protocol source</Button>
-            <Button href={DEVELOPER_FORUM} secondary>
-              Nodes &amp; Development
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section className="section soft-section" id="participate">
-        <div className="container narrow">
-          <Eyebrow>CONTRIBUTE A REPRODUCIBLE FINDING</Eyebrow>
-          <h2>Bring the evidence to the forum.</h2>
-          <ol className="prose">
-            <li>
-              Open Nodes &amp; Development and read the recent topics before
-              posting.
-            </li>
-            <li>
-              Sign in with your own account. Reply to a matching topic, or
-              create one with a specific question and the template below.
-            </li>
-            <li>
-              Include failures as well as successes. Separate transport receipt,
-              ledger import, maturity and finality in your observations.
-            </li>
-          </ol>
-          <div className="code-panel">
-            <div>
-              <span />
-              <span />
-              <span />
-              <small>PUBLIC FEEDBACK TEMPLATE</small>
-            </div>
-            <pre>
-              <code>{`Source commit / archive SHA-256:
-OS / CPU / Rust / Python versions:
-Fresh-directory setup and exact commands:
-Topology, timing, fault and restart conditions:
-Expected result / actual result:
-First failing phase and elapsed time:
-Sanitized report or minimal reproduction:
-Scope: local fixture / existing Earth testnet`}</code>
-            </pre>
-          </div>
-          <Note title="Protect keys and disclose privately">
-            Never post seed phrases, private keys, passwords, session URLs,
-            wallet backups or signer/replica/head/transport state. The public
-            archive does not provide a verified SECURITY.md disclosure route.
-            For a suspected vulnerability, use the official maintainer’s forum
-            profile to request a private reporting channel before sharing
-            exploit details. No response-time or bounty commitment is offered.
-          </Note>
-          <div className="hero-actions">
-            <Button href={DEVELOPER_FORUM}>Open Nodes &amp; Development</Button>
-            <Button href={MAINTAINER_PROFILE} secondary>
-              Maintainer profile
-            </Button>
-            <Button href={WEBSITE_REPOSITORY} secondary>
-              Contribute website fixes
-            </Button>
-          </div>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="developers" />
-      <Closing
-        title="Every claim should have a record."
-        href="/network"
-        label="Inspect current qualification"
-      />
-    </>
-  );
-}
-function Network() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Network & qualification"
-        title="Test on Earth. Qualify every step."
-        description="Development uses a fresh testnet with public fixture keys and no monetary value. A new mainnet has not launched."
-      />
-      <PublicEvidence />
-      <section className="section network-section">
-        <div className="container">
-          <NetworkStatusPanel />
-          <Note title="A fresh genesis after qualification">
-            Development and qualification use public fixtures with no monetary
-            value. Test balances, channels, exports and imports do not migrate
-            into a future mainnet. Production requires its own signed
-            zero-issuance genesis and independent acceptance.
-          </Note>
-          <div className="section-heading genesis-heading">
-            <div>
-              <Eyebrow>WHITE PAPER</Eyebrow>
-              <h2>Defined goals. Evidence still required.</h2>
-            </div>
-            <p>
-              The final paper supplies the normative architecture, risk
-              obligations and embedded implementation and release gates. Full
-              protocol qualification, new-mainnet authorization and each
-              physical route require distinct evidence.
-            </p>
-          </div>
-          <div className="download-grid">
-            {[
-              [
-                "White paper",
-                "The target design and mandatory acceptance contract.",
-                "/whitepaper",
-              ],
-              [
-                "Fresh testnet",
-                "Exact source, public fixtures and qualification gaps.",
-                TESTNET,
-              ],
-              [
-                "Delivery roadmap",
-                "The twelve mandatory capabilities and remaining work.",
-                "/roadmap",
-              ],
-              [
-                "Public implementation plan",
-                "Public implementation plan; subordinate to the final white paper.",
-                CURRENT_PLAN,
-              ],
-            ].map(([title, text, href]) => (
-              <a className="download-card" href={href} key={title}>
-                <FileCheck2 size={24} aria-hidden="true" />
-                <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </div>
-                <ArrowUpRight size={18} aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="network" />
-      <Closing
-        title="Follow the requirements and evidence."
-        href="/roadmap"
-        label="See the roadmap"
-      />
-    </>
-  );
-}
-const milestones = [
-  [
-    "I1",
-    "Currency and regional identity",
-    "Authenticate one currency root, distinct regional rules and signer epochs without an online Earth directory. Discovery never grants monetary authority.",
-  ],
-  [
-    "I2",
-    "Local autonomy during remote disconnection",
-    "Keep local blocks, payments and recovery working without remote HTTP. Ground candidates exercise this; long-term and independent qualification remain open.",
-  ],
-  [
-    "I3",
-    "Unique issuance and conservation",
-    "Bind the supply cap, integer units and zero initial allocation. Preserve mutually exclusive U/E/T value, including pre-finality selected export debits, unique destination credit, exact fees, orphan reversal and checked integer issuance.",
-  ],
-  [
-    "I4",
-    "Transfers between authorized regions",
-    "Support both export and import with multiple sources, owner-authorized debit, exact destination binding and permanent duplicate protection.",
-  ],
-  [
-    "I5",
-    "Onward export and composed finality",
-    "Protect imported provenance and the new debit with recognized local finality before onward import. Probabilistic maturity alone is insufficient.",
-  ],
-  [
-    "I6",
-    "Actual return of value",
-    "Return value through a new export and unique import. Ground cyclic-transfer candidates exist; a returned receipt never releases the initial debit.",
-  ],
-  [
-    "I7",
-    "Regional finality and trust evolution",
-    "Qualify the independent BFT baseline, persisted locks, reviewed view changes, old/new epoch prefix and lock handoff, and full descendant quarantine. Four fixture keys under one owner do not establish independent BFT.",
-  ],
-  [
-    "I8",
-    "Native discovery and evidence relay",
-    "Each normally started full node must discover and relay in the same lifecycle. The supplemental mesh and public v26 native-startup candidate have separate scopes; sustained cross-region progress, real adapters and independent qualification remain open.",
-  ],
-  [
-    "I9",
-    "Recipient-verifiable payment states",
-    "Distinguish identity, route, contact, transport receipt, import, maturity and finality. Wallets must verify current signing state and expose missing or conflicting evidence.",
-  ],
-  [
-    "I10",
-    "Durable history and bounded recovery",
-    "Retain histories, permanent import commitments and finality locks. Qualify independent archives, corruption recovery, old-backup rejection and a declared preservation horizon.",
-  ],
-  [
-    "I11",
-    "Cryptographic longevity and delayed revocation",
-    "Version key and algorithm epochs, qualify post-quantum migration and renewal, and reject downgrades. Million-year cryptographic safety is not established.",
-  ],
-  [
-    "I12",
-    "Independent qualification and sustained service",
-    "Provide separate operators and custody, external review, device recovery and measurable service budgets. Each physical route needs its own evidence.",
-  ],
-] as const;
-function Roadmap() {
-  return (
-    <>
-      <PageHero
-        eyebrow="The roadmap"
-        title="A defined purpose. Mandatory steps."
-        description="The final white paper embeds S1–S18, R1–R24, I1–I12 and the A–G, N1–N10 and P1–P8 gates. No requirement is fully qualified; progress follows evidence, not a promised calendar."
-      />
-      <section className="section">
-        <div className="container narrow">
-          <p className="updated-label">CONTENT REVIEW / 4 OCTOBER 2026</p>
-          <Note title="Development phase">
-            Ground candidates implement parts of the design. The final design is
-            frozen; full protocol qualification, new-mainnet authorization and
-            physical-route qualification remain unfinished. Old and test
-            balances never migrate into a future mainnet.
-          </Note>
-          <div className="roadmap">
-            {milestones.map(([id, title, description]) => (
-              <article className="milestone" key={id}>
-                <div className="milestone-index">{id}</div>
-                <div>
-                  <span className="milestone-status">
-                    {id} · Qualification incomplete
-                  </span>
-                  <h2>{title}</h2>
-                  <p>{description}</p>
-                  {id === "I8" && (
-                    <TextLink href="/node-network">
-                      Inspect the ground mesh
-                    </TextLink>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="hero-actions">
-            <Button href={CURRENT_PLAN}>Read the full master plan</Button>
-            <Button href={TESTNET} secondary>
-              Inspect testnet evidence & gaps
-            </Button>
-          </div>
-          <Note title="Separate acceptance stages">
-            An authenticated executable profile must satisfy S1–S18 and the
-            applicable R1–R24 obligations, A–G, I1–I12, N1–N10 and P1–P8 gates
-            within declared fault, load, verification and horizon limits. A new
-            Earth mainnet additionally needs exact signed adoption and a
-            zero-issuance genesis. A physical route needs measured contacts,
-            capacity and independent operating evidence. Tests or telemetry
-            cannot substitute for these stages.
-          </Note>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="roadmap" />
-      <Closing href="/research" label="Explore research & evidence" />
-    </>
-  );
-}
-function FAQ() {
-  return (
-    <>
-      <PageHero
-        eyebrow="FAQ"
-        title="A little more understanding."
-        description="Straight answers about the vision, the asset, and the network that exists today."
-      />
-      <section className="section">
-        <div className="container narrow">
-          <div className="faq-list faq-full">
-            {faqs.map(([question, answer], i) => (
-              <details key={question} open={i === 0}>
-                <summary>
-                  {question}
-                  <span aria-hidden="true">+</span>
-                </summary>
-                <p>{answer}</p>
-                {question === "What network is available today?" && (
-                  <TextLink href="/network">
-                    Inspect network qualification
-                  </TextLink>
-                )}
-                {question === "How can I verify the genesis?" && (
-                  <TextLink href="/resources">Find the public records</TextLink>
-                )}
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section soft-section">
-        <div className="container guide-next-links">
-          <Button href="/you-need-to-know" secondary>
-            Key limitations
-          </Button>
-          <Button href="/vocabulary" secondary>
-            Vocabulary
-          </Button>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="faq" />
-      <Closing
-        title="Keep the conversation going."
-        text="Bring your questions and ideas to the Rldcoin community."
-        href="https://forum.rldcoin.com/"
-        label="Visit the forum"
-      />
-    </>
-  );
-}
 function About() {
   return (
     <>
       <PageHero
         eyebrow="About Rldcoin"
-        title="A future worth building toward."
-        description="Rldcoin is building an interstellar peer-to-peer payment system for the future of humanity. Development and qualification continue on a value-free Earth testnet."
+        title="Payments across delayed regions."
+        description="Rldcoin is a peer-to-peer payment design for humanity’s interstellar future, beginning with development on Earth."
       />
       <section className="section">
-        <div className="container editorial">
-          <aside>
-            <Eyebrow>THE IDEA</Eyebrow>
-            <span className="editorial-symbol" aria-hidden="true">
-              <Image
-                src="/brand/rldcoin-coin-logo.png"
-                alt=""
-                width={210}
-                height={210}
-              />
-            </span>
-          </aside>
-          <div className="prose large-prose">
-            <h2>Humanity may not always live in one connected place.</h2>
-            <p>
-              People could build lives on Earth, in orbital habitats, aboard
-              spacecraft, and eventually in distant star systems. Between those
-              places, communication will take time. Sometimes it will be
-              interrupted for long periods.
-            </p>
-            <p>
-              Rldcoin asks a practical question: how can people pay each other
-              across star systems while ownership remains verifiable and the
-              participants cannot share an immediate conversation?
-            </p>
-            <p>
-              The answer being developed begins with local Zones and
-              asynchronous evidence. A local community confirms its own
-              activity. A transfer to another region carries proof. The asset’s
-              history must remain continuous throughout the journey.
-            </p>
-            <h2>
-              A defined purpose.
-              <br />
-              An unfinished system.
-            </h2>
-            <p>
-              Development now uses a fresh testnet with public fixture keys and
-              no monetary value. A future mainnet requires a new signed
-              zero-issuance genesis. Old and test balances never migrate.
-            </p>
-            <p>
-              White paper makes local autonomy, conserved onward and return
-              transfers, native relay discovery, long-term preservation and
-              independent qualification mandatory. Sections 18–21 add explicit
-              authority, risk obligations, recovery, funding, embedded release
-              gates and a 100-million-year continuity objective. Ground
-              candidates exercise parts of the design; none of I1–I12 is fully
-              qualified yet.
-            </p>
-            <h2>One currency. Regional verification.</h2>
-            <p>
-              Authorized regions bind one currency root while applying their own
-              explicitly adopted consensus. The target cap is 100 billion RLD,
-              with zero initial allocation and 10²⁴ runlai per RLD. Additional
-              regions do not issue a second reserve. Each import, onward export
-              and return must preserve exact value and authenticated ancestry.
-            </p>
-            <p>
-              Courier discovery cannot authorize a region or a payment. Actual
-              contacts carry evidence; no always-online Earth directory or
-              simultaneous global balance is required.
-            </p>
-            <h2>Built in the open.</h2>
-            <p>
-              The protocol source and verification artifacts are published for
-              inspection. The code is licensed under Apache-2.0. Open source is
-              an invitation to review; it does not replace independent security
-              work.
-            </p>
-            <TextLink href={TESTNET}>
-              Explore testnet source & evidence
-            </TextLink>
-            <br />
-            <TextLink href="/whitepaper">Read the white paper</TextLink>
+        <div className="container narrow prose">
+          <h2>Why regional ledgers?</h2>
+          <p>
+            Future communities may be separated by years of communication delay
+            or intermittent contacts. The design gives each authorized region
+            its own ledger and local finality. A sufficiently connected region
+            should be able to make local payments without waiting for a distant
+            Earth service.
+          </p>
+          <p>
+            Value moves between regions through authenticated source history,
+            recognized finality and a unique destination import. Couriers and
+            neighboring relays carry evidence; carrying a message grants no
+            authority to issue or accept money.
+          </p>
+          <h2>One currency, conserved value</h2>
+          <p>
+            The white paper specifies a cap of 100 billion RLD, zero initial
+            allocation and no native issuance in additional regions. Amounts are
+            exact integers: 1 RLD equals 10²⁴ runlai. An onward or return
+            transfer creates a new debit and import; it never releases an
+            already spent source balance.
+          </p>
+          <h2>A specification and an open implementation</h2>
+          <p>
+            The <Link href="/whitepaper">white paper</Link> defines the required
+            architecture, risk controls and acceptance conditions. The{" "}
+            <a href={REPOSITORY}>protocol repository</a> contains development
+            source. Testnets and separately scoped ground candidates have no
+            monetary value. No mainnet or physical interstellar payment route
+            has been qualified.
+          </p>
+          <Note title="A long-term objective with finite conditions">
+            Continuity requires maintained cryptography, keys, archives,
+            institutions and funded service. The hundred-million-year horizon is
+            a purpose for successive generations, not a security lifetime or a
+            guarantee that every risk can be removed.
+          </Note>
+          <div className="guide-next-links">
+            <Button href="/how-it-works">How it works</Button>
+            <Button href="/whitepaper" secondary>
+              Read the white paper
+            </Button>
           </div>
         </div>
       </section>
-      <WhitepaperAlignment topic="about" />
-      <Closing
-        title="Start with the idea. Follow the evidence."
-        href="/get-started"
-        label="Get started"
-      />
     </>
   );
 }
+
+function HowItWorks() {
+  return (
+    <>
+      <PageHero
+        eyebrow="How it works"
+        title="Verify locally. Carry evidence onward."
+        description="The target combines owner authorization, independent regional finality and asynchronous transfers. Each stage has its own verification conditions."
+      />
+      <section className="section">
+        <div className="container two-column">
+          <div>
+            <Eyebrow>01 / THE REGION</Eyebrow>
+            <h2>
+              A local ledger.
+              <br />
+              Its own finality.
+            </h2>
+          </div>
+          <div className="prose">
+            <p>
+              A region, or Zone, orders and validates local payments under its
+              authenticated rules. The target baseline uses independently
+              operated Byzantine regional finality, with adopted validator
+              membership, durable locks and reviewed epoch changes.
+            </p>
+            <p>
+              Remote disconnection does not require unrelated local payments to
+              stop. A partition inside a region can remove its required quorum;
+              affected finalization and dependent imports or exports must then
+              stop. Safety does not imply availability through every partition.
+            </p>
+            <TextLink href="/whitepaper#18-normative-architecture-and-transition-rules">
+              Read the normative architecture
+            </TextLink>
+          </div>
+        </div>
+      </section>
+      <section className="section soft-section" id="payment-states">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <Eyebrow>02 / THE PAYMENT</Eyebrow>
+              <h2>A transfer is a sequence of checks.</h2>
+            </div>
+            <p>
+              The explorer illustrates required protocol behavior. It is not a
+              transaction service or a live network observation.
+            </p>
+          </div>
+          <TransferExplorer />
+          <div className="prose payment-explanation">
+            <p>
+              The source consumes authorized inputs atomically. An import
+              requires recognized finality for that debit and complete
+              authenticated ancestry. The destination binds its own identity,
+              accepts the export once and applies its adopted maturity rules.
+            </p>
+            <p>
+              A relay receipt proves only its stated transport event. It does
+              not finalize an export, credit the source or establish recipient
+              spendability. Lost contact or elapsed time cannot refund value
+              that a destination may already have accepted.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container two-column">
+          <div>
+            <Eyebrow>03 / THE CONTACT</Eyebrow>
+            <h2>
+              Reach a neighbor.
+              <br />
+              Then another.
+            </h2>
+          </div>
+          <div className="prose">
+            <p>
+              Every normally started full network node should discover reachable
+              neighbors and relay admitted evidence by default. Durable store,
+              carry and forward lets a path use successive contacts even when
+              the whole route is never online at once.
+            </p>
+            <p>
+              A first contact, authenticated identity, capacity and custody
+              policy are still required. The published contact-spool ground
+              prototype is a separately started supplemental process. It does
+              not establish native default discovery or a physical route.
+            </p>
+            <TextLink href="/node-network">Explore nodes and relays</TextLink>
+          </div>
+        </div>
+      </section>
+      <section className="section soft-section">
+        <div className="container narrow prose">
+          <h2>What the protocol must preserve</h2>
+          <ul>
+            <li>Owner authority and exact checked accounting.</li>
+            <li>
+              One spendable location, permanent duplicate-import refusal and
+              authenticated provenance through onward and return transfers.
+            </li>
+            <li>
+              Retention and quarantine of conflicting histories and affected
+              descendants; unrelated qualified activity remains separately
+              scoped.
+            </li>
+            <li>
+              Authentic recovery, key succession and cryptographic renewal
+              within declared horizons, resources and funding.
+            </li>
+          </ul>
+          <p>
+            Prefunded local channels have separate challenge and watcher
+            obligations. Copyable software alone cannot safely authorize
+            unrestricted offline spending. Physical light-time still bounds when
+            new information can arrive.
+          </p>
+          <Note title="Reference rules are not universal rules">
+            The paper’s historical Earth proof-of-work and unanimous-checkpoint
+            profile is distinct from the target baseline. Each region must
+            authenticate and qualify its own exact consensus, epoch, maturity
+            and operating limits. Ground fixtures do not establish complete
+            acceptance.
+          </Note>
+          <div className="guide-next-links">
+            <Button href="/whitepaper" secondary>
+              Read the complete specification
+            </Button>
+            <Button href="/you-need-to-know" secondary>
+              Safety &amp; limits
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function Safety() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Safety & limits"
+        title="Understand the conditions before the claim."
+        description="The design is conditional. Test assets, valid signatures and delivered messages do not by themselves establish a usable payment service."
+      />
+      <section className="section">
+        <div className="container narrow prose">
+          <h2>No mainnet or qualified consumer wallet</h2>
+          <p>
+            Current testnets and ground candidates are for development without
+            monetary value. Test keys may be public. Do not fund them or use
+            real secrets in fixtures. This website offers no sale, exchange,
+            wallet connection or transaction form. A future mainnet needs
+            separate qualification and a fresh signed zero-issuance genesis;
+            test balances and keys never migrate into that authority.
+          </p>
+          <h2>Custody and recovery</h2>
+          <p>
+            Ownership depends on valid keys and an authenticated spending or
+            recovery policy. A copied archive cannot authorize a spend. A stale
+            restore or two copies of signing custody can produce dangerous
+            conflicting actions. The target requires independently witnessed
+            current state, durable signing intent and preauthorized succession
+            or recovery rules.
+          </p>
+          <p>
+            Key loss, compromise, unavailable guardians or lost archives can
+            leave value unavailable. Recovery cannot be granted retroactively by
+            an operator, a new genesis or a website statement. Never publish
+            passwords, private keys or unredacted node and wallet data.
+          </p>
+          <h2>Finality and communication</h2>
+          <p>
+            Authorization, block inclusion, recognized finality, carriage,
+            unique import and recipient maturity are distinct. A sufficiently
+            connected local region can progress independently of remote contact,
+            but a local group without its adopted finality resources stops
+            dependent settlement.
+          </p>
+          <p>
+            No protocol delivers information before a physical contact allows
+            it. A timeout or a missing receipt cannot prove non-import and does
+            not release a source debit. Permanent separation, unsupported
+            ancestry or contradictory finality may leave affected value pending
+            or quarantined.
+          </p>
+          <h2>Privacy and economic limits</h2>
+          <p>
+            A publicly verifiable pseudonymous ledger can expose amounts,
+            provenance and route or timing metadata. Encryption protects only
+            its declared scope; it does not erase disclosed information or
+            guarantee anonymity. A supply cap does not guarantee purchasing
+            power, liquidity or a sustainable security budget.
+          </p>
+          <h2>Maintenance and qualification</h2>
+          <p>
+            Signatures, suites and archives need finite verification horizons,
+            renewal and funded preservation. Independent operation, real
+            adapters and each physical route require their own evidence. Ground
+            tests, a build and document publication cannot prove complete
+            protocol acceptance or remove unknown future risks.
+          </p>
+          <div className="guide-next-links">
+            <Button href="/whitepaper#19-risk-register-and-falsifiable-controls">
+              Read the risk register
+            </Button>
+            <Button
+              href="/whitepaper#20-conformance-and-authenticated-adoption"
+              secondary
+            >
+              Acceptance conditions
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function Developers() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Development"
+        title="Read. Review. Build."
+        description="Use the specification and current repository instructions to work on isolated, no-value implementations."
+      />
+      <section className="section">
+        <div className="container narrow prose">
+          <h2>Start with the specification</h2>
+          <p>
+            The <Link href="/whitepaper">white paper</Link> is the normative
+            contract. Review the architecture, operational risks and acceptance
+            conditions together. Implementation gaps belong in development
+            records; changing code cannot silently weaken the specification.
+          </p>
+          <h2>Protocol and node source</h2>
+          <p>
+            Build and test instructions belong to the{" "}
+            <a href={REPOSITORY}>protocol repository</a>. Follow its current
+            README and documented commands for the selected source and platform.
+            Use the <a href={TESTNET}>Earth testnet guide</a> for the separately
+            scoped testnet. Keep valuable assets and real signing keys outside
+            experiments.
+          </p>
+          <div className="guide-next-links">
+            <Button href={REPOSITORY}>Protocol repository</Button>
+            <Button href={TESTNET} secondary>
+              Testnet guide
+            </Button>
+          </div>
+          <h2>Contribute a change or review</h2>
+          <p>
+            Use the repository’s contribution workflow for implementation, tests
+            and review. Explain the changed behavior, assumptions, affected
+            scope and relevant verification. A prototype result must retain its
+            source identity, failures and limits; it cannot certify an unchanged
+            historical release or independent custody.
+          </p>
+          <h2 id="participate">Discussion and website corrections</h2>
+          <p>
+            Discuss public technical questions in the{" "}
+            <a href={DEVELOPER_FORUM}>Nodes &amp; Development forum</a>. Website
+            source and checks are in the{" "}
+            <a href={WEBSITE_REPOSITORY}>website repository</a>; use its{" "}
+            <a href={`${WEBSITE_REPOSITORY}/issues`}>issue tracker</a> for
+            public corrections. The author’s published contact is{" "}
+            <a href="mailto:dengrunlai@gmail.com">dengrunlai@gmail.com</a>. Do
+            not post secrets or sensitive custody material in public
+            discussions.
+          </p>
+          <Note title="Development is not release authorization">
+            Independent protocol review, wallet and custody qualification,
+            durable archive recovery and authenticated adoption remain required.
+            No mainnet or physical interstellar route is qualified by the
+            website.
+          </Note>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function Network() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Network & development"
+        title="Testnet work. Separate qualification."
+        description="A dated development summary. It is not a live availability monitor, a release authorization or independent verification."
+      />
+      <section className="section">
+        <div className="container">
+          <NetworkStatusPanel />
+        </div>
+      </section>
+      <section className="section soft-section">
+        <div className="container narrow prose">
+          <h2>What remains required</h2>
+          <p>
+            The specification requires owner-authorized local payments,
+            independently recognized regional finality, conserved cross-region
+            onward and return value, native neighbor discovery and durable
+            relay. Key custody, complete provenance, wallet recovery, archive
+            renewal and adversarial resource limits must compose safely.
+          </p>
+          <p>
+            Full qualification is not established. The exact protocol must
+            satisfy applicable S1–S18 and R1–R24 obligations and A–G, I1–I12,
+            N1–N10 and P1–P8 acceptance conditions with independent evidence.
+            Failed or missing scopes remain unqualified. A future mainnet
+            requires fresh signed zero-issuance genesis and verified adoption;
+            physical routes are separately scoped.
+          </p>
+          <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
+            Read the complete acceptance contract
+          </TextLink>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <details className="historical-record">
+            <summary>
+              Earlier published ground observations and their limits
+            </summary>
+            <PublicEvidence />
+          </details>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function Resources() {
-  const sections = [
+  const groups = [
     {
-      title: "Understand the target",
-      label: "01 / WHITE PAPER & REQUIREMENTS",
+      title: "White paper",
       items: [
         [
-          "Rldcoin white paper",
-          "The final 21-chapter design, normative architecture, 24 risk records, embedded acceptance gates and 39 references. Read online or download the frozen PDF.",
+          "Read online",
+          "The frozen normative specification, including architecture, risk obligations and acceptance conditions.",
           "/whitepaper",
         ],
         [
-          "Publication freeze receipt",
-          "The audit commit and exact frozen Markdown/PDF hashes; implementation versions continue separately.",
-          "/documents/rldcoin-whitepaper-freeze.json",
+          "Download PDF",
+          "The approved PDF publication.",
+          "/documents/rldcoin-whitepaper.pdf",
         ],
         [
-          "How it works",
-          "Local ledgers, asynchronous evidence, conservation and payment states.",
-          "/how-it-works",
+          "Canonical Markdown",
+          "The text source used by the web reader.",
+          "/documents/rldcoin-whitepaper.md",
         ],
         [
-          "Protocol overview",
-          "A concise English introduction to the current design and qualification limits.",
-          "/documents/rldcoin-overview.md",
-        ],
-        [
-          "Mandatory roadmap",
-          "The twelve requirements plus normative, operational and native/pre-mainnet gates; distinct protocol, deployment and physical-route acceptance.",
-          "/roadmap",
-        ],
-        [
-          "Public implementation plan",
-          "Public implementation plan; it cannot override the frozen white paper.",
-          CURRENT_PLAN,
-        ],
-        [
-          "You need to know",
-          "Availability, custody, finality and communication limits before a payment.",
-          "/you-need-to-know",
-        ],
-        [
-          "Payment states",
-          "Owner authorization through unique import, maturity and onward export.",
-          "/payments",
-        ],
-        [
-          "Vocabulary",
-          "Plain definitions of the white paper’s terms.",
-          "/vocabulary",
-        ],
-        [
-          "Wallets & ownership",
-          "Payment review and the remaining custody and recovery gates.",
-          "/wallets",
-        ],
-        [
-          "Questions & answers",
-          "Testnet, supply, wallets and ways to participate today.",
-          "/faq",
+          "Publication receipt",
+          "Content hashes and the immutable publication audit binding.",
+          WHITEPAPER_FREEZE,
         ],
       ],
     },
     {
-      title: "Inspect and reproduce",
-      label: "02 / CURRENT DEVELOPMENT",
+      title: "Development",
       items: [
         [
-          "Fresh testnet source & records",
-          "Public fixture keys, exact source commitments, checksums and qualification gaps. No monetary value.",
-          TESTNET,
-        ],
-        [
-          "Run a test node and contribute",
-          "Choose an exact fixture, follow the published commands and share sanitized findings.",
-          "/run-a-node",
-        ],
-        [
-          "Network & qualification",
-          "The current phase, limits and links to public testnet telemetry.",
-          "/network",
-        ],
-        [
           "Protocol source",
-          "Current protocol code and development records; qualification remains separate.",
+          "Implementation and current build, test and contribution instructions.",
           REPOSITORY,
         ],
         [
+          "Earth testnet guide",
+          "No-value testnet guidance, distinct from separately scoped ground candidates.",
+          TESTNET,
+        ],
+        [
           "Website source",
-          "The independent English website source repository.",
+          "Pages, media notices and website checks.",
           WEBSITE_REPOSITORY,
+        ],
+        [
+          "Community forum",
+          "Public project discussion.",
+          "https://forum.rldcoin.com/",
         ],
       ],
     },
@@ -1178,49 +510,82 @@ function Resources() {
     <>
       <PageHero
         eyebrow="Resources"
-        title="Explore. Inspect. Understand."
-        description="The current design, testnet source and qualification evidence."
+        title="Documents and source."
+        description="The specification and the real entry points for development. Publication does not establish implementation or qualification."
       />
-      <PublicEvidence />
       <section className="section">
         <div className="container">
-          {sections.map((section) => (
-            <section className="resource-section" key={section.title}>
+          {groups.map((group) => (
+            <section className="resource-section" key={group.title}>
               <div>
-                <Eyebrow>{section.label}</Eyebrow>
-                <h2>{section.title}</h2>
+                <Eyebrow>READ THE SOURCE</Eyebrow>
+                <h2>{group.title}</h2>
               </div>
               <div className="resource-list">
-                {section.items.map(([title, text, href]) => (
+                {group.items.map(([title, text, href]) => (
                   <Link href={href} key={title}>
                     <div>
                       <h3>{title}</h3>
                       <p>{text}</p>
                     </div>
-                    {href.endsWith(".gz") || href.endsWith(".md") ? (
-                      <Download size={21} aria-hidden="true" />
-                    ) : (
-                      <ArrowUpRight size={21} aria-hidden="true" />
-                    )}
+                    <span aria-hidden="true">↗</span>
                   </Link>
                 ))}
               </div>
             </section>
           ))}
-          <Note title="Download with context">
-            Use the fresh testnet guide and verify exact source commitments and
-            checksums in an isolated environment. Test keys are public and test
-            currency has no value. Testnet evidence does not authorize a mainnet
-            or establish independent qualification.
-          </Note>
+          <div className="container narrow prose">
+            <p>
+              Primary research references are in the{" "}
+              <Link href="/whitepaper#references">
+                white paper bibliography
+              </Link>
+              . A citation informs the design; it does not validate Rldcoin.
+              Published documents retain their original dates and scope.
+            </p>
+            <p>
+              The{" "}
+              <Link href="/documents/rldcoin-implementation-status.md">
+                editorial separation record
+              </Link>{" "}
+              retains prior dated implementation wording. It is not a current
+              network status report or an acceptance certificate.
+            </p>
+          </div>
         </div>
       </section>
-      <WhitepaperAlignment topic="resources" />
-      <Closing
-        title="Knowledge grows through conversation."
-        href="https://forum.rldcoin.com/"
-        label="Visit the community"
+    </>
+  );
+}
+
+function FAQ() {
+  return (
+    <>
+      <PageHero
+        eyebrow="FAQ"
+        title="Common questions."
+        description="The purpose, the target behavior and the limits of today’s development."
       />
+      <section className="section">
+        <div className="container narrow">
+          <div className="faq-list">
+            {faqs.map(([question, answer]) => (
+              <details key={question}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+          <div className="guide-next-links">
+            <Button href="/whitepaper" secondary>
+              Read the specification
+            </Button>
+            <Button href="/you-need-to-know" secondary>
+              Safety &amp; limits
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
@@ -1234,7 +599,9 @@ function Privacy() {
       />
       <section className="section">
         <div className="container narrow prose">
-          <p className="updated-label">LAST REVIEWED / 4 OCTOBER 2026</p>
+          <p className="updated-label">
+            LAST REVIEWED / {CONTENT_REVIEW_DATE.toUpperCase()}
+          </p>
           <h2>No account or wallet connection</h2>
           <p>
             This website has no account registration, payment form, wallet

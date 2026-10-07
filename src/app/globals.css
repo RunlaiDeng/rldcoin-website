@@ -976,7 +976,7 @@ summary:focus-visible {
 }
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   padding-top: 7px;
 }
@@ -4679,4 +4679,45 @@ summary:focus-visible {
 }
 .footer-stage .status-dot {
   background: #a88960;
+}
+
+/* Compact public information pages. */
+.status-scope {
+  padding: 0 28px 24px;
+  font-size: 14px;
+}
+.payment-explanation {
+  max-width: 760px;
+  margin: 32px auto 0;
+}
+.historical-record {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.historical-record > summary {
+  cursor: pointer;
+  padding: 24px;
+  font-weight: 600;
+}
+.historical-record .evidence-section {
+  padding-block: 24px;
+}
+.historical-record .container {
+  width: auto;
+  padding-inline: 24px;
+}
+.historical-record > summary:focus-visible {
+  outline: 2px solid #476b7c;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .status-scope {
+    padding-inline: 20px;
+  }
+  .historical-record > summary {
+    padding: 20px;
+  }
+  .historical-record .container {
+    padding-inline: 20px;
+  }
 }

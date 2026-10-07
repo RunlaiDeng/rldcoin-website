@@ -4,7 +4,7 @@ The English public information website for [rldcoin.com](https://rldcoin.com).
 
 ## What is this repository?
 
-This repository contains the website, educational guides, interactive relay and
+This repository contains the website, concise design explanations, interactive relay and
 transfer illustrations, and the [white paper reader](https://rldcoin.com/whitepaper).
 Rldcoin is being developed as a peer-to-peer payment system across delayed
 regions. The [protocol and node code](https://github.com/RunlaiDeng/rldcoin)
@@ -42,6 +42,9 @@ With that production server running, use a second terminal:
 node scripts/check-site.mjs http://127.0.0.1:3100
 ```
 
+The site has twelve primary content pages. Previous audience, research and
+roadmap URLs redirect to the corresponding consolidated pages.
+
 The existing test checks exact RLD amount formatting. The rendered-site audit
 checks sitemap pages, headings, titles, canonical URLs, local links, anchors and
 a missing-page response. For page changes, also check desktop and mobile
@@ -49,14 +52,14 @@ navigation, keyboard operation, reduced motion and browser errors.
 
 ## Repository layout
 
-| Path | Purpose |
-| --- | --- |
-| [src/app](src/app) | Pages, shared layout, styles, metadata and sitemap |
-| [src/components](src/components) | Navigation, media, educational figures and interactive explorers |
-| [src/lib](src/lib) | Shared content, evidence links, learning guides and amount formatting |
-| [public](public) | Published documents, diagrams, brand assets, photographs and video |
-| [tests](tests) | Focused website tests |
-| [scripts/check-site.mjs](scripts/check-site.mjs) | Production-site link and metadata audit |
+| Path                                             | Purpose                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------ |
+| [src/app](src/app)                               | Pages, shared layout, styles, metadata and sitemap                 |
+| [src/components](src/components)                 | Navigation, media, educational figures and interactive explorers   |
+| [src/lib](src/lib)                               | Shared content, evidence links and amount formatting               |
+| [public](public)                                 | Published documents, diagrams, brand assets, photographs and video |
+| [tests](tests)                                   | Focused website tests                                              |
+| [scripts/check-site.mjs](scripts/check-site.mjs) | Production-site link and metadata audit                            |
 
 ## Content maintenance
 

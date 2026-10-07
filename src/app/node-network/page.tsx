@@ -1,149 +1,76 @@
-import Link from "next/link";
-import { WhitepaperAlignment } from "@/components/whitepaper-alignment";
-import { Button, Eyebrow, Note, PageHero } from "@/components/ui";
-import { PublicEvidence } from "@/components/public-evidence";
+import { Button, Note, PageHero, TextLink } from "@/components/ui";
 import { NodeMeshExplorer } from "@/components/node-mesh-explorer";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "Nodes that extend the network",
-  "Progressive neighbor discovery, multi-hop evidence relay and durable recovery across future regions. Explore the ground prototype and physical limits.",
+  "Nodes & relays",
+  "The target for signed neighbor discovery and durable multi-hop relay. Conceptual local networks, adjacent contacts and explicit physical limits.",
   "/node-network",
 );
 
 export default function NodeNetwork() {
   return (
     <>
-      <div className="node-atlas-hero">
-        <PageHero
-          eyebrow="THE NODE NETWORK"
-          title="A network. Then a connection."
-          description="Each community begins locally. In the target, normally started full nodes relay within declared custody, capacity and funding limits. A station or moving habitat can extend the path through actual contacts; physical routes remain unqualified."
-        />
-      </div>
+      <PageHero
+        eyebrow="Nodes & relays"
+        title="A neighbor. Then a longer path."
+        description="The target joins local networks through adjacent relays, including stationary habitats and mobile carriers. Each new useful contact can extend the reach."
+      />
       <section className="section node-atlas-section">
         <div className="container">
           <NodeMeshExplorer />
         </div>
       </section>
-      <PublicEvidence />
       <section className="section soft-section">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <Eyebrow>PROGRESSIVE CONNECTION</Eyebrow>
-              <h2>
-                Find a neighbor.
-                <br />
-                Reach beyond it.
-              </h2>
-            </div>
-            <p>
-              Like a chain of interconnected local networks, the relay mesh
-              carries signed information and evidence. Each region keeps its own
-              ledger; each contact can extend the network’s reach.
-            </p>
-          </div>
-          <div className="feature-grid three">
-            <div className="feature">
-              <h3>Discover gradually</h3>
-              <p>
-                Reachable neighbors exchange signed node information. Each
-                contact can teach a node about more distant regions. A first
-                contact, seed or physical carrier is still needed.
-              </p>
-            </div>
-            <div className="feature">
-              <h3>Carry across contacts</h3>
-              <p>
-                Messages can cross several relays, even when the whole path is
-                never online at once. Each hop stores evidence before sending it
-                onward.
-              </p>
-            </div>
-            <div className="feature">
-              <h3>Resume after silence</h3>
-              <p>
-                The target retains accepted evidence across contact gaps within
-                declared custody, capacity and funding rules. Restart recovery
-                must establish authentic current state. Discovery, an advertised
-                route, destination receipt and spendable value have separate
-                meanings.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container narrow">
-          <Eyebrow>HISTORICAL GROUND PROTOTYPE · 30 SEPTEMBER 2026</Eyebrow>
-          <h2>A connection pattern tested on Earth.</h2>
-          <p className="page-lead">
-            Three real local processes, labelled Earth, Proxima Centauri and
-            Andromeda, learned all three identities through two adjacent
-            directory contacts. Evidence crossed two hops unchanged. Stopping
-            the middle relay and restarting the sender preserved the queue;
-            restoring the relay delivered the evidence and returned a signed
-            transport receipt.
+        <div className="container narrow prose">
+          <h2>Discovery and relay are required node behavior</h2>
+          <p>
+            Every normally started full network node should advertise
+            authenticated identity, learn reachable neighbors and relay admitted
+            evidence without a separate relay launch or a mandatory Earth
+            directory. A first reachable contact, seed or carried message is
+            still needed.
           </p>
           <p>
-            16 mesh checks and 18 existing transport and route-budget checks
-            passed. The contact-spool program runs separately from the regional
-            ledger node. Its destination receipt says that evidence was stored;
-            ledger acceptance was not exercised in this drill.
+            Store, carry and forward can bridge contacts that never form one
+            continuously online path. Recovery must retain accepted evidence and
+            establish authentic current state under declared custody, capacity
+            and funding rules. A learned route is not proof of current
+            reachability; a transport receipt is not ledger acceptance.
           </p>
-          <div className="hero-actions">
-            <Button href="/whitepaper" secondary>
-              Read the white paper
+          <Note title="Conceptual topology, not a measured route">
+            The circles group local networks; they are not radio ranges or
+            physical overlap. Geometry and animations are not distance or
+            travel-time scales. Earth–Proxima Centauri–Andromeda is an
+            illustrative topology, not an operational payment route.
+          </Note>
+          <h2>Ground transport and full protocol operation are distinct</h2>
+          <p>
+            The published contact-spool prototype is a separately started
+            supplemental process. Regional ground candidates have their own
+            runtime and adoption scope. Neither establishes default discovery on
+            an adopted release, independent operation or a real physical
+            adapter.
+          </p>
+          <h2>Distance still sets the pace</h2>
+          <p>
+            Relays cannot shorten the causal light-time bound. Long gaps also
+            require sustainable storage, contact capacity, key succession and
+            archive renewal. The protocol must declare its finite assumptions
+            and failure outcomes; long-term continuity is not a guarantee of
+            uninterrupted service.
+          </p>
+          <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
+            Read the native relay acceptance obligations
+          </TextLink>
+          <div className="guide-next-links">
+            <Button href="/how-it-works" secondary>
+              Payment lifecycle
+            </Button>
+            <Button href="/network" secondary>
+              Development scope
             </Button>
           </div>
-          <h3>Automatic relay in the regional fixture candidate.</h3>
-          <p>
-            Revision 16 starts relay and local BFT within the ordinary native
-            node lifecycle. Twelve local nodes use pinned TLS neighbors to
-            complete Earth–Proxima–Andromeda–Earth. All Earth processes stop
-            while remote regions import, mature and export value onward and
-            back. Earth resumes, then verifies and matures a new return import;
-            the first source debit remains spent. Fifteen conservation checks
-            were recorded for this historical ground result.
-          </p>
-          <Note title="A future physical network needs more">
-            The prototype has configured adjacent contacts, signed discovery,
-            bounded storage and automatic relay. Physical radio or laser links,
-            local broadcast discovery, real BPv7 adapters, contact scheduling,
-            long-disconnection ledger autonomy, independent operators and
-            long-term key and archive survival still require qualification. The
-            adopted Earth testnet does not inherit this separate candidate's
-            relay or BFT behavior. Same-host tests do not qualify physical
-            links, sustained BFT liveness or independent operation.
-          </Note>
-        </div>
-      </section>
-      <WhitepaperAlignment topic="node-network" />
-      <section className="section soft-section">
-        <div className="container narrow">
-          <h2>Distance sets the pace.</h2>
-          <p className="page-lead">
-            Proxima Centauri is about 4.24 light-years away; Andromeda is about
-            2.5 million light-years away. Under a simplified stationary-endpoint
-            model, new information takes years to the nearest star and millions
-            of years across that galactic distance. A relay cannot shorten the
-            causal light-time bound.
-          </p>
-          <p>
-            These are distance scales, not measured Rldcoin routes. The
-            100-million-year continuity objective is not a lifetime guarantee;
-            operation needs continuing evidence for cryptography, archives,
-            institutions and changing endpoints.{" "}
-            <a href="https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/">
-              NASA distance reference
-            </a>
-            .
-          </p>
-          <p>
-            Qualification continues on a value-free testnet; a mainnet has not
-            launched. <Link href="/roadmap">Follow the roadmap</Link>.
-          </p>
         </div>
       </section>
     </>

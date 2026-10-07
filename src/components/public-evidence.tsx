@@ -1,4 +1,4 @@
-import { CONTENT_REVIEW_DATE } from "@/lib/site";
+import { EVIDENCE_REVIEW_DATE as CONTENT_REVIEW_DATE } from "@/lib/site";
 import { Eyebrow } from "./ui";
 
 export function PublicEvidence() {

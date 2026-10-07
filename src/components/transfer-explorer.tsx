@@ -8,7 +8,7 @@ const steps = [
   {
     title: "Lock at the source",
     label: "01 / SOURCE AUTHORIZATION",
-    text: "The sender authorizes an atomic debit with destination-bound identity. Its value is counted in transit even before finality; import requires adopted source finality and full ancestry. The target uses reviewed independent BFT. Historical Earth checkpoints use 12 confirmations and four signatures.",
+    text: "The sender authorizes an atomic debit with destination-bound identity. Its value is counted in transit even before finality; import requires adopted source finality and full ancestry. Finality follows the region’s authenticated consensus and epoch profile.",
     icon: LockKeyhole,
   },
   {
@@ -20,7 +20,7 @@ const steps = [
   {
     title: "Verify and receive",
     label: "03 / LOCAL ACCEPTANCE",
-    text: "The destination atomically verifies complete admitted history and records permanent unique import with its credit. Spendability follows its authenticated profile; disputed descendants remain quarantined. Historical Earth imports mature after six successor blocks; this is separate from export finality.",
+    text: "The destination atomically verifies complete admitted history and records permanent unique import with its credit. Spendability follows its authenticated profile; disputed descendants remain quarantined.",
     icon: Fingerprint,
   },
   {
@@ -218,7 +218,7 @@ export function TransferExplorer() {
       <div className={styles.transferFigure}>
         <div className={styles.transferFigureTop}>
           <span className={styles.overline}>EVIDENCE JOURNEY / 02</span>
-          <span>White paper reference profile · explanatory model</span>
+          <span>Target design · explanatory model</span>
         </div>
         <TransferMap selected={selected} mobile={false} />
         <TransferMap selected={selected} mobile />
