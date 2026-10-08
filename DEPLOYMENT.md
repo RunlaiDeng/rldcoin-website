@@ -44,14 +44,23 @@ white paper Markdown and PDF with the approved hashes in the publication receipt
 A build or deployment status alone does not prove that the production alias
 serves the intended content.
 
-## Frozen publication
+## Publication revisions and history
 
-The white paper has no publication version label. Its canonical Markdown, PDF
-and [immutable receipt](public/documents/rldcoin-whitepaper-freeze.json) are
-frozen. Check their hashes without editing, relabeling or regenerating the files.
-The PDF builder is retained tooling, not authorization to regenerate the frozen
-publication. Its receipt binds content hashes and audit commits; preserve that
-history.
+The white paper has no numbered publication label. A body revision requires an
+explicit owner decision. Production provides only the current publication.
+Earlier artifact bytes and immutable receipts remain recoverable from Git
+history and local preservation copies, outside the public tree. Never rewrite
+that history. The [successor record](public/documents/rldcoin-whitepaper-release-2026-10-08.json)
+must distinguish candidate, review and publication status and bind the exact
+new source, PDF, predecessor and applicable audit commit. A pending model or
+publication review blocks release.
+
+Generate a proposed PDF into a separate path with `scripts/build-whitepaper.py`
+using `--source`, `--output` and `--skip-svg-export`. The builder requires
+ReportLab and takes its date from the canonical header. This command is tooling,
+not permission to regenerate an old frozen artifact. Verify all canonical text,
+page geometry and rendered pages before selecting the new PDF. Preserve formal
+SVGs unless a separately authorized diagram correction requires new artifacts.
 
 The web reader uses the canonical Markdown. Future progress and defects belong
 in separate implementation/risk records. A body correction requires an explicit

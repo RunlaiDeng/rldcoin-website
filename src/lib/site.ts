@@ -7,8 +7,9 @@ export const WEBSITE_REPOSITORY =
 export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TESTNET.md`;
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
-export const WHITEPAPER_FREEZE = "/documents/rldcoin-whitepaper-freeze.json";
-export const CONTENT_REVIEW_DATE = "7 October 2026";
+export const WHITEPAPER_RELEASE =
+  "/documents/rldcoin-whitepaper-release-2026-10-08.json";
+export const CONTENT_REVIEW_DATE = "8 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
 export const navigation = [
@@ -84,7 +85,7 @@ export const pages = {
   ],
   resources: [
     "Documents & source",
-    "Read the frozen white paper, download its PDF and find the protocol and website repositories.",
+    "Read the research revision, download its PDF and inspect its publication record and development source.",
   ],
   faq: [
     "Frequently asked questions",
@@ -116,6 +117,10 @@ export const faqs = [
   [
     "Does a delivered message mean a completed payment?",
     "No. Source authorization, source finality, transport receipt, destination import and recipient maturity are distinct states. The recipient must validate the destination ledger and the complete authenticated provenance. A timeout does not refund an export or prove that another region never accepted it.",
+  ],
+  [
+    "Does the revision permit refunds after a timeout?",
+    "No. Cancellation is a proposed extension disabled in the baseline. It would require authenticated adoption, recognized destination finality permanently rejecting an unimported export, and a unique source refund retaining its provenance. An imported ID cannot also be cancelled. Silence, transport expiry and a stale non-membership proof are insufficient.",
   ],
   [
     "Will a new node extend the network?",

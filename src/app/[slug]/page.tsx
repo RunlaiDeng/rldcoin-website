@@ -12,7 +12,7 @@ import {
   REPOSITORY,
   TESTNET,
   WEBSITE_REPOSITORY,
-  WHITEPAPER_FREEZE,
+  WHITEPAPER_RELEASE,
   faqs,
 } from "@/lib/site";
 
@@ -181,6 +181,16 @@ function HowItWorks() {
               spendability. Lost contact or elapsed time cannot refund value
               that a destination may already have accepted.
             </p>
+            <h3>Optional cancellation is a separate proposed extension</h3>
+            <p>
+              Cancellation remains disabled in the baseline. An adopted
+              extension would need recognized destination finality that
+              permanently rejects an unimported export, followed by a unique
+              source refund. An imported ID cannot also be cancelled. Refund
+              outputs retain the original provenance and cancellation authority;
+              silence, old non-membership evidence and transport expiry cannot
+              authorize them.
+            </p>
           </div>
         </div>
       </section>
@@ -286,6 +296,14 @@ function Safety() {
             or recovery rules.
           </p>
           <p>
+            The research revision requires the complete independently witnessed
+            prefix and safety floors before restored signing. A durable witness
+            or equivalently qualified fencing must precede release of a new
+            action and prevent two active copies of custody. A witness failure
+            keeps affected signing stopped; a newer-looking local file is not
+            proof of freshness.
+          </p>
+          <p>
             Key loss, compromise, unavailable guardians or lost archives can
             leave value unavailable. Recovery cannot be granted retroactively by
             an operator, a new genesis or a website statement. Never publish
@@ -321,6 +339,14 @@ function Safety() {
             adapters and each physical route require their own evidence. Ground
             tests, a build and document publication cannot prove complete
             protocol acceptance or remove unknown future risks.
+          </p>
+          <p>
+            Renewal must preserve original bytes, exact historical identities,
+            finality locks, consumed IDs, liabilities and incident evidence.
+            Verifying history is distinct from admitting a new action. Archives
+            need measured full-extraction and repair duties, finite funding and
+            explicit service stops. A compact root or a small model cannot
+            establish those obligations.
           </p>
           <div className="guide-next-links">
             <Button href="/whitepaper#19-risk-register-and-falsifiable-controls">
@@ -434,6 +460,13 @@ function Network() {
             requires fresh signed zero-issuance genesis and verified adoption;
             physical routes are separately scoped.
           </p>
+          <p>
+            The 8 October research revision refines cancellation, renewal,
+            recovery, accounting and archive obligations. These are design
+            requirements and proposed mechanisms; publication does not establish
+            their implementation or independent qualification. Historical
+            observations below retain their original dates and scope.
+          </p>
           <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
             Read the complete acceptance contract
           </TextLink>
@@ -460,12 +493,12 @@ function Resources() {
       items: [
         [
           "Read online",
-          "The frozen normative specification, including architecture, risk obligations and acceptance conditions.",
+          "The research revision, including architecture, risk obligations and acceptance conditions.",
           "/whitepaper",
         ],
         [
           "Download PDF",
-          "The approved PDF publication.",
+          "PDF of the research revision.",
           "/documents/rldcoin-whitepaper.pdf",
         ],
         [
@@ -474,9 +507,9 @@ function Resources() {
           "/documents/rldcoin-whitepaper.md",
         ],
         [
-          "Publication receipt",
-          "Content hashes and the immutable publication audit binding.",
-          WHITEPAPER_FREEZE,
+          "Revision record",
+          "Artifact hashes, predecessor bindings and the revision’s review and publication status.",
+          WHITEPAPER_RELEASE,
         ],
       ],
     },
@@ -542,6 +575,11 @@ function Resources() {
               </Link>
               . A citation informs the design; it does not validate Rldcoin.
               Published documents retain their original dates and scope.
+            </p>
+            <p>
+              A revision changes the design text, not an already signed genesis
+              or regional adoption. The current publication is available here;
+              earlier artifact bytes and receipts remain in Git history.
             </p>
             <p>
               The{" "}

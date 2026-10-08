@@ -1,6 +1,16 @@
 # Rldcoin — Protocol overview and implementation records
 
-Reviewed 4 October 2026. The [white paper](https://rldcoin.com/whitepaper) is the normative authority: 21 chapters, 18 architecture rules, 24 risk records with operational obligations, embedded acceptance gates and 39 references. The [canonical PDF](https://rldcoin.com/documents/rldcoin-whitepaper.pdf) and [publication receipt](https://rldcoin.com/documents/rldcoin-whitepaper-freeze.json) bind the approved text to hashes and its audit commit. The paper specifies required capabilities and protocol rules. This maintained overview separates that design from implementation status; dated wording moved out of the paper is retained in [implementation records](/documents/rldcoin-implementation-status.md).
+Reviewed 8 October 2026. The [white paper](https://rldcoin.com/whitepaper) is the normative authority: 21 chapters, 18 architecture rules, 24 risk records with operational obligations, embedded acceptance gates and 53 references. The [canonical PDF](https://rldcoin.com/documents/rldcoin-whitepaper.pdf) and [publication receipt](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-08.json) record the revision’s hashes, predecessor and review status. The paper specifies required capabilities and protocol rules. This maintained overview separates that design from implementation status; dated wording moved out of the paper is retained in [implementation records](/documents/rldcoin-implementation-status.md).
+
+## Research refinements and their limits
+
+The 8 October revision retains the original 21-section architecture, nine figures and monetary rules. It refines requirements; it does not claim these mechanisms have been implemented or independently qualified. The production website provides the current publication; previous publication bytes and receipts remain recoverable from Git history.
+
+Accounting uses compatible causally closed cuts, not a simultaneously observed global balance. Dependency-complete admission, fresh action checks, exact-original-byte renewal bridges and inherited incident provenance remain mandatory. An unresolved or bounded dependency traversal cannot silently label an output clean.
+
+Terminal cancellation is an optional proposed extension disabled in the baseline. Both exact profiles and the export intent must precommit the policy. An unimported export requires recognized destination finality permanently recording rejection before a unique source refund. Imported and rejected terminal states cannot coexist. Refund outputs inherit their cancellation/finality provenance, preserve fees already earned and cannot arise from a timeout or stale absence proof.
+
+Recovery requires the entire independently witnessed prefix and safety floors, with a pre-release durable witness or equivalently qualified fencing and single-active custody. Archives and services need finite funded intervals, exact manifests, measured repair and full-extraction duties, and explicit stops. A root commitment, small model or seconds-long test cannot establish general implementation correctness, indefinite service or physical-route qualification.
 
 ## Purpose and current availability
 

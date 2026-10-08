@@ -63,11 +63,13 @@ navigation, keyboard operation, reduced motion and browser errors.
 
 ## Content maintenance
 
-The [canonical white paper](public/documents/rldcoin-whitepaper.md), its
-[PDF](public/documents/rldcoin-whitepaper.pdf) and the immutable
-[publication receipt](public/documents/rldcoin-whitepaper-freeze.json) are frozen.
-Do not relabel, edit or regenerate them without an explicit owner decision.
-Keep development status and risk updates separate from the normative paper.
+The [canonical white paper](public/documents/rldcoin-whitepaper.md) and its
+[PDF](public/documents/rldcoin-whitepaper.pdf) have a separate
+[revision record](public/documents/rldcoin-whitepaper-release-2026-10-08.json).
+The production site provides only the current publication. Earlier artifacts and
+receipts remain recoverable from Git history; they are not published downloads.
+Body revisions require an explicit owner decision; preserve historical audit bindings. Keep implementation and qualification
+records separate from the normative design.
 
 Public claims must match published sources and retain their scope and failures.
 The network page links to operator testnet telemetry; this is not independent

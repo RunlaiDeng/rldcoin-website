@@ -1,5 +1,6 @@
 """Render the website's Markdown white paper as a compact, readable PDF."""
 
+import argparse
 from html import escape
 from pathlib import Path
 import re
@@ -79,21 +80,28 @@ styles = {
 }
 
 
-def page_frame(canvas, doc):
+def page_frame(canvas, doc, publication_date):
     canvas.saveState()
     width, _ = A4
     canvas.setStrokeColor(colors.black)
     canvas.line(24 * mm, 21 * mm, width - 24 * mm, 21 * mm)
     canvas.setFont("Times-Roman", 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(24 * mm, 16 * mm, "Rldcoin · 4 October 2026")
+    canvas.drawString(24 * mm, 16 * mm, f"Rldcoin · {publication_date}")
     canvas.drawRightString(width - 24 * mm, 16 * mm, str(doc.page))
     canvas.restoreState()
 
 
 def main():
-    export_svgs(ROOT)
-    lines = SOURCE.read_text(encoding="utf-8").splitlines()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source", type=Path, default=SOURCE)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--skip-svg-export", action="store_true")
+    args = parser.parse_args()
+    if not args.skip_svg_export:
+        export_svgs(ROOT)
+    lines = args.source.read_text(encoding="utf-8").splitlines()
+    publication_date = lines[5].strip()
     title = lines[0].removeprefix("# ")
     story = [Paragraph(escape(title), styles["title"])]
     for line in lines[2:5]:
@@ -130,14 +138,15 @@ def main():
             story.append(Paragraph(inline(block), styles["reference" if in_references else "body"]))
 
     doc = SimpleDocTemplate(
-        str(OUTPUT), pagesize=A4,
+        str(args.output), pagesize=A4,
         rightMargin=24 * mm, leftMargin=24 * mm,
         topMargin=23 * mm, bottomMargin=27 * mm,
         title=title, author="Runlai Deng",
         subject="Rldcoin technical white paper",
     )
-    doc.build(story, onFirstPage=page_frame, onLaterPages=page_frame)
-    print(OUTPUT)
+    frame = lambda canvas, doc: page_frame(canvas, doc, publication_date)
+    doc.build(story, onFirstPage=frame, onLaterPages=frame)
+    print(args.output)
 
 
 if __name__ == "__main__":

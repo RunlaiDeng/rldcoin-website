@@ -3,11 +3,11 @@ import { join } from "node:path";
 import Link from "next/link";
 import { TechnicalFigure } from "@/components/technical-figure";
 import { Download } from "lucide-react";
-import { pageMetadata } from "@/lib/site";
+import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Rldcoin white paper",
-  "The 21-chapter Rldcoin protocol specification: independent regional finality, conserved transfers, 24 risk records, embedded acceptance gates and 39 references. Required capabilities, assumptions and conformance conditions.",
+  "The Rldcoin protocol specification: regional finality, conserved transfers, risk obligations and acceptance gates. Required capabilities, assumptions and conformance conditions.",
   "/whitepaper",
 );
 
@@ -15,6 +15,7 @@ const source = readFileSync(
   join(process.cwd(), "public/documents/rldcoin-whitepaper.md"),
   "utf8",
 );
+const publicationDate = source.split("\n")[5].trim().toUpperCase();
 const blocks = source.trim().split(/\n\s*\n/);
 const sections = blocks
   .filter((block) => block.startsWith("## "))
@@ -61,7 +62,7 @@ export default function Whitepaper() {
     <div className="whitepaper-document">
       <section className="whitepaper-hero">
         <div className="container narrow">
-          <p className="eyebrow plain">TECHNICAL PAPER · 4 OCTOBER 2026</p>
+          <p className="eyebrow plain">TECHNICAL PAPER · {publicationDate}</p>
           <h1>Rldcoin: A Peer-to-Peer Payment System Across Delayed Regions</h1>
           <p className="whitepaper-byline">
             Runlai Deng ·{" "}
@@ -75,13 +76,20 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            This paper specifies required regional payment capabilities, asynchronous
-            evidence transport, normative transition rules, the risk register,
-            and embedded acceptance gates. See{" "}
+            This paper specifies required regional payment capabilities,
+            asynchronous evidence transport, normative transition rules, the
+            risk register, and embedded acceptance gates. See{" "}
             <Link href="/network">network &amp; qualification</Link> for
-            implementation status, reviewed public evidence and a separate operator-telemetry
-            link. For a shorter introduction, start with{" "}
+            implementation status, reviewed public evidence and a separate
+            operator-telemetry link. For a shorter introduction, start with{" "}
             <Link href="/you-need-to-know">what you need to know</Link>.
+          </p>
+          <p className="whitepaper-context">
+            The research revision and its proposed mechanisms require separate
+            validation and authenticated adoption. See the{" "}
+            <Link href={WHITEPAPER_RELEASE}>revision record</Link>. Publication
+            does not establish implementation, monetary authority or
+            physical-route qualification.
           </p>
         </div>
       </section>
