@@ -31,3 +31,9 @@ The owner requests a final paper without a publication version number and no fur
 ## Implementation obligations remain in force
 
 All S1-S18, R1-R24, I1-I12, A-G, N1-N10 and P1-P8 obligations remain required. An editorial separation does not qualify a release, erase a failed scope, relax a budget, authorize a test balance or key as money, or justify repeating completed tests. The active original development task remains the sole implementation and fixture owner.
+
+## Regional performance status recorded 9 October 2026
+
+The owner authorized a regional ordinary-payment target of p95 <= 3 seconds and p99 <= 5 seconds under declared normal network and offered-load conditions. This is not achieved performance. Acceptance ends at recipient-verified final spendability and must exercise an actual second payment, counting all valid submissions, pending ages and completion/failure rates. The full contract is in whitepaper Section 20; cross-region delivery and destination maturity are separate.
+
+For the pinned protocol source `01b7e0cd28cfd78194b2fdbf3612410594a4e265`, the development report supplied for this update records 284 passing regression checks and a failed ordinary payment check that did not complete within 180 seconds. The native profile is not adopted. These facts do not qualify the new percentiles, independent regional operation or monetary release. The protocol task remains the sole implementation author; this website update does not alter protocol code, genesis or quorum thresholds. Later exact sources require separately recorded qualification and must retain this failed scope.

@@ -149,6 +149,31 @@ function HowItWorks() {
               affected finalization and dependent imports or exports must then
               stop. Safety does not imply availability through every partition.
             </p>
+            <h3>Seconds-scale local finality is a target</h3>
+            <p>
+              For payments within Earth, including continent-to-continent pairs,
+              within a Mars region, or aboard the same spacecraft, the target
+              under a declared normal network and offered load is p95 ≤ 3
+              seconds and p99 ≤ 5 seconds. This has not been demonstrated. Each
+              region uses its own quorum; local payments do not wait for a
+              distant planet.
+            </p>
+            <p>
+              Measure from signed transaction submission to the recipient
+              independently verifying finality and a balance that can be paid
+              onward. An actual second payment must verify that spendability.
+              Include all valid submissions, pending ages, failures and
+              completion rates, with separate Earth continent pairs, validator
+              counts and load/latency classes. A percentile of successful
+              payments alone is insufficient.
+            </p>
+            <p>
+              Received, pre-confirmed and final/spendable are distinct states.
+              Cross-region delivery still needs propagation, import and adopted
+              destination maturity. Missing local quorum pauses finalization;
+              multiple keys under one controller do not establish independent
+              fault tolerance, even on a small spacecraft.
+            </p>
             <TextLink href="/whitepaper#18-normative-architecture-and-transition-rules">
               Read the normative architecture
             </TextLink>
@@ -348,6 +373,14 @@ function Safety() {
             explicit service stops. A compact root or a small model cannot
             establish those obligations.
           </p>
+          <p>
+            The p95 ≤ 3 second and p99 ≤ 5 second local-payment targets apply
+            only to declared normal network and offered-load conditions. They
+            are not demonstrated performance or a guarantee through quorum loss,
+            partitions or overload. A safe pause must never appear as a final
+            confirmation. Small spacecraft still require the independent
+            validators and quorum of their adopted fault model.
+          </p>
           <div className="guide-next-links">
             <Button href="/whitepaper#19-risk-register-and-falsifiable-controls">
               Read the risk register
@@ -461,11 +494,24 @@ function Network() {
             physical routes are separately scoped.
           </p>
           <p>
-            The 8 October research revision refines cancellation, renewal,
-            recovery, accounting and archive obligations. These are design
-            requirements and proposed mechanisms; publication does not establish
-            their implementation or independent qualification. Historical
-            observations below retain their original dates and scope.
+            The 9 October research revision adds a regional local-payment target
+            of p95 ≤ 3 seconds and p99 ≤ 5 seconds under declared normal network
+            and offered load, alongside cancellation, renewal, recovery,
+            accounting and archive obligations. These are design requirements
+            and proposed mechanisms; publication does not establish their
+            implementation or independent qualification. Historical observations
+            below retain their original dates and scope.
+          </p>
+          <p>
+            At protocol commit{" "}
+            <a href="https://github.com/RunlaiDeng/rldcoin/commit/01b7e0cd28cfd78194b2fdbf3612410594a4e265">
+              01b7e0c
+            </a>
+            , 284 regression checks were reported passing, but the ordinary
+            payment check failed to complete within 180 seconds. The native
+            profile remains unadopted. Neither that regression result nor
+            publication establishes the new final-spendability percentiles or
+            readiness for use with value.
           </p>
           <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
             Read the complete acceptance contract

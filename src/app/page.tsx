@@ -100,7 +100,7 @@ export default function Home() {
               {
                 icon: Globe2,
                 title: "Verified in each region",
-                text: "The target lets a connected local region finalize its own payments while distant regions are unavailable. Local quorum and custody assumptions still apply.",
+                text: "The local-payment target is p95 ≤ 3 seconds and p99 ≤ 5 seconds under declared normal network and load, without waiting for distant regions. This is not yet demonstrated; local quorum and custody assumptions still apply.",
               },
               {
                 icon: Code2,

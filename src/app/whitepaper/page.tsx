@@ -91,6 +91,13 @@ export default function Whitepaper() {
             does not establish implementation, monetary authority or
             physical-route qualification.
           </p>
+          <p className="whitepaper-context">
+            The regional local-payment target is p95 ≤ 3 seconds and p99 ≤ 5
+            seconds under declared normal network and offered load, measured
+            through recipient-verified final spendability with an actual
+            follow-up payment. It is not yet demonstrated and does not bound
+            cross-region propagation or destination maturity.
+          </p>
         </div>
       </section>
       <div className="container whitepaper-layout">

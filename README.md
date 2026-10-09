@@ -65,7 +65,7 @@ navigation, keyboard operation, reduced motion and browser errors.
 
 The [canonical white paper](public/documents/rldcoin-whitepaper.md) and its
 [PDF](public/documents/rldcoin-whitepaper.pdf) have a separate
-[revision record](public/documents/rldcoin-whitepaper-release-2026-10-08.json).
+[revision record](public/documents/rldcoin-whitepaper-release-2026-10-09.json).
 The production site provides only the current publication. Earlier artifacts and
 receipts remain recoverable from Git history; they are not published downloads.
 Body revisions require an explicit owner decision; preserve historical audit bindings. Keep implementation and qualification

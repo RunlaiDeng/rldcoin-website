@@ -8,8 +8,8 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-08.json";
-export const CONTENT_REVIEW_DATE = "8 October 2026";
+  "/documents/rldcoin-whitepaper-release-2026-10-09.json";
+export const CONTENT_REVIEW_DATE = "9 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
 export const navigation = [
@@ -113,6 +113,10 @@ export const faqs = [
   [
     "How can local payments work while distant regions are disconnected?",
     "The target lets a sufficiently connected local region order and finalize its own payments under its adopted consensus. A partition inside that region is different: isolated groups cannot both safely finalize conflicting spends. A group without the required quorum must stop dependent settlement.",
+  ],
+  [
+    "How fast should a payment within one region become spendable?",
+    "The target is p95 ≤ 3 seconds and p99 ≤ 5 seconds under a declared normal network and offered load, for Earth including continent-to-continent payments, a Mars region, or the same spacecraft. It is not yet demonstrated. Measure from signed submission to recipient-verified final spendability and check an actual second payment; include all valid submissions, pending ages and completion rates, separately by region, continent pair, validator count and load/latency class. An acknowledgment or pre-confirmation is not finality. Quorum loss pauses finalization, and cross-region propagation and destination maturity are outside this local deadline.",
   ],
   [
     "Does a delivered message mean a completed payment?",
