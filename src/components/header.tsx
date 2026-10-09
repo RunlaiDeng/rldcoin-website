@@ -111,10 +111,10 @@ export function Header() {
             >
               Development
             </Link>
-            <Link className="nav-cta" href="/whitepaper">
-              White paper
+            <a className="nav-cta" href="https://forum.rldcoin.com/">
+              Community Forum
               <ArrowUpRight size={15} aria-hidden="true" />
-            </Link>
+            </a>
           </nav>
         </div>
       </header>
