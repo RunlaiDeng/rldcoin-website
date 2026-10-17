@@ -86,7 +86,7 @@ export default function Home() {
             </div>
             <p>
               The white paper sets out a single currency across independently
-              validating regional ledgers. These are required capabilities, with
+              validating nodes. These are required capabilities, with
               explicit conditions for safety, delivery and continued operation.
             </p>
           </div>
@@ -99,13 +99,13 @@ export default function Home() {
               },
               {
                 icon: Globe2,
-                title: "Verified in each region",
-                text: "The local-payment target is p95 ≤ 3 seconds and p99 ≤ 5 seconds under declared normal network and load, without waiting for distant regions. This is not yet demonstrated; local quorum and custody assumptions still apply.",
+                title: "Validated by each node",
+                text: "A capable full node can attempt mining and validate authorized payments without another participant. Local inclusion remains conditional and may roll back when a different valid history wins.",
               },
               {
                 icon: Code2,
                 title: "Carried with evidence",
-                text: "Neighboring nodes should discover and relay by default. The destination verifies source finality and history before a unique import becomes spendable.",
+                text: "Ordinary nodes must synchronize and relay authenticated evidence. The recipient validates the same currency's complete history; transport custody is separate from payment inclusion.",
               },
             ].map(({ icon: Icon, title, text }) => (
               <article key={title}>
@@ -136,8 +136,8 @@ export default function Home() {
           </div>
           <div className="prose">
             <p>
-              Regional finality, conserved onward and return value, durable
-              relay, key succession and archive renewal must work together.
+              Open mining, conserved payments, reversible wallet state, durable
+              relay and recoverable history must work together.
               Communication still takes time; a transport receipt is not ledger
               acceptance.
             </p>

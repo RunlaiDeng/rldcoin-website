@@ -7,7 +7,7 @@ import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Rldcoin white paper",
-  "The Rldcoin protocol specification: regional finality, conserved transfers, risk obligations and acceptance gates. Required capabilities, assumptions and conformance conditions.",
+  "Rldcoin survivor-first mining and reversible payments: cumulative-work selection, delayed evidence transport, limitations and acceptance gates.",
   "/whitepaper",
 );
 
@@ -63,7 +63,7 @@ export default function Whitepaper() {
       <section className="whitepaper-hero">
         <div className="container narrow">
           <p className="eyebrow plain">TECHNICAL PAPER · {publicationDate}</p>
-          <h1>Rldcoin: A Peer-to-Peer Payment System Across Delayed Regions</h1>
+          <h1>{source.split("\n")[0].replace(/^# /, "")}</h1>
           <p className="whitepaper-byline">
             Runlai Deng ·{" "}
             <a href="mailto:dengrunlai@gmail.com">dengrunlai@gmail.com</a> ·
@@ -76,9 +76,9 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            This paper specifies required regional payment capabilities,
-            asynchronous evidence transport, normative transition rules, the
-            risk register, and embedded acceptance gates. See{" "}
+            This paper describes open mining, continued single-node operation,
+            reversible payments and asynchronous evidence transport under the
+            Survivor-1 candidate specification. See{" "}
             <Link href="/network">network &amp; qualification</Link> for
             implementation status, reviewed public evidence and a separate
             operator-telemetry link. For a shorter introduction, start with{" "}
@@ -92,11 +92,14 @@ export default function Whitepaper() {
             physical-route qualification.
           </p>
           <p className="whitepaper-context">
-            The regional local-payment target is p95 ≤ 3 seconds and p99 ≤ 5
-            seconds under declared normal network and offered load, measured
-            through recipient-verified final spendability with an actual
-            follow-up payment. It is not yet demonstrated and does not bound
-            cross-region propagation or destination maturity.
+            A capable surviving full node can attempt mining without a committee
+            or founder service. Payments remain conditional and can be reversed
+            when a different valid history wins. No fixed confirmation deadline
+            or operational interstellar route is claimed. Read the{" "}
+            <a href="https://github.com/RunlaiDeng/rldcoin/tree/cf37a9e576f2f6ca581bff0201ce21c9c06cc3ab/docs/protocol/survivor-v1">
+              complete candidate protocol
+            </a>
+            .
           </p>
         </div>
       </section>

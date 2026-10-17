@@ -6,27 +6,27 @@ import styles from "./diagrams.module.css";
 
 const steps = [
   {
-    title: "Lock at the source",
+    title: "Authorize the payment",
     label: "01 / SOURCE AUTHORIZATION",
-    text: "The sender authorizes an atomic debit with destination-bound identity. Its value is counted in transit even before finality; import requires adopted source finality and full ancestry. Finality follows the region’s authenticated consensus and epoch profile.",
+    text: "The owner signs exact inputs, outputs, fees and expiry. Inclusion consumes inputs only on that selected history. Disconnected nodes can have competing histories; a signed intent or local inclusion is not irreversible settlement.",
     icon: LockKeyhole,
   },
   {
     title: "Carry the proof",
     label: "02 / SUCCESSIVE CONTACTS",
-    text: "Signed evidence travels through available relays. Each relay can retain it across a contact gap. A transport acknowledgment states custody under its declared retention contract; it establishes neither unique import nor spendable value.",
+    text: "Signed packets carry the transaction and required history through available contacts. A relay stores exact bytes before acknowledging custody. Acknowledgment does not establish selected-chain inclusion or spendable value.",
     icon: Radio,
   },
   {
     title: "Verify and receive",
     label: "03 / LOCAL ACCEPTANCE",
-    text: "The destination atomically verifies complete admitted history and records permanent unique import with its credit. Spendability follows its authenticated profile; disputed descendants remain quarantined.",
+    text: "The recipient validates complete history for the same currency and applies cumulative-work selection. Selected unspent outputs can support a later authorized payment. A stronger valid branch may subsequently remove that value.",
     icon: Fingerprint,
   },
   {
     title: "Return the receipt",
     label: "04 / RETURNED INFORMATION",
-    text: "A ledger receipt provides evidence of destination import. It carries information back, not currency. Missing receipts and elapsed time never authorize a refund or release the source export.",
+    text: "A signed destination receipt reports custody of exact packet bytes. It can return through other contacts and does not create money or certify inclusion. Missing receipts and elapsed time never authorize a refund.",
     icon: Check,
   },
 ];
@@ -140,12 +140,12 @@ function TransferMap({
             >
               {i === 0
                 ? selected === 0
-                  ? "Authorize and lock"
-                  : "Export remains locked"
+                  ? "Review and sign"
+                  : "Inclusion is conditional"
                 : i === 1
                   ? "Store · carry · forward"
                   : selected >= 2
-                    ? "Unique import + maturity"
+                    ? "Validate selected history"
                     : "Await verified evidence"}
             </text>
             <text
@@ -275,10 +275,11 @@ export function TransferExplorer() {
         </div>
       </div>
       <p className={styles.transferCaption}>
-        This figure explains the intended evidence lifecycle. Onward transfer
-        requires a new export protected by recognized local finality; returning
-        value is a new export and import. A returned receipt never releases the
-        first debit. Full protocol and physical-route qualification remain open.
+        This figure explains the candidate evidence lifecycle. Onward and return
+        payments are ordinary authorized transfers on the selected history.
+        Reorganization can reverse them. A returned receipt does not credit or
+        refund value. Implementation and physical-route qualification are
+        separate.
       </p>
     </div>
   );

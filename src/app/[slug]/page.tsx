@@ -69,27 +69,27 @@ function About() {
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Why regional ledgers?</h2>
+          <h2>Why independent local validation?</h2>
           <p>
             Future communities may be separated by years of communication delay
-            or intermittent contacts. The design gives each authorized region
-            its own ledger and local finality. A sufficiently connected region
-            should be able to make local payments without waiting for a distant
-            Earth service.
+            or intermittent contacts. Each capable full node validates its own
+            view of one currency and can attempt mining without a distant Earth
+            service or local committee. Payments remain conditional on that
+            history continuing to win cumulative-work selection.
           </p>
           <p>
-            Value moves between regions through authenticated source history,
-            recognized finality and a unique destination import. Couriers and
-            neighboring relays carry evidence; carrying a message grants no
-            authority to issue or accept money.
+            Signed transactions and complete history travel through available
+            contacts. Recipients validate them independently. Reconnection can
+            reverse a losing branch; couriers and relays cannot issue money or
+            turn a custody receipt into ledger acceptance.
           </p>
           <h2>One currency, conserved value</h2>
           <p>
             The white paper specifies a cap of 100 billion RLD, zero initial
-            allocation and no native issuance in additional regions. Amounts are
-            exact integers: 1 RLD equals 10²⁴ runlai. An onward or return
-            transfer creates a new debit and import; it never releases an
-            already spent source balance.
+            allocation. Locations receive no separate minting allocation.
+            Amounts are exact integers: 1 RLD equals 10²⁴ runlai. Onward and
+            return payments spend valid outputs on the selected history.
+            Competing branch balances are never added together.
           </p>
           <h2>A specification and an open implementation</h2>
           <p>
@@ -123,167 +123,91 @@ function HowItWorks() {
     <>
       <PageHero
         eyebrow="How it works"
-        title="Verify locally. Carry evidence onward."
-        description="The target combines owner authorization, independent regional finality and asynchronous transfers. Each stage has its own verification conditions."
+        title="Mine locally. Verify every payment."
+        description="Survivor-1 combines open mining, conditional payments and authenticated evidence carried over delayed contacts."
       />
       <section className="section">
-        <div className="container two-column">
-          <div>
-            <Eyebrow>01 / THE REGION</Eyebrow>
-            <h2>
-              A local ledger.
-              <br />
-              Its own finality.
-            </h2>
-          </div>
-          <div className="prose">
-            <p>
-              A region, or Zone, orders and validates local payments under its
-              authenticated rules. The target baseline uses independently
-              operated Byzantine regional finality, with adopted validator
-              membership, durable locks and reviewed epoch changes.
-            </p>
-            <p>
-              Remote disconnection does not require unrelated local payments to
-              stop. A partition inside a region can remove its required quorum;
-              affected finalization and dependent imports or exports must then
-              stop. Safety does not imply availability through every partition.
-            </p>
-            <h3>Seconds-scale local finality is a target</h3>
-            <p>
-              For payments within Earth, including continent-to-continent pairs,
-              within a Mars region, or aboard the same spacecraft, the target
-              under a declared normal network and offered load is p95 ≤ 3
-              seconds and p99 ≤ 5 seconds. This has not been demonstrated. Each
-              region uses its own quorum; local payments do not wait for a
-              distant planet.
-            </p>
-            <p>
-              Measure from signed transaction submission to the recipient
-              independently verifying finality and a balance that can be paid
-              onward. An actual second payment must verify that spendability.
-              Include all valid submissions, pending ages, failures and
-              completion rates, with separate Earth continent pairs, validator
-              counts and load/latency classes. A percentile of successful
-              payments alone is insufficient.
-            </p>
-            <p>
-              Received, pre-confirmed and final/spendable are distinct states.
-              Cross-region delivery still needs propagation, import and adopted
-              destination maturity. Missing local quorum pauses finalization;
-              multiple keys under one controller do not establish independent
-              fault tolerance, even on a small spacecraft.
-            </p>
-            <TextLink href="/whitepaper#18-normative-architecture-and-transition-rules">
-              Read the normative architecture
-            </TextLink>
-          </div>
+        <div className="container narrow prose">
+          <h2>One currency, independently validated histories</h2>
+          <p>
+            Any capable full node can attempt mining with its retained valid
+            history, even when no peer is reachable. No founder machine or fixed
+            committee approves ordinary blocks. Locations do not receive
+            separate issuance rights.
+          </p>
+          <p>
+            Nodes select the complete valid history with greatest cumulative
+            work, using the smallest tip ID to break exact ties. Disconnected
+            nodes may continue on competing branches. Reconnection can reverse
+            rewards, payments and their descendants; balances from different
+            branches are never added together.
+          </p>
+          <h3>Recovery mining has explicit limits</h3>
+          <p>
+            The candidate permits a low-work block after a 14400-second parent
+            timestamp gap. It counts only that block's actual work and does not
+            reset base difficulty. Mining remains probabilistic, reward maturity
+            still applies, and there is no guaranteed four-hour or seconds-scale
+            settlement deadline.
+          </p>
+          <TextLink href="/whitepaper#4-difficulty-and-single-node-operation">
+            Read the mining and recovery rules
+          </TextLink>
         </div>
       </section>
       <section className="section soft-section" id="payment-states">
         <div className="container">
           <div className="section-heading">
             <div>
-              <Eyebrow>02 / THE PAYMENT</Eyebrow>
-              <h2>A transfer is a sequence of checks.</h2>
+              <Eyebrow>THE PAYMENT</Eyebrow>
+              <h2>Evidence arrives. The recipient verifies.</h2>
             </div>
             <p>
-              The explorer illustrates required protocol behavior. It is not a
-              transaction service or a live network observation.
+              This illustrates the candidate contract, not a transaction service
+              or an observed physical route.
             </p>
           </div>
           <TransferExplorer />
           <div className="prose payment-explanation">
             <p>
-              The source consumes authorized inputs atomically. An import
-              requires recognized finality for that debit and complete
-              authenticated ancestry. The destination binds its own identity,
-              accepts the export once and applies its adopted maturity rules.
+              Owners sign exact inputs, outputs, fees and expiry. A recipient
+              verifies complete history and selected-chain inclusion before
+              reporting a payment. A transfer output can be spent in a later
+              block; a reward created at height h first becomes eligible in
+              block h+100.
             </p>
             <p>
-              A relay receipt proves only its stated transport event. It does
-              not finalize an export, credit the source or establish recipient
-              spendability. Lost contact or elapsed time cannot refund value
-              that a destination may already have accepted.
-            </p>
-            <h3>Optional cancellation is a separate proposed extension</h3>
-            <p>
-              Cancellation remains disabled in the baseline. An adopted
-              extension would need recognized destination finality that
-              permanently rejects an unimported export, followed by a unique
-              source refund. An imported ID cannot also be cancelled. Refund
-              outputs retain the original provenance and cancellation authority;
-              silence, old non-membership evidence and transport expiry cannot
-              authorize them.
+              Relays retain and forward authenticated bytes. A destination
+              receipt proves custody of those bytes, not ledger acceptance.
+              Silence and elapsed time never refund a transaction. A valid
+              winning history may later remove a payment that was previously
+              included and spent onward.
             </p>
           </div>
         </div>
       </section>
       <section className="section">
-        <div className="container two-column">
-          <div>
-            <Eyebrow>03 / THE CONTACT</Eyebrow>
-            <h2>
-              Reach a neighbor.
-              <br />
-              Then another.
-            </h2>
-          </div>
-          <div className="prose">
-            <p>
-              Every normally started full network node should discover reachable
-              neighbors and relay admitted evidence by default. Durable store,
-              carry and forward lets a path use successive contacts even when
-              the whole route is never online at once.
-            </p>
-            <p>
-              A first contact, authenticated identity, capacity and custody
-              policy are still required. The published contact-spool ground
-              prototype is a separately started supplemental process. It does
-              not establish native default discovery or a physical route.
-            </p>
-            <TextLink href="/node-network">Explore nodes and relays</TextLink>
-          </div>
-        </div>
-      </section>
-      <section className="section soft-section">
         <div className="container narrow prose">
-          <h2>What the protocol must preserve</h2>
-          <ul>
-            <li>Owner authority and exact checked accounting.</li>
-            <li>
-              One spendable location, permanent duplicate-import refusal and
-              authenticated provenance through onward and return transfers.
-            </li>
-            <li>
-              Retention and quarantine of conflicting histories and affected
-              descendants; unrelated qualified activity remains separately
-              scoped.
-            </li>
-            <li>
-              Authentic recovery, key succession and cryptographic renewal
-              within declared horizons, resources and funding.
-            </li>
-          </ul>
+          <h2>What remains necessary</h2>
           <p>
-            Prefunded local channels have separate challenge and watcher
-            obligations. Copyable software alone cannot safely authorize
-            unrestricted offline spending. Physical light-time still bounds when
-            new information can arrive.
+            Exact accounting, complete validation, durable wallet intent, honest
+            rollback displays and bounded storage must compose through the
+            ordinary node lifecycle. The candidate does not include
+            independently final regional ledgers, bridge mints, native channels
+            or an administrator recovery key.
           </p>
-          <Note title="Reference rules are not universal rules">
-            The paper’s historical Earth proof-of-work and unanimous-checkpoint
-            profile is distinct from the target baseline. Each region must
-            authenticate and qualify its own exact consensus, epoch, maturity
-            and operating limits. Ground fixtures do not establish complete
-            acceptance.
-          </Note>
+          <p>
+            Cryptography, archives, independent security review and physical
+            contacts require finite, separately supported qualification. A
+            single surviving node cannot communicate with a destroyed receiver
+            or recover permanently lost keys and history.
+          </p>
           <div className="guide-next-links">
             <Button href="/whitepaper" secondary>
-              Read the complete specification
+              Read the paper
             </Button>
             <Button href="/you-need-to-know" secondary>
-              Safety &amp; limits
+              Safety and limits
             </Button>
           </div>
         </div>
@@ -297,98 +221,52 @@ function Safety() {
     <>
       <PageHero
         eyebrow="Safety & limits"
-        title="Understand the conditions before the claim."
-        description="The design is conditional. Test assets, valid signatures and delivered messages do not by themselves establish a usable payment service."
+        title="Know what a payment means."
+        description="The candidate prioritizes continued local operation and permits rollback. A confirmation is an observation of one selected history."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>No mainnet or qualified consumer wallet</h2>
+          <h2>No monetary deployment is qualified here</h2>
           <p>
-            Current testnets and ground candidates are for development without
-            monetary value. Test keys may be public. Do not fund them or use
-            real secrets in fixtures. This website offers no sale, exchange,
-            wallet connection or transaction form. A future mainnet needs
-            separate qualification and a fresh signed zero-issuance genesis;
-            test balances and keys never migrate into that authority.
+            Test networks and separate ground candidates have no monetary value.
+            Specification publication, a build or a local experiment does not
+            authorize mainnet or migrate test balances and keys.
           </p>
-          <h2>Custody and recovery</h2>
+          <h2>Local operation and distant certainty are different</h2>
           <p>
-            Ownership depends on valid keys and an authenticated spending or
-            recovery policy. A copied archive cannot authorize a spend. A stale
-            restore or two copies of signing custody can produce dangerous
-            conflicting actions. The target requires independently witnessed
-            current state, durable signing intent and preauthorized succession
-            or recovery rules.
+            A capable full node can attempt mining without peers. It cannot know
+            that no stronger history exists elsewhere. Payments, rewards and
+            subsequent spends can be reversed after reconnection. No fixed
+            confirmation count, relay receipt or maturity boundary provides
+            irreversible global settlement.
           </p>
+          <h2>Keys and recovery remain the owner's responsibility</h2>
           <p>
-            The research revision requires the complete independently witnessed
-            prefix and safety floors before restored signing. A durable witness
-            or equivalently qualified fencing must precede release of a new
-            action and prevent two active copies of custody. A witness failure
-            keeps affected signing stopped; a newer-looking local file is not
-            proof of freshness.
+            Direct-key loss has no protocol reset. Durable intent and
+            reservations reduce accidental conflicting signatures; copied keys
+            and stale whole-wallet backups do not prove exclusive custody or
+            freshness. Uncertain restore must be disclosed before any explicitly
+            authorized new signing.
           </p>
+          <h2>Resources and communication are finite</h2>
           <p>
-            Key loss, compromise, unavailable guardians or lost archives can
-            leave value unavailable. Recovery cannot be granted retroactively by
-            an operator, a new genesis or a website statement. Never publish
-            passwords, private keys or unredacted node and wallet data.
-          </p>
-          <h2>Finality and communication</h2>
-          <p>
-            Authorization, block inclusion, recognized finality, carriage,
-            unique import and recipient maturity are distinct. A sufficiently
-            connected local region can progress independently of remote contact,
-            but a local group without its adopted finality resources stops
-            dependent settlement.
-          </p>
-          <p>
-            No protocol delivers information before a physical contact allows
-            it. A timeout or a missing receipt cannot prove non-import and does
-            not release a source debit. Permanent separation, unsupported
-            ancestry or contradictory finality may leave affected value pending
-            or quarantined.
-          </p>
-          <h2>Privacy and economic limits</h2>
-          <p>
-            A publicly verifiable pseudonymous ledger can expose amounts,
-            provenance and route or timing metadata. Encryption protects only
-            its declared scope; it does not erase disclosed information or
-            guarantee anonymity. A supply cap does not guarantee purchasing
-            power, liquidity or a sustainable security budget.
+            Storage exhaustion must preserve acknowledged obligations and refuse
+            unsupported new work. No protocol recreates lost data or supplies a
+            missing physical link. Transparent transactions and contact metadata
+            are not anonymity.
           </p>
           <h2>Maintenance and qualification</h2>
           <p>
-            Signatures, suites and archives need finite verification horizons,
-            renewal and funded preservation. Independent operation, real
-            adapters and each physical route require their own evidence. Ground
-            tests, a build and document publication cannot prove complete
-            protocol acceptance or remove unknown future risks.
-          </p>
-          <p>
-            Renewal must preserve original bytes, exact historical identities,
-            finality locks, consumed IDs, liabilities and incident evidence.
-            Verifying history is distinct from admitting a new action. Archives
-            need measured full-extraction and repair duties, finite funding and
-            explicit service stops. A compact root or a small model cannot
-            establish those obligations.
-          </p>
-          <p>
-            The p95 ≤ 3 second and p99 ≤ 5 second local-payment targets apply
-            only to declared normal network and offered-load conditions. They
-            are not demonstrated performance or a guarantee through quorum loss,
-            partitions or overload. A safe pause must never appear as a final
-            confirmation. Small spacecraft still require the independent
-            validators and quorum of their adopted fault model.
+            The current suite is not post-quantum. Long journeys need defensible
+            cryptographic and archival horizons, independent operators, funded
+            maintenance and actual route evidence. Historical regional-finality
+            experiments remain historical and do not qualify Survivor-1.
           </p>
           <div className="guide-next-links">
-            <Button href="/whitepaper#19-risk-register-and-falsifiable-controls">
-              Read the risk register
+            <Button href="/whitepaper#9-threats-and-limitations">
+              Threats and limitations
             </Button>
-            <Button
-              href="/whitepaper#20-conformance-and-authenticated-adoption"
-              secondary
-            >
+            <Button href="/whitepaper#10-acceptance-and-release" secondary>
               Acceptance conditions
             </Button>
           </div>
@@ -479,42 +357,26 @@ function Network() {
         <div className="container narrow prose">
           <h2>What remains required</h2>
           <p>
-            The specification requires owner-authorized local payments,
-            independently recognized regional finality, conserved cross-region
-            onward and return value, native neighbor discovery and durable
-            relay. Key custody, complete provenance, wallet recovery, archive
-            renewal and adversarial resource limits must compose safely.
+            The current candidate requires open single-node mining, exact
+            owner-authorized payments, cumulative-work branch selection and
+            reversible wallet state. Ordinary startup must integrate
+            authenticated neighbor synchronization and durable delayed relay.
           </p>
           <p>
-            Full qualification is not established. The exact protocol must
-            satisfy applicable S1–S18 and R1–R24 obligations and A–G, I1–I12,
-            N1–N10 and P1–P8 acceptance conditions with independent evidence.
-            Failed or missing scopes remain unqualified. A future mainnet
-            requires fresh signed zero-issuance genesis and verified adoption;
-            physical routes are separately scoped.
+            Full qualification is not established. The complete Survivor-1
+            contract defines C01-C11, O01-O13 and T01-T22, with an explicit
+            mapping of replaced historical obligations. Independent review,
+            custody, long-history resources and physical routes require their
+            own evidence.
           </p>
           <p>
-            The 9 October research revision adds a regional local-payment target
-            of p95 ≤ 3 seconds and p99 ≤ 5 seconds under declared normal network
-            and offered load, alongside cancellation, renewal, recovery,
-            accounting and archive obligations. These are design requirements
-            and proposed mechanisms; publication does not establish their
-            implementation or independent qualification. Historical observations
-            below retain their original dates and scope.
+            The 16 October paper replaces the former regional quorum-finality
+            and seconds-scale final-spendability target. Earlier ground
+            observations below retain their original profiles and dates; they
+            are not Survivor-1 acceptance evidence.
           </p>
-          <p>
-            At protocol commit{" "}
-            <a href="https://github.com/RunlaiDeng/rldcoin/commit/01b7e0cd28cfd78194b2fdbf3612410594a4e265">
-              01b7e0c
-            </a>
-            , 284 regression checks were reported passing, but the ordinary
-            payment check failed to complete within 180 seconds. The native
-            profile remains unadopted. Neither that regression result nor
-            publication establishes the new final-spendability percentiles or
-            readiness for use with value.
-          </p>
-          <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
-            Read the complete acceptance contract
+          <TextLink href="/whitepaper#10-acceptance-and-release">
+            Read the acceptance contract
           </TextLink>
         </div>
       </section>
@@ -695,14 +557,14 @@ function Privacy() {
           </p>
           <h2>Public ledger privacy is a separate question</h2>
           <p>
-            The final protocol design is a publicly verifiable pseudonymous
-            ledger. Amounts, provenance and route/timing metadata may identify
+            The candidate protocol is a publicly verifiable pseudonymous ledger.
+            Amounts, provenance and route/timing metadata may identify
             participants. Encryption protects only its declared scope and cannot
             erase information already disclosed or hide required verification
-            and incident dependencies from validators. Anonymity and qualified
-            privacy mechanisms are not offered by this website. Read{" "}
-            <Link href="/whitepaper#18-normative-architecture-and-transition-rules">
-              S15 in the final architecture
+            history from validating nodes. Anonymity and qualified privacy
+            mechanisms are not offered by this website. Read{" "}
+            <Link href="/whitepaper#9-threats-and-limitations">
+              the threats and limitations
             </Link>
             .
           </p>

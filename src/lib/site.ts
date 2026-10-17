@@ -8,8 +8,8 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-09.json";
-export const CONTENT_REVIEW_DATE = "9 October 2026";
+  "/documents/rldcoin-whitepaper-release-2026-10-16.json";
+export const CONTENT_REVIEW_DATE = "16 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
 export const navigation = [
@@ -69,11 +69,11 @@ export const pages = {
   ],
   "how-it-works": [
     "How Rldcoin works",
-    "Local regional finality, conserved value and evidence carried across successive contacts. Target capabilities defined by the white paper.",
+    "Open mining, reversible payments and evidence carried across successive contacts under the Survivor-1 candidate.",
   ],
   "you-need-to-know": [
     "Safety & limits",
-    "Testnet limits, custody, regional finality, payment states, privacy and the conditions for future operation.",
+    "Testnet limits, custody, rollback, payment states, privacy and conditions for future operation.",
   ],
   developers: [
     "Develop Rldcoin",
@@ -104,7 +104,7 @@ export const pages = {
 export const faqs = [
   [
     "What is Rldcoin?",
-    "Rldcoin is a peer-to-peer payment design for communities separated by long or intermittent communication. Its target combines local regional ledgers, owner-authorized payments and authenticated transfers carried over successive contacts. The white paper defines the required capabilities; it is not a certificate that they are implemented.",
+    "Rldcoin is a peer-to-peer payment design combining open mining, a single currency, reversible local payments and authenticated delayed carriage. A capable surviving full node can keep attempting mining without a founder or committee. The white paper describes required behavior, not completed qualification.",
   ],
   [
     "Can I buy or use RLD today?",
@@ -112,19 +112,19 @@ export const faqs = [
   ],
   [
     "How can local payments work while distant regions are disconnected?",
-    "The target lets a sufficiently connected local region order and finalize its own payments under its adopted consensus. A partition inside that region is different: isolated groups cannot both safely finalize conflicting spends. A group without the required quorum must stop dependent settlement.",
+    "Each capable full node validates and can mine its retained history without a quorum. Disconnected branches may both include payments. When histories meet, actual cumulative work and a deterministic tie rule select one; losing payments and rewards can roll back.",
   ],
   [
-    "How fast should a payment within one region become spendable?",
-    "The target is p95 ≤ 3 seconds and p99 ≤ 5 seconds under a declared normal network and offered load, for Earth including continent-to-continent payments, a Mars region, or the same spacecraft. It is not yet demonstrated. Measure from signed submission to recipient-verified final spendability and check an actual second payment; include all valid submissions, pending ages and completion rates, separately by region, continent pair, validator count and load/latency class. An acknowledgment or pre-confirmation is not finality. Quorum loss pauses finalization, and cross-region propagation and destination maturity are outside this local deadline.",
+    "Is there a guaranteed confirmation time?",
+    "No. Mining is probabilistic and transport depends on real contacts. The candidate's timestamp-based recovery rule permits easier attempts, not a four-hour deadline. Ordinary outputs can be spent in a later block; rewards become eligible at height h+100. Neither condition makes payment irreversible.",
   ],
   [
     "Does a delivered message mean a completed payment?",
-    "No. Source authorization, source finality, transport receipt, destination import and recipient maturity are distinct states. The recipient must validate the destination ledger and the complete authenticated provenance. A timeout does not refund an export or prove that another region never accepted it.",
+    "No. Byte custody, independently validated history, selected-chain inclusion and local spendability are distinct. A destination receipt does not mint or import money. The recipient verifies the same currency's history; payments may later be reorganized.",
   ],
   [
     "Does the revision permit refunds after a timeout?",
-    "No. Cancellation is a proposed extension disabled in the baseline. It would require authenticated adoption, recognized destination finality permanently rejecting an unimported export, and a unique source refund retaining its provenance. An imported ID cannot also be cancelled. Silence, transport expiry and a stale non-membership proof are insufficient.",
+    "No. Silence, expiry and a transport receipt cannot refund or revoke a released signature. An owner can explicitly authorize a conflicting transfer from still-valid inputs, but selection determines which history includes it; a replacement is not a guaranteed refund.",
   ],
   [
     "Will a new node extend the network?",
@@ -132,7 +132,7 @@ export const faqs = [
   ],
   [
     "Are the historical Earth rules universal?",
-    "No. The white paper distinguishes its proof-of-work reference profile from the target baseline of independent Byzantine regional finality. Each adopted region must bind its exact consensus, signers, epochs, maturity and operating limits. An already signed genesis cannot be changed retroactively.",
+    "No. Survivor-1 is an incompatible new candidate with explicit work, encoding, maturity and recovery rules. Old regional BFT and unanimous-checkpoint fixtures retain their original scope and are not migrated or upgraded by the new paper.",
   ],
   [
     "Does Rldcoin guarantee a hundred million years of operation?",

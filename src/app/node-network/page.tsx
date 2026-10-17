@@ -60,7 +60,7 @@ export default function NodeNetwork() {
             and failure outcomes; long-term continuity is not a guarantee of
             uninterrupted service.
           </p>
-          <TextLink href="/whitepaper#20-conformance-and-authenticated-adoption">
+          <TextLink href="/whitepaper#10-acceptance-and-release">
             Read the native relay acceptance obligations
           </TextLink>
           <div className="guide-next-links">
