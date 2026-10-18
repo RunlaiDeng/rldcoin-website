@@ -93,8 +93,8 @@ function About() {
           </p>
           <h2>A specification and an open implementation</h2>
           <p>
-            The <Link href="/whitepaper">white paper</Link> defines the required
-            architecture, risk controls and acceptance conditions. The{" "}
+            The <Link href="/whitepaper">white paper</Link> explains the
+            architecture, monetary rules and security assumptions. The{" "}
             <a href={REPOSITORY}>protocol repository</a> contains development
             source. Testnets and separately scoped ground candidates have no
             monetary value. No mainnet or physical interstellar payment route
@@ -150,7 +150,7 @@ function HowItWorks() {
             still applies, and there is no guaranteed four-hour or seconds-scale
             settlement deadline.
           </p>
-          <TextLink href="/whitepaper#4-difficulty-and-single-node-operation">
+          <TextLink href="/whitepaper#4-difficulty-and-survivor-operation">
             Read the mining and recovery rules
           </TextLink>
         </div>
@@ -263,10 +263,10 @@ function Safety() {
             experiments remain historical and do not qualify Survivor-1.
           </p>
           <div className="guide-next-links">
-            <Button href="/whitepaper#9-threats-and-limitations">
+            <Button href="/whitepaper#11-security-and-scaling-analysis">
               Threats and limitations
             </Button>
-            <Button href="/whitepaper#10-acceptance-and-release" secondary>
+            <Button href="https://github.com/RunlaiDeng/rldcoin/blob/main/docs/WHITEPAPER_IMPLEMENTATION_ACCEPTANCE.md" secondary>
               Acceptance conditions
             </Button>
           </div>
@@ -288,10 +288,10 @@ function Developers() {
         <div className="container narrow prose">
           <h2>Start with the specification</h2>
           <p>
-            The <Link href="/whitepaper">white paper</Link> is the normative
-            contract. Review the architecture, operational risks and acceptance
-            conditions together. Implementation gaps belong in development
-            records; changing code cannot silently weaken the specification.
+            The <Link href="/whitepaper">white paper</Link> explains the design
+            and its security assumptions. Exact protocol rules, implementation
+            requirements and acceptance conditions are maintained in the
+            repository. Changing code cannot silently weaken those obligations.
           </p>
           <h2>Protocol and node source</h2>
           <p>
@@ -375,7 +375,7 @@ function Network() {
             observations below retain their original profiles and dates; they
             are not Survivor-1 acceptance evidence.
           </p>
-          <TextLink href="/whitepaper#10-acceptance-and-release">
+          <TextLink href="https://github.com/RunlaiDeng/rldcoin/blob/main/docs/WHITEPAPER_IMPLEMENTATION_ACCEPTANCE.md">
             Read the acceptance contract
           </TextLink>
         </div>
@@ -401,7 +401,7 @@ function Resources() {
       items: [
         [
           "Read online",
-          "The research revision, including architecture, risk obligations and acceptance conditions.",
+          "The mechanism paper: transactions, mining, incentives, interstellar communication and security analysis.",
           "/whitepaper",
         ],
         [
@@ -563,7 +563,7 @@ function Privacy() {
             erase information already disclosed or hide required verification
             history from validating nodes. Anonymity and qualified privacy
             mechanisms are not offered by this website. Read{" "}
-            <Link href="/whitepaper#9-threats-and-limitations">
+            <Link href="/whitepaper#11-security-and-scaling-analysis">
               the threats and limitations
             </Link>
             .

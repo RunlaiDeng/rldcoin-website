@@ -130,8 +130,8 @@ export default function Home() {
               across delayed regions.
             </h2>
             <p className="section-lead">
-              The architecture, risk controls and acceptance conditions in one
-              specification.
+              The payment mechanism, miner incentives and security assumptions
+              explained together.
             </p>
           </div>
           <div className="prose">

@@ -7,7 +7,7 @@ import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "Ordinary-user mining and interstellar payments, with design targets for local seconds-scale usable receipt, 100 million daily payments and miner-directed fees on every payment.",
+  "Open mining, conserved transfers, local fast-payment accounting and interstellar evidence carriage, with security and scaling analysis.",
   "/whitepaper",
 );
 
@@ -76,46 +76,15 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            This paper requires ordinary-user mining without accounts, stake or
-            mandatory pools and causal interstellar carriage. It adds design and
-            acceptance targets for local usable receipt at p95 ≤3 seconds and
-            p99 ≤5 seconds, at least 100 million completed payments per continuous
-            24 hours, and a funded protocol fee to miners on every payment. These
-            targets require a separately specified and qualified noncustodial
-            fast layer alongside the Survivor-1 base.
-            See{" "}
-            <Link href="/network">network &amp; qualification</Link> for
-            implementation status, reviewed public evidence and a separate
-            operator-telemetry link. For a shorter introduction, start with{" "}
-            <Link href="/you-need-to-know">what you need to know</Link>.
+            Open proof of work, owner-authorized payments, miner incentives and
+            authenticated evidence carried across delayed contacts. The paper
+            explains local fast-payment accounting and its unresolved enforcement
+            questions, then analyzes security, communication and scaling costs.
           </p>
           <p className="whitepaper-context">
-            The research revision and its proposed mechanisms require separate
-            validation and authenticated adoption. See the{" "}
-            <Link href={WHITEPAPER_RELEASE}>revision record</Link>. Publication
-            does not establish implementation, monetary authority or
-            physical-route qualification.
-          </p>
-          <p className="whitepaper-context">
-            A capable surviving full node can attempt mining without a committee
-            or founder service. Payments remain conditional and can be reversed
-            when a different valid history wins. Local fast usability is separate
-            from base settlement and physical interstellar delivery. No global
-            seconds-finality or operational interstellar route is claimed. Read the{" "}
-            <a href="https://github.com/RunlaiDeng/rldcoin/tree/cf37a9e576f2f6ca581bff0201ce21c9c06cc3ab/docs/protocol/survivor-v1">
-              complete candidate protocol
-            </a>
-            {" "}
-            and its{" "}
-            <a href="https://github.com/RunlaiDeng/rldcoin/blob/725a5392135862b94446bbb7767699bde7d2f6c4/docs/protocol/INTERSTELLAR_OPEN_PAYMENT_REQUIREMENTS.md">
-              open-payment requirements
-            </a>
-            {" "}
-            and{" "}
-            <a href="https://github.com/RunlaiDeng/rldcoin/blob/fe3e993457a11bbf805dea42d00f5a47418871c1/docs/protocol/LOCAL_FAST_PAYMENT_REQUIREMENTS.md">
-              local fast-payment acceptance contract
-            </a>
-            .
+            Implementation requirements and qualification are maintained
+            separately. See <Link href="/network">network &amp; development</Link>
+            {" "}and the <Link href={WHITEPAPER_RELEASE}>revision record</Link>.
           </p>
         </div>
       </section>
