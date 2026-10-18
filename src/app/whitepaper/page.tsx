@@ -6,7 +6,7 @@ import { Download } from "lucide-react";
 import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "Rldcoin white paper",
+  "Interstellar peer-to-peer payments white paper",
   "Permissionless ordinary-user mining and causal interstellar payments: portable signed intent, complete delayed evidence, independent verification and acceptance gates.",
   "/whitepaper",
 );

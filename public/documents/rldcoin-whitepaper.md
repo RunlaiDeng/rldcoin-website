@@ -1,4 +1,4 @@
-# Rldcoin: Permissionless Mining and Causal Interstellar Payments
+# Rldcoin: Interstellar Peer-to-Peer Payments
 
 Runlai Deng
 dengrunlai@gmail.com
