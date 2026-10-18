@@ -7,7 +7,7 @@ import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "Permissionless ordinary-user mining and causal interstellar payments: portable signed intent, complete delayed evidence, independent verification and acceptance gates.",
+  "Ordinary-user mining and interstellar payments, with design targets for local seconds-scale usable receipt, 100 million daily payments and miner-directed fees on every payment.",
   "/whitepaper",
 );
 
@@ -77,9 +77,12 @@ export default function Whitepaper() {
           </div>
           <p className="whitepaper-context">
             This paper requires ordinary-user mining without accounts, stake or
-            mandatory pools, portable signed payment intents, complete delayed
-            evidence and independent recipient verification. It combines the
-            Survivor-1 candidate with additional interstellar product requirements.
+            mandatory pools and causal interstellar carriage. It adds design and
+            acceptance targets for local usable receipt at p95 ≤3 seconds and
+            p99 ≤5 seconds, at least 100 million completed payments per continuous
+            24 hours, and a funded protocol fee to miners on every payment. These
+            targets require a separately specified and qualified noncustodial
+            fast layer alongside the Survivor-1 base.
             See{" "}
             <Link href="/network">network &amp; qualification</Link> for
             implementation status, reviewed public evidence and a separate
@@ -96,8 +99,9 @@ export default function Whitepaper() {
           <p className="whitepaper-context">
             A capable surviving full node can attempt mining without a committee
             or founder service. Payments remain conditional and can be reversed
-            when a different valid history wins. No fixed confirmation deadline
-            or operational interstellar route is claimed. Read the{" "}
+            when a different valid history wins. Local fast usability is separate
+            from base settlement and physical interstellar delivery. No global
+            seconds-finality or operational interstellar route is claimed. Read the{" "}
             <a href="https://github.com/RunlaiDeng/rldcoin/tree/cf37a9e576f2f6ca581bff0201ce21c9c06cc3ab/docs/protocol/survivor-v1">
               complete candidate protocol
             </a>
@@ -105,6 +109,11 @@ export default function Whitepaper() {
             and its{" "}
             <a href="https://github.com/RunlaiDeng/rldcoin/blob/725a5392135862b94446bbb7767699bde7d2f6c4/docs/protocol/INTERSTELLAR_OPEN_PAYMENT_REQUIREMENTS.md">
               open-payment requirements
+            </a>
+            {" "}
+            and{" "}
+            <a href="https://github.com/RunlaiDeng/rldcoin/blob/fe3e993457a11bbf805dea42d00f5a47418871c1/docs/protocol/LOCAL_FAST_PAYMENT_REQUIREMENTS.md">
+              local fast-payment acceptance contract
             </a>
             .
           </p>
