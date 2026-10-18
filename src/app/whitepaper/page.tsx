@@ -7,7 +7,7 @@ import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Rldcoin white paper",
-  "Rldcoin survivor-first mining and reversible payments: cumulative-work selection, delayed evidence transport, limitations and acceptance gates.",
+  "Permissionless ordinary-user mining and causal interstellar payments: portable signed intent, complete delayed evidence, independent verification and acceptance gates.",
   "/whitepaper",
 );
 
@@ -76,9 +76,11 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            This paper describes open mining, continued single-node operation,
-            reversible payments and asynchronous evidence transport under the
-            Survivor-1 candidate specification. See{" "}
+            This paper requires ordinary-user mining without accounts, stake or
+            mandatory pools, portable signed payment intents, complete delayed
+            evidence and independent recipient verification. It combines the
+            Survivor-1 candidate with additional interstellar product requirements.
+            See{" "}
             <Link href="/network">network &amp; qualification</Link> for
             implementation status, reviewed public evidence and a separate
             operator-telemetry link. For a shorter introduction, start with{" "}
@@ -98,6 +100,11 @@ export default function Whitepaper() {
             or operational interstellar route is claimed. Read the{" "}
             <a href="https://github.com/RunlaiDeng/rldcoin/tree/cf37a9e576f2f6ca581bff0201ce21c9c06cc3ab/docs/protocol/survivor-v1">
               complete candidate protocol
+            </a>
+            {" "}
+            and its{" "}
+            <a href="https://github.com/RunlaiDeng/rldcoin/blob/725a5392135862b94446bbb7767699bde7d2f6c4/docs/protocol/INTERSTELLAR_OPEN_PAYMENT_REQUIREMENTS.md">
+              open-payment requirements
             </a>
             .
           </p>

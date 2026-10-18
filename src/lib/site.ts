@@ -8,8 +8,8 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-16.json";
-export const CONTENT_REVIEW_DATE = "16 October 2026";
+  "/documents/rldcoin-whitepaper-release-2026-10-18.json";
+export const CONTENT_REVIEW_DATE = "18 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
 export const navigation = [
