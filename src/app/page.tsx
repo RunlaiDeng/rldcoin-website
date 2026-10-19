@@ -12,7 +12,7 @@ import { pageMetadata, REPOSITORY, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments",
-  "runlai (RLD) payments with local settlement and asynchronous transfer of exclusive spend authority. Explore the interstellar architecture and its trust and recovery rules. No mainnet has launched.",
+  "One currency for separated worlds. Explore Rldcoin’s local settlement, prepared interstellar payments and 21 million RLD issuance design.",
   "/",
 );
 
@@ -29,7 +29,7 @@ export default function Home() {
             url: SITE,
             inLanguage: "en",
             description:
-              "An interstellar runlai (RLD) payment architecture with local settlement and destination-bound transfer of spend authority. Research only; no mainnet or physical stellar service is qualified.",
+              "A research construction for interstellar peer-to-peer payments in runlai (RLD), with local settlement and prepared transfers between separated communities.",
           }),
         }}
       />
@@ -49,23 +49,23 @@ export default function Home() {
             <span>For humanity’s future.</span>
           </h1>
           <p className="cinematic-lead">
-            One native currency: runlai (RLD). Settle locally and carry verified
-            payments between prepared communities.
+            One currency for separated worlds. Settle nearby in runlai (RLD).
+            Carry verified payments farther when contact becomes possible.
           </p>
           <div className="cinematic-actions">
             <Link className="cinematic-button" href="/about">
               Meet Rldcoin <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
             <Link className="cinematic-text-link" href="/how-it-works">
-              How it works <ArrowRight size={17} aria-hidden="true" />
+              Follow a payment <ArrowRight size={17} aria-hidden="true" />
             </Link>
             <Link className="cinematic-text-link" href="/whitepaper">
               Read the white paper <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
           <p className="home-reality">
-            No-value testnets today. No mainnet or operational interstellar
-            payment route.
+            Research construction · No active mainnet · Existing test assets
+            have no monetary value
           </p>
         </div>
       </section>
@@ -77,37 +77,36 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div>
-              <Eyebrow>THE DESIGN</Eyebrow>
+              <Eyebrow>THE IDEA</Eyebrow>
               <h2 id="home-introduction-title">
-                Local payments.
+                A local purchase should not
                 <br />
-                Connections that reach farther.
+                wait for a distant world.
               </h2>
             </div>
             <p>
-              Pay in runlai (RLD) while distant worlds are offline. Principal
-              and protocol fees use the same currency across every domain. A
-              destination preissues source-bound capacity; the payer chooses
-              actual inputs later. Certified execution and complete current data
-              support one destination decision.
+              Communication across space is delayed and intermittent. Rldcoin
+              gives each balance one authoritative home: local communities
+              settle distinct funds locally, then move exact payments between
+              homes without copying the spending right.
             </p>
           </div>
           <div className="home-basics">
             {[
               {
                 icon: KeyRound,
-                title: "Settle locally",
-                text: "Owners authorize exact payments. Local PBFT resolves competing spends; independent execution checks the money. Reconnection does not itself overwrite the local history.",
+                title: "Settle where you are",
+                text: "Owners authorize exact payments. An accepted local quorum orders them. Communities with locally homed funds can trade during isolation while their own quorum and resources remain available.",
               },
               {
                 icon: Globe2,
-                title: "Choose inputs later",
-                text: "Advance receiving coupons commit fees, accepted risks and funded capacity for one source. Choose inputs locally and prepare an independent escrow. Its controller releases or cancels while ordinary settlement continues; no payment-specific stellar approval is needed.",
+                title: "Prepare to send farther",
+                text: "Arrange receiving capacity before choosing future inputs. Prepare exact funds locally; an independent controller cancels or releases while other local settlement continues.",
               },
               {
                 icon: Code2,
-                title: "Interstellar carriage",
-                text: "Carriers move authenticated evidence through delayed or one-way contacts. After a final import, the recipient can pay locally without a return message. Missing receipts never authorize a source refund.",
+                title: "Receive, then keep trading",
+                text: "A complete released payment travels through real contacts. After verification and one-time import, the recipient can spend locally without a message returning to the source.",
               },
             ].map(({ icon: Icon, title, text }) => (
               <article key={title}>
@@ -118,34 +117,80 @@ export default function Home() {
             ))}
           </div>
           <TextLink href="/how-it-works">
-            Explore the payment lifecycle
+            Explore preparation, release and receipt
           </TextLink>
         </div>
       </section>
-      <section className="section soft-section home-paper">
+      <section className="section soft-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <Eyebrow>RUNLAI / RLD</Eyebrow>
+              <h2>
+                One currency.
+                <br />A finite beginning.
+              </h2>
+            </div>
+            <p>
+              Payments, fees and native services use RLD under one monetary
+              identity. Moving between domains neither wraps the currency nor
+              creates another supply.
+            </p>
+          </div>
+          <div className="progress-grid">
+            <article>
+              <h3>21 million RLD</h3>
+              <p>
+                The proposed lifetime cap. Public work consumes unique issuance
+                slots once; new domains cannot enlarge the budget.
+              </p>
+            </article>
+            <article>
+              <h3>Zero initial allocation</h3>
+              <p>
+                No spendable genesis, founder reserve, investor, treasury or
+                validator allocation.
+              </p>
+            </article>
+            <article>
+              <h3>Public issuance work</h3>
+              <p>
+                Installed grants support local Mint work without prior RLD or a
+                compulsory pool. Work distributes issuance; it does not grant
+                consensus votes.
+              </p>
+            </article>
+          </div>
+          <TextLink href="/rld">Read the issuance and fee rules</TextLink>
+        </div>
+      </section>
+      <section className="section home-paper">
         <div className="container two-column">
           <div>
-            <Eyebrow>WHITE PAPER</Eyebrow>
+            <Eyebrow>THE WHITE PAPER</Eyebrow>
             <h2>
-              A payment system
+              A mechanism for
               <br />
-              across delayed regions.
+              the long journey.
             </h2>
             <p className="section-lead">
-              The payment mechanism, authority boundaries and security
-              assumptions explained together.
+              Money, local authority, prepared transfers and the conditions that
+              keep them meaningful.
             </p>
           </div>
           <div className="prose">
             <p>
-              Follow advance receiving capacity, recursive execution receipts
-              and one-time import through delayed contacts. Explicit acceptance
-              covers support bounded current attribution with owner-authorized
-              broadening; complete current data supports onward spending. A 21
-              million RLD lifetime cap and publicly claimable, disjoint work
-              entitlements define issuance without a global payment-branch
-              contest. Ordering failures and stranded value remain explicit
-              boundaries.
+              The paper follows a payment from owner authorization to
+              independent verification and destination receipt. It explains
+              finite receiving capacity, cancel-or-release controllers,
+              public-work issuance, accepted authority exposure and durable
+              carriage.
+            </p>
+            <p>
+              Distance, authority failure and missing data remain explicit.
+              Before release, certified cancellation can return prepared escrow.
+              After release, only permanent destination rejection permits
+              recovery; silence cannot refund a payment.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>
@@ -155,52 +200,53 @@ export default function Home() {
             </div>
             <p>
               <TextLink href="/you-need-to-know">
-                Understand the safety boundaries
+                Understand the assumptions and limits
               </TextLink>
             </p>
           </div>
         </div>
       </section>
-      <section className="section home-progress">
+      <section className="section soft-section home-progress">
         <div className="container">
           <div className="section-heading">
             <div>
               <Eyebrow>OPEN DEVELOPMENT</Eyebrow>
               <h2>
-                Inspect the work.
+                Read the design.
                 <br />
-                Understand its scope.
+                Inspect what exists.
               </h2>
             </div>
             <p>
-              The new paper is a research architecture. Existing source,
-              testnets and ground candidates have separate identities and no
-              monetary value.
+              The current paper is a research construction. Executable
+              implementation, measured performance and independent security need
+              their own evidence. Existing no-value candidates keep their
+              separate scope.
             </p>
           </div>
           <div className="progress-grid">
             <article>
-              <h3>Development status</h3>
+              <h3>Development stage</h3>
               <p>
-                No mainnet has launched. Independent operation, custody, full
-                protocol acceptance and physical routes require their own
-                evidence.
+                No mainnet or operational interstellar payment route is
+                established. Read the distinction between publication,
+                implementation and qualification.
               </p>
               <TextLink href="/network">Network &amp; development</TextLink>
             </article>
             <article>
-              <h3>Protocol source</h3>
+              <h3>Source and review</h3>
               <p>
-                Review the implementation and the repository’s own build, test
-                and contribution instructions.
+                Inspect the node implementation and its source-specific
+                requirements, limits and development records.
               </p>
-              <TextLink href={REPOSITORY}>Browse the source</TextLink>
+              <TextLink href={REPOSITORY}>Browse protocol source</TextLink>
             </article>
             <article>
-              <h3>Take part</h3>
+              <h3>Build with us</h3>
               <p>
-                Help with protocol review, implementation, testing or clear
-                documentation. Keep experiments isolated from valuable assets.
+                Contribute mechanism review, implementation or clear
+                documentation. Tie each claim to the exact work it describes.
               </p>
               <TextLink href="/developers">Developer resources</TextLink>
             </article>

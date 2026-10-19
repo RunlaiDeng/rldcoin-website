@@ -42,8 +42,9 @@ With that production server running, use a second terminal:
 node scripts/check-site.mjs http://127.0.0.1:3100
 ```
 
-The site has twelve primary content pages. Previous audience, research and
-roadmap URLs redirect to the corresponding consolidated pages.
+The site has thirteen primary content pages, including the RLD & issuance guide.
+Previous audience, research and roadmap URLs redirect to the corresponding
+consolidated pages.
 
 The existing test checks exact RLD amount formatting. The rendered-site audit
 checks sitemap pages, headings, titles, canonical URLs, local links, anchors and

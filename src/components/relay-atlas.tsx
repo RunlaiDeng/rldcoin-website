@@ -7,7 +7,7 @@ export const relayNetworks = [
   {
     name: "Earth",
     kind: "Planetary network",
-    text: "A community starts locally. Its nodes exchange information with an adjacent relay when a real contact is available.",
+    text: "Locally homed RLD circulates under an accepted local quorum. A prepared, released payment can leave through an authenticated contact; its relay carries evidence without copying the balance.",
     role: "Local origin",
     icon: "earth",
     x: 170,
@@ -18,7 +18,7 @@ export const relayNetworks = [
   {
     name: "Deep-space station",
     kind: "Habitat network",
-    text: "A station connects its own local network to neighboring networks. It can keep signed evidence while the next contact is unavailable.",
+    text: "A stationary habitat can retain admitted payment material between contacts. Its custody acknowledgment concerns complete bytes, not successful destination import.",
     role: "Stationary relay",
     icon: "station",
     x: 375,
@@ -29,7 +29,7 @@ export const relayNetworks = [
   {
     name: "Proxima Centauri",
     kind: "Stellar network",
-    text: "A distant community verifies its own ledger. Its relay can forward evidence without importing the RLD or becoming an Earth consensus signer.",
+    text: "A distant community settles its own locally homed funds. It may relay another domain’s payment without importing that RLD or becoming a signer for Earth.",
     role: "Regional relay",
     icon: "star",
     x: 580,
@@ -40,7 +40,7 @@ export const relayNetworks = [
   {
     name: "Carrier vessel",
     kind: "Moving network",
-    text: "A mobile habitat brings its local network with it. Stored evidence can move between contacts as the vessel follows a real journey.",
+    text: "A ship prepares local funds, keys and receiving arrangements before departure. It can carry other parties’ complete evidence along its actual travel and contact opportunities.",
     role: "Mobile relay",
     icon: "carrier",
     x: 785,
@@ -51,7 +51,7 @@ export const relayNetworks = [
   {
     name: "Andromeda",
     kind: "Galactic community",
-    text: "The destination receives evidence through a succession of contacts. Its ledger must separately verify the source, uniqueness and acceptance rules.",
+    text: "The destination verifies the released package, original capability, accepted authorities and complete current data. One certified import permits local use; relay delivery alone does not.",
     role: "Local destination",
     icon: "galaxy",
     x: 990,

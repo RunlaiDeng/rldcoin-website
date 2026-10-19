@@ -3,7 +3,10 @@ import { TESTNET, CONTENT_REVIEW_DATE } from "@/lib/site";
 
 export function NetworkStatusPanel() {
   return (
-    <section className="live-panel" aria-label="Network development summary">
+    <section
+      className="live-panel"
+      aria-label="Publication and development summary"
+    >
       <div className="live-panel-top">
         <div>
           <span className="eyebrow plain">
@@ -36,10 +39,9 @@ export function NetworkStatusPanel() {
         </div>
       </div>
       <p className="status-scope">
-        The new paper is not a running protocol upgrade. Existing testnets and
-        ground candidates retain separate identities and evidence scopes. Their
-        observations do not demonstrate this architecture or independent
-        service.
+        The current paper specifies a research construction. Existing testnets
+        and ground candidates retain separate identities and evidence scopes.
+        Their observations do not establish an implementation of this design.
       </p>
       <div className="live-panel-bottom">
         <p>

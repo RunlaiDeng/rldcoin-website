@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Nodes & relays",
-  "The target for signed neighbor discovery and durable multi-hop relay. Conceptual local networks, adjacent contacts and explicit physical limits.",
+  "How local domains and store-carry-forward relays connect separated communities through real contacts, with custody distinct from payment receipt.",
   "/node-network",
 );
 
@@ -13,8 +13,8 @@ export default function NodeNetwork() {
     <>
       <PageHero
         eyebrow="Nodes & relays"
-        title="A neighbor. Then a longer path."
-        description="The target joins local networks through adjacent relays, including stationary habitats and mobile carriers. Each new useful contact can extend the reach."
+        title="Local communities. Successive contacts."
+        description="A path can form over time. Nodes retain admitted evidence and pass it onward when the next real contact becomes available."
       />
       <section className="section node-atlas-section">
         <div className="container">
@@ -23,73 +23,84 @@ export default function NodeNetwork() {
       </section>
       <section className="section soft-section">
         <div className="container narrow prose">
-          <h2>Discovery and relay are required node behavior</h2>
+          <h2>A domain settles; a relay carries</h2>
           <p>
-            Every normally started full network node should advertise
-            authenticated identity, learn reachable neighbors and relay admitted
-            evidence without a separate relay launch or a mandatory Earth
-            directory. A first reachable contact, seed or carried message is
-            still needed.
+            A monetary domain maintains accepted local ordering authority. A
+            relay moves authenticated evidence. One machine may perform both
+            roles, but discovering a neighbor or acknowledging bytes grants no
+            validator vote, balance or destination acceptance.
           </p>
           <p>
-            Store, carry and forward can bridge contacts that never form one
-            continuously online path. Recovery must retain accepted evidence and
-            establish authentic current state under declared custody, capacity
-            and funding rules. A learned route is not proof of current
-            reachability; a transport receipt is not ledger acceptance.
+            Separated domains can trade their own locally homed funds while
+            their quorums remain responsive. Forwarding a payment through
+            another community does not require that community to import the RLD
+            or become its monetary authority.
           </p>
-          <Note title="Conceptual topology, not a measured route">
-            The circles group local networks; they are not radio ranges or
-            physical overlap. Geometry and animations are not distance or
-            travel-time scales. Earth–Proxima Centauri–Andromeda is an
-            illustrative topology, not an operational payment route.
+          <h2>Discover the next useful contact</h2>
+          <p>
+            The paper places bounded discovery and carriage in normal
+            network-node operation. A configured neighbor, observed contact or
+            authenticated carried introduction provides a starting point. Signed
+            identities and bounded route hints suggest candidate contacts. They
+            do not create a trusted currency root or prove a route is currently
+            reachable.
+          </p>
+          <p>
+            No mandatory Earth directory participates in monetary validation. A
+            stationary habitat or mobile carrier can help connect successive
+            local networks. Physical communication and travel opportunities
+            remain prerequisites.
+          </p>
+          <Note title="Explore a topology, not an operating route">
+            Circles group local networks; they do not show radio ranges or
+            physical overlap. Geometry and animation are not distance or
+            travel-time scales. Earth–Proxima Centauri–Andromeda is
+            illustrative.
           </Note>
-          <h2>One-way carriage, independent verification</h2>
+          <h2>Store, carry and forward</h2>
           <p>
-            Sender and recipient need not be online at the same time. Relays
-            carry unchanged owner authorization, a source-bound coupon, a
-            controller release receipt and complete current monetary data. The
-            recipient checks the proof, matching controller certificate, native
-            creation binding and every accepted cover, then durably installs
-            data and imports once before onward local spending. Missing current
-            material leaves the ticket pending; a custody receipt cannot supply
-            monetary authority.
+            A path need not be continuously online end to end. An admitted
+            custodian retains complete agreed bytes durably before acknowledging
+            custody. Later contacts resume bounded fragments or whole objects.
+            Exact commitments and retained identifiers make retries refer to the
+            same transfer without another monetary debit.
           </p>
           <p>
-            A return message can take another path or never arrive. Silence does
-            not restore exported value. Only a permanent destination rejection
-            can authorize source recovery. Reconnection does not itself replace
-            a finalized local ledger under the accepted fault assumptions.
+            Capacity refusal comes before a new custody obligation. Retention,
+            replication, fees and renewal have finite contracts. Queueing
+            includes incident evidence, terminal decisions and missing-data
+            completion; a route hint or expired attempt cannot erase a monetary
+            obligation.
           </p>
-          <h2>A contact must have resources</h2>
+          <h2>One-way delivery after preparation</h2>
           <p>
-            A relay retains accepted bytes durably before acknowledging custody.
-            Bounded batches carry receipts and current material over successive
-            contacts. Compact historical proofs do not remove current-data or
-            permanent-decision storage obligations. Storage exhaustion can
-            refuse new material, while existing obligations remain explicit.
-            Ground prototypes and conceptual routes do not establish a qualified
-            physical service.
+            A compatible destination capability must already be available at the
+            source. The released capsule then carries owner authorization,
+            coupon binding, controller execution receipt and certificate, plus
+            complete current monetary material. The destination independently
+            verifies and imports or rejects once. Missing material leaves it
+            pending.
           </p>
-          <h2>Distance still sets the pace</h2>
           <p>
-            Relays cannot shorten the causal light-time bound. Long gaps also
-            require sustainable storage, contact capacity, key succession and
-            archive renewal. The protocol must declare its finite assumptions
-            and failure outcomes; long-term continuity is not a guarantee of
-            uninterrupted service.
+            After import, the recipient can pay locally without a return
+            acknowledgment. After release, recovery requires permanent
+            destination rejection to travel back. Custody, delivery, import and
+            relay compensation remain distinct events.
           </p>
-          <TextLink href="/whitepaper#10-transport-and-durable-evidence">
-            Read the interstellar communication mechanism
+          <h2>Long gaps require continued care</h2>
+          <p>
+            Relays respect causal delay. Long journeys also need available data,
+            maintained cryptographic profiles, retained controller keys, funded
+            archives and authenticated succession. Lost authority or failed
+            custody can strand funds. A ground prototype does not qualify a
+            physical link or a centuries-long service.
+          </p>
+          <TextLink href="/whitepaper#10-1-neighbor-discovery-and-carriage-scheduling">
+            Read discovery and carriage scheduling
           </TextLink>
-          <p>
-            <TextLink href="/whitepaper#8-an-interstellar-payment-and-local-autonomy">
-              Follow an interstellar payment through onward spending
-            </TextLink>
-          </p>
           <div className="guide-next-links">
             <Button href="/how-it-works" secondary>
-              Payment lifecycle
+              Follow a payment
             </Button>
             <Button href="/network" secondary>
               Development scope

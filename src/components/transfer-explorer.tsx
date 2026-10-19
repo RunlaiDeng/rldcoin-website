@@ -7,26 +7,26 @@ import styles from "./diagrams.module.css";
 const steps = [
   {
     title: "Prepare locally",
-    label: "01 / INDEPENDENT CONTROLLER",
-    text: "A source-bound coupon leaves future inputs unspecified. The owner prepares exact escrow with an independent one-decision controller. Historical proving continues while ordinary native settlement advances. Before release, certified controller cancellation can return escrow once, with original preparation charges retained.",
+    label: "SOURCE / CANCELABLE ESCROW",
+    text: "With compatible receiving capacity already available, the owner selects exact inputs and fees. The source locks escrow in an independent controller. Historical proving proceeds while other local payments continue. Before release, certified controller cancellation permits one local return; performed preparation service remains paid.",
     icon: LockKeyhole,
   },
   {
     title: "Release and carry",
-    label: "02 / PROOF-READY TERMINAL DECISION",
-    text: "The controller commits Exported only with its exact execution receipt and current material ready. Its own quorum certificate excludes cancellation. Carriers move the immutable capsule forward. Ordinary native head changes do not invalidate this fixed object's proof; byte custody grants no balance.",
+    label: "CONTROLLER / ONE TERMINAL DECISION",
+    text: "The controller certifies Exported only when its execution receipt and complete required material are ready. This excludes cancellation. Carriers move the exact package through actual contacts. A custody acknowledgment records retained bytes; it grants no destination balance.",
     icon: Radio,
   },
   {
     title: "Import and spend",
-    label: "03 / COVERED CURRENT STATE",
-    text: "The destination checks release proof, certified ordering, original coupon terms and every acceptance cover, then retains current data and imports once. Same-cover continuation avoids a growing epoch vector. Broadening needs owner approval; broad covers can quarantine more funds. Onward local use needs no source reply.",
+    label: "DESTINATION / ACCEPTANCE OUTCOME",
+    text: "The destination checks the proof, matching certificate, original coupon, accepted authority cover and complete current data. It durably installs that material and imports once. The recipient can then pay locally without a source reply. The same object cannot also be rejected or refunded.",
     icon: Fingerprint,
   },
   {
-    title: "Recover on rejection",
-    label: "04 / AFTER RELEASE",
-    text: "After Exported, only permanent destination rejection permits one source recovery. It excludes import and preserves exact amount or slot identities. Pre-release controller cancellation is a separate local decision. Silence, proof delay and transport expiry never authorize a post-release refund.",
+    title: "Reject and recover",
+    label: "DESTINATION / ALTERNATIVE OUTCOME",
+    text: "Permanent certified rejection excludes import. Only that rejection, carried back to the source, permits one post-release recovery under the original fee terms. A timeout or missing acknowledgment never refunds. If the necessary authority or return path is unavailable, the amount can remain stranded.",
     icon: Check,
   },
 ];
@@ -141,13 +141,17 @@ function TransferMap({
               {i === 0
                 ? selected === 0
                   ? "Prepare controller escrow"
-                  : "Release removes source rights"
+                  : selected === 1
+                    ? "Released funds in flight"
+                    : selected === 2
+                      ? "Source right surrendered"
+                      : "Rejection permits recovery"
                 : i === 1
                   ? "Store · carry · forward"
                   : selected >= 2
                     ? selected === 3
                       ? "Certified rejection"
-                      : "Import exactly once"
+                      : "Import; then local use"
                     : "Await verified evidence"}
             </text>
             <text
@@ -220,7 +224,7 @@ export function TransferExplorer() {
       <div className={styles.transferFigure}>
         <div className={styles.transferFigureTop}>
           <span className={styles.overline}>EVIDENCE JOURNEY / 02</span>
-          <span>Target design · explanatory model</span>
+          <span>Paper mechanism · alternative outcomes</span>
         </div>
         <TransferMap selected={selected} mobile={false} />
         <TransferMap selected={selected} mobile />
@@ -228,7 +232,7 @@ export function TransferExplorer() {
       <div
         className={styles.transferTabs}
         role="tablist"
-        aria-label="Stages of an interstellar payment"
+        aria-label="Payment states and alternative destination outcomes"
       >
         {steps.map((step, index) => (
           <button
@@ -277,12 +281,12 @@ export function TransferExplorer() {
         </div>
       </div>
       <p className={styles.transferCaption}>
-        After a source-bound coupon is available, inputs can be chosen locally
-        and independent preparation can precede a forward payment without a
-        permission round trip. Import and permanent rejection are alternative
-        decisions, not sequential stages. A carriage receipt grants no balance.
-        Accepted ordering assumptions and actual physical contacts remain
-        necessary.
+        Receiving capacity is arranged before this journey. Preparation can
+        cancel locally before release. After release, choose either destination
+        outcome above: import or permanent rejection. Rejection follows an
+        alternative branch; it cannot refund an imported payment. Actual
+        progress depends on accepted quorums, available data and physical
+        contacts.
       </p>
     </div>
   );

@@ -25,8 +25,7 @@ export function NodeMeshExplorer() {
             <span className={styles.overline}>RELAY ATLAS / 01</span>
             <h2>
               Local networks.
-              <br />
-              An expanding reach.
+              <br />A path over time.
             </h2>
           </div>
           <span className={styles.conceptTag}>Interactive concept</span>
@@ -106,10 +105,10 @@ export function NodeMeshExplorer() {
             {interrupted
               ? "Concept: contact paused; admitted evidence stays under its custody contract."
               : layer === "networks"
-                ? "Every network begins with its own community."
+                ? "Each domain settles distinct locally homed funds under its accepted quorum."
                 : layer === "journey"
-                  ? "Evidence follows successive contacts toward its destination."
-                  : "Adjacent relays extend the path beyond a single network."}
+                  ? "A released payment package follows contacts; only verified import grants destination use."
+                  : "Route hints suggest contacts; authenticated neighbors do not grant monetary authority."}
           </p>
           <button
             type="button"

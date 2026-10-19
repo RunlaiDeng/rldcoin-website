@@ -38,6 +38,8 @@ export default async function ContentPage({
   switch (slug) {
     case "about":
       return <About />;
+    case "rld":
+      return <Money />;
     case "how-it-works":
       return <HowItWorks />;
     case "you-need-to-know":
@@ -64,62 +66,72 @@ function About() {
     <>
       <PageHero
         eyebrow="About Rldcoin"
-        title="Local economies. Connected worlds."
-        description="One native currency, independent monetary verification and prepared payments across delayed contacts."
+        title="A local economy should not wait for another star."
+        description="Rldcoin explores how one currency can move between communities that cannot stay in continuous contact."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Settle where the funds are usable</h2>
+          <h2>Start with the distance</h2>
           <p>
-            Locally homed RLD circulates without a distant vote. Owners
-            authorize exact payments; accepted PBFT validators order competing
-            spends. Reconnection does not itself replace a finalized local
-            history. A ship prepares its domain and balances before departure.
+            A community on a ship or another world needs to trade while Earth is
+            unreachable. Waiting for a distant vote on every purchase would make
+            ordinary commerce depend on the journey time of a message. Rldcoin’s
+            paper starts with a different arrangement: give each balance one
+            authoritative home and settle its payments there.
           </p>
-          <h2>Prepare capacity before choosing inputs</h2>
+          <h2>One currency, many local homes</h2>
           <p>
-            A destination preissues finite receiving coupons naming one source,
-            recipient policy, amount limits, fees and funded processing
-            capacity. The payer chooses actual inputs later. With a compatible
-            coupon in hand, payment needs one forward journey and no
-            payment-specific permission round trip. Unknown sources and depleted
-            inventories still require setup.
-          </p>
-          <h2>Verify history without carrying every event</h2>
-          <p>
-            Recursive native receipts prove historical creation. A separate
-            one-decision controller then releases or cancels each prepared
-            object while ordinary local settlement continues. A cold receiver
-            checks the terminal proof, matching certificate and complete current
-            cover/state material. Valid execution cannot reveal an unseen valid
-            quorum fork.
-          </p>
-          <h2>One currency. A fixed 21 million RLD cap.</h2>
-          <p>
-            runlai (RLD) is the sole native payment, fee and service currency.
-            One RLD equals 10^24 atomic units. Genesis creates zero spendable
-            RLD, with no founder, investor, treasury or validator allocation.
-            Import moves existing money without wrapping or duplicating it.
+            runlai (RLD) is the sole native currency. A home, called a domain,
+            maintains its accepted local validators and available balances.
+            Owners authorize payments; local consensus orders them. Separate
+            communities can circulate distinct funds during disconnection as
+            long as their own quorums and resources remain available.
           </p>
           <p>
-            There are 4,096 roots of 1 million slots, each paying 0.005126953125
-            RLD once. Public work detaches at most 256 unconsumed slots.
-            Residual source segments keep the same placement grant, so disjoint
-            claims and unrelated Mint do not invalidate the selected work. Moved
-            or returned slots receive a new grant. Claiming creates no RLD.
+            Moving between homes requires surrendering the old spending right
+            before a new one is installed. Copying a ledger, carrying a private
+            key or relaying a message cannot create a second balance. Import
+            relocates the same RLD under one common monetary identity.
+          </p>
+          <h2>Prepare before the long journey</h2>
+          <p>
+            A destination first supplies funded receiving capacity for one
+            source and agreed acceptance terms. The payer can choose actual
+            inputs later. Local preparation locks the exact amount in a separate
+            controller, which makes one decision: cancel or release. Other local
+            payments can continue while its historical execution proof is built.
           </p>
           <p>
-            Installed ranges support mining during isolation. There is no
-            halving, tail emission, lost-coin replacement or promised completion
-            date. Bootstrap trust, unequal hardware and censorship remain
-            boundaries; fees and funded renewal must sustain operations.
+            After release, a complete payment package travels through real
+            contacts. The destination verifies it and imports or permanently
+            rejects once. A recipient can spend imported RLD locally without
+            sending a receipt back to the source. Unknown destinations and
+            depleted receiving capacity still need setup.
           </p>
-          <Note title="Research and operation are separate">
-            The RLD proof program, exact cryptographic bindings, proving cost,
-            custody and independent operations require implementation and
-            analysis. Publication establishes no measured capacity, mainnet or
-            physical interstellar service. Existing no-value code keeps its
-            separate identity.
+          <h2>A finite supply and explicit operating costs</h2>
+          <p>
+            The proposed lifetime cap is 21 million RLD, with zero spendable
+            genesis and no founder, investor, treasury or validator allocation.
+            Public work issues the fixed budget. Existing RLD pays payment,
+            work-author, relay and archival services. Continued operation needs
+            funded capacity and renewal; no finite reserve promises eternal
+            service.
+          </p>
+          <TextLink href="/rld">Understand RLD and its issuance</TextLink>
+          <h2>A construction with stated assumptions</h2>
+          <p>
+            Local validators, execution proofs, signing custody and available
+            data each have a separate role. The paper makes those dependencies
+            explicit. A shared currency does not mean every community accepts
+            every other authority, and a valid proof cannot expose an unseen
+            conflicting quorum certificate.
+          </p>
+          <Note title="Current stage">
+            The current paper describes a research construction. Existing
+            implementations and no-value testnets have their own scope. Monetary
+            implementation, measured performance and independent security still
+            need evidence. No mainnet or operational interstellar payment route
+            is established by this publication.
           </Note>
           <div className="guide-next-links">
             <Button href="/how-it-works">Follow a payment</Button>
@@ -133,99 +145,231 @@ function About() {
   );
 }
 
+function Money() {
+  return (
+    <>
+      <PageHero
+        eyebrow="RLD & issuance"
+        title="One currency. A finite issuance budget."
+        description="runlai (RLD) pays principal and native protocol fees. The paper fixes a 21 million lifetime cap and zero initial allocation."
+      />
+      <section className="section">
+        <div className="container">
+          <div className="progress-grid">
+            <article>
+              <h2>21,000,000 RLD</h2>
+              <p>
+                Lifetime issuance cap under the construction’s execution,
+                ordering and custody assumptions.
+              </p>
+            </article>
+            <article>
+              <h2>Zero allocation</h2>
+              <p>
+                No spendable genesis, founder reserve, investor, treasury or
+                validator allocation.
+              </p>
+            </article>
+            <article>
+              <h2>10²⁴ atomic units</h2>
+              <p>
+                Per RLD. Moving to another domain creates neither a wrapped
+                token nor new supply.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section className="section soft-section">
+        <div className="container narrow prose">
+          <h2 id="issuance">How the budget becomes RLD</h2>
+          <p>
+            The budget consists of 4,096 roots, each containing 1,000,000 unique
+            issuance slots. Successful Mint work consumes one eligible slot and
+            pays its work author 0.005126953125 RLD. All 4,096,000,000 slots
+            together sum to the cap. A slot can be exercised only once.
+          </p>
+          <h2>Claiming a range is different from mining it</h2>
+          <p>
+            Public proportional-work claims can select up to 256 unconsumed
+            slots for relocation under funded receiving terms. Claiming pays no
+            RLD and replaces no later Mint work. It moves only those exact
+            entitlements through the same prepare, release and install-or-reject
+            mechanism used for typed transfers.
+          </p>
+          <p>
+            A stable placement grant identifies the selected range. Splitting an
+            unrelated range does not invalidate that claim’s work. Moving,
+            consuming or delegating a selected slot can. Every installation or
+            return preserves its unique slot identity and receives a new grant;
+            it never copies the budget.
+          </p>
+          <h2 id="mining">Public work during isolation</h2>
+          <p>
+            A community with an installed grant and a responsive accepted local
+            quorum can admit Mint work without an existing RLD balance, stake or
+            compulsory pool. The proposed profile is Argon2id with 64 MiB
+            memory, three passes and one lane. Work distributes issuance; it
+            does not choose a global payment history or grant validator votes.
+          </p>
+          <p>
+            CPU participation does not establish profitability, equal access or
+            ASIC resistance. Hardware advantage, bootstrap authority, bounded
+            sponsored admission and censorship remain real considerations. The
+            profile and its proving costs have no claimed production benchmark.
+          </p>
+          <h2>No promised exhaustion date</h2>
+          <p>
+            There is no halving, automatic difficulty retarget, tail emission or
+            reissue of lost or retired RLD. Hardware progress may accelerate
+            issuance. Lost grants, unavailable controllers or unreachable
+            authorities can leave actual issuance below the cap. Creating a new
+            domain cannot replenish it.
+          </p>
+          <h2 id="fees">Who pays for a payment?</h2>
+          <p>
+            Every owner-initiated local or cross-domain payment includes a
+            positive RLD service fee and a positive share for a verifiable prior
+            Mint work author, funded from exact authorized existing balances.
+            The work-author share is at least one atomic unit. A funded sponsor
+            may pay on an owner’s behalf. Mint itself requires no RLD admission
+            fee, so first issuance has no prior-balance prerequisite.
+          </p>
+          <p>
+            Service terms cover consensus, verification and an archival-reserve
+            contribution. Cross-domain terms also bind destination and recovery
+            charges before preparation. Performed preparation service remains
+            paid after cancellation. Relay contracts and renewal have their own
+            funded terms; receipts cannot create a subsidy.
+          </p>
+          <h2>Same denomination, explicit acceptance</h2>
+          <p>
+            Communities choose which authority families and security rules they
+            accept. The paper calls these finite policies acceptance covers. Two
+            balances can both be RLD while carrying different accepted exposure.
+            Common denomination alone guarantees neither universal acceptance
+            nor equal market value.
+          </p>
+          <Note title="No sale or monetary launch">
+            These are the current paper’s monetary rules. This website offers no
+            RLD sale, exchange, mining download or wallet connection. Existing
+            test assets have no monetary value and never become mainnet assets.
+          </Note>
+          <div className="guide-next-links">
+            <Button href="/whitepaper#3-money-with-one-authoritative-home">
+              Read the monetary mechanism
+            </Button>
+            <Button href="/you-need-to-know" secondary>
+              Acceptance and risk
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function HowItWorks() {
   return (
     <>
       <PageHero
         eyebrow="How it works"
-        title="Prepare capacity. Choose locally. Send forward."
-        description="Prepare locally while proving continues. Cancel before release, or carry a certified export to one destination decision."
+        title="Pay nearby. Prepare to send farther."
+        description="Keep local settlement local. Move an exact payment between homes through preparation, verified release and one destination decision."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Local ordering, independent validity</h2>
+          <h2 id="local-payments">A local payment stays in its home</h2>
           <p>
-            Owners authorize inputs, exact cover allocations and fees funded
-            from existing RLD, including a positive work-author share. PBFT
-            orders native operations under its accepted fault bound. Preparation
-            delegates funds to an independently ordered controller; proving its
-            historical creation does not require the ordinary ledger to pause.
+            Alice authorizes exact inputs, Bob’s output, change and fees. The
+            domain’s admitted validators execute the command and use Byzantine
+            consensus (PBFT) to order it. Under that quorum’s stated fault
+            bound, a valid certified output can be spent in the next local
+            command. It waits for neither a distant vote nor mining maturity.
           </p>
           <p>
-            Proof validity and exclusive ordering remain different assumptions.
-            A compromised quorum can certify two individually valid branches.
-            Current spend data must also be available: a proof alone is not an
-            onward-spendable balance. Local latency and proving cost are not
-            established by this design.
+            The community needs locally homed RLD, a responsive accepted quorum
+            and operating resources. An issuance grant is needed to mint, not to
+            circulate existing money. A minority partition must wait rather than
+            claim competing spending authority.
           </p>
-          <TextLink href="/whitepaper#4-local-settlement-and-its-meaning">
-            Read the execution and settlement model
-          </TextLink>
+          <h2 id="receiving-capacity">Arrange receiving capacity in advance</h2>
+          <p>
+            Bob’s destination supplies a receiving capability: a finite funded
+            coupon naming one source domain, recipient policy, amount limits,
+            fees, accepted authorities and data/proof bounds. It leaves Alice’s
+            future inputs and future source head unspecified. Each coupon is
+            usable once.
+          </p>
+          <p>
+            Once compatible capacity reaches Alice, she can select funds later
+            and send forward without a payment-specific stellar permission round
+            trip. A new source, unknown destination or depleted coupon inventory
+            still needs setup. Capacity is a retained obligation; local timeouts
+            cannot silently free it.
+          </p>
         </div>
       </section>
       <section className="section soft-section" id="payment-states">
         <div className="container">
           <div className="section-heading">
             <div>
-              <Eyebrow>THE PAYMENT</Eyebrow>
-              <h2>Advance capacity. One exact export.</h2>
+              <Eyebrow>BETWEEN DOMAINS</Eyebrow>
+              <h2>Follow the payment. Explore its outcomes.</h2>
             </div>
             <p>
-              A conceptual journey under stated assumptions, not an available
-              transaction service.
+              A conceptual payment under the paper’s assumptions. Import and
+              rejection are alternative destination decisions.
             </p>
           </div>
           <TransferExplorer />
           <div className="prose payment-explanation">
-            <h3>An invoice can arrive before the payer owns the inputs</h3>
+            <h3>Preparation locks only the selected funds</h3>
             <p>
-              Bob sends a coupon naming Alice’s source domain and committing to
-              fees, acceptance and resource bounds. Alice may receive funds
-              later, select inputs locally and authorize a conforming payment.
-              No draft-specific stellar approval is needed. Each coupon names
-              exactly one source so two domains cannot race for one slot. Unused
-              release requires authorized, source-certified closure.
+              Alice’s native ledger commits exact escrow and delegates it to an
+              independent controller. Other payments continue. Any prover with
+              retained witnesses can prove that historical creation while the
+              ordinary ledger advances; a later head does not invalidate the
+              fixed preparation.
             </p>
-            <h3>Separate preparation from proof-ready release</h3>
+            <h3>Cancellation belongs before release</h3>
             <p>
-              Native preparation commits an immutable escrow and its controller.
-              Any retained-witness prover can prove that historical checkpoint
-              while the native head advances. The controller releases only after
-              its exact proof and material are ready, or cancels before release.
-              A canceled preparation returns locally once; released funds
-              recover only after permanent destination rejection. Preparation
-              service fees remain payable.
+              The controller makes one certified terminal decision. Canceled
+              permits one local return and closes the coupon. Exported releases
+              a proof-ready payment package and excludes cancellation. Original
+              preparation charges remain paid. An unavailable controller can
+              strand the escrow; a new native committee cannot seize it.
             </p>
-            <h3>Use explicit acceptance covers</h3>
+            <h3>A complete package supports independent receipt</h3>
             <p>
-              An immutable acceptance cover states which authority families a
-              recipient accepts. Recursive execution proves that all actual
-              ancestry fits that cover. Same-cover amounts coalesce without a
-              growing epoch list. Broadening a cover needs explicit owner
-              approval and verified inclusion; narrowing requires additional
-              ancestry evidence. An incident can quarantine the entire covered
-              amount.
+              Bob’s domain checks execution proofs, matching quorum
+              certificates, the original coupon and complete current data. It
+              either imports once or permanently rejects. After import, Bob can
+              spend locally without a source reply. After release, source
+              recovery requires certified rejection. Silence, delay and a lost
+              receipt never refund a released payment.
             </p>
-            <h3>Separate placement identity from mining progress</h3>
+            <h3>The recipient chooses acceptable exposure</h3>
             <p>
-              Claim work names a stable placement grant and selected range,
-              without binding mutable segment boundaries. A disjoint split
-              preserves that grant and the other claim. Preparation locks only
-              selected slots in their controller. Cancellation, destination
-              installation or rejection return relocates those exact slots under
-              a new grant, preserving the cap.
+              An acceptance cover lists the authority families and rules Bob
+              accepts. Execution proves the payment’s actual ancestry fits that
+              policy. Amounts with exactly the same cover can coalesce. A wider
+              cover needs explicit owner approval and verified inclusion; a
+              narrower one needs additional ancestry evidence. Incidents can
+              quarantine an entire covered portion.
             </p>
+            <h3>Proofs and ordering answer different questions</h3>
             <p>
-              Before release, a certified controller cancellation returns
-              prepared escrow once. After release, only permanent destination
-              rejection permits recovery; silence cannot refund. Positive
-              service and work-author fees use RLD. Funded capacity, accepted
-              quorums, available data and physical contacts remain necessary.
+              Recursive receipts establish valid monetary execution under an
+              authenticated program. PBFT separately excludes competing uses
+              under its fault assumptions. A valid proof cannot reveal a hidden,
+              separately valid quorum fork. Complete current data is also needed
+              to make the next payment; a root or receipt alone is insufficient.
             </p>
           </div>
           <div className="guide-next-links">
-            <Button href="/whitepaper#12-conservation-and-safety-argument">
-              Read the conservation argument
+            <Button href="/whitepaper#5-export-surrender-before-sending">
+              Read the exact transition rules
             </Button>
             <Button href="/you-need-to-know" secondary>
               Safety and limits
@@ -238,89 +382,67 @@ function HowItWorks() {
 }
 
 function Safety() {
+  const boundaries = [
+    [
+      "Local finality is conditional",
+      "PBFT uses admitted validators, durable locks and a stated Byzantine fault bound. A disconnected minority cannot finalize. If the accepted quorum is compromised, individually valid conflicting histories can be certified; remote silence cannot expose the hidden branch.",
+    ],
+    [
+      "A proof needs a correct program",
+      "Recursive receipts verify execution only under an authenticated RLD program and a sound proof backend. The paper names a RISC Zero reference profile, but supplies no implemented RLD guest, qualified image identity or measured proving cost. Unsupported, fake or unresolved conditional receipts must refuse.",
+    ],
+    [
+      "Available data remains essential",
+      "Recipients need full current outputs, cover definitions and authenticated access material to execute their next payment. Proof compression does not supply lost bytes. Permanent duplicate-prevention decisions and contracted audit archives retain storage and funding costs.",
+    ],
+    [
+      "Preparation and release have different exits",
+      "Before release, an authorized certified controller cancellation can return escrow once. After release, only permanent destination rejection permits recovery. A timeout, expired transport attempt, missing receipt or failed service cannot restore source spending rights.",
+    ],
+    [
+      "Acceptance carries exposure",
+      "Immutable covers summarize explicitly accepted authority families. Broader covers trade precise attribution for bounded continuation and may quarantine more funds. Broadening needs signed approval; narrowing requires additional ancestry evidence. One RLD denomination does not guarantee uniform acceptance.",
+    ],
+    [
+      "Resources and keys are finite",
+      "Coupons, controllers, signing-key schedules, archives and queues all consume funded capacity. Pending controllers retain their original quorum and keys across native handoff. Exhaustion stops new obligations. Finite reserves cannot fund indefinite storage, and an administrator cannot replace stranded authority.",
+    ],
+    [
+      "Public work has economic limits",
+      "Mining is distinct from payment ordering. CPU admission is not a profitability or ASIC-resistance guarantee. Bootstrap trust, unequal hardware, bounded admission and censorship remain. The cap’s conservation argument depends on valid execution, exclusive histories and custody.",
+    ],
+    [
+      "Distance and permanent loss remain real",
+      "Delivery requires an actual physical forward path. Recovery requires authentic rejection to travel back. Lost authority, unavailable data or a failed long-term service can strand funds. Finite insurance spends existing RLD and cannot mint compensation.",
+    ],
+  ];
   return (
     <>
       <PageHero
         eyebrow="Safety & limits"
-        title="Verify the money. Know the assumptions."
-        description="Compact validity proofs, current data and exclusive ordering have distinct obligations. Advance capacity cannot eliminate authority loss or causal delay."
+        title="Know what a payment depends on."
+        description="Ownership, execution, ordering, available data and physical delivery each carry separate assumptions."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Proofs do not establish an unseen fork’s absence</h2>
-          <p>
-            Correct reference execution or a sound receipt rejects invalid
-            ownership, work and amounts. Accepted PBFT authorities must still
-            avoid certifying two individually valid competing histories. A
-            remote hidden certificate cannot be discovered from silence.
-          </p>
-          <h2>A proof backend is not a completed monetary program</h2>
-          <p>
-            The proposed RISC Zero zkVM 3.0.6 SuccinctReceipt adapter requires
-            an exact RLD guest, trusted program and verifier commitments,
-            successful execution and resolved recursive assumptions. Fake,
-            conditional or unsupported receipts refuse. Program correctness,
-            backend soundness, Argon2 proving cost and implementation resources
-            still need independent analysis; no RLD proof benchmark is claimed.
-          </p>
-          <h2>Compact history still needs available current data</h2>
-          <p>
-            Current output tables, immutable cover definitions and authenticated
-            state access data remain available. Same-cover continuation verifies
-            previous coverage plus new family membership, rather than carrying
-            every old epoch label. Broad covers deliberately accept more
-            possible exposure and may quarantine more funds. Permanent maps and
-            contracted audit archives still grow.
-          </p>
-          <h2>Coupons are finite funded obligations</h2>
-          <p>
-            A coupon binds one source, fixed acceptance terms and bounded
-            capacity. Ordinary policy changes cannot revoke a conforming unused
-            coupon, and time cannot release it. Authorized source-certified
-            closure prevents an export before capacity is freed. A failed source
-            or destination can still strand money or unused capacity.
-          </p>
-          <h2>No timeout refund or unfunded replacement</h2>
-          <p>
-            A controller can cancel before release and authorize one local
-            return. Once Exported wins, only certified permanent destination
-            rejection allows recovery. Neither silence nor transport expiry
-            refunds. Insurance spends existing RLD under finite terms; it cannot
-            mint replacement money. Prepared and released wallet states must be
-            distinct.
-          </p>
-          <h2>Public work is not equal opportunity</h2>
-          <p>
-            ClaimRange removes discretionary awards, not bootstrap trust,
-            hardware advantage or censorship. Stable grants protect disjoint
-            claim work; actual selected-slot conflicts still lose. Fair bounded
-            admission and separate work/payment/controller queues are
-            assumptions. The fixed cap applies to valid exclusive histories,
-            under proof and custody premises.
-          </p>
-          <h2>Finite keys, archives and physical contacts</h2>
-          <p>
-            Native height keys and independent controller-key pools have
-            distinct purposes. Pending controllers retain their original keys
-            and quorum across native handoff; a replacement committee cannot
-            seize their escrows. Secure erasure, exact custody and renewal
-            before exhaustion remain requirements. Finite reserves fund finite
-            service, with retained pending obligations when renewal stops.
-          </p>
-          <Note title="No mainnet or qualified consumer service">
-            This is a research revision. Existing test assets have no monetary
-            value and never migrate into a future network. The website offers no
-            token sale, wallet connection or transaction service.
+          {boundaries.map(([title, text]) => (
+            <section key={title}>
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </section>
+          ))}
+          <Note title="Read the stage correctly">
+            No mainnet or qualified consumer payment service is established.
+            Existing tests and ground candidates have no monetary value.
+            Published mechanisms and conditional arguments are separate from
+            executable implementation, security review and measured performance.
           </Note>
           <div className="guide-next-links">
             <Button href="/whitepaper#12-conservation-and-safety-argument">
-              Safety argument
+              Read the safety argument
             </Button>
-            <Button
-              href="/whitepaper#4-3-validity-current-data-and-ordering"
-              secondary
-            >
-              Proof and availability boundaries
+            <Button href="/network" secondary>
+              Current development scope
             </Button>
           </div>
         </div>
@@ -334,60 +456,81 @@ function Developers() {
     <>
       <PageHero
         eyebrow="Development"
-        title="Read. Review. Build."
-        description="Use the specification and current repository instructions to work on isolated, no-value implementations."
+        title="Build the mechanism. Make the evidence inspectable."
+        description="Start with the current paper, then identify the exact implementation and assumptions your work addresses."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Start with the specification</h2>
+          <h2>Read the construction first</h2>
           <p>
-            The <Link href="/whitepaper">white paper</Link> explains the design
-            and its security assumptions. The new architecture is not
-            automatically implemented by existing source. Repository protocol
-            identities, requirements and acceptance conditions retain their own
-            scope until explicitly reconciled. A paper edit does not upgrade a
-            running network.
+            The <Link href="/whitepaper">white paper</Link> defines monetary
+            state, native transitions, independent controllers, proofs and
+            failure outcomes. Appendix A describes canonical objects and
+            reference bounds. Its conditional arguments are the starting point
+            for implementation and review, not evidence that older code already
+            realizes the design.
           </p>
-          <h2>Protocol and node source</h2>
+          <h2>Work on a named implementation</h2>
           <p>
-            Build and test instructions belong to the{" "}
-            <a href={REPOSITORY}>protocol repository</a>. Follow its current
-            README and documented commands for the selected source and platform.
-            Use the <a href={TESTNET}>Earth testnet guide</a> for the separately
-            scoped testnet. Keep valuable assets and real signing keys outside
-            experiments.
+            The <a href={REPOSITORY}>protocol repository</a> maintains node
+            code, requirements and source-specific records. Follow its current
+            local instructions and build guidance. Earlier candidates keep their
+            own protocol identities and no-value evidence; a manuscript revision
+            does not upgrade them. The <a href={TESTNET}>Earth testnet guide</a>
+            concerns that separately scoped testnet.
           </p>
           <div className="guide-next-links">
-            <Button href={REPOSITORY}>Protocol repository</Button>
+            <Button href={REPOSITORY}>Protocol source</Button>
             <Button href={TESTNET} secondary>
               Testnet guide
             </Button>
           </div>
-          <h2>Contribute a change or review</h2>
+          <h2>Where implementation and review matter</h2>
+          <ul>
+            <li>
+              Exact monetary execution, unique issuance slots and funded fees.
+            </li>
+            <li>
+              Controller cancellation/release exclusion, durable locks and
+              one-time redemption.
+            </li>
+            <li>
+              Authenticated proof programs, complete current material and
+              practical resource costs.
+            </li>
+            <li>
+              Independent custody, succession, incident handling and archive
+              recovery.
+            </li>
+            <li>
+              Bounded discovery, durable carriage and explicitly scoped physical
+              adapters.
+            </li>
+          </ul>
           <p>
-            Use the repository’s contribution workflow for implementation, tests
-            and review. Explain the changed behavior, assumptions, affected
-            scope and relevant verification. A prototype result must retain its
-            source identity, failures and limits; it cannot certify an unchanged
-            historical release or independent custody.
+            Report the exact source, changed behavior, assumptions and remaining
+            limitations. Preserve failed observations and distinguish
+            compilation from runtime evidence. Keep experiments isolated from
+            valuable assets and real monetary keys.
           </p>
-          <h2 id="participate">Discussion and website corrections</h2>
+          <h2 id="participate">Contribute a correction or technical review</h2>
           <p>
-            Discuss public technical questions in the{" "}
+            Use the protocol repository’s contribution workflow for code and
+            mechanism review. Discuss public questions in the{" "}
             <a href={DEVELOPER_FORUM}>Nodes &amp; Development forum</a>. Website
-            source and checks are in the{" "}
-            <a href={WEBSITE_REPOSITORY}>website repository</a>; use its{" "}
-            <a href={`${WEBSITE_REPOSITORY}/issues`}>issue tracker</a> for
-            public corrections. The author’s published contact is{" "}
-            <a href="mailto:dengrunlai@gmail.com">dengrunlai@gmail.com</a>. Do
-            not post secrets or sensitive custody material in public
-            discussions.
+            changes belong in the{" "}
+            <a href={WEBSITE_REPOSITORY}>website repository</a> and its{" "}
+            <a href={`${WEBSITE_REPOSITORY}/issues`}>issue tracker</a>. The
+            author’s published contact is{" "}
+            <a href="mailto:dengrunlai@gmail.com">dengrunlai@gmail.com</a>. Keep
+            signing material, backups and private node state out of public
+            reports.
           </p>
-          <Note title="Development is not release authorization">
-            Independent protocol review, wallet and custody qualification,
-            durable archive recovery and authenticated adoption remain required.
-            No mainnet or physical interstellar route is qualified by the
-            website.
+          <Note title="Implementation and qualification remain separate">
+            Monetary adoption needs exact executable identities, independent
+            analysis, durable custody and operational evidence. A successful
+            build, candidate observation or published paper cannot establish all
+            of these conditions.
           </Note>
         </div>
       </section>
@@ -400,8 +543,8 @@ function Network() {
     <>
       <PageHero
         eyebrow="Network & development"
-        title="A new research architecture."
-        description="The current paper specifies local settlement and asynchronous authority transfer. Existing implementations retain their separate profiles and no-value scope."
+        title="The design is public. Qualification remains open."
+        description="Read the current construction alongside the separately scoped source and no-value network records."
       />
       <section className="section">
         <div className="container">
@@ -410,39 +553,52 @@ function Network() {
       </section>
       <section className="section soft-section">
         <div className="container narrow prose">
-          <h2>What the paper changes</h2>
+          <h2>What the current paper specifies</h2>
           <p>
-            The paper specifies local PBFT, independent one-decision export
-            controllers, stable placement grants, explicit acceptance covers and
-            recursive execution relations. Canonical objects and refusal bounds
-            appear in its encoding appendix. RLD is the only native currency,
-            capped at 21 million with zero allocation. Publication does not
-            qualify a running implementation.
+            One RLD currency and fixed issuance budget; local PBFT settlement;
+            funded receiving capabilities; independent cancel-or-release
+            controllers; one-time import or rejection; recursive execution
+            relations; explicit acceptance covers; finite key, custody and
+            archival obligations. These mechanisms form a conditional research
+            construction.
           </p>
-          <h2>What publication establishes</h2>
+          <h2>What still needs implementation evidence</h2>
           <p>
-            The paper provides a transition system, conditional conservation
-            argument and fault assumptions. It is not a new running ledger, an
-            implemented consensus suite, an independent security review or
-            measured payment capacity. A complete executable profile still needs
-            exact encodings, consensus and cryptographic selections, durable
-            custody and operational verification.
+            A complete monetary implementation needs authenticated RLD program
+            and verifier identities, correct executable transitions, durable
+            signing custody and complete current data. Practical proof costs,
+            payment latency, sustained capacity and failure behavior require
+            evidence tied to that implementation. Independent security and
+            physical-route qualification remain separate work.
           </p>
-          <h2>Existing code and historical obligations</h2>
           <p>
-            Earlier no-value candidates, receipts, failures and implementation
-            requirements remain historical records under their own source and
-            protocol identities. This architecture does not adopt their
-            evidence, migrate their value or silently change their rules.
-            Repository guidance must be reconciled explicitly before an
-            implementation targets the new design.
+            The site publishes no measured throughput or settlement-time claim
+            for this architecture. Earlier engineering targets and source-bound
+            results retain their own records; they are not measurements of the
+            current construction.
           </p>
-          <TextLink href={REPOSITORY}>Inspect development source</TextLink>
+          <h2>How to read existing network records</h2>
           <p>
-            <TextLink href={WHITEPAPER_RELEASE}>
-              Read the current publication record
-            </TextLink>
+            Existing testnets and ground candidates use separate source and
+            protocol identities. Their test assets have no monetary value.
+            Preserve their failures and limits when interpreting a result;
+            neither their balances nor their keys migrate into a monetary
+            genesis. Publishing this website changes no protocol or node
+            service.
           </p>
+          <h2>A future monetary launch needs its own record</h2>
+          <p>
+            An actual launch requires a separately authenticated genesis with
+            zero initial issuance and zero allocation, fresh monetary keys and
+            explicit adoption of the completed executable construction. A
+            website update cannot stand in for those steps.
+          </p>
+          <div className="guide-next-links">
+            <Button href={REPOSITORY}>Inspect protocol source</Button>
+            <Button href={WHITEPAPER_RELEASE} secondary>
+              Paper publication record
+            </Button>
+          </div>
         </div>
       </section>
       <section className="section">
@@ -462,51 +618,76 @@ function Network() {
 function Resources() {
   const groups = [
     {
-      title: "White paper",
+      title: "Understand the design",
       items: [
         [
-          "Read online",
-          "The new architecture: local settlement, exclusive spend authority, asynchronous export/import and evidence-dependent recovery.",
+          "White paper",
+          "The complete mechanism, assumptions, transition rules and conditional safety argument.",
           "/whitepaper",
         ],
         [
-          "Download PDF",
-          "PDF of the research revision.",
-          "/documents/rldcoin-whitepaper.pdf",
+          "Payment walkthrough",
+          "Local settlement, receiving capacity, cancellation, release and destination outcomes.",
+          "/how-it-works",
         ],
         [
-          "Canonical Markdown",
-          "The text source used by the web reader.",
-          "/documents/rldcoin-whitepaper.md",
+          "RLD & issuance",
+          "The cap, zero allocation, public work and owner-funded service fees.",
+          "/rld",
         ],
         [
-          "Revision record",
-          "Artifact hashes, predecessor bindings and the revision’s review and publication status.",
-          WHITEPAPER_RELEASE,
+          "Safety & limits",
+          "Accepted authorities, proof correctness, available data and stranded-value conditions.",
+          "/you-need-to-know",
         ],
       ],
     },
     {
-      title: "Development",
+      title: "Publication files",
+      items: [
+        [
+          "Download PDF",
+          "The current paper in a standalone document.",
+          "/documents/rldcoin-whitepaper.pdf",
+        ],
+        [
+          "Canonical Markdown",
+          "The exact source text used by the online reader.",
+          "/documents/rldcoin-whitepaper.md",
+        ],
+        [
+          "Publication record",
+          "Document hashes, predecessor bindings and the manuscript’s explicit scope.",
+          WHITEPAPER_RELEASE,
+        ],
+        [
+          "Research references",
+          "Primary references cited by the paper; citations do not qualify the RLD construction.",
+          "/whitepaper#references",
+        ],
+      ],
+    },
+    {
+      title: "Source & participation",
       items: [
         [
           "Protocol source",
-          "Implementation and current build, test and contribution instructions.",
+          "Implementation, local instructions and source-specific development records.",
           REPOSITORY,
         ],
         [
           "Earth testnet guide",
-          "No-value testnet guidance, distinct from separately scoped ground candidates.",
+          "Guidance for the separately scoped no-value testnet.",
           TESTNET,
         ],
         [
           "Website source",
-          "Pages, media notices and website checks.",
+          "Pages, public assets, media notices and website build guidance.",
           WEBSITE_REPOSITORY,
         ],
         [
           "Community forum",
-          "Public project discussion.",
+          "Public project discussion and technical questions.",
           "https://forum.rldcoin.com/",
         ],
       ],
@@ -516,15 +697,15 @@ function Resources() {
     <>
       <PageHero
         eyebrow="Resources"
-        title="Documents and source."
-        description="The specification and the real entry points for development. Publication does not establish implementation or qualification."
+        title="Read the mechanism. Inspect the source."
+        description="Choose a plain-language guide, the full paper or the separately scoped development records."
       />
       <section className="section">
         <div className="container">
           {groups.map((group) => (
             <section className="resource-section" key={group.title}>
               <div>
-                <Eyebrow>READ THE SOURCE</Eyebrow>
+                <Eyebrow>EXPLORE RLDCOIN</Eyebrow>
                 <h2>{group.title}</h2>
               </div>
               <div className="resource-list">
@@ -542,26 +723,12 @@ function Resources() {
           ))}
           <div className="container narrow prose">
             <p>
-              Primary research references are in the{" "}
-              <Link href="/whitepaper#references">
-                white paper bibliography
-              </Link>
-              . A citation informs the design; it does not validate Rldcoin.
-              Published documents retain their original dates and scope.
+              Published documents retain their own dates and scope. The current
+              manuscript’s publication record binds its exact files. Earlier
+              revisions remain preserved in source history. Implementation
+              results and independent qualification need their own evidence.
             </p>
-            <p>
-              A revision changes the design text, not an already signed genesis
-              or regional adoption. The current publication is available here;
-              earlier artifact bytes and receipts remain in Git history.
-            </p>
-            <p>
-              The{" "}
-              <Link href="/documents/rldcoin-implementation-status.md">
-                editorial separation record
-              </Link>{" "}
-              retains prior dated implementation wording. It is not a current
-              network status report or an acceptance certificate.
-            </p>
+            <p>Website content reviewed {CONTENT_REVIEW_DATE}.</p>
           </div>
         </div>
       </section>
@@ -574,8 +741,8 @@ function FAQ() {
     <>
       <PageHero
         eyebrow="FAQ"
-        title="Common questions."
-        description="The purpose, the target behavior and the limits of today’s development."
+        title="Questions before the long journey."
+        description="Local payments, RLD issuance, preparation, recovery and the current development stage."
       />
       <section className="section">
         <div className="container narrow">
@@ -622,12 +789,12 @@ function Privacy() {
           </p>
           <h2>Public ledger privacy is a separate question</h2>
           <p>
-            The candidate protocol is a publicly verifiable pseudonymous ledger.
-            Amounts, provenance and route/timing metadata may identify
-            participants. Encryption protects only its declared scope and cannot
-            erase information already disclosed or hide required verification
-            history from validating nodes. Anonymity and qualified privacy
-            mechanisms are not offered by this website. Read{" "}
+            The current design does not promise anonymous payments. Recipient
+            identities, current monetary data and route or timing observations
+            may reveal participants. Compact execution receipts do not by
+            themselves establish privacy; acceptance covers summarize exposure
+            rather than provide an anonymity guarantee. Encryption cannot erase
+            information already disclosed. Read{" "}
             <Link href="/whitepaper#14-capacity-archives-and-failure-bounds">
               the threats and limitations
             </Link>

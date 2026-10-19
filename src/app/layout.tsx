@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Rldcoin",
   },
   description:
-    "Rldcoin proposes runlai (RLD) as its sole native currency, with local settlement and asynchronous transfer of exclusive spend authority. Read the interstellar payment architecture and its explicit trust assumptions. No mainnet is operating.",
+    "One currency for separated worlds. Discover Rldcoin’s local settlement, prepared interstellar payments and 21 million RLD issuance design. Research construction; no active mainnet.",
   openGraph: {
     siteName: "Rldcoin",
     type: "website",

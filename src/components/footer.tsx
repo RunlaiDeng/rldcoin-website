@@ -13,6 +13,7 @@ const columns = [
     [
       ["About Rldcoin", "/about"],
       ["How it works", "/how-it-works"],
+      ["RLD & issuance", "/rld"],
       ["Nodes & relays", "/node-network"],
       ["Safety & limits", "/you-need-to-know"],
       ["FAQ", "/faq"],
@@ -48,9 +49,9 @@ export function Footer() {
               <Logo />
             </Link>
             <p>
-              A peer-to-peer payment design
+              One currency. Local economies.
               <br />
-              for humanity’s interstellar future.
+              An interstellar future.
             </p>
           </div>
           <div className="footer-columns">

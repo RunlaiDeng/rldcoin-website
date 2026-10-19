@@ -77,12 +77,11 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            runlai (RLD) is the sole native currency, capped at 21 million with
-            zero initial allocation. Stable placement grants preserve disjoint
-            work. Source-bound receiving capacity and independent controllers
-            separate cancellable preparation from released exports. Recursive
-            receipts verify execution; explicit acceptance covers bound current
-            attribution under stated risk and availability assumptions.
+            A payment system for separated worlds: one RLD currency, local
+            settlement and prepared transfers between authoritative homes. The
+            paper develops its 21 million cap, public issuance work, independent
+            cancel-or-release controllers, execution proofs and explicit
+            acceptance policies, together with their assumptions and limits.
           </p>
         </div>
       </section>
