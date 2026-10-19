@@ -65,60 +65,65 @@ function About() {
       <PageHero
         eyebrow="About Rldcoin"
         title="Local economies. Connected worlds."
-        description="A payment architecture for communities separated by long or intermittent contact. Each spendable output has one authoritative home."
+        description="One native currency, independently verified money and prepared payments across long or intermittent contacts."
       />
       <section className="section">
         <div className="container narrow prose">
           <h2>Settle where the funds are usable</h2>
           <p>
-            A community should not need a distant world's approval for every
-            purchase. The paper places conflict resolution in explicit local
-            domains. Under their accepted validator fault assumptions, local
-            payments finalize without waiting for a stellar round trip.
+            A community uses locally homed RLD without waiting for a distant
+            world's vote. Owners authorize exact payments; accepted PBFT
+            validators order competing spends. Reconnection does not itself
+            replace a finalized local history. A ship prepares its domain and
+            balances before departure.
+          </p>
+          <h2>Verify money before accepting it</h2>
+          <p>
+            Receiving nodes reconstruct the causal monetary execution, including
+            issuance work, ownership, amounts, source debit and unique import. A
+            signed balance or a downloaded state root cannot replace that
+            verification. Exclusive ordering still relies on accepted validator
+            fault assumptions: replay cannot reveal an unseen conflicting valid
+            branch signed by a compromised quorum.
+          </p>
+          <h2>Prepare receipt before sending</h2>
+          <p>
+            The destination reserves an exact receiving obligation with agreed
+            fees, evidence limits and retained decision capacity. The source
+            verifies this permit before surrendering spendability. Complete
+            evidence then travels through contacts to one import or permanent
+            rejection. After import the recipient can spend locally without a
+            return receipt. A new pair may need advance communication to prepare
+            its permit.
+          </p>
+          <h2>One currency. A fixed 21 million RLD cap.</h2>
+          <p>
+            runlai (RLD) is the sole currency for native payments, fees and
+            funded service escrows. One RLD equals 10^24 atomic units. Genesis
+            creates zero spendable RLD and no founder, investor, treasury or
+            validator allocation. Cross-domain transfer neither wraps RLD nor
+            creates a second supply.
           </p>
           <p>
-            To pay another domain, an owner first surrenders local spendability.
-            A certificate binds that exported amount to one destination and one
-            recipient. The destination records one import or one permanent
-            rejection; only verified rejection can authorize source recovery.
-          </p>
-          <h2>A payment protocol with explicit trust</h2>
-          <p>
-            Users control their spending keys. Communities can create domains,
-            and people choose which authority histories to accept for RLD. A
-            domain's signatures are meaningful only under its declared security
-            model. Open discovery does not automatically make a new committee
-            trustworthy.
-          </p>
-          <h2>One native currency: runlai (RLD)</h2>
-          <p>
-            All native payments and protocol fees use runlai (RLD). One RLD
-            equals 10^24 atomic runlai units. Every domain binds the same
-            authenticated currency identity and monetary rules. Cross-domain
-            transfers relocate existing RLD; they do not mint another supply or
-            replace it with a wrapped or domain-issued token.
+            There are 4,096 budget roots of 1 million work slots each, paying
+            0.005126953125 RLD per successful Mint. Public placement work
+            detaches up to 256 next slots into a prepared home and leaves a
+            disjoint remainder. Each slot pays once. No private eligibility list
+            or discretionary award replaces that rule; bootstrap authority,
+            censorship risk and unequal hardware remain explicit.
           </p>
           <p>
-            The proposed lifetime cap is 21 million RLD, with zero spendable
-            genesis supply and no founder allocation. All issuance uses 4,096
-            conserved public-work strands, each with 1 million slots paying
-            0.005126953125 RLD. Moving a whole strand preserves its remaining
-            slots; creating a domain grants no issuance right.
-          </p>
-          <p>
-            An isolated community can mine after an authenticated strand
-            arrives. Initial strand placement is discretionary quorum
-            governance, so the design does not promise equal allocation to every
-            settlement. There is no fixed completion date, halving, tail
-            emission or lost-coin replacement. All rewards go to successful work
-            authors; operators need funded service fees or other disclosed
-            support.
+            An isolated community can mine after an authenticated interval
+            arrives. There is no fixed completion date, halving, tail emission
+            or lost-coin replacement. Mining distributes supply and grants no
+            validator vote. Funded service fees and archival renewal must
+            sustain operations independently of future issuance.
           </p>
           <Note title="Research and operation are separate">
-            The paper is a new architecture proposal. Existing no-value
-            implementations and testnets have separate identities. Publication
-            does not demonstrate this design's implementation, measured capacity
-            or a physical interstellar service.
+            The paper develops a mechanism under stated assumptions. Existing
+            no-value implementations have separate identities. Publication does
+            not demonstrate the new design's implementation, measured capacity,
+            independent security or a physical interstellar service.
           </Note>
           <div className="guide-next-links">
             <Button href="/how-it-works">Follow a payment</Button>
@@ -137,31 +142,26 @@ function HowItWorks() {
     <>
       <PageHero
         eyebrow="How it works"
-        title="One home for every spend."
-        description="Settle locally. Surrender source spendability before exporting. Verify one destination decision before creating a new local balance."
+        title="Prepare. Verify. Settle."
+        description="Reserve the receiving obligation before debit. Carry complete execution to one destination decision, then spend locally."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Local settlement, without a distant vote</h2>
+          <h2>Local authority, independent monetary verification</h2>
           <p>
-            A domain is a replicated ledger with an authenticated identity and
-            explicit validators. In the baseline, 3f + 1 validators tolerate at
-            most f Byzantine validators; finalization uses the selected
-            consensus protocol's commit proof from at least 2f + 1. A few
-            signatures on an arbitrary root are not enough.
+            Owners authorize actual inputs, recipients, component allocations
+            and RLD fees. PBFT orders their operations under the accepted 3f + 1
+            validator model and at most f Byzantine faults. Full replay
+            separately checks the money, from work entitlements and issuance
+            through each debit and credit. A quorum signature cannot make an
+            invalid transition acceptable.
           </p>
           <p>
-            Owners authorize exact inputs, recipients, amounts and fees. The
-            domain resolves competing spends and finalizes an output the
-            recipient can use in a subsequent local transaction. There is no
-            global greatest-work branch that automatically overwrites settled
-            local history after reconnection.
-          </p>
-          <p>
-            This guarantee is conditional on accepted domain histories, secure
-            keys and durable state. A minority partition waits. A lone surviving
-            machine cannot grant itself a replacement quorum or recreate stopped
-            funds.
+            A verified local output is usable in the next local transition.
+            Neither a remote mining branch nor a stellar receipt is required. A
+            minority partition waits, and threshold compromise can still produce
+            conflicting valid histories: independent execution is not automatic
+            trust in every new domain.
           </p>
           <TextLink href="/whitepaper#4-local-settlement-and-its-meaning">
             Read the local settlement model
@@ -173,7 +173,7 @@ function HowItWorks() {
           <div className="section-heading">
             <div>
               <Eyebrow>THE PAYMENT</Eyebrow>
-              <h2>Export once. Import once.</h2>
+              <h2>Reserve receipt. Export once.</h2>
             </div>
             <p>
               A conceptual payment journey under the paper's stated assumptions.
@@ -182,49 +182,39 @@ function HowItWorks() {
           </div>
           <TransferExplorer />
           <div className="prose payment-explanation">
+            <h3>A receiving obligation comes first</h3>
             <p>
-              Alice's source domain consumes her inputs and finalizes an export
-              bound to Bob's destination, key and amount. Alice and Bob may be
-              offline while carriers deliver the certificate and its
-              authenticated authority material.
+              Bob's destination commits to an exact draft, acceptance policy,
+              fees, proof bounds and decision capacity. Alice's source verifies
+              that permit before debit. A new pair may need a returning permit;
+              with preparation complete, the payment itself can use one-way
+              contacts. Unused capacity cannot be released until the source
+              permanently closes its permission to export.
+            </p>
+            <h3>Full evidence, one terminal decision</h3>
+            <p>
+              The destination replays the supporting monetary execution and
+              consumes the permit together with one import or permanent
+              rejection. Duplicate delivery adds no balance. Import lets Bob pay
+              locally without a reply to Alice. Only authenticated rejection
+              permits one source recovery; silence cannot refund the payment.
+            </p>
+            <h3>Keep actual dependencies separate</h3>
+            <p>
+              Accepted components totaling 100 RLD need not inherit an unrelated
+              1 RLD portion's history merely because a wallet shows both.
+              Explicit per-component allocations preserve real dependencies,
+              keep change attributable and let invoices select accepted funds.
+              This reduces accidental risk mixing without guaranteeing equal
+              market value.
             </p>
             <p>
-              Bob's destination verifies the source, exact ticket, provenance
-              and permanent decision map. It atomically records the import and
-              creates Bob's output. Bob can then pay locally without sending a
-              message back to Alice's world.
+              Source, destination and archive services receive explicit funded
+              RLD fees. Custody receipts attest retained bytes; they grant no
+              payment finality. Physical propagation, available quorums and
+              preserved evidence remain necessary.
             </p>
-            <TextLink href="/whitepaper#8-an-interstellar-payment-and-local-autonomy">
-              Read the interstellar example
-            </TextLink>
           </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container narrow prose">
-          <h2>Recovery needs evidence</h2>
-          <p>
-            The destination can finalize either import or rejection for the same
-            ticket. A permanent rejection forbids later import. Only its
-            authenticated proof permits the source to recover the exported value
-            once, under the owner's bound recovery rule.
-          </p>
-          <p>
-            A missing receipt, full queue or transport timeout does not prove
-            rejection. If the destination never becomes available, exported
-            value can remain stranded. The paper chooses to preserve exclusivity
-            rather than silently create another balance.
-          </p>
-          <TextLink href="/whitepaper#7-rejection-cancellation-and-stranded-value">
-            Read rejection and recovery
-          </TextLink>
-          <h2>Trust travels with value</h2>
-          <p>
-            An output retains the authority histories on which its backing
-            depends. Passing value through a reputable domain cannot erase
-            earlier risk. A wallet should distinguish spendable funds, exports
-            in flight and different provenance sets.
-          </p>
           <div className="guide-next-links">
             <Button href="/whitepaper#12-conservation-and-safety-argument">
               Read the conservation argument
@@ -244,55 +234,68 @@ function Safety() {
     <>
       <PageHero
         eyebrow="Safety & limits"
-        title="Know the authority behind a payment."
-        description="Local finality has explicit validator and custody assumptions. Cross-domain delivery can be delayed indefinitely, and silence never authorizes recovery."
+        title="Verify the money. Know the assumptions."
+        description="Independent execution narrows validator trust to exclusive ordering. Preparation reduces avoidable failures; it cannot eliminate destroyed authorities or causal delay."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Accepted authority is a security assumption</h2>
+          <h2>Execution and exclusive ordering are different</h2>
           <p>
-            The baseline trusts a fault-bounded validator set in each relevant
-            domain configuration. A threshold compromise can certify false
-            state; cryptographic signatures do not repair missing backing. The
-            paper does not claim universal permissionless consensus or automatic
-            trust in new domains.
+            Complete monetary replay rejects invalid ownership, issuance or
+            amounts even with quorum signatures. Accepted PBFT authorities must
+            still avoid certifying two individually valid conflicting spends. An
+            unseen remote fork cannot be discovered from silence. The design
+            does not claim universal permissionless consensus.
           </p>
-          <h2>Finality preserves a valid local prefix</h2>
+          <h2>
+            Reservations are obligations, not guarantees against destruction
+          </h2>
           <p>
-            Inter-domain isolation or reconnection does not itself reverse local
-            settlement. This property depends on correct consensus,
-            authenticated handoff, secure historical keys and retained import
-            decisions. A conflicting final certificate is a security incident,
-            not a reason to accept both balances.
+            A destination commits to funded capacity, fees and a particular
+            acceptance predicate before export. Ordinary later policy changes
+            cannot revoke a conforming reservation. Destroyed quorums, missing
+            archives or broken cryptographic assumptions can still stop
+            progress. Unused permits also need certified closure to release
+            capacity safely.
           </p>
-          <h2>Exported funds can be unavailable</h2>
+          <h2>No automatic refund or unfunded replacement</h2>
           <p>
-            The source cannot spend an exported amount. Import needs a working
-            destination quorum; recovery needs certified rejection from that
-            same destination. Permanent loss of the authority or evidence can
-            strand the value. There is no guaranteed timer-based refund or
-            emergency administrative replacement.
+            Only permanent destination rejection permits source recovery. A
+            missing return receipt may hide an already completed import, so
+            elapsed time cannot restore the old balance. Optional insurance
+            spends separately funded RLD under explicit finite terms; it neither
+            mints replacement money nor reverses a ticket.
           </p>
-          <h2>One currency, explicit authority risks</h2>
+          <h2>One denomination, separately attributable risks</h2>
           <p>
-            RLD is the sole native currency, but authority histories still carry
-            different risks. The protocol conserves RLD under its assumptions;
-            it does not guarantee a price, bound an entire economy's losses or
-            insure every payment. Privacy is not supplied by a transparent
-            certificate.
+            Component allocations prevent unrelated funds automatically sharing
+            every dependency through merging. Real authority histories remain,
+            and acceptance or price may differ. Incidents can suspend acceptance
+            of dependent components; they do not make distant losses vanish or
+            erase unrelated settled histories.
           </p>
-          <h2>Keys, archives and real contacts remain necessary</h2>
+          <h2>Open placement is not equal opportunity</h2>
           <p>
-            Ordinary key rotation does not protect old signatures after
-            compromise. Long journeys need a declared cryptographic horizon,
-            authenticated succession and recoverable permanent decision state.
-            No finite profile guarantees endless operation or an unavailable
-            physical route.
+            Public ClaimRange rules remove discretionary beneficiary selection
+            from valid placement. The initial D_0 quorum is still a bootstrap
+            dependency, and hardware advantage or censorship can concentrate
+            issuance. The 21 million cap applies to valid exclusive histories;
+            it is not protection against every accepted quorum failure.
+          </p>
+          <h2>Finite keys, funded archives and real contacts</h2>
+          <p>
+            The proposed per-height key schedule depends on secure erasure,
+            current custody heads and authenticated renewal before exhaustion.
+            Ordinary disk deletion or old secret backups do not prove these
+            conditions. Full replay and permanent decisions have continuing
+            storage costs. Finite reserves and cryptographic profiles cannot
+            guarantee endless service or create a missing physical route.
           </p>
           <Note title="No mainnet or qualified consumer service">
-            The new paper is research. Existing test assets have no monetary
-            value and never migrate into a new network. This website offers no
-            token sale, wallet connection or transaction service.
+            The paper is research. Existing test assets have no monetary value
+            and never migrate into a new network. This website offers no token
+            sale, wallet connection or transaction service. New mechanisms
+            require independent analysis and implementation qualification.
           </Note>
           <div className="guide-next-links">
             <Button href="/whitepaper#12-conservation-and-safety-argument">
@@ -394,12 +397,12 @@ function Network() {
         <div className="container narrow prose">
           <h2>What the paper changes</h2>
           <p>
-            The owner-authorized redesign replaces a globally competing work
-            history with explicit local finality domains, unique
-            destination-bound exports, permanent import-or-reject decisions and
-            evidence-dependent recovery. runlai (RLD) is the sole native payment
-            and fee currency. Domains cannot issue their own substitutes or mint
-            RLD merely by joining the network.
+            The paper combines local PBFT ordering with independently replayed
+            money, reserved receiving obligations, one-time import or rejection,
+            separate dependency components and public placement of disjoint work
+            entitlements. runlai (RLD) is the sole native currency, capped at 21
+            million with zero initial allocation. Domain creation cannot create
+            money or replace an unavailable authority.
           </p>
           <h2>What publication establishes</h2>
           <p>

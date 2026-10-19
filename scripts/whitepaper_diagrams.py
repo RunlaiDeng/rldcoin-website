@@ -278,40 +278,43 @@ def relay_networks():
 
 
 def authority_transfer():
-    d = Drawing(470, 250)
-    label(d, 235, 233, "ONE HOME AT A TIME; ONE DESTINATION DECISION", 8.3, bold=True)
-    box(d, 8, 150, 126, 65, "SOURCE A", ["consume spendable inputs", "final Exported(x, a)"])
-    box(d, 168, 150, 134, 65, "IN FLIGHT", ["recipient-bound certificate", "no source spending right"])
-    box(d, 336, 150, 126, 65, "DESTINATION B", ["verify accepted authority", "serialize J[x] once"])
-    arrow(d, 134, 181, 168)
-    arrow(d, 302, 181, 336)
-    box(d, 336, 60, 126, 60, "IMPORTED", ["recipient v + service fee", "onward local spending"])
-    box(d, 168, 60, 134, 60, "REJECTED", ["permanent no-import", "certified by B"])
-    box(d, 8, 60, 126, 60, "RECOVERY AT A", ["verify B's rejection", "credit a - r; fee r"])
-    path(d, [(399, 150), (399, 120)])
-    path(d, [(377, 150), (377, 135), (235, 135), (235, 120)])
-    path(d, [(168, 89), (134, 89)], dashed=True)
-    label(d, 235, 40, "Imported and Rejected exclude each other under the accepted quorum rules", 7.2)
-    label(d, 235, 18, "Silence, local timeouts and carriage receipts never restore source value", 7.4, bold=True)
+    d = Drawing(470, 288)
+    label(d, 235, 271, "PREPARE THE RECEIVER; TRANSFER AUTHORITY ONCE", 8.3, bold=True)
+    box(d, 40, 218, 390, 34, "DESTINATION RESERVATION", ["exact intent, fees, evidence bounds and retained decision capacity"])
+    box(d, 8, 130, 126, 66, "SOURCE A", ["verify permit and owners", "debit + mark permit used"])
+    box(d, 168, 130, 134, 66, "IN FLIGHT", ["ticket + complete execution", "no source spending right"])
+    box(d, 336, 130, 126, 66, "DESTINATION B", ["replay money + check order", "consume reserved permit"])
+    arrow(d, 134, 162, 168)
+    arrow(d, 302, 162, 336)
+    box(d, 336, 42, 126, 58, "IMPORTED", ["principal + bound RLD fees", "onward local spending"])
+    box(d, 168, 42, 134, 58, "REJECTED", ["permanent no-import", "complete decision evidence"])
+    box(d, 8, 42, 126, 58, "RECOVERY AT A", ["verify B's exact rejection", "one credit; original fee"])
+    path(d, [(399, 130), (399, 100)])
+    path(d, [(377, 130), (377, 114), (235, 114), (235, 100)])
+    path(d, [(168, 70), (134, 70)], dashed=True)
+    label(d, 235, 18, "Accepted ordering assumptions remain; silence never refunds", 7.5, bold=True)
     return d
 
 
 def issuance_strands():
     d = Drawing(470, 266)
     label(d, 235, 248, "ONE LIFETIME BUDGET: 21,000,000 RLD", 8.4, bold=True)
-    box(d, 30, 172, 410, 58, "GENESIS: ZERO SPENDABLE RLD",
-        ["4,096 public issuance strands; no private reserve owner",
-         "one home and 1,000,000 work slots per strand"])
-    label(d, 235, 57, "certified whole-strand relocation; never copy or reset", 7.4)
+    box(d, 30, 178, 410, 50, "GENESIS: ZERO SPENDABLE RLD",
+        ["4,096 budget roots x 1,000,000 unique slots",
+         "each finalized Mint pays 0.005126953125 RLD"])
+    box(d, 30, 113, 410, 45, "PUBLIC CLAIM: CONSUME ONE EXACT INTERVAL",
+        ["detach up to 256 next slots; preserve the disjoint remainder"])
+    path(d, [(235, 178), (235, 158)])
     for x, title, lines in (
-        (8, "HOME A: strand 0", ["public work consumes slot k", "reward: 0.005126953125 RLD"]),
-        (168, "HOME B: strand 1", ["local work during isolation", "same counter after a move"]),
-        (328, "OTHER STRANDS", ["numbers 2 through 4095", "existing or future homes"]),
+        (8, "SOURCE REMAINDER", ["same root, next range", "no copied slot identities"]),
+        (168, "CARRIED RANGE", ["typed export / install", "or certified recovery"]),
+        (328, "PREPARED HOME", ["work consumes one slot", "local Mint during isolation"]),
     ):
-        box(d, x, 66, 134, 64, title, lines)
-        path(d, [(x + 67, 172), (x + 67, 130)])
-    label(d, 235, 42, "Issued + resident unissued + in-flight unissued = cap", 7.8, bold=True)
-    label(d, 235, 22, "Lost contact cannot recreate a strand; exhausted slots never renew", 7.4)
+        box(d, x, 35, 134, 58, title, lines)
+    path(d, [(75, 113), (75, 93)])
+    path(d, [(235, 113), (235, 93)])
+    arrow(d, 302, 64, 328)
+    label(d, 235, 13, "Issued + active unissued + in-flight unissued = cap", 7.5, bold=True)
     return d
 
 
@@ -330,8 +333,8 @@ FIGURES = {
 }
 
 DESCRIPTIONS = {
-    "issuance-strands": "Twenty-one million RLD of lifetime issuance is conserved across 4096 single-home strands. Public work consumes successive slots; relocation preserves the counter and remaining budget.",
-    "authority-transfer": "A source removes spend authority before sending a certificate. One destination imports or permanently rejects it; only certified rejection authorizes source recovery.",
+    "issuance-strands": "Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Public claims detach bounded ranges; verified Mint consumes each slot once.",
+    "authority-transfer": "A destination reserves an exact receiving obligation before source debit. Complete execution is checked before import or permanent rejection; only rejection evidence permits recovery.",
     "transaction": "Two mature inputs authorize one transfer with recipient value, change and a fee.",
     "blocks": "Consecutive block headers commit to commands and replayed state, linked by a parent hash.",
     "channel": "Funded escrow, signed payment states, a stale-close challenge and settlement.",

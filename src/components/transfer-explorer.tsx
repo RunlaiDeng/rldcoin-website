@@ -6,27 +6,27 @@ import styles from "./diagrams.module.css";
 
 const steps = [
   {
-    title: "Finalize source export",
-    label: "01 / SURRENDER SOURCE AUTHORITY",
-    text: "The owner signs the common RLD currency identity, exact destination, recipient, principal and RLD fees. The source domain atomically consumes local inputs and finalizes one export. An owner signature or a wallet reservation alone cannot create a destination claim.",
+    title: "Reserve and export",
+    label: "01 / PREPARE BEFORE SOURCE DEBIT",
+    text: "The destination reserves an exact receiving obligation: intent, RLD fees, acceptance policy, proof bounds and decision capacity. The source verifies that permit and owner authorizations, then atomically consumes inputs, marks the permit used and finalizes export. A new pair may need advance communication to obtain its permit.",
     icon: LockKeyhole,
   },
   {
     title: "Carry the certificate",
     label: "02 / SUCCESSIVE CONTACTS",
-    text: "Carriers retain the exact ticket, source commit proof and authenticated configuration material. Sender and recipient need not be online together. Duplicate delivery and custody receipts create no additional balance.",
+    text: "Carriers retain the exact ticket, receiving reservation and complete causal monetary execution, including issuance and authenticated ordering evidence. Prepared payments can use one-way contacts. Duplicate delivery and custody receipts create no additional balance.",
     icon: Radio,
   },
   {
     title: "Import and spend",
     label: "03 / ONE DESTINATION DECISION",
-    text: "The destination verifies its accepted source and provenance, records Imported once and creates the recipient's local output atomically. The recipient can then pay locally without a reply to the source. Finality remains conditional on the accepted authority assumptions.",
+    text: "The destination independently replays the supporting money, checks the reserved terms and accepted ordering history, and atomically consumes the permit and records one import. Actual amount dependencies remain separately attributable. The recipient can spend locally without a source reply; threshold equivocation remains a security failure.",
     icon: Fingerprint,
   },
   {
     title: "Recover on rejection",
     label: "04 / POSITIVE REJECTION EVIDENCE",
-    text: "The destination may instead finalize a permanent Rejected decision that excludes import. Its authenticated proof allows one source recovery under the original owner's rule. Silence and local timeouts cannot refund; an unavailable destination can strand exported value.",
+    text: "The destination may instead consume the reservation with permanent rejection, excluding import. Complete authenticated rejection execution allows one source recovery under the original rule. Timeouts cannot refund. A permit reduces avoidable processing surprises but cannot rescue funds from a destroyed authority.",
     icon: Check,
   },
 ];
@@ -277,11 +277,11 @@ export function TransferExplorer() {
         </div>
       </div>
       <p className={styles.transferCaption}>
-        This figure explains the proposed authority-transfer lifecycle. Import
-        and permanent rejection are alternative destination decisions, not
-        sequential steps. Recovery requires rejection evidence. A carriage
-        receipt grants no balance, and physical-route qualification remains
-        separate.
+        After a receiving obligation is prepared, complete payment evidence can
+        travel forward without a return receipt. Import and permanent rejection
+        are alternative decisions, not sequential stages. A carriage receipt
+        grants no balance. Accepted ordering assumptions and actual physical
+        contacts remain necessary.
       </p>
     </div>
   );

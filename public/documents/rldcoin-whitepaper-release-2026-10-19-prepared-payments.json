@@ -1,0 +1,122 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-RESEARCH-REVISION-RECORD",
+  "status": "OWNER_AUTHORIZED_PREPARED_PAYMENTS_RESEARCH_PUBLICATION",
+  "document_date": "2026-10-19",
+  "publication_version_label": null,
+  "title": "Rldcoin: Interstellar Peer-to-Peer Payments",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "2b9ea85b7bcbca9290dfc7551ceb60cdcbbeec986b19af5bb54e30308582b589",
+    "bytes": 57473
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "d82eddf269e3262852ca7a0d5de7ac137cd66f75a87bdd9f75e6d293108e58b5",
+    "bytes": 58505,
+    "pages": 14
+  },
+  "figures": [
+    {
+      "path": "public/diagrams/authority-transfer.svg",
+      "sha256": "4d6a32c00c5f3ea9e327c0922e5b940ab5847cb7b05b5f0bde614fe66a87d2f3",
+      "bytes": 8145
+    },
+    {
+      "path": "public/diagrams/issuance-strands.svg",
+      "sha256": "324d09d0c3853b33861713b1a114fe5d6582869a3d47ac20ec07c1e0eda0e6c4",
+      "bytes": 6148
+    }
+  ],
+  "authorization_scope": "Owner requests resolving the architecture critique, completing the whitepaper and synchronizing the official website, preserving runlai (RLD) as the sole currency and the 21-million cap. This is a research mechanism revision, not node implementation or launch authorization.",
+  "native_currency": {
+    "name": "runlai",
+    "ticker": "RLD",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "only_native_payment_currency": true,
+    "all_protocol_fees_in_RLD": true,
+    "currency_identity": "C_RLD binds one common authenticated genesis and monetary policy."
+  },
+  "issuance": {
+    "cap_RLD": "21000000",
+    "cap_atomic": "21000000000000000000000000000000",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "budget_roots": 4096,
+    "slots_per_root": 1000000,
+    "reward_RLD": "0.005126953125",
+    "reward_atomic": "5126953125000000000000",
+    "total_slots": 4096000000,
+    "genesis_spendable_RLD": "0",
+    "all_preallocations_RLD": "0",
+    "all_Mint_rewards_to_work_author": true,
+    "placement": "Public ClaimRange for a next prefix of 1 through min(256,remaining) slots, with proportionally scaled placement work, a typed receiving reservation, consumed parent and disjoint retained remainder. No discretionary beneficiary or administrative allocation command.",
+    "single_home_per_interval": true,
+    "split_preserves_unique_root_slot_identity": true,
+    "claim_issues_RLD": false,
+    "merge_operation": false,
+    "bootstrap": "D_0 is an explicitly accepted initial quorum and availability dependency; no claim of Sybil-free equal distribution or trust-free consensus.",
+    "retarget": false,
+    "halving": false,
+    "tail_emission": false,
+    "lost_or_retired_reissue": false,
+    "calendar_completion_guarantee": false
+  },
+  "work_profile": {
+    "algorithm": "Argon2id",
+    "version": 19,
+    "memory_KiB": 65536,
+    "passes": 3,
+    "lanes": 1,
+    "output_bytes": 32,
+    "base_target": "2^240 - 1",
+    "Mint_weight": 1,
+    "ClaimRange_weight": "number of detached slots",
+    "target": "floor(base_target / weight)",
+    "purpose": "Public issuance/distribution only; not validator votes or global monetary history selection. Claim work earns no RLD and does not replace Mint.",
+    "benchmarked_or_economically_optimal": false
+  },
+  "mechanisms": [
+    "PBFT selected explicitly; complete monetary replay is distinct from exclusive-ordering trust.",
+    "Cold full causal execution from genesis; verified immutable prefix reuse only. No trusted snapshot or unspecified succinct proof.",
+    "One-use ReceivePermit before source debit, exact intent/fees/acceptance/expanded proof bounds, funded decision capacity and certified unused closure.",
+    "Exact source and destination terminal maps; import or permanent rejection; no elapsed-time refund.",
+    "Amount components retain exact contributing issuance origins and authority dependencies rather than indiscriminate risk union.",
+    "Existing-RLD service reserves and optional funded insurance do not mint or double count supply.",
+    "Finite proposed per-height Ed25519/Merkle/forward-evolving-secret schedule with erasure, durable response retention and authenticated renewal."
+  ],
+  "conservation": {
+    "equations": [
+      "U + F = I - Z",
+      "I + B + Q = C",
+      "U + F + B + Q + Z = C"
+    ],
+    "conditions": "Complete valid causal execution, accepted exclusive PBFT histories, authentic finite keys and durable permanent decisions. Full replay rejects invalid signed states, but unseen individually valid conflicting quorum histories remain outside the fault assumption."
+  },
+  "predecessor": {
+    "receipt": "rldcoin-whitepaper-release-2026-10-19-21m.json",
+    "website_commit": "ab022c0f9007e57627f72e9058b81838e7385368",
+    "canonical_markdown": {
+      "path": "public/documents/rldcoin-whitepaper.md",
+      "sha256": "96f72d60fb6fa6a77b35d6ca67ea97b4388d9a8a98736061cf4a6b319dc3ad5d",
+      "bytes": 64114
+    },
+    "pdf": {
+      "path": "public/documents/rldcoin-whitepaper.pdf",
+      "sha256": "4ad0979f600a2a2ae4621808734cab7efc62456339f362b897c3b34d63f3cdaa",
+      "bytes": 63536,
+      "pages": 16
+    }
+  },
+  "claims": "Mechanism-level design and conditional conservation argument. No newly qualified consensus, standardized forward-secure suite, independent cryptographic review, measured latency/volume or guaranteed impact.",
+  "limitations": [
+    "Threshold equivocation cannot be excluded from remote silence; arbitrary domains are not automatically accepted.",
+    "Actual dependencies and possible acceptance discounts remain; no complete fungibility guarantee.",
+    "Preparation may require a returning permit; one-way execution is claimed only after preparation.",
+    "Destroyed authorities and evidence can strand funds or unused capacity; funded insurance is optional finite counterparty risk.",
+    "Public placement remains computation-weighted and can concentrate or intentionally strand capacity; no fair human allocation or CPU profitability guarantee.",
+    "Full replay and permanent decisions have substantial resource costs; fixed work has no calendar emission guarantee.",
+    "Key erasure, signer rollback/concurrency protection, secure renewal and custody remain assumptions requiring independent analysis.",
+    "Finite reserves do not prove perpetual service; physical routes and useful adoption remain separate."
+  ],
+  "implementation_boundary": "No protocol/node source, live network, monetary genesis, keys, asset balances, test-value migration or adoption policy is changed. Prior receipts and implementation obligations retain their original scope.",
+  "body_revisions_require_explicit_owner_decision": true
+}

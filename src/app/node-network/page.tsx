@@ -49,7 +49,8 @@ export default function NodeNetwork() {
             Sender and recipient need not be online at the same time. Relays
             carry an unchanged owner authorization and the history needed to
             validate it. The recipient domain verifies the source commit and
-            authority chain, then finalizes one import before onward local
+            authority chain and complete monetary execution against its reserved
+            receiving terms, then finalizes one import before onward local
             spending. A missing dependency leaves the ticket unverified; a
             custody receipt cannot supply monetary authority.
           </p>

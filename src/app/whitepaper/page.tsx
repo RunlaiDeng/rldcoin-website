@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "runlai (RLD) as the sole native currency: local settlement, export, one-time import, certified rejection and a causal conservation argument.",
+  "runlai (RLD), capped at 21 million: verified execution, reserved receiving capacity, one-time import and conserved public-work issuance.",
   "/whitepaper",
 );
 
@@ -20,7 +20,7 @@ const sections = blocks
   .filter((block) => block.startsWith("## "))
   .map((block) => block.slice(3).trim());
 const figureHeights: Record<string, number> = {
-  "authority-transfer": 278,
+  "authority-transfer": 316,
   "issuance-strands": 294,
   transaction: 264,
   blocks: 267,
@@ -78,11 +78,12 @@ export default function Whitepaper() {
           </div>
           <p className="whitepaper-context">
             runlai (RLD) is the sole native payment and fee currency. Each
-            spendable output has one authoritative home. Communities settle
-            locally; owner-authorized certificates move spend authority through
-            delayed contacts. The paper defines export, one-time import,
-            permanent rejection, recovery and capped public-work issuance, with
-            explicit quorum, provenance and availability assumptions.
+            spendable output has one authoritative home. A destination reserves
+            its receiving obligation before export and verifies the supporting
+            monetary execution before import. Separate amount components retain
+            their actual dependencies. Divisible public-work entitlements keep
+            lifetime issuance within 21 million RLD, under explicit ordering,
+            custody and cryptographic assumptions.
           </p>
         </div>
       </section>
@@ -106,7 +107,7 @@ export default function Whitepaper() {
           </nav>
         </details>
         <article className="whitepaper-paper">
-          {blocks.slice(2).map((block, index) => {
+          {blocks.slice(3).map((block, index) => {
             if (block.startsWith("## ")) {
               const title = block.slice(3).trim();
               return (

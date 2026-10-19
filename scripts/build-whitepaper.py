@@ -59,13 +59,13 @@ styles = {
     ),
     "body": ParagraphStyle(
         "body", fontName="Times-Roman", fontSize=9.2, leading=13.3,
-        alignment=TA_JUSTIFY, textColor=TEXT, spaceAfter=8,
+        alignment=TA_JUSTIFY, textColor=TEXT, spaceAfter=7.6,
         allowWidows=False, allowOrphans=False,
     ),
     "reference": ParagraphStyle(
-        "reference", fontName="Times-Roman", fontSize=8.5, leading=11.5,
+        "reference", fontName="Times-Roman", fontSize=8.5, leading=11.3,
         alignment=TA_LEFT, textColor=TEXT, leftIndent=13,
-        firstLineIndent=-13, spaceAfter=5,
+        firstLineIndent=-13, spaceAfter=3,
         splitLongWords=True,
     ),
     "figure": ParagraphStyle(

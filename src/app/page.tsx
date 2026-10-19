@@ -49,8 +49,8 @@ export default function Home() {
             <span>For humanity’s future.</span>
           </h1>
           <p className="cinematic-lead">
-            One native currency: runlai (RLD). Settle locally and carry
-            certified payments between worlds through successive contacts.
+            One native currency: runlai (RLD). Settle locally and carry verified
+            payments between prepared communities.
           </p>
           <div className="cinematic-actions">
             <Link className="cinematic-button" href="/about">
@@ -86,9 +86,10 @@ export default function Home() {
             </div>
             <p>
               Pay in runlai (RLD) while distant worlds are offline. Principal
-              and protocol fees use the same currency across every domain.
-              Cross-domain payment first surrenders source spending authority,
-              then creates one destination claim under explicit trust rules.
+              and protocol fees use the same currency across every domain. A
+              destination reserves receipt before source debit. Complete
+              monetary evidence then supports one destination decision under
+              explicit ordering and custody assumptions.
             </p>
           </div>
           <div className="home-basics">
@@ -96,12 +97,12 @@ export default function Home() {
               {
                 icon: KeyRound,
                 title: "Settle locally",
-                text: "A community finalizes payments through its accepted local validator rules. Reconnection does not itself overwrite its history; quorum, key and provenance assumptions remain essential.",
+                text: "Owners authorize exact payments. Local PBFT resolves competing spends; independent execution checks the money. Reconnection does not itself overwrite the local history.",
               },
               {
                 icon: Globe2,
-                title: "One home at a time",
-                text: "The source removes exported value from spendability before releasing a recipient-bound certificate. The destination records one import or one permanent rejection, preventing duplicate credit under the stated assumptions.",
+                title: "Prepare the receiver",
+                text: "An exact receiving permit commits fees, proof bounds and decision capacity before export. The source surrenders spendability; the prepared destination imports or permanently rejects once.",
               },
               {
                 icon: Code2,
@@ -137,12 +138,13 @@ export default function Home() {
           </div>
           <div className="prose">
             <p>
-              Follow exclusive spend authority from source export to one-time
-              import and onward payment. The paper gives a conservation argument
-              and explains permanent rejection, recovery, provenance and the
-              cost of value stranded between worlds. A 21 million RLD lifetime
-              cap and conserved public-work strands define how new RLD is issued
-              without a global mining branch contest.
+              Follow reserved receipt, complete monetary verification and
+              one-time import through delayed contacts. Amount-specific
+              components retain their actual dependencies without automatic risk
+              mixing. A 21 million RLD lifetime cap and publicly claimable,
+              disjoint work entitlements define issuance without a global
+              payment-branch contest. Ordering failures and stranded value
+              remain explicit boundaries.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>
