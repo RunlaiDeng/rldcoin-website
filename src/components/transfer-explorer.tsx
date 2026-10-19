@@ -190,7 +190,7 @@ function TransferMap({
             textAnchor={mobile ? "start" : "middle"}
             className={styles.transferBadge}
           >
-            Proof
+            Capsule
           </text>
         </g>
       )}
@@ -205,7 +205,7 @@ function TransferMap({
           />
           {!mobile && (
             <text y="28" textAnchor="middle" className={styles.transferSub}>
-              Rejection proof: recovery, not a timeout
+              Certified rejection permits recovery
             </text>
           )}
         </g>

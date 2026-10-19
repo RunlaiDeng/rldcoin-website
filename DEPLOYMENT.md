@@ -42,15 +42,19 @@ After a website release, verify the deployment's exact commit and ready state,
 then repeat the rendered audit against `https://rldcoin.com`. Compare the served
 white paper Markdown and PDF with the approved hashes in the publication receipt.
 A build or deployment status alone does not prove that the production alias
-serves the intended content.
+serves the intended content. Check the complete public document/figure inventory,
+including direct URLs outside navigation. Keep only current documents under
+`public/documents/` and the two canonical figures under `public/diagrams/`;
+retired publication and diagram URLs must return 404. Historical files and their byte inventory remain outside the
+served tree in `archive/whitepaper-history/`.
 
 ## Publication revisions and history
 
 The white paper has no numbered publication label. A body revision requires an
 explicit owner decision. Production provides only the current publication.
 Earlier artifact bytes and immutable receipts remain recoverable from Git
-history and local preservation copies, outside the public tree. Never rewrite
-that history. The [successor record](public/documents/rldcoin-whitepaper-release-2026-10-18-interstellar.json)
+history and the byte-preserved `archive/whitepaper-history/` directory, outside
+the public tree. Never rewrite that history. The [successor record](public/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json)
 must distinguish candidate, review and publication status and bind the exact
 new source, PDF, predecessor and applicable audit commit. A pending model or
 publication review blocks release.

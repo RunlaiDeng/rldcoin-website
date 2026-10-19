@@ -1,0 +1,161 @@
+{
+  "scope": "Historical artifacts retained byte-for-byte outside the website public directory; not current mechanism or implementation authority.",
+  "retained": [
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-09.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-09.json",
+      "bytes": 7532,
+      "sha256": "8cde3575a4e7c6f3908008cc6ef919bc82aad6ee6ef84868e80b9d82104123a2"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-16.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-16.json",
+      "bytes": 2349,
+      "sha256": "45d458586143924df6986e1d5427cc62566ba0f28f079ca4e24217f9305a9239"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-18-fast-payments.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-18-fast-payments.json",
+      "bytes": 4815,
+      "sha256": "95f2753da1838e449a00525eb9749afc1dc5189cb2b99d73529896bb9063d2d5"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-18-interstellar.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-18-interstellar.json",
+      "bytes": 3054,
+      "sha256": "ba763293a069e014da24d14f7a76d8b6c942a17818d8055361264b5a017880ed"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-18-mechanism.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-18-mechanism.json",
+      "bytes": 5299,
+      "sha256": "01c9e6a429844fb3c508651daccf932b40b2d0ff8c7478461c42afefcd884af5"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-18.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-18.json",
+      "bytes": 3211,
+      "sha256": "d2e8d9bd744f51594bdafe0c9e97a36c3cfb6bf0f5619457edc8da98ac8a4d76"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-21m.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-21m.json",
+      "bytes": 6446,
+      "sha256": "d353b3f85b60dc87b5e456db1f538a66af9c9de33e8d1ad52b560d9dac5285cd"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-authority.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-authority.json",
+      "bytes": 4075,
+      "sha256": "c10cffdfd5cbe15455eeb6428af04228452f98a3541db3fb6c0ad7f48f119eb2"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-capabilities.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-capabilities.json",
+      "bytes": 8433,
+      "sha256": "69c25e6c244289c6e4137abb2656fcc3a22e07c53eb81ecc2e54cfb7e43556e2"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-issuance.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-issuance.json",
+      "bytes": 5944,
+      "sha256": "ed2df86ff7e6df5ef937001e2e6ca79469bf4b050c885b7b2fbb260048d73e2e"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-prepared-payments.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-prepared-payments.json",
+      "bytes": 6725,
+      "sha256": "af935839ad7157e0137852408de8d26d1993d91ccf557cf48a80a7d64df0bca2"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-rld.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-rld.json",
+      "bytes": 4579,
+      "sha256": "65e649b0f36c71ddc38a62439cd6893f87e1b3587be2bd8acb5cf52f551e8f54"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-standalone.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-standalone.json",
+      "bytes": 6187,
+      "sha256": "4eb3f65b08bce2d3c50dda88b5f20d9e95d89dd00a6e4c30e2c073670d24be22"
+    },
+    {
+      "previous_public_path": "/documents/archive/rldcoin-whitepaper-2026-10-09.md",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-2026-10-09.md",
+      "bytes": 199279,
+      "sha256": "a400de0e05ae439dd665dd8f72db348ce6ccffa62e7314c4bf40874453508e1d"
+    },
+    {
+      "previous_public_path": "/documents/archive/rldcoin-whitepaper-2026-10-09.pdf",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-2026-10-09.pdf",
+      "bytes": 196098,
+      "sha256": "5b79df9feb3cf521e255b1244e25f51cb214920c266a90540f9f740397837bfe"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-overview.md",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-overview-2026-10-09.md",
+      "bytes": 12463,
+      "sha256": "caab738671409f733a6f24d4493ecd112d36da031cca847ad2d93306d8eace8d"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-implementation-status.md",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-implementation-status-2026-10-04.md",
+      "bytes": 8063,
+      "sha256": "bd93d995b0732e9d5366a1076f38a1491f818da1b590384c0699a8244d8ad2df"
+    },
+    {
+      "previous_public_path": "/diagrams/blocks.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/blocks.svg",
+      "bytes": 9601,
+      "sha256": "d270d2a9a5355f17bb0481bfe9672c3d762f6fdec5bc07dc42c4b8cd98ffb994"
+    },
+    {
+      "previous_public_path": "/diagrams/channel.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/channel.svg",
+      "bytes": 8528,
+      "sha256": "f7f653c984a6f1d469b01dd9f589949d1e3f14873b57cd7f7ff4667245f8079d"
+    },
+    {
+      "previous_public_path": "/diagrams/contact-silence.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/contact-silence.svg",
+      "bytes": 9783,
+      "sha256": "c00d6980dcc614f3b65719b6fe46f124921820a76e3d1952724169d91680dbd7"
+    },
+    {
+      "previous_public_path": "/diagrams/cross-zone.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/cross-zone.svg",
+      "bytes": 8201,
+      "sha256": "92463701cf652986959cf16ab460fcb4192e15991da7cfaa6378eb17c7c0925b"
+    },
+    {
+      "previous_public_path": "/diagrams/export-tree.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/export-tree.svg",
+      "bytes": 8659,
+      "sha256": "8439b92352a76718b79fe83cec18eb6ea2d339eb716608827a277dd66891f244"
+    },
+    {
+      "previous_public_path": "/diagrams/pow-risk.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/pow-risk.svg",
+      "bytes": 10179,
+      "sha256": "0b80382d267777b81f449e2f3c436d12860656d6957589947f091ca1df1da49f"
+    },
+    {
+      "previous_public_path": "/diagrams/privacy.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/privacy.svg",
+      "bytes": 6399,
+      "sha256": "55b66a792f957d10d89621a45eef85fe70dab7f03b21825c43935a6fa1b45597"
+    },
+    {
+      "previous_public_path": "/diagrams/relay-networks.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/relay-networks.svg",
+      "bytes": 12257,
+      "sha256": "8c7aa14d00b95f81a321abe45b6daaf53c5017cb88b72b52ac63aa7012fcd983"
+    },
+    {
+      "previous_public_path": "/diagrams/transaction.svg",
+      "archive_path": "archive/whitepaper-history/diagrams/transaction.svg",
+      "bytes": 9922,
+      "sha256": "90ae98970c35db13b391e1090741756ed4b1fb140547f0dfbe5815563f8cf832"
+    }
+  ]
+}

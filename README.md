@@ -68,7 +68,8 @@ The [canonical white paper](public/documents/rldcoin-whitepaper.md) and its
 [PDF](public/documents/rldcoin-whitepaper.pdf) have a separate
 [revision record](public/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json).
 The production site provides only the current publication. Earlier artifacts and
-receipts remain recoverable from Git history; they are not published downloads.
+receipts remain byte-for-byte in [the non-served historical archive](archive/whitepaper-history/README.md)
+and Git history; they are not published downloads.
 Body revisions require an explicit owner decision; preserve historical audit bindings. Keep implementation and qualification
 records separate from the normative design.
 

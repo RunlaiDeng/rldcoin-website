@@ -22,15 +22,6 @@ const sections = blocks
 const figureHeights: Record<string, number> = {
   "authority-transfer": 404,
   "issuance-strands": 294,
-  transaction: 264,
-  blocks: 267,
-  channel: 281,
-  "export-tree": 285,
-  "cross-zone": 319,
-  "contact-silence": 288,
-  privacy: 216,
-  "pow-risk": 262,
-  "relay-networks": 278,
 };
 
 function idFor(title: string) {
@@ -95,7 +86,7 @@ export default function Whitepaper() {
           ))}
         </nav>
         <details className="whitepaper-mobile-contents">
-          <summary>Contents · {sections.length - 1} sections</summary>
+          <summary>Contents · {sections.length} entries</summary>
           <nav aria-label="Paper contents on mobile">
             {sections.map((title) => (
               <a href={`#${idFor(title)}`} key={title}>

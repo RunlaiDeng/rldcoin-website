@@ -50,7 +50,7 @@ export function pageMetadata(
       images: [
         {
           url: "/opengraph-image.png",
-          alt: "Rldcoin over a view of Earth from the International Space Station",
+          alt: "Earth viewed from the International Space Station",
         },
       ],
     },

@@ -17,10 +17,11 @@ export function PublicEvidence() {
             <h2 id="evidence-title">Historical results and their limits.</h2>
           </div>
           <p>
-            These historical observations used the same v53 runtime.
-            Ordinary-cycle success and the subsequent failed fault scope are
-            separate results. Newer local work is outside this publication
-            snapshot.
+            These observations concern an earlier regional prototype, not the
+            current paper’s controller construction. Both used the same v53
+            runtime. Ordinary-cycle success and the subsequent failed fault
+            scope are separate results. Newer local work is outside this
+            publication snapshot.
           </p>
         </div>
         <div className="evidence-grid">

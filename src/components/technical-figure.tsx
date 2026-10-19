@@ -8,15 +8,6 @@ import styles from "./diagrams.module.css";
 const titles: Record<string, string> = {
   "authority-transfer": "Transfer of spend authority",
   "issuance-strands": "A conserved issuance budget",
-  transaction: "Signature & value",
-  blocks: "Connected state transitions",
-  channel: "A payment channel",
-  "export-tree": "An authenticated export",
-  "cross-zone": "Across the Zone boundary",
-  "relay-networks": "A network of networks",
-  "contact-silence": "What silence can mean",
-  privacy: "Public value, observable links",
-  "pow-risk": "An idealized risk model",
 };
 
 export function TechnicalFigure({

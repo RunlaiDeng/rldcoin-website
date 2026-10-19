@@ -1,74 +1,56 @@
-# Rldcoin — Protocol overview and implementation records
+# Rldcoin — Current mechanism overview
 
-Reviewed 9 October 2026. The [white paper](https://rldcoin.com/whitepaper) is the normative authority: 21 chapters, 18 architecture rules, 24 risk records with operational obligations, embedded acceptance gates and 53 references. The [canonical PDF](https://rldcoin.com/documents/rldcoin-whitepaper.pdf) and [publication receipt](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-09.json) record the revision’s hashes, predecessor and review status. The paper specifies required capabilities and protocol rules. This maintained overview separates that design from implementation status; dated wording moved out of the paper is retained in [implementation records](/documents/rldcoin-implementation-status.md).
+Reviewed 20 October 2026 against [Rldcoin: Interstellar Peer-to-Peer Payments](https://rldcoin.com/whitepaper), dated 19 October 2026. The [current publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json) binds the canonical Markdown, PDF and two figures. This guide summarizes that construction; it is not an implementation or performance certificate.
 
-## Research refinements and their limits
+## One RLD currency and a finite issuance budget
 
-The 9 October revision retains the original 21-section architecture, nine figures and monetary rules. It refines requirements; it does not claim these mechanisms have been implemented or independently qualified. The production website provides the current publication; previous publication bytes and receipts remain recoverable from Git history.
+runlai (RLD) is the sole native payment, fee and service currency, with 10^24 atomic units per RLD. Its proposed lifetime cap is 21,000,000 RLD. Spendable genesis and all founder, investor, treasury and validator allocations are zero. Import relocates existing RLD without wrapping it or creating another domain supply.
 
-Accounting uses compatible causally closed cuts, not a simultaneously observed global balance. Dependency-complete admission, fresh action checks, exact-original-byte renewal bridges and inherited incident provenance remain mandatory. An unresolved or bounded dependency traversal cannot silently label an output clean.
+The fixed budget contains 4,096 roots of 1,000,000 unique slots. Each successful Mint consumes one eligible slot and pays its work author 0.005126953125 RLD. Public range-claim work can detach at most 256 unconsumed slots for relocation; claiming issues no RLD and replaces no later Mint work. Stable placement grants preserve unrelated claims through source splits. Installation or return changes the grant for only the selected slots, preserving their identities.
 
-Terminal cancellation is an optional proposed extension disabled in the baseline. Both exact profiles and the export intent must precommit the policy. An unimported export requires recognized destination finality permanently recording rejection before a unique source refund. Imported and rejected terminal states cannot coexist. Refund outputs inherit their cancellation/finality provenance, preserve fees already earned and cannot arise from a timeout or stale absence proof.
+The proposed work profile is Argon2id version 19, 64 MiB, three passes, one lane and a 32-byte output, with a base target of 2^240 - 1. Range-claim difficulty scales with the number of selected slots. Work distributes issuance; it does not choose payment consensus or grant validator votes. There is no automatic retarget, halving, tail emission, lost-money reissue or calendar exhaustion guarantee. CPU admission establishes neither profitability nor ASIC resistance.
 
-Recovery requires the entire independently witnessed prefix and safety floors, with a pre-release durable witness or equivalently qualified fencing and single-active custody. Archives and services need finite funded intervals, exact manifests, measured repair and full-extraction duties, and explicit stops. A root commitment, small model or seconds-long test cannot establish general implementation correctness, indefinite service or physical-route qualification.
+## Local settlement and exclusive homes
 
-## Regional local-payment target and acceptance
+Each balance has one authoritative home. A domain is an authenticated state machine, not a geographic monopoly. Distinct domains can circulate distinct locally homed funds during isolation while their accepted quorums and resources remain responsive. A minority partition waits. Copying a ledger or carrying a private key cannot create local authority over remotely homed money.
 
-The target for ordinary payments within an independently adopted region is p95 <= 3 seconds and p99 <= 5 seconds under a predeclared normal network and offered-load envelope. It includes continent-to-continent payments within Earth, payments within a Mars region and payments aboard the same spacecraft. This target is not yet demonstrated and is not a guarantee during partitions, overload, custody failure or quorum loss.
+The baseline ordering profile is PBFT with n = 3f + 1 admitted validators and at least 2f + 1 distinct commits under the complete locking and view-change rules. Exact owner authorization and valid execution remain mandatory. Ordinary certified local outputs can be used in the next valid command; the current construction does not impose the older block-confirmation or mining-maturity rules on those payments.
 
-Measure from the first signed valid submission, including admission and queue waiting, to the recipient independently verifying adopted finality, complete provenance and a mature, unquarantined balance eligible for another payment. Execute an actual second ordinary payment consuming that output and independently verify its finality. Received/submitted, pre-confirmed/included and final/spendable must remain distinct.
+## Advance receiving capacity, then local preparation
 
-Count all unique valid submissions, retaining retries under the same identity, backpressure, failures, late completions and pending ages. At least 95 percent of the entire valid cohort must reach verified final spendability within 3 seconds and 99 percent within 5 seconds; successful-only percentiles do not qualify. Report completion rates, clock uncertainty, queue and validation costs, and separate Earth continent pairs and directions, independent validator/controller counts, offered load and measured latency classes. Mars and spacecraft measurements must disclose actual or simulated local conditions. Missing quorum pauses finalization; distinct keys under one controller do not establish independent fault tolerance, even on a small craft.
+A destination preissues finite funded ReceiveCapability coupons. Each binds exactly one source, recipient policy, object/amount limits, accepted covers, fees, proof/current-data bounds and funded custody. Future payment inputs and the future source head remain unspecified. Unknown sources, new destinations and exhausted inventories require setup; one-way payment does not eliminate this preparation cost.
 
-The 600-second PoW interval, twelve-block checkpoint count (the checkpoint block plus eleven successors), and six successors after destination import remain a historical reference profile. The seconds-scale goal requires a separately qualified, authenticated BFT regional profile without weakening those historical rules or silently changing genesis. Each region finalizes its own local payments without waiting for a distant planet. Cross-region transfers still require source finality, propagation/contact, unique import and exact destination finality/maturity.
+The payer later authorizes exact inputs, outputs, cover assignments and fees. Native preparation locks the exact escrow and delegates it to an independent one-decision controller. Historical proving continues while the ordinary native ledger advances. Separate key pools, durable locks and funded capacity constrain controllers; outstanding controllers retain their original authority across native handoff.
 
-## Purpose and current availability
+Before release, an authorized Canceled controller decision permits one local redemption; performed preparation service remains paid. Exported can finalize only when its required execution receipt and complete material are ready. The controller cannot both cancel and release under the stated safety assumptions.
 
-The target is one conserved currency for locally verified payments in human communities, habitats and spacecraft, with owner-authorized onward and return transfers through asynchronous contacts. Local progress requires the region's actual security and communication assumptions. Mutually isolated groups cannot both safely finalize conflicting spending.
+## Import, rejection and recovery
 
-Development uses no-value testnets and separately admitted ground fixtures. There is no launched mainnet, token sale, qualified consumer wallet or physical interstellar payment service. Test balances and keys never become mainnet assets or authority. None of I1–I12 is fully qualified. A future mainnet requires an accepted authenticated executable profile, independent qualification and a fresh signed zero-issuance genesis.
+Relays carry the released package through real contacts. The destination checks execution receipts, matching quorum certificates, creation and coupon binding, acceptance policy and complete current data. It imports or permanently rejects once. After import, the recipient can pay locally without a return message.
 
-## Regional authority and consensus
+After release, only certified permanent destination rejection permits one source recovery under the original fee terms. Silence, a deadline, transport expiry or a missing receipt cannot restore source spending rights. Missing data, unavailable authority or a failed physical path can leave funds pending or stranded.
 
-CurrencyRoot and RegionAdmission bind genesis, issuance, rules, validator membership, governance and suite policies. Every approval or recovery role needs independently held identities, quorum, scope, predecessor and conflict/activation rules before qualification; absent authority fails closed. Discovery and coin ownership grant no finality or issuance authority. Membership admission remains a disclosed trust boundary.
+## Execution proofs and explicit acceptance covers
 
-The target baseline is independent Byzantine regional finality: n = 3f + 1 equal-weight validators, at most f Byzantine, and 2f + 1 approved votes for each required quorum under a reviewed locking/view-change protocol. Signers durably preserve locks and signing intent; certified ledger installation is atomic. Old/new epoch changes bind the identical closed prefix and carried locks. Missing quorum stops affected finality-dependent transitions. Sections 5–9 retain the historical Earth PoW/four-of-four checkpoint reference; a new target adoption is not constrained by that example and cannot retroactively alter its signed genesis.
+Recursive execution receipts summarize monetary validity under an authenticated RLD program. Matching PBFT certificates separately establish ordering under accepted fault assumptions. Validity proofs cannot expose an unseen, separately valid quorum fork. The named RISC Zero reference profile is not an implemented or independently qualified RLD monetary guest; concrete image identities and practical costs still need evidence.
 
-## Value and provenance
+An immutable acceptance cover defines finite accepted authority families and security rules. Execution proves that actual ancestry fits the cover. Same-cover amounts can coalesce. Broadening requires explicit owner authorization and verified inclusion; narrowing needs additional ancestry evidence. An incident can quarantine the whole covered portion. Shared RLD denomination guarantees neither uniform acceptance nor equal market value.
 
-The cap is 100 billion RLD, with 10^24 integer runlai per RLD, zero initial allocation and no regional reissuance. Section 6's exact integer recurrence, boundary and terminal vectors bind origin rewards; arithmetic and parsing must be checked.
+## Fees, custody and continued service
 
-On compatible selected histories, I = U + E + T with mutually exclusive buckets. U includes immature and quarantined unspent value; E includes channel escrows and adopted fee reserves; T includes every selected source export debit, even before finality, until unique destination credit. Fees are assigned once. Only finalized debits with complete admitted ancestry can be imported. Orphaned unfinalized debits reverse atomically; ordinary reorganization cannot undo finalized debits. Import atomically records permanent ExportID consumption and credit.
+Owner-initiated local and cross-domain payments include a positive RLD service fee and a positive share for a verifiable prior Mint work author, funded from exact authorized existing balances. The work-author share is at least one atomic unit. Funded sponsors may pay on an owner's behalf. Mint itself requires no RLD admission fee.
 
-Proof dependencies form a finite causal DAG rooted in authenticated issuance. An onward or return journey creates a new debit/import identity; a proof ring cannot authenticate itself. Every payment, split/merge, change, fee and channel output commits the union of input provenance. Disputed lineage taints an entire mixed output and all reachable descendants, including received local balances. Affected spending, channel value transitions, imports and exports stop while liabilities and evidence remain retained. Resumption needs pre-adopted recovery authority and complete compatible replay. Timeout, expiry and missing receipts never refund a finalized debit; cancellation is excluded from the baseline.
+Service terms cover consensus, verification and archival reserves. Relay and renewal contracts use existing RLD under finite funded terms. Complete current data, permanent decisions, controller responses and audit custody retain costs. Exhaustion stops new unsupported obligations while old pending liabilities remain; it cannot authorize a refund or replacement issuance.
 
-## Wallets, channels and recovery
+Normal node operation includes bounded authenticated discovery and store-carry-forward carriage. Route hints and custody acknowledgments grant no monetary authority. Physical contacts, finite cryptographic horizons, secure custody and funded succession remain necessary. Finite reserves do not buy perpetual operation.
 
-Wallets must distinguish review, reservation, submission, inclusion, source finality, transport custody, unique import, maturity, quarantine and onward eligibility. After restore, signing requires a surviving independent fresh monotonic witness; common rollback leaves inspection read-only and signing/spending refused. Owner recovery and inheritance require a policy authorized before the loss. No operator can invent recovery authority.
+## Read further
 
-Channels need preauthorized challenge-fee reserves, local monitoring, exact conservation and qualified restart freshness. For close height c and window W, challenges run from c + 1 through d = c + W inclusive and settlement requires h > d. Challenges do not extend d; same-sequence conflicts trigger isolation. Exhausted reserves stop new receipts or insufficiently funded challenges. A reserve cannot guarantee affordable fees or overcome censorship; a distant watchtower cannot beat a local deadline.
+- [Payment walkthrough](https://rldcoin.com/how-it-works)
+- [RLD and issuance](https://rldcoin.com/rld)
+- [Nodes and relays](https://rldcoin.com/node-network)
+- [Safety and limits](https://rldcoin.com/you-need-to-know)
+- [Current development scope](https://rldcoin.com/network)
+- [Implementation summary](https://rldcoin.com/documents/rldcoin-implementation-status.md)
 
-## Bounded transport and continuing service
-
-Every normally started full node must discover and relay admitted evidence in its ordinary lifecycle within declared resource limits. Real first contacts, signed candidate paths and store-carry-forward do not establish monetary admission, current reachability or ledger acceptance. Custody contracts bind objects, retention, horizon, capacity, payer and legal release conditions, separately from owner archive duties. A transport receipt cannot erase custody obligations. Capacity or funding exhaustion stops the affected service without destroying value evidence.
-
-Proof, storage, decompression, graph, signature-work, CPU/RAM/disk, queue, retry and recovery limits are mandatory. Relay, validators, archives, watchtowers and recovery have declared payers, reserves, minimum service and insolvency stop rules. No free unlimited transit, endless archive retention or finite delivery deadline under permanent disconnection is promised.
-
-The 100-million-year continuity goal is an objective, not a demonstrated lifetime. Independent archives, hardware/disaster recovery, authenticated key/suite/epoch succession, proactive renewal and causally delayed revocation remain qualification duties. Freezing the paper does not freeze executable protocol versions. Defects, experiments and risk changes belong in separate records; material changes require scoped requalification.
-
-## Evidence and acceptance
-
-Section 20 embeds A–G, I1–I12, N1–N10 and P1–P8 gates plus pre-mainnet decisions. Two independent verifiers, reproducible builds, supply-chain provenance, device/archive recovery and complete operational risk obligations are mandatory. Each R1–R24 record includes adversary, assumptions, mitigation, residual risk, detection, affected value, recovery authority, safe stop, payer and tests. Documentation, hash publication or a same-owner fixture does not establish full implementation. Failed runs cannot be cleared by deadline extensions, threshold reductions or repetition without a bounded causal hypothesis.
-
-### Historical reviewed public evidence
-
-At public evidence commit `74f16276605823e8c84b67a66d5ff23134a86c8a`, the v54 ordinary cycle passed with pinned v53 runtime. The v55 finite fault scope failed its restored-contact import/maturity deadline. Separate stopped checks preserved that failure. Same host/controller results do not establish independent operation, sustained BFT, long history or physical routes; newer local work is outside this historical public snapshot.
-
-## Inspect the actual scope
-
-- [Architecture](https://rldcoin.com/how-it-works), [payments](https://rldcoin.com/payments), [wallets](https://rldcoin.com/wallets) and [limits](https://rldcoin.com/you-need-to-know)
-- [Node and relay model](https://rldcoin.com/node-network), [research](https://rldcoin.com/research) and [mandatory roadmap](https://rldcoin.com/roadmap)
-- [Current development summary](https://rldcoin.com/network) and [public no-value testnet guide](https://github.com/RunlaiDeng/rldcoin/blob/main/docs/operations/EARTH_FRESH_TESTNET.md)
-- [Test-node guide](https://rldcoin.com/run-a-node), [developer resources](https://rldcoin.com/developers) and [participation](https://rldcoin.com/participate)
-
-Operator telemetry is not independent verification. No mainnet or physical interstellar route is qualified by this website.
+Earlier public artifacts are preserved byte-for-byte in the website repository's separate historical archive and Git history. They are not current mechanism authority. Existing test assets have no monetary value and never migrate into a monetary genesis. No active mainnet or operational interstellar payment route is established by this publication.

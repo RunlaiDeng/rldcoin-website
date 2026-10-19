@@ -661,6 +661,16 @@ function Resources() {
           WHITEPAPER_RELEASE,
         ],
         [
+          "Mechanism overview",
+          "A concise current-paper summary, including issuance, controllers, acceptance and service obligations.",
+          "/documents/rldcoin-overview.md",
+        ],
+        [
+          "Implementation scope",
+          "The current publication’s boundaries and the separate status of existing no-value candidates.",
+          "/documents/rldcoin-implementation-status.md",
+        ],
+        [
           "Research references",
           "Primary references cited by the paper; citations do not qualify the RLD construction.",
           "/whitepaper#references",
