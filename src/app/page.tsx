@@ -12,7 +12,7 @@ import { pageMetadata, REPOSITORY, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments",
-  "Local settlement and asynchronous transfer of exclusive spend authority. Explore an interstellar payment architecture with explicit trust and recovery rules. No mainnet has launched.",
+  "runlai (RLD) payments with local settlement and asynchronous transfer of exclusive spend authority. Explore the interstellar architecture and its trust and recovery rules. No mainnet has launched.",
   "/",
 );
 
@@ -29,7 +29,7 @@ export default function Home() {
             url: SITE,
             inLanguage: "en",
             description:
-              "An interstellar payment architecture with local settlement and destination-bound transfer of spend authority. Research only; no mainnet or physical stellar service is qualified.",
+              "An interstellar runlai (RLD) payment architecture with local settlement and destination-bound transfer of spend authority. Research only; no mainnet or physical stellar service is qualified.",
           }),
         }}
       />
@@ -49,8 +49,8 @@ export default function Home() {
             <span>For humanity’s future.</span>
           </h1>
           <p className="cinematic-lead">
-            Local economies. One home for every spend. Certified payments
-            carried between worlds through successive contacts.
+            One native currency: runlai (RLD). Settle locally and carry
+            certified payments between worlds through successive contacts.
           </p>
           <div className="cinematic-actions">
             <Link className="cinematic-button" href="/about">
@@ -85,7 +85,8 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Settle against local funds while distant worlds are offline.
+              Pay in runlai (RLD) while distant worlds are offline. Principal
+              and protocol fees use the same currency across every domain.
               Cross-domain payment first surrenders source spending authority,
               then creates one destination claim under explicit trust rules.
             </p>

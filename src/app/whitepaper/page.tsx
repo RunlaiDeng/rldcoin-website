@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "Local settlement and asynchronous transfer of exclusive spend authority: export, one-time import, certified rejection and a causal conservation argument.",
+  "runlai (RLD) as the sole native currency: local settlement, export, one-time import, certified rejection and a causal conservation argument.",
   "/whitepaper",
 );
 
@@ -76,7 +76,8 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            Each spendable output has one authoritative home. Communities settle
+            runlai (RLD) is the sole native payment and fee currency. Each
+            spendable output has one authoritative home. Communities settle
             locally; owner-authorized certificates move spend authority through
             delayed contacts. The paper defines export, one-time import,
             permanent rejection and recovery, with explicit quorum, provenance

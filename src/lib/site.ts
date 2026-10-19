@@ -8,7 +8,7 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-19-authority.json";
+  "/documents/rldcoin-whitepaper-release-2026-10-19-rld.json";
 export const CONTENT_REVIEW_DATE = "19 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
@@ -65,7 +65,7 @@ export function pageMetadata(
 export const pages = {
   about: [
     "About Rldcoin",
-    "A peer-to-peer payment design for communities separated by long or intermittent communication.",
+    "An interstellar peer-to-peer payment design using runlai (RLD) as its sole native currency.",
   ],
   "how-it-works": [
     "How Rldcoin works",
@@ -104,11 +104,15 @@ export const pages = {
 export const faqs = [
   [
     "What is Rldcoin?",
-    "Rldcoin is a research architecture for interstellar peer-to-peer payments. Each spendable output has one authoritative home domain. Communities settle locally; certified exports relocate authority through delayed contacts. The paper gives conditional safety arguments, not a claim that the architecture is already implemented.",
+    "Rldcoin is a research architecture for interstellar peer-to-peer payments in runlai (RLD), its sole native currency. Each spendable output has one authoritative home domain. Communities settle locally; certified exports relocate authority through delayed contacts. The paper gives conditional safety arguments, not a claim that the architecture is already implemented.",
+  ],
+  [
+    "Which currency do payments and fees use?",
+    "Only runlai (RLD). One RLD equals 10^24 atomic runlai units. Local and interstellar payments, source and destination fees, recovery fees and protocol relay-service payments all use RLD. A valid import relocates existing RLD rather than minting or wrapping it. Every domain must bind the same authenticated currency identity and monetary rules.",
   ],
   [
     "Can I buy or use RLD today?",
-    "No mainnet has launched and this website offers no token sale or consumer transaction service. Existing test assets have no monetary value. The new architecture does not require a mandatory new token and does not migrate test balances or keys.",
+    "No mainnet has launched and this website offers no token sale or consumer transaction service. Existing test assets have no monetary value. runlai (RLD) is the only native payment and fee currency in the proposed design. Publication does not issue RLD or migrate test balances or keys.",
   ],
   [
     "How can communities pay while separated?",
@@ -116,7 +120,7 @@ export const faqs = [
   ],
   [
     "What moves between worlds?",
-    "An owner-authorized export certificate, its exact recipient and destination, and the evidence needed to authenticate the source authority. The source first removes that value from local spendability. Ordinary carriers move bytes without becoming monetary validators.",
+    "An owner-authorized RLD export certificate, its exact recipient and destination, and the evidence needed to authenticate the source authority. The source first removes that value from local spendability. Ordinary carriers move bytes without becoming monetary validators.",
   ],
   [
     "When can the recipient spend?",
@@ -136,7 +140,7 @@ export const faqs = [
   ],
   [
     "Why does provenance matter?",
-    "Value retains the authority histories on which its backing depends. Importing through another domain does not erase earlier trust. Two balances with the same denomination and different provenance may have different acceptance or market value.",
+    "Value retains the authority histories on which its backing depends. Importing through another domain does not erase earlier trust. All native balances are RLD, but different authority histories can lead to different acceptance conditions or market discounts. Provenance is risk metadata, not a separate currency.",
   ],
   [
     "Does the paper guarantee seconds or one hundred million payments a day?",
@@ -144,7 +148,7 @@ export const faqs = [
   ],
   [
     "Does the design require mining?",
-    "The new architecture does not require a universal proof-of-work contest or an automatic subsidy. Asset issuance and local service funding have explicit policies. Earlier mining candidates retain their historical scope and are not upgraded by publication.",
+    "The new architecture does not require a universal proof-of-work contest or an automatic subsidy. RLD issuance must follow one common authenticated monetary policy; domains cannot mint their own supply. Local service fees are paid in RLD. Earlier mining candidates retain their historical scope and are not upgraded by publication.",
   ],
   [
     "What happens if a domain loses its validators?",
@@ -156,6 +160,6 @@ export const faqs = [
   ],
   [
     "What would be needed before an actual network?",
-    "An exact executable profile, independent protocol analysis, durable implementation and custody qualification, explicit asset rules, governance and authenticated adoption. Existing no-value fixtures and website publication do not supply these. No new monetary genesis or physical stellar route is activated here.",
+    "An exact executable profile, independent protocol analysis, durable implementation and custody qualification, complete common RLD monetary rules, governance and authenticated adoption. Existing no-value fixtures and website publication do not supply these. No new monetary genesis or physical stellar route is activated here.",
   ],
 ] as const;

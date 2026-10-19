@@ -85,18 +85,23 @@ function About() {
           <h2>A payment protocol with explicit trust</h2>
           <p>
             Users control their spending keys. Communities can create domains,
-            and people choose which asset and authority histories to accept. A
+            and people choose which authority histories to accept for RLD. A
             domain's signatures are meaningful only under its declared security
             model. Open discovery does not automatically make a new committee
             trustworthy.
           </p>
-          <h2>Assets follow their own monetary rules</h2>
+          <h2>One native currency: runlai (RLD)</h2>
           <p>
-            The architecture requires no mandatory new token or founder
-            allocation. Each asset identifies its issuance rules and initial
-            authority. Transfers relocate existing spending rights; they do not
-            mint a second allocation. Identical symbols do not establish
-            identical backing or risk.
+            All native payments and protocol fees use runlai (RLD). One RLD
+            equals 10^24 atomic runlai units. Every domain binds the same
+            authenticated currency identity and monetary rules. Cross-domain
+            transfers relocate existing RLD; they do not mint another supply or
+            replace it with a wrapped or domain-issued token.
+          </p>
+          <p>
+            Creating a domain grants no RLD issuance right. An emission schedule
+            and complete issuance mechanism must be fixed in the common monetary
+            rules before monetary activation; this publication issues no coins.
           </p>
           <Note title="Research and operation are separate">
             The paper is a new architecture proposal. Existing no-value
@@ -257,13 +262,13 @@ function Safety() {
             strand the value. There is no guaranteed timer-based refund or
             emergency administrative replacement.
           </p>
-          <h2>Provenance and asset rules matter</h2>
+          <h2>One currency, explicit authority risks</h2>
           <p>
-            Issuers, assets and authority histories have different risks. The
-            protocol conserves digital rights under its assumptions; it does not
-            prove physical reserves, guarantee a price, bound an entire
-            economy's losses or insure every payment. Privacy is not supplied by
-            a transparent certificate.
+            RLD is the sole native currency, but authority histories still carry
+            different risks. The protocol conserves RLD under its assumptions;
+            it does not guarantee a price, bound an entire economy's losses or
+            insure every payment. Privacy is not supplied by a transparent
+            certificate.
           </p>
           <h2>Keys, archives and real contacts remain necessary</h2>
           <p>
@@ -381,8 +386,9 @@ function Network() {
             The owner-authorized redesign replaces a globally competing work
             history with explicit local finality domains, unique
             destination-bound exports, permanent import-or-reject decisions and
-            evidence-dependent recovery. It has no mandatory new token or
-            universal mining contest.
+            evidence-dependent recovery. runlai (RLD) is the sole native payment
+            and fee currency. Domains cannot issue their own substitutes or mint
+            RLD merely by joining the network.
           </p>
           <h2>What publication establishes</h2>
           <p>

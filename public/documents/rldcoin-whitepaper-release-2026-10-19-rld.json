@@ -1,0 +1,60 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-RESEARCH-REVISION-RECORD",
+  "status": "OWNER_AUTHORIZED_NATIVE_RLD_RESEARCH_PUBLICATION",
+  "document_date": "2026-10-19",
+  "publication_version_label": null,
+  "title": "Rldcoin: Interstellar Peer-to-Peer Payments",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "f79694c0b5fef0a16b27cba797834a94d5397b51490ded0f629839f64ffb6da5",
+    "bytes": 50076
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "e9691242fa4163b4189aa5e049b71b5516fcd74629dae39c5470f5419717a02e",
+    "bytes": 50168,
+    "pages": 13
+  },
+  "figures": [
+    {
+      "path": "public/diagrams/authority-transfer.svg",
+      "sha256": "431d9b66c72110503bccb304dc4218bd0cbd6b68b77aebdbf78db9cf725d786e",
+      "bytes": 7731
+    }
+  ],
+  "authorization_scope": "The owner explicitly requires runlai (RLD) as the system payment currency. This revision makes RLD the sole native currency in the paper and synchronizes the official website within the prior authorization.",
+  "native_currency": {
+    "name": "runlai",
+    "ticker": "RLD",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "only_native_payment_currency": true,
+    "all_protocol_fees_in_RLD": true,
+    "common_currency_identity": "C_RLD binds one authenticated monetary genesis, denomination and complete monetary rules across all domains.",
+    "domain_creation_grants_issuance": false,
+    "import_is_issuance": false,
+    "wrapped_or_domain_token_substitution": false,
+    "provenance": "Security metadata for RLD; does not create another denomination or currency.",
+    "issuance_boundary": "No new supply cap, emission schedule or allocation selected. A complete common monetary policy and globally non-duplicable issuance mechanism remain necessary before monetary activation; the paper alone authorizes no issuance."
+  },
+  "architecture": "Single-home spend authority; final local settlement under accepted Byzantine validator assumptions; destination-bound source exports; permanent import-or-reject decisions; rejection-evidence-dependent source recovery; monotonic monetary provenance.",
+  "predecessor": {
+    "receipt": "rldcoin-whitepaper-release-2026-10-19-authority.json",
+    "website_commit": "57eb66ddd27f976c10aae6970ffb390003255319",
+    "canonical_markdown": {
+      "path": "public/documents/rldcoin-whitepaper.md",
+      "sha256": "aee192deff4664ea996380257a591bd5c7324ea4def61d091f4d769232898d71",
+      "bytes": 48207
+    },
+    "pdf": {
+      "path": "public/documents/rldcoin-whitepaper.pdf",
+      "sha256": "ebc542b0f1d84544119a7ef3095e49391961f7646aeb31e719dfefdf246634e4",
+      "bytes": 47963,
+      "pages": 12
+    }
+  },
+  "claims": "Conditional transition-level arguments for unique destination decisions, import/recovery exclusion, conservation over causal executions, local finality across inter-domain disconnection and conditional progress. No claimed invention of BFT, certified transfer or a new cryptographic primitive; no exhaustive novelty or priority claim.",
+  "assumptions": "Accepted initial domain and common RLD currency anchors; at most f Byzantine among 3f+1 validators in each relevant configuration, including applicable later historical-key compromise; correct commit/locking and handoff protocols; secure cryptography; owner authorization; durable output/export/decision state. Progress additionally needs responsive local quorums, complete evidence, accepted policies, funded resources and usable contact paths. Conservation also requires every authorized issuance entitlement to be exercisable at most once across all domains.",
+  "limitations": "Threshold compromise, stranded in-flight value, quorum unavailability, provenance-dependent fungibility, historical key compromise, archive growth, governance and physical delivery remain explicit. No achieved throughput, implemented complete protocol, independent audit, machine-checked proof, universal permissionless consensus or world-changing outcome is certified. The transfer mechanism does not itself construct or select an RLD emission schedule.",
+  "implementation_boundary": "No protocol/node source, live network, asset balance, monetary genesis, signing keys or adoption policy is changed. Prior receipts, failures, source-bound evidence and existing implementation obligations retain their original scope. A future implementation requires an exact separately identified profile and explicit reconciliation; no test value or keys migrate.",
+  "body_revisions_require_explicit_owner_decision": true
+}

@@ -8,7 +8,7 @@ const steps = [
   {
     title: "Finalize source export",
     label: "01 / SURRENDER SOURCE AUTHORITY",
-    text: "The owner signs exact asset, destination, recipient, principal and fees. The source domain atomically consumes local inputs and finalizes one export. An owner signature or a wallet reservation alone cannot create a destination claim.",
+    text: "The owner signs the common RLD currency identity, exact destination, recipient, principal and RLD fees. The source domain atomically consumes local inputs and finalizes one export. An owner signature or a wallet reservation alone cannot create a destination claim.",
     icon: LockKeyhole,
   },
   {

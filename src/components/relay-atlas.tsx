@@ -29,7 +29,7 @@ export const relayNetworks = [
   {
     name: "Proxima Centauri",
     kind: "Stellar network",
-    text: "A distant community verifies its own ledger. Its relay can forward evidence without importing the asset or becoming an Earth consensus signer.",
+    text: "A distant community verifies its own ledger. Its relay can forward evidence without importing the RLD or becoming an Earth consensus signer.",
     role: "Regional relay",
     icon: "star",
     x: 580,
