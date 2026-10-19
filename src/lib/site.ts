@@ -8,7 +8,7 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-19-rld.json";
+  "/documents/rldcoin-whitepaper-release-2026-10-19-issuance.json";
 export const CONTENT_REVIEW_DATE = "19 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
@@ -111,6 +111,18 @@ export const faqs = [
     "Only runlai (RLD). One RLD equals 10^24 atomic runlai units. Local and interstellar payments, source and destination fees, recovery fees and protocol relay-service payments all use RLD. A valid import relocates existing RLD rather than minting or wrapping it. Every domain must bind the same authenticated currency identity and monetary rules.",
   ],
   [
+    "What is the supply and initial allocation?",
+    "The proposed lifetime cap is 1,000,000,000,000 RLD. Genesis issues and allocates zero spendable RLD. All issuance goes through 4,096 conserved strands, each with 1,000,000 slots paying 244.140625 RLD to the successful work author. There is no founder reserve, presale allocation, halving, tail emission or replacement issuance for lost or retired coins.",
+  ],
+  [
+    "Can an isolated community issue RLD?",
+    "Only if it already holds an active, authenticated issuance strand and its local quorum can finalize valid public work. A whole-strand move preserves the counter and remaining budget; it cannot copy them. Initial placement is discretionary governance by the bootstrap domain's quorum, not a promise of equal allocation to every person or settlement. A permanently stranded strand is not recreated elsewhere.",
+  ],
+  [
+    "When will all RLD be issued?",
+    "There is no fixed calendar completion date or annual release rate. Each valid slot pays a fixed reward for the fixed Argon2id work profile; there is no automatic retarget. Faster computation can accelerate issuance. All 4,096,000,000 finalized events would exhaust the cap; loss or unavailability of strands can leave actual issuance below it. Validators and relays rely on funded service fees and other disclosed support after rewards end.",
+  ],
+  [
     "Can I buy or use RLD today?",
     "No mainnet has launched and this website offers no token sale or consumer transaction service. Existing test assets have no monetary value. runlai (RLD) is the only native payment and fee currency in the proposed design. Publication does not issue RLD or migrate test balances or keys.",
   ],
@@ -147,8 +159,8 @@ export const faqs = [
     "No measured performance is claimed. Local latency depends on quorum communication, verification and durable storage. Aggregate capacity can scale across separate local domains, with explicit transfer and archive costs. Stellar arrival still depends on physical contacts and propagation.",
   ],
   [
-    "Does the design require mining?",
-    "The new architecture does not require a universal proof-of-work contest or an automatic subsidy. RLD issuance must follow one common authenticated monetary policy; domains cannot mint their own supply. Local service fees are paid in RLD. Earlier mining candidates retain their historical scope and are not upgraded by publication.",
+    "What does mining do?",
+    "Public Argon2id work distributes the fixed RLD issuance budget; local BFT finality settles payments. Mining grants no validator vote and selects no global payment branch. A domain can settle existing RLD without mining. Anyone with access to an active strand's home may compete without an RLD balance, stake or compulsory pool; ordinary-computer eligibility does not guarantee profit or equal hardware efficiency.",
   ],
   [
     "What happens if a domain loses its validators?",
@@ -160,6 +172,6 @@ export const faqs = [
   ],
   [
     "What would be needed before an actual network?",
-    "An exact executable profile, independent protocol analysis, durable implementation and custody qualification, complete common RLD monetary rules, governance and authenticated adoption. Existing no-value fixtures and website publication do not supply these. No new monetary genesis or physical stellar route is activated here.",
+    "An exact executable profile, independent protocol analysis, durable implementation and custody qualification, an exact executable encoding of the specified monetary rules, work-profile analysis, governance and authenticated adoption. Existing no-value fixtures and website publication do not supply these. No new monetary genesis or physical stellar route is activated here.",
   ],
 ] as const;

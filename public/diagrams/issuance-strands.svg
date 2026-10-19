@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="470" height="294" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 294" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Rldcoin: conserved issuance strands</title>
+	<desc>One trillion RLD of lifetime issuance is conserved across 4096 single-home strands. Public work consumes successive slots; relocation preserves the counter and remaining budget.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="470" height="294"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-294)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="470" height="294" rx="6" ry="6" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<g transform=" matrix(1,0,0,1,0,14)">
+				<text x="139.303" y="248" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,496) scale(1,-1)">ONE LIFETIME BUDGET: 1,000,000,000,000 RLD</text>
+				<rect x="30" y="172" width="410" height="58" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="165.22539999999998" y="213" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">GENESIS: ZERO SPENDABLE RLD</text>
+				<text x="145.9612" y="198" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">4,096 public issuance strands; no private reserve owner</text>
+				<text x="160.76080000000002" y="186" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,372) scale(1,-1)">one home and 1,000,000 work slots per strand</text>
+				<text x="149.0453" y="57" style="font-family: Helvetica; font-size: 7.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,114) scale(1,-1)">certified whole-strand relocation; never copy or reset</text>
+				<rect x="8" y="66" width="134" height="64" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="39.2958" y="113" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,226) scale(1,-1)">HOME A: strand 0</text>
+				<text x="30.187199999999997" y="98" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,196) scale(1,-1)">public work consumes slot k</text>
+				<text x="34.7808" y="86" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,172) scale(1,-1)">reward: 244.140625 RLD</text>
+				<path d="M 75,172 L 75,130 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="71 137, 75 130, 79 137" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<rect x="168" y="66" width="134" height="64" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="199.29579999999999" y="113" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,226) scale(1,-1)">HOME B: strand 1</text>
+				<text x="193.78719999999998" y="98" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,196) scale(1,-1)">local work during isolation</text>
+				<text x="192.1816" y="86" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,172) scale(1,-1)">same counter after a move</text>
+				<path d="M 235,172 L 235,130 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="231 137, 235 130, 239 137" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<rect x="328" y="66" width="134" height="64" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="358.8338" y="113" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,226) scale(1,-1)">OTHER STRANDS</text>
+				<text x="355.778" y="98" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,196) scale(1,-1)">numbers 2 through 4095</text>
+				<text x="356.5844" y="86" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,172) scale(1,-1)">existing or future homes</text>
+				<path d="M 395,172 L 395,130 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="391 137, 395 130, 399 137" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<text x="136.7083" y="42" style="font-family: Helvetica-Bold; font-size: 7.8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,84) scale(1,-1)">Issued + resident unissued + in-flight unissued = cap</text>
+				<text x="124.7659" y="22" style="font-family: Helvetica; font-size: 7.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,44) scale(1,-1)">Lost contact cannot recreate a strand; exhausted slots never renew</text>
+			</g>
+		</g>
+	</g>
+</svg>

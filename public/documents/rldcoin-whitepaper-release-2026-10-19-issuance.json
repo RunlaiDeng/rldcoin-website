@@ -1,0 +1,108 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-RESEARCH-REVISION-RECORD",
+  "status": "OWNER_AUTHORIZED_ISSUANCE_RESEARCH_PUBLICATION",
+  "document_date": "2026-10-19",
+  "publication_version_label": null,
+  "title": "Rldcoin: Interstellar Peer-to-Peer Payments",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "1490250ee6f42e73a3a4ade7771ae8db397c17ca76882cf825639f3f000b9d63",
+    "bytes": 64108
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "d879938a8a702ce18ccefa5803a2aa2a06b81a1acea19436c354a6b4091858f5",
+    "bytes": 63532,
+    "pages": 16
+  },
+  "figures": [
+    {
+      "path": "public/diagrams/authority-transfer.svg",
+      "sha256": "431d9b66c72110503bccb304dc4218bd0cbd6b68b77aebdbf78db9cf725d786e",
+      "bytes": 7731
+    },
+    {
+      "path": "public/diagrams/issuance-strands.svg",
+      "sha256": "4170c8babfe840bdfb26c5f26b33c3872e0ea3c5a4dc33c43c480d5f0c253bf1",
+      "bytes": 5782
+    }
+  ],
+  "authorization_scope": "Owner explicitly requests completing Rldcoin supply and issuance from the interstellar peer-to-peer payment goal, disregarding old issuance. The paper and previously authorized matching official website are revised; no runtime or monetary network is activated.",
+  "native_currency": {
+    "name": "runlai",
+    "ticker": "RLD",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "only_native_payment_currency": true,
+    "all_protocol_fees_in_RLD": true,
+    "currency_identity": "C_RLD binds one common authenticated genesis and monetary policy."
+  },
+  "issuance": {
+    "cap_RLD": "1000000000000",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "cap_atomic": "1000000000000000000000000000000000000",
+    "strands": 4096,
+    "slots_per_strand": 1000000,
+    "reward_atomic": "244140625000000000000000000",
+    "reward_RLD": "244.140625",
+    "total_events": 4096000000,
+    "genesis_issued": 0,
+    "preallocation": 0,
+    "exact_product": true,
+    "all_rewards_to_public_work_authors": true,
+    "founder_investor_treasury_validator_preallocation_RLD": "0",
+    "initial_strand_home": "D_0, named by a future authenticated monetary genesis; no genesis or keys created by this publication",
+    "placement_authority": "Current home BFT quorum exercises public discretionary placement governance; no identity-free fair allocation or automatic domain entitlement claimed.",
+    "strand_transfer": "Whole state only; typed export, installation-or-permanent-rejection and certified recovery; preserve identity, counter and provenance; no timeout reallocation.",
+    "mint_authority": "One valid public work candidate finalized once by the current strand home; no owner reserve withdrawal or administrative mint.",
+    "retarget": false,
+    "halving": false,
+    "tail_emission": false,
+    "lost_or_retired_coin_reissue": false,
+    "calendar_completion_guarantee": false,
+    "unissued_budget_is_spendable_RLD": false
+  },
+  "work_profile": {
+    "purpose": "Distribution only, never global branch selection or validator voting",
+    "algorithm": "Argon2id",
+    "reference": "RFC 9106",
+    "version": 19,
+    "memory_KiB": 65536,
+    "passes": 3,
+    "lanes": 1,
+    "output_bytes": 32,
+    "secret_and_associated_data": "empty",
+    "password": "SHA256 of canonically tagged candidate including currency, strand, counter, home, opening anchor, payout commitment and nonce",
+    "salt": "first 16 SHA256 bytes of separately tagged currency/strand/counter/home/anchor",
+    "nonce_bytes": 32,
+    "integer_order": "big endian",
+    "target": "2^240 - 1",
+    "uniform_model_expected_evaluations": 65536,
+    "profile_change_by_local_governance": false,
+    "hardware_cost_or_profitability_measured": false,
+    "ASIC_resistance_or_equal_device_efficiency_claimed": false
+  },
+  "conservation": {
+    "genesis_spendable_supply": "0",
+    "equations": ["I + B + Q = C", "U + F + B + Q + Z = C", "0 <= I <= C"],
+    "condition": "Accepted BFT/cryptographic/durable-state assumptions for all payment and issuance provenance; accounting over causally consistent cuts, not an instantaneous observable global total."
+  },
+  "predecessor": {
+    "receipt": "rldcoin-whitepaper-release-2026-10-19-rld.json",
+    "website_commit": "9d1b30a2247ba11e3d4c896cd24a155714dbe7d8",
+    "canonical_markdown": {
+      "path": "public/documents/rldcoin-whitepaper.md",
+      "sha256": "f79694c0b5fef0a16b27cba797834a94d5397b51490ded0f629839f64ffb6da5",
+      "bytes": 50076
+    },
+    "pdf": {
+      "path": "public/documents/rldcoin-whitepaper.pdf",
+      "sha256": "e9691242fa4163b4189aa5e049b71b5516fcd74629dae39c5470f5419717a02e",
+      "bytes": 50168,
+      "pages": 13
+    }
+  },
+  "claims": "A concrete monetary policy and transition-level construction for bounded public-work issuance and authenticated whole-strand relocation, composed with the existing payment architecture. Exact integer schedule reconciles to the lifetime cap. No new BFT, cryptographic primitive, independent security qualification or achieved performance is claimed.",
+  "limitations": "Initial placement governance can concentrate or withhold issuance capacity; accepted quorum failures can violate safety assumptions. Stranded strands can reduce attainable supply. Fixed work has no calendar emission guarantee, ASIC resistance or promised CPU profitability. Long-term fees, cryptographic succession and operational qualification remain separate from the transition-level design.",
+  "implementation_boundary": "No protocol/node source, live network, asset balance, monetary genesis, signing keys or adoption policy is changed. Prior receipts, failures, source-bound evidence and existing implementation obligations retain their original scope. A future implementation requires an exact separately identified profile and explicit reconciliation; no test value or keys migrate.",
+  "body_revisions_require_explicit_owner_decision": true
+}

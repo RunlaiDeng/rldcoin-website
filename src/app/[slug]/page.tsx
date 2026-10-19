@@ -99,9 +99,20 @@ function About() {
             replace it with a wrapped or domain-issued token.
           </p>
           <p>
-            Creating a domain grants no RLD issuance right. An emission schedule
-            and complete issuance mechanism must be fixed in the common monetary
-            rules before monetary activation; this publication issues no coins.
+            The proposed lifetime cap is 1 trillion RLD, with zero spendable
+            genesis supply and no founder allocation. All issuance uses 4,096
+            conserved public-work strands, each with 1 million slots paying
+            244.140625 RLD. Moving a whole strand preserves its remaining slots;
+            creating a domain grants no issuance right.
+          </p>
+          <p>
+            An isolated community can mine after an authenticated strand
+            arrives. Initial strand placement is discretionary quorum
+            governance, so the design does not promise equal allocation to every
+            settlement. There is no fixed completion date, halving, tail
+            emission or lost-coin replacement. All rewards go to successful work
+            authors; operators need funded service fees or other disclosed
+            support.
           </p>
           <Note title="Research and operation are separate">
             The paper is a new architecture proposal. Existing no-value

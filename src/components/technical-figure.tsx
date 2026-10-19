@@ -7,6 +7,7 @@ import styles from "./diagrams.module.css";
 
 const titles: Record<string, string> = {
   "authority-transfer": "Transfer of spend authority",
+  "issuance-strands": "A conserved issuance budget",
   transaction: "Signature & value",
   blocks: "Connected state transitions",
   channel: "A payment channel",

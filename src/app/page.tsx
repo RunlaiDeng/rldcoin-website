@@ -140,7 +140,9 @@ export default function Home() {
               Follow exclusive spend authority from source export to one-time
               import and onward payment. The paper gives a conservation argument
               and explains permanent rejection, recovery, provenance and the
-              cost of value stranded between worlds.
+              cost of value stranded between worlds. A 1 trillion RLD lifetime
+              cap and conserved public-work strands define how new RLD is issued
+              without a global mining branch contest.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>

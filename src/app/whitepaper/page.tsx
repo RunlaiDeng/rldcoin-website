@@ -21,6 +21,7 @@ const sections = blocks
   .map((block) => block.slice(3).trim());
 const figureHeights: Record<string, number> = {
   "authority-transfer": 278,
+  "issuance-strands": 294,
   transaction: 264,
   blocks: 267,
   channel: 281,
@@ -80,8 +81,8 @@ export default function Whitepaper() {
             spendable output has one authoritative home. Communities settle
             locally; owner-authorized certificates move spend authority through
             delayed contacts. The paper defines export, one-time import,
-            permanent rejection and recovery, with explicit quorum, provenance
-            and availability assumptions.
+            permanent rejection, recovery and capped public-work issuance, with
+            explicit quorum, provenance and availability assumptions.
           </p>
         </div>
       </section>
