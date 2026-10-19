@@ -87,11 +87,12 @@ function About() {
           </p>
           <h2>Verify history without carrying every event</h2>
           <p>
-            Recursive execution receipts summarize monetary validity; matching
-            PBFT certificates establish the accepted ordering. Complete current
-            class tables, exposure sets and state access data still accompany
-            the payment so the recipient can spend onward independently. A proof
-            cannot reveal an unseen valid fork from a compromised quorum.
+            Recursive native receipts prove historical creation. A separate
+            one-decision controller then releases or cancels each prepared
+            object while ordinary local settlement continues. A cold receiver
+            checks the terminal proof, matching certificate and complete current
+            cover/state material. Valid execution cannot reveal an unseen valid
+            quorum fork.
           </p>
           <h2>One currency. A fixed 21 million RLD cap.</h2>
           <p>
@@ -101,12 +102,11 @@ function About() {
             Import moves existing money without wrapping or duplicating it.
           </p>
           <p>
-            There are 4,096 budget roots of 1 million work slots, paying
-            0.005126953125 RLD per successful Mint. Public ClaimRange work
-            detaches at most 256 unconsumed slots and leaves disjoint residuals.
-            Stable placement generations are separate from Mint cursors:
-            subsequent mining cannot change an exported range. Claiming pays no
-            reward; every slot still requires its own Mint work.
+            There are 4,096 roots of 1 million slots, each paying 0.005126953125
+            RLD once. Public work detaches at most 256 unconsumed slots.
+            Residual source segments keep the same placement grant, so disjoint
+            claims and unrelated Mint do not invalidate the selected work. Moved
+            or returned slots receive a new grant. Claiming creates no RLD.
           </p>
           <p>
             Installed ranges support mining during isolation. There is no
@@ -139,18 +139,17 @@ function HowItWorks() {
       <PageHero
         eyebrow="How it works"
         title="Prepare capacity. Choose locally. Send forward."
-        description="Source-bound coupons leave future inputs unspecified. A proof-ready export reaches one destination decision."
+        description="Prepare locally while proving continues. Cancel before release, or carry a certified export to one destination decision."
       />
       <section className="section">
         <div className="container narrow prose">
           <h2>Local ordering, independent validity</h2>
           <p>
-            Owners authorize actual inputs, class allocations and RLD fees. PBFT
-            orders operations with at most f Byzantine validators among 3f + 1.
-            The monetary program checks issuance, ownership, conservation and
-            unique import. Recursive execution receipts carry those checks
-            forward without requiring a cold recipient to replay all mining
-            events.
+            Owners authorize inputs, exact cover allocations and fees funded
+            from existing RLD, including a positive work-author share. PBFT
+            orders native operations under its accepted fault bound. Preparation
+            delegates funds to an independently ordered controller; proving its
+            historical creation does not require the ordinary ledger to pause.
           </p>
           <p>
             Proof validity and exclusive ordering remain different assumptions.
@@ -187,37 +186,41 @@ function HowItWorks() {
               exactly one source so two domains cannot race for one slot. Unused
               release requires authorized, source-certified closure.
             </p>
-            <h3>Prepare the proof before the debit</h3>
+            <h3>Separate preparation from proof-ready release</h3>
             <p>
-              The source prepares the candidate execution receipt and complete
-              current material, then finalizes their matching header. Local head
-              conflicts retry without renewing the coupon across space. The
-              destination checks the receipt, matching PBFT certificate and all
-              current data, then imports or permanently rejects once. Bob can
-              spend locally after import without replying to Alice.
+              Native preparation commits an immutable escrow and its controller.
+              Any retained-witness prover can prove that historical checkpoint
+              while the native head advances. The controller releases only after
+              its exact proof and material are ready, or cancels before release.
+              A canceled preparation returns locally once; released funds
+              recover only after permanent destination rejection. Preparation
+              service fees remain payable.
             </p>
-            <h3>Group equal risks, preserve different ones</h3>
+            <h3>Use explicit acceptance covers</h3>
             <p>
-              Rewards from different Mint events can share one amount entry when
-              their exact authority-exposure sets match. Unequal sets stay
-              separate. Every consumed class is conserved through recipients,
-              change and fees. Real trust exposure is never discarded, and
-              distinct classes or permanent decisions can still grow.
+              An immutable acceptance cover states which authority families a
+              recipient accepts. Recursive execution proves that all actual
+              ancestry fits that cover. Same-cover amounts coalesce without a
+              growing epoch list. Broadening a cover needs explicit owner
+              approval and verified inclusion; narrowing requires additional
+              ancestry evidence. An incident can quarantine the entire covered
+              amount.
             </p>
             <h3>Separate placement identity from mining progress</h3>
             <p>
-              A generic issuance coupon does not bind a changing Mint cursor.
-              Claim work names a stable allocation generation and selected
-              unconsumed range. Finalization detaches it atomically; mining in
-              residual ranges cannot invalidate its in-flight ticket. A local
-              claim still loses if another operation consumes its selected slots
-              first.
+              Claim work names a stable placement grant and selected range,
+              without binding mutable segment boundaries. A disjoint split
+              preserves that grant and the other claim. Preparation locks only
+              selected slots in their controller. Cancellation, destination
+              installation or rejection return relocates those exact slots under
+              a new grant, preserving the cap.
             </p>
             <p>
-              Only permanent certified rejection permits source recovery.
-              Silence cannot refund. Principal and positive service fees use
-              RLD; funded capacity, accepted quorums, available data and actual
-              physical contacts remain necessary.
+              Before release, a certified controller cancellation returns
+              prepared escrow once. After release, only permanent destination
+              rejection permits recovery; silence cannot refund. Positive
+              service and work-author fees use RLD. Funded capacity, accepted
+              quorums, available data and physical contacts remain necessary.
             </p>
           </div>
           <div className="guide-next-links">
@@ -262,11 +265,12 @@ function Safety() {
           </p>
           <h2>Compact history still needs available current data</h2>
           <p>
-            Recipients must retain full current class tables, exposure sets and
-            authenticated state access data before onward-spendable credit.
-            Equal-risk grouping removes obligatory per-Mint components, but
-            genuinely different exposures, permanent decisions and audit
-            archives retain real costs. Small roots do not supply missing bytes.
+            Current output tables, immutable cover definitions and authenticated
+            state access data remain available. Same-cover continuation verifies
+            previous coverage plus new family membership, rather than carrying
+            every old epoch label. Broad covers deliberately accept more
+            possible exposure and may quarantine more funds. Permanent maps and
+            contracted audit archives still grow.
           </p>
           <h2>Coupons are finite funded obligations</h2>
           <p>
@@ -278,27 +282,30 @@ function Safety() {
           </p>
           <h2>No timeout refund or unfunded replacement</h2>
           <p>
-            Only certified permanent rejection allows one source recovery.
-            Missing receipts can hide a completed import. Optional insurance
-            spends already issued RLD under finite terms; it cannot mint a
-            replacement or reverse a ticket. Different exposure classes can
-            still have different acceptance and value.
+            A controller can cancel before release and authorize one local
+            return. Once Exported wins, only certified permanent destination
+            rejection allows recovery. Neither silence nor transport expiry
+            refunds. Insurance spends existing RLD under finite terms; it cannot
+            mint replacement money. Prepared and released wallet states must be
+            distinct.
           </p>
           <h2>Public work is not equal opportunity</h2>
           <p>
-            ClaimRange removes discretionary beneficiary awards, not bootstrap
-            trust, hardware advantage or censorship. Stable placement identity
-            avoids invalidation by unrelated Mint; it does not prevent local
-            conflicts or maliciously stranded ranges. The 21 million cap remains
-            conditional on valid exclusive histories and proof soundness.
+            ClaimRange removes discretionary awards, not bootstrap trust,
+            hardware advantage or censorship. Stable grants protect disjoint
+            claim work; actual selected-slot conflicts still lose. Fair bounded
+            admission and separate work/payment/controller queues are
+            assumptions. The fixed cap applies to valid exclusive histories,
+            under proof and custody premises.
           </p>
           <h2>Finite keys, archives and physical contacts</h2>
           <p>
-            The proposed per-height key schedule needs secure erasure, durable
-            custody heads and authenticated renewal. Historical proof renewal
-            must occur while predecessor assumptions remain trustworthy. Finite
-            reserves cannot guarantee endless storage or create a missing
-            physical route.
+            Native height keys and independent controller-key pools have
+            distinct purposes. Pending controllers retain their original keys
+            and quorum across native handoff; a replacement committee cannot
+            seize their escrows. Secure erasure, exact custody and renewal
+            before exhaustion remain requirements. Finite reserves fund finite
+            service, with retained pending obligations when renewal stops.
           </p>
           <Note title="No mainnet or qualified consumer service">
             This is a research revision. Existing test assets have no monetary
@@ -405,12 +412,12 @@ function Network() {
         <div className="container narrow prose">
           <h2>What the paper changes</h2>
           <p>
-            The paper combines local PBFT ordering with recursive execution
-            receipts, advance source-bound capabilities, complete current spend
-            data, exact exposure classes and stable-generation issuance ranges.
-            runlai (RLD) is the sole native currency, capped at 21 million with
-            zero initial allocation. Domain creation cannot create money or
-            replace an unavailable authority.
+            The paper specifies local PBFT, independent one-decision export
+            controllers, stable placement grants, explicit acceptance covers and
+            recursive execution relations. Canonical objects and refusal bounds
+            appear in its encoding appendix. RLD is the only native currency,
+            capped at 21 million with zero allocation. Publication does not
+            qualify a running implementation.
           </p>
           <h2>What publication establishes</h2>
           <p>

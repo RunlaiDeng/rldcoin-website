@@ -6,27 +6,27 @@ import styles from "./diagrams.module.css";
 
 const steps = [
   {
-    title: "Choose and export",
-    label: "01 / ADVANCE CAPACITY, LOCAL INPUTS",
-    text: "A preissued coupon names one source, recipient policy, fees, accepted risks and funded resource bounds. Actual inputs are chosen later. The source prepares the candidate receipt and current data before finalizing debit and consuming the coupon. Input changes retry locally without payment-specific stellar permission.",
+    title: "Prepare locally",
+    label: "01 / INDEPENDENT CONTROLLER",
+    text: "A source-bound coupon leaves future inputs unspecified. The owner prepares exact escrow with an independent one-decision controller. Historical proving continues while ordinary native settlement advances. Before release, certified controller cancellation can return escrow once, with original preparation charges retained.",
     icon: LockKeyhole,
   },
   {
-    title: "Carry the capsule",
-    label: "02 / SUCCESSIVE CONTACTS",
-    text: "Carriers retain the exact ticket, source-bound coupon, unconditional execution receipt, matching PBFT certificate and complete current spend data. History is folded into the proof rather than replayed from every Mint origin. After coupon setup, the payment can use one-way contacts.",
+    title: "Release and carry",
+    label: "02 / PROOF-READY TERMINAL DECISION",
+    text: "The controller commits Exported only with its exact execution receipt and current material ready. Its own quorum certificate excludes cancellation. Carriers move the immutable capsule forward. Ordinary native head changes do not invalidate this fixed object's proof; byte custody grants no balance.",
     icon: Radio,
   },
   {
     title: "Import and spend",
-    label: "03 / ONE DESTINATION DECISION",
-    text: "The destination checks proof, certified ordering, every exposure class and the original coupon terms, then durably installs current data and imports once. Equal-risk amounts coalesce; different risks remain separate. The recipient spends locally without a source reply. Proof soundness and accepted exclusive ordering remain assumptions.",
+    label: "03 / COVERED CURRENT STATE",
+    text: "The destination checks release proof, certified ordering, original coupon terms and every acceptance cover, then retains current data and imports once. Same-cover continuation avoids a growing epoch vector. Broadening needs owner approval; broad covers can quarantine more funds. Onward local use needs no source reply.",
     icon: Fingerprint,
   },
   {
     title: "Recover on rejection",
-    label: "04 / POSITIVE REJECTION EVIDENCE",
-    text: "Permanent destination rejection excludes import. Its certified execution receipt and exact decision allow one source recovery under the original rule. Silence and timeouts cannot refund. A coupon limits avoidable processing surprises but cannot rescue funds from a destroyed authority.",
+    label: "04 / AFTER RELEASE",
+    text: "After Exported, only permanent destination rejection permits one source recovery. It excludes import and preserves exact amount or slot identities. Pre-release controller cancellation is a separate local decision. Silence, proof delay and transport expiry never authorize a post-release refund.",
     icon: Check,
   },
 ];
@@ -140,8 +140,8 @@ function TransferMap({
             >
               {i === 0
                 ? selected === 0
-                  ? "Commit export"
-                  : "Export removes local rights"
+                  ? "Prepare controller escrow"
+                  : "Release removes source rights"
                 : i === 1
                   ? "Store · carry · forward"
                   : selected >= 2
@@ -278,10 +278,11 @@ export function TransferExplorer() {
       </div>
       <p className={styles.transferCaption}>
         After a source-bound coupon is available, inputs can be chosen locally
-        and a payment capsule can travel forward without a permission round
-        trip. Import and permanent rejection are alternative decisions, not
-        sequential stages. A carriage receipt grants no balance. Accepted
-        ordering assumptions and actual physical contacts remain necessary.
+        and independent preparation can precede a forward payment without a
+        permission round trip. Import and permanent rejection are alternative
+        decisions, not sequential stages. A carriage receipt grants no balance.
+        Accepted ordering assumptions and actual physical contacts remain
+        necessary.
       </p>
     </div>
   );

@@ -102,7 +102,7 @@ export default function Home() {
               {
                 icon: Globe2,
                 title: "Choose inputs later",
-                text: "Advance receiving coupons commit fees, accepted risks and funded capacity for one source. Choose inputs locally, prepare the proof and send forward without payment-specific stellar approval.",
+                text: "Advance receiving coupons commit fees, accepted risks and funded capacity for one source. Choose inputs locally and prepare an independent escrow. Its controller releases or cancels while ordinary settlement continues; no payment-specific stellar approval is needed.",
               },
               {
                 icon: Code2,
@@ -139,12 +139,13 @@ export default function Home() {
           <div className="prose">
             <p>
               Follow advance receiving capacity, recursive execution receipts
-              and one-time import through delayed contacts. Equal exposure
-              classes coalesce without hiding different risks; complete current
-              data supports onward spending. A 21 million RLD lifetime cap and
-              publicly claimable, disjoint work entitlements define issuance
-              without a global payment-branch contest. Ordering failures and
-              stranded value remain explicit boundaries.
+              and one-time import through delayed contacts. Explicit acceptance
+              covers support bounded current attribution with owner-authorized
+              broadening; complete current data supports onward spending. A 21
+              million RLD lifetime cap and publicly claimable, disjoint work
+              entitlements define issuance without a global payment-branch
+              contest. Ordering failures and stranded value remain explicit
+              boundaries.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>

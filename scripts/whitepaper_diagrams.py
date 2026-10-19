@@ -278,21 +278,27 @@ def relay_networks():
 
 
 def authority_transfer():
-    d = Drawing(470, 288)
-    label(d, 235, 271, "PREISSUE CAPACITY; CHOOSE INPUTS LOCALLY", 8.3, bold=True)
-    box(d, 40, 207, 390, 48, "SOURCE-BOUND CAPABILITY", ["future inputs unspecified; limits, fees and funded decision capacity"])
-    box(d, 8, 130, 126, 66, "SOURCE A", ["choose inputs; prepare proof", "debit + consume coupon"])
-    box(d, 168, 130, 134, 66, "IN FLIGHT", ["ticket + receipt / QC / data", "no source spending right"])
-    box(d, 336, 130, 126, 66, "DESTINATION B", ["verify proof + current data", "one import or rejection"])
-    arrow(d, 134, 162, 168)
-    arrow(d, 302, 162, 336)
-    box(d, 336, 42, 126, 58, "IMPORTED", ["principal + bound RLD fees", "onward local spending"])
-    box(d, 168, 42, 134, 58, "REJECTED", ["permanent no-import", "certified decision + data"])
-    box(d, 8, 42, 126, 58, "RECOVERY AT A", ["verify B's exact rejection", "one credit; original fee"])
-    path(d, [(399, 130), (399, 100)])
-    path(d, [(377, 130), (377, 114), (235, 114), (235, 100)])
-    path(d, [(168, 70), (134, 70)], dashed=True)
-    label(d, 235, 18, "Accepted ordering assumptions remain; silence never refunds", 7.5, bold=True)
+    d = Drawing(470, 376)
+    label(d, 235, 359, "LOCAL PREPARATION; ONE RELEASE OR CANCELLATION", 8.1, bold=True)
+    box(d, 35, 298, 400, 44, "ADVANCE SOURCE-BOUND CAPABILITY",
+        ["future inputs unspecified; finite cover, fee and custody obligations"])
+    box(d, 8, 206, 100, 68, "PREPARE AT A", ["exact local escrow", "native ledger continues"])
+    box(d, 126, 206, 100, 68, "CONTROLLER", ["independent proof / QC", "one terminal decision"])
+    box(d, 244, 206, 100, 68, "EXPORTED", ["proof-ready capsule", "no timeout refund"])
+    box(d, 362, 206, 100, 68, "DESTINATION B", ["verify proof and covers", "retain current data"])
+    for x1,x2 in ((108,126),(226,244),(344,362)):
+        arrow(d,x1,240,x2)
+    box(d, 126, 116, 100, 58, "CANCELED", ["permanent no-release", "original quorum"])
+    box(d, 8, 116, 100, 58, "LOCAL RETURN", ["redeem cancel once", "coupon closes"])
+    box(d, 362, 116, 100, 58, "IMPORTED", ["principal + RLD fees", "onward local spending"])
+    path(d, [(176,206),(176,174)])
+    path(d, [(126,145),(108,145)], dashed=True)
+    path(d, [(412,206),(412,174)])
+    box(d, 244, 26, 100, 58, "REJECTED", ["permanent no-import", "certified decision"])
+    box(d, 8, 26, 100, 58, "RECOVERY AT A", ["verify rejection", "redeem once"])
+    path(d, [(388,206),(388,190),(294,190),(294,84)])
+    path(d, [(244,55),(108,55)], dashed=True)
+    label(d,235,8,"After release, silence never refunds; cancellation and rejection are distinct",7.1,bold=True)
     return d
 
 
@@ -303,11 +309,11 @@ def issuance_strands():
         ["4,096 budget roots x 1,000,000 unique slots",
          "each finalized Mint pays 0.005126953125 RLD"])
     box(d, 30, 113, 410, 45, "PUBLIC CLAIM: DETACH AN UNCONSUMED RANGE",
-        ["stable generation; up to 256 slots; preserve disjoint residuals"])
+        ["stable grant; up to 256 slots; preserve unrelated work"])
     path(d, [(235, 178), (235, 158)])
     for x, title, lines in (
-        (8, "SOURCE REMAINDER", ["new disjoint generations", "Mint advances local cursors"]),
-        (168, "CARRIED RANGE", ["immutable after export", "later Mint cannot change it"]),
+        (8, "SOURCE REMAINDER", ["SAME placement grant", "existing frontier unchanged"]),
+        (168, "CARRIED RANGE", ["only selected slots leave", "new grant on install / return"]),
         (328, "PREPARED HOME", ["install exact detached slots", "local Mint during isolation"]),
     ):
         box(d, x, 35, 134, 58, title, lines)
@@ -333,8 +339,8 @@ FIGURES = {
 }
 
 DESCRIPTIONS = {
-    "issuance-strands": "Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Stable-generation claims detach bounded unconsumed ranges. Mint cursors advance independently; exported ranges do not change.",
-    "authority-transfer": "Advance source-bound capacity leaves future inputs unspecified. A proof-ready export carries a receipt, matching certificate and current data; only certified rejection permits recovery.",
+    "issuance-strands": "Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Stable-grant claims preserve disjoint source work. Only selected slots leave the grant; installation or return gives those slots a new grant.",
+    "authority-transfer": "Independent local controllers release or cancel prepared escrow without stopping native settlement. After release, only certified destination rejection permits recovery.",
     "transaction": "Two mature inputs authorize one transfer with recipient value, change and a fee.",
     "blocks": "Consecutive block headers commit to commands and replayed state, linked by a parent hash.",
     "channel": "Funded escrow, signed payment states, a stale-close challenge and settlement.",

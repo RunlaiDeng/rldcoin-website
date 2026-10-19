@@ -48,11 +48,12 @@ export default function NodeNetwork() {
           <p>
             Sender and recipient need not be online at the same time. Relays
             carry unchanged owner authorization, a source-bound coupon, a
-            recursive execution receipt and complete current monetary data. The
-            recipient checks the proof, matching source commit and every
-            accepted exposure class, then durably installs data and imports once
-            before onward local spending. Missing current material leaves the
-            ticket pending; a custody receipt cannot supply monetary authority.
+            controller release receipt and complete current monetary data. The
+            recipient checks the proof, matching controller certificate, native
+            creation binding and every accepted cover, then durably installs
+            data and imports once before onward local spending. Missing current
+            material leaves the ticket pending; a custody receipt cannot supply
+            monetary authority.
           </p>
           <p>
             A return message can take another path or never arrive. Silence does

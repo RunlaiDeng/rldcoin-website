@@ -20,7 +20,7 @@ const sections = blocks
   .filter((block) => block.startsWith("## "))
   .map((block) => block.slice(3).trim());
 const figureHeights: Record<string, number> = {
-  "authority-transfer": 316,
+  "authority-transfer": 404,
   "issuance-strands": 294,
   transaction: 264,
   blocks: 267,
@@ -77,14 +77,12 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            runlai (RLD) is the sole native payment and fee currency. Each
-            spendable output has one authoritative home. A destination reserves
-            source-bound capacity before actual inputs are chosen. Recursive
-            receipts summarize execution; complete current data enables onward
-            spending. Equal exposure classes coalesce without hiding risk.
-            Stable-generation public-work entitlements keep lifetime issuance
-            within 21 million RLD, under explicit ordering, custody and
-            cryptographic assumptions.
+            runlai (RLD) is the sole native currency, capped at 21 million with
+            zero initial allocation. Stable placement grants preserve disjoint
+            work. Source-bound receiving capacity and independent controllers
+            separate cancellable preparation from released exports. Recursive
+            receipts verify execution; explicit acceptance covers bound current
+            attribution under stated risk and availability assumptions.
           </p>
         </div>
       </section>

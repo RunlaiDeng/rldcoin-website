@@ -8,7 +8,7 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-19-capabilities.json";
+  "/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json";
 export const CONTENT_REVIEW_DATE = "19 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
@@ -73,7 +73,7 @@ export const pages = {
   ],
   "you-need-to-know": [
     "Safety & limits",
-    "Ordering assumptions, exact exposure classes, receiving capabilities, stranded funds and finite key/archive obligations.",
+    "Ordering assumptions, explicit acceptance covers, receiving capabilities, stranded funds and finite key/archive obligations.",
   ],
   developers: [
     "Develop Rldcoin",
@@ -104,78 +104,78 @@ export const pages = {
 export const faqs = [
   [
     "What is Rldcoin?",
-    "Rldcoin is a research design for interstellar peer-to-peer payments in runlai (RLD). Funds have one authoritative home. Communities settle locally; a certified capsule carries a source debit to a prepared destination. Recursive execution receipts check historical validity while complete current data supports onward spending. Exclusive ordering still depends on accepted fault-bounded validators. Publication does not demonstrate an implemented network.",
+    "Rldcoin is a research construction for interstellar peer-to-peer payments in runlai (RLD). Native homes settle locally; independent one-decision controllers release or cancel prepared objects while ordinary settlement continues. Recursive execution receipts, explicit acceptance covers and current data support asynchronous transfer. Accepted ordering and custody assumptions remain.",
   ],
   [
     "Which currency do payments and fees use?",
-    "Only runlai (RLD). One RLD equals 10^24 atomic runlai units. Principal, native service fees, relay contracts and funded escrows use RLD. Every domain binds the same authenticated currency identity. Import relocates existing RLD without wrapping it or creating a domain currency.",
+    "Only runlai (RLD), with 10^24 atomic units per RLD. Principal, service fees, positive work-author fees and funded escrows use the same authenticated currency. Import relocates existing RLD without wrapping or creating a domain supply.",
   ],
   [
     "What is the supply and initial allocation?",
-    "The lifetime cap is 21,000,000 RLD. Genesis creates zero spendable RLD, with no founder, investor, treasury or validator allocation. There are 4,096 budget roots of 1,000,000 slots each, paying 0.005126953125 RLD per successful Mint. Public placement and subdivision cannot copy slots. There is no presale, halving, tail emission or replacement issuance for lost or retired coins.",
+    "The lifetime cap is 21,000,000 RLD. Genesis and all founder/investor/treasury/validator allocations are zero. There are 4,096 roots of 1,000,000 slots, each paying 0.005126953125 RLD once to its work author. No presale, halving, tail emission or lost/retired-money reissue.",
   ],
   [
-    "How does a community obtain issuance capacity?",
-    "A public ClaimRange operation uses proportional work to detach up to 256 unconsumed slots from a stable allocation generation. Mint changes a separate cursor; it cannot alter a finalized range ticket. A generic receiving capability is obtained in advance, without binding a moving source head. The source retains only disjoint residuals. Honest validators cannot substitute a private eligibility list or discretionary award. Claiming issues no RLD; Mint consumes each slot once. D_0 remains the initial bootstrap authority, and hardware advantage or censorship can still concentrate opportunity.",
+    "How do disjoint issuance claims avoid invalidating each other?",
+    "Claim work binds a stable placement grant and selected range, not mutable segment boundaries. Splitting unrelated slots retains the same grant in source residuals. Only actual consumption, delegation or relocation of selected slots changes their eligibility. Public proportional-work claims detach at most 256 slots and issue no RLD.",
   ],
   [
     "Can an isolated community mine RLD?",
-    "Yes, under the proposed rules, after it has installed an authenticated issuance interval and can maintain its local quorum. Dividing ranges permits more than 4,096 issuance homes without increasing the cap. Creating a domain alone supplies no budget. Mining requires no stake, existing RLD or compulsory pool, but ordinary-computer eligibility does not establish profitability or equal hardware efficiency.",
+    "After installing a valid grant and maintaining its accepted local quorum, it can submit public Mint work without an existing RLD balance, stake or compulsory pool. Every slot is checked uniquely. Bootstrap trust, hardware advantage, finite sponsored admission and censorship risk remain; CPU eligibility is not profitability.",
   ],
   [
     "When will all RLD be issued?",
-    "No calendar completion date or annual rate is promised. The fixed Argon2id profile has no automatic retarget; hardware progress can accelerate exhaustion. All 4,096,000,000 Mint events would exhaust the cap. Lost ranges can leave actual issuance lower. Placement work earns no additional reward and mining selects no global payment branch.",
+    "No calendar completion date is promised. The fixed Argon2id profile has no automatic retarget. Hardware progress can accelerate exhaustion; unavailable ranges can leave actual issuance below the cap. Placement work pays no reward and does not select payment consensus.",
   ],
   [
     "Can I buy or use RLD today?",
-    "No mainnet has launched and this website offers no token sale or consumer transaction service. Existing test assets have no monetary value. Publishing this design creates no monetary genesis, RLD balance or migration of test keys.",
+    "No mainnet or consumer payment service is launched by this publication. Existing test assets have no monetary value and never migrate into a monetary genesis. The website offers no token sale or wallet connection.",
   ],
   [
     "What is reserved before a cross-domain payment?",
-    "The destination preissues finite ReceiveCapability coupons naming exactly one source, recipient policy, amount or slot limits, fee formulas, accepted exposures, proof bounds and funded decision capacity. Actual inputs, change and exact amount are chosen later at the source. The coupon is not money and does not expire with travel time. Unused closure requires use authorization and a permanent certified source decision.",
+    "A funded finite coupon family binds exactly one source, destination, accepted covers, fees, object/amount limits and controller/proof/current-data bounds. Future inputs and source heads are unspecified. Each leaf has one terminal use; wildcard multi-source leaves are forbidden.",
   ],
   [
-    "Does payment require an interstellar round trip?",
-    "After a source-bound coupon reaches the payer, actual inputs can be chosen locally and the payment sent forward without a payment-specific draft-and-permission round trip. New sources, unknown destinations or exhausted coupon inventories still need setup. The recipient spends after import without a return receipt. Physical propagation remains causal.",
+    "Does payment need a stellar permission round trip?",
+    "Once a compatible source-bound coupon reaches the payer, inputs can be chosen locally and a released capsule sent forward. New sources, unknown destinations or exhausted inventories need setup. No return acknowledgment is required before the recipient spends after import.",
   ],
   [
-    "What does the recipient verify?",
-    "A pinned unconditional recursive execution receipt, matching PBFT certificate, exact ticket/coupon inclusion and complete current class, exposure and authority data. The proved program must check work, slot uniqueness, ownership, conservation, debit and duplicate prevention. Cold receipt does not replay every Mint origin. A proof alone supplies neither data availability nor detection of an unseen valid quorum fork. The RLD proof program and its cost still require implementation and independent analysis.",
+    "Does proving stop ordinary local payments?",
+    "The proposed construction commits a historical preparation first. Its independent controller releases or cancels that fixed object while the native ledger and other controllers advance. This removes current-head retry as a requirement. Shared computation, queues and finite controller capacity still constrain actual performance.",
   ],
   [
-    "Does a compact proof eliminate history and storage costs?",
-    "No. The proposed RISC Zero zkVM 3.0.6 SuccinctReceipt adapter folds historical execution under pinned program and verifier parameters. It still needs a correct RLD guest, real proving resources and resolved recursive assumptions. Current class tables, exposure sets and state access data must arrive and remain available for onward execution. Permanent decisions and contracted audit archives retain real storage costs. No RLD proving benchmark or completed proof implementation is claimed.",
+    "Can a prepared payment be canceled?",
+    "Before controller Exported finalizes, the bound owner can request controller Canceled. Its exact quorum certificate authorizes one local return and closes that coupon. Agreed preparation fees remain paid. Cancellation needs the original controller and source to be available and cannot override a release that already won.",
+  ],
+  [
+    "What happens after release?",
+    "The destination verifies the terminal execution receipt and matching quorum certificate, exact native creation/coupon binding and complete current material. It imports or permanently rejects once. After release, only certified rejection permits source recovery; silence and transport expiry cannot refund.",
+  ],
+  [
+    "What is an acceptance cover?",
+    "An immutable finite policy over authority families and security rules. Monetary execution proves all actual ancestry fits it. Same-cover amounts can coalesce and circulate without carrying every old key epoch. Explicit owner-approved broadening requires verified policy inclusion. Narrowing needs extra ancestry evidence; an incident can quarantine the whole covered amount.",
+  ],
+  [
+    "Do compact receipts remove storage costs?",
+    "No. Current outputs, cover definitions, authenticated access data, controller responses and permanent duplicate-prevention maps remain available. Audit archives have explicit contracts. A proof does not supply lost bytes or prove perpetual funding. The RLD guests and their practical costs still require implementation and independent analysis.",
   ],
   [
     "How do communities pay while separated?",
-    "They use distinct funds already homed locally. A responsive accepted local quorum settles payments without a distant vote. A minority partition of the same domain must wait. A traveler carrying a private key must still relocate funds before losing access to their home; copying a ledger creates no independent balance.",
+    "They use distinct funds already homed locally, under responsive accepted quorums. A minority partition waits. Travelers relocate funds and prepare coupons, custody and keys before losing contact; copying a ledger or carrying a remote private key creates no local authority.",
   ],
   [
-    "Can a timeout refund a missing payment?",
-    "No. A delayed copy may already have been imported. Only complete evidence of the destination's permanent rejection allows one source recovery. A receiving capability reduces avoidable policy and capacity surprises, but cannot rescue funds from a destroyed destination. Optional insurance is a separately funded RLD contract, with finite exposure and its own risks.",
+    "Is consensus universally permissionless?",
+    "No. Owners authorize exact payments and carriers can move evidence, but PBFT uses admitted validators and explicit fault bounds. Correct execution receipts reject invalid transitions; they cannot reveal an unseen separately valid quorum fork. Public work does not automatically grant consensus votes.",
   ],
   [
-    "Does combining balances spread every source risk?",
-    "Amounts group only by identical canonical authority-exposure sets, independently of individual Mint origins. Different sets stay separate inside an output. Paying from 100 RLD of accepted components need not attach an unrelated 1 RLD portion's history to them or their change. Real dependencies are never erased. Wallets select components accepted by the invoice and show other-policy or unresolved balances separately. Different acceptance risks may still affect market value.",
+    "Who funds payments and long-lived capacity?",
+    "Owner-authorized existing RLD funds services, a positive work-author share and archives. Coupon families name reserves, renewal payers and custodians. Service deficits stop new obligations and retain old pending ones; insolvency cannot certify a refund. Finite reserves do not buy infinite service.",
   ],
   [
-    "Is the system trust-free or universally permissionless?",
-    "No. Users authorize their own payments and anyone may offer carriage, but local PBFT ordering uses admitted validators and at most f Byzantine faults among 3f + 1. Sound execution receipts or correct reference execution reject invalid execution even with signatures; neither can prevent two valid conflicting branches after a threshold compromise. Public mining and domain creation do not automatically confer globally accepted consensus authority.",
+    "How are controller and native keys separated?",
+    "Native height keys use their finite signing schedule. Controllers use distinct precommitted key-pool indices and independent locks, retaining original keys across native reconfiguration until terminal resolution. Exhaustion stops new preparations; it does not transfer outstanding escrow to a new quorum. Erasure, anti-rollback custody and safe renewal still need independent qualification.",
   ],
   [
-    "Who pays for validators, relays and permanent decisions?",
-    "Payments include explicit positive RLD service fees and archival-reserve contributions. Every coupon family reserves funded bounded capacity for all its leaves or uses a sponsor. Relay service has its own finite contract. Service and insurance escrows hold already issued RLD, counted once. A finite reserve does not prove perpetual solvency; funded renewal and succession are necessary, especially after issuance ends.",
-  ],
-  [
-    "How are old signing keys handled?",
-    "The paper describes a finite per-height Ed25519 key schedule committed by public Merkle roots, forward-evolving secrets, retained exact responses and secure erasure after commitment. Authenticated handoff must occur before exhaustion. This proposed construction still requires custody and cryptographic analysis; disk deletion, copied backups and ordinary key rotation do not prove protection against rollback or historical forgery.",
-  ],
-  [
-    "Are fast local payments or stellar routes already verified?",
-    "No achieved latency, daily volume or physical stellar service is claimed. Recursive proving, current-state availability, durable PBFT, coupon liabilities and permanent decisions have explicit costs. Existing no-value implementations have separate profiles and evidence. A whitepaper edit does not upgrade running software or establish independent security qualification.",
-  ],
-  [
-    "What would be needed before an actual network?",
-    "An exact executable encoding of these rules, independent analysis of consensus and key custody, durable implementation, resource and operational qualification, sustainable service funding and authenticated adoption. No monetary genesis, keys or physical route is activated by this publication; existing test assets never migrate into real value.",
+    "Does a complete paper mean a qualified live system?",
+    "No. The paper specifies objects, transitions, encoding, conditional proofs and failure rules. Executable guest images, measured cost, custody security and independent review need separate evidence. Existing no-value implementations are not silently upgraded; no mainnet or physical stellar route is qualified.",
   ],
 ] as const;
