@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "A standalone mechanism paper covering open mining, one-way interstellar payment, recipient verification, onward spending and delayed reconciliation.",
+  "Local settlement and asynchronous transfer of exclusive spend authority: export, one-time import, certified rejection and a causal conservation argument.",
   "/whitepaper",
 );
 
@@ -20,6 +20,7 @@ const sections = blocks
   .filter((block) => block.startsWith("## "))
   .map((block) => block.slice(3).trim());
 const figureHeights: Record<string, number> = {
+  "authority-transfer": 278,
   transaction: 264,
   blocks: 267,
   channel: 281,
@@ -75,12 +76,11 @@ export default function Whitepaper() {
             <a href="/documents/rldcoin-whitepaper.md">Read source Markdown</a>
           </div>
           <p className="whitepaper-context">
-            Open proof of work, owner-authorized payments, miner incentives and
-            authenticated evidence carried across delayed contacts. Follow an
-            interstellar payment from an offline sender through successive
-            relays to independent receipt, onward spending and later
-            reconciliation. Local fast states, miner fees and security
-            assumptions are explained separately.
+            Each spendable output has one authoritative home. Communities settle
+            locally; owner-authorized certificates move spend authority through
+            delayed contacts. The paper defines export, one-time import,
+            permanent rejection and recovery, with explicit quorum, provenance
+            and availability assumptions.
           </p>
         </div>
       </section>

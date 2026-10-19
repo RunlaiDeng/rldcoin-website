@@ -1,0 +1,56 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-RESEARCH-REVISION-RECORD",
+  "status": "OWNER_AUTHORIZED_RESEARCH_ARCHITECTURE_PUBLICATION",
+  "document_date": "2026-10-19",
+  "publication_version_label": null,
+  "title": "Rldcoin: Interstellar Peer-to-Peer Payments",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "aee192deff4664ea996380257a591bd5c7324ea4def61d091f4d769232898d71",
+    "bytes": 48207
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "ebc542b0f1d84544119a7ef3095e49391961f7646aeb31e719dfefdf246634e4",
+    "bytes": 47963,
+    "pages": 12
+  },
+  "figures": [
+    {
+      "path": "public/diagrams/authority-transfer.svg",
+      "sha256": "431d9b66c72110503bccb304dc4218bd0cbd6b68b77aebdbf78db9cf725d786e",
+      "bytes": 7731
+    }
+  ],
+  "authorization_scope": "Owner explicitly requested a new whitepaper targeting Interstellar Peer-to-Peer Payments, disregarding all content and architectural constraints of the existing paper. The new research architecture is authored within that clean-slate scope; the previously authorized website synchronization follows its content.",
+  "architecture": "Single-home spend authority; final local settlement under accepted Byzantine validator assumptions; destination-bound source exports; permanent import-or-reject decisions; rejection-evidence-dependent source recovery; monotonic monetary provenance.",
+  "research_supersession": {
+    "replaces_predecessor_body": true,
+    "global_greatest_work_consensus": false,
+    "mandatory_mining": false,
+    "mandatory_new_token": false,
+    "inherited_supply_policy": false,
+    "inherited_performance_or_miner_fee_targets": false,
+    "note": "Deliberate changes to the proposed research design, not changes to existing signed currencies, implementation profiles or historical obligations."
+  },
+  "predecessor": {
+    "receipt": "rldcoin-whitepaper-release-2026-10-19-standalone.json",
+    "website_commit": "113ef64dd3ac89f441fb4956f1769a6f30996496",
+    "canonical_markdown": {
+      "path": "public/documents/rldcoin-whitepaper.md",
+      "sha256": "cb1ec30c8782699a57ea62dfaccf9f7ff7796d45edcaada7adca507be0c96335",
+      "bytes": 39231
+    },
+    "pdf": {
+      "path": "public/documents/rldcoin-whitepaper.pdf",
+      "sha256": "4fe36b93441dc349801229ae1e31317f7d139914ff30263c0745915975b4987c",
+      "bytes": 37040,
+      "pages": 9
+    }
+  },
+  "claims": "Conditional transition-level arguments for unique destination decisions, import/recovery exclusion, conservation over causal executions, local finality across inter-domain disconnection and conditional progress. No claimed invention of BFT, certified transfer or a new cryptographic primitive; no exhaustive novelty or priority claim.",
+  "assumptions": "Accepted initial domain and asset anchors; at most f Byzantine among 3f+1 validators in each relevant configuration, including applicable later historical-key compromise; correct commit/locking and handoff protocols; secure cryptography; owner authorization; durable output/export/decision state. Progress additionally needs responsive local quorums, complete evidence, accepted policies, funded resources and usable contact paths.",
+  "limitations": "Threshold compromise, stranded in-flight value, quorum unavailability, provenance-dependent fungibility, historical key compromise, archive growth, governance and physical delivery remain explicit. No achieved throughput, implemented complete protocol, independent audit, machine-checked proof, universal permissionless consensus or world-changing outcome is certified.",
+  "implementation_boundary": "No protocol/node source, live network, asset balance, monetary genesis, signing keys or adoption policy is changed. Prior receipts, failures, source-bound evidence and existing implementation obligations retain their original scope. A future implementation requires an exact separately identified profile and explicit reconciliation; no test value or keys migrate.",
+  "body_revisions_require_explicit_owner_decision": true
+}

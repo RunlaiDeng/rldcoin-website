@@ -6,27 +6,27 @@ import styles from "./diagrams.module.css";
 
 const steps = [
   {
-    title: "Authorize the payment",
-    label: "01 / SOURCE AUTHORIZATION",
-    text: "The owner authenticates the recipient key and currency, signs exact inputs, outputs, fee and expiry, and durably reserves the inputs before release. After a willing relay accepts custody, the sender can go offline. Inclusion remains conditional on the selected history.",
+    title: "Finalize source export",
+    label: "01 / SURRENDER SOURCE AUTHORITY",
+    text: "The owner signs exact asset, destination, recipient, principal and fees. The source domain atomically consumes local inputs and finalizes one export. An owner signature or a wallet reservation alone cannot create a destination claim.",
     icon: LockKeyhole,
   },
   {
-    title: "Carry the proof",
+    title: "Carry the certificate",
     label: "02 / SUCCESSIVE CONTACTS",
-    text: "Signed packets carry the unchanged authorization and required history through successive contacts, including one-way links. Sender and recipient need not be online together. Relays retain exact bytes before acknowledging custody; that acknowledgment grants no spending authority.",
+    text: "Carriers retain the exact ticket, source commit proof and authenticated configuration material. Sender and recipient need not be online together. Duplicate delivery and custody receipts create no additional balance.",
     icon: Radio,
   },
   {
-    title: "Verify and receive",
-    label: "03 / LOCAL ACCEPTANCE",
-    text: "The recipient independently validates the same currency's history and selects by cumulative work. Missing inclusion can be sought by mining the original intent only if its inputs remain valid. After inclusion, the recipient can sign an onward payment without a reply to the sender. Stronger later work can reverse both payments.",
+    title: "Import and spend",
+    label: "03 / ONE DESTINATION DECISION",
+    text: "The destination verifies its accepted source and provenance, records Imported once and creates the recipient's local output atomically. The recipient can then pay locally without a reply to the source. Finality remains conditional on the accepted authority assumptions.",
     icon: Fingerprint,
   },
   {
-    title: "Optional return receipt",
-    label: "04 / INDEPENDENT RETURN PATH",
-    text: "A signed destination receipt reports custody of exact packet bytes. It can return through other contacts and does not create money or certify inclusion. Missing receipts and elapsed time never authorize a refund.",
+    title: "Recover on rejection",
+    label: "04 / POSITIVE REJECTION EVIDENCE",
+    text: "The destination may instead finalize a permanent Rejected decision that excludes import. Its authenticated proof allows one source recovery under the original owner's rule. Silence and local timeouts cannot refund; an unavailable destination can strand exported value.",
     icon: Check,
   },
 ];
@@ -39,15 +39,15 @@ function TransferMap({
   mobile: boolean;
 }) {
   const id = useId().replace(/:/g, "");
-  const source = mobile ? { x: 165, y: 104 } : { x: 180, y: 178 };
-  const relay = mobile ? { x: 165, y: 290 } : { x: 510, y: 178 };
-  const dest = mobile ? { x: 165, y: 476 } : { x: 840, y: 178 };
-  const line = mobile ? "M165 104V476" : "M180 178H840";
-  const back = mobile ? "M112 476H40V104H112" : "M840 224V316H180V224";
+  const source = mobile ? { x: 165, y: 110 } : { x: 180, y: 178 };
+  const relay = mobile ? { x: 165, y: 330 } : { x: 510, y: 178 };
+  const dest = mobile ? { x: 165, y: 550 } : { x: 840, y: 178 };
+  const line = mobile ? "M165 110V550" : "M180 178H840";
+  const back = mobile ? "M112 550H40V110H112" : "M840 224V316H180V224";
   return (
     <svg
       className={`${styles.transferMap} ${mobile ? styles.mobileTransferMap : styles.desktopTransferMap}`}
-      viewBox={mobile ? "0 0 330 610" : "0 0 1020 380"}
+      viewBox={mobile ? "0 0 330 690" : "0 0 1020 380"}
       aria-hidden="true"
     >
       <defs>
@@ -72,7 +72,7 @@ function TransferMap({
       </defs>
       <rect
         width={mobile ? 330 : 1020}
-        height={mobile ? 610 : 380}
+        height={mobile ? 690 : 380}
         fill={`url(#${id}-grid)`}
       />
       <path
@@ -128,10 +128,10 @@ function TransferMap({
               className={styles.transferTitle}
             >
               {i === 0
-                ? "Source Zone"
+                ? "Source domain"
                 : i === 1
                   ? "Relay contacts"
-                  : "Destination Zone"}
+                  : "Destination domain"}
             </text>
             <text
               y={i === 1 ? 99 : 115}
@@ -140,12 +140,14 @@ function TransferMap({
             >
               {i === 0
                 ? selected === 0
-                  ? "Review and sign"
-                  : "Inclusion is conditional"
+                  ? "Commit export"
+                  : "Export removes local rights"
                 : i === 1
                   ? "Store · carry · forward"
                   : selected >= 2
-                    ? "Validate selected history"
+                    ? selected === 3
+                      ? "Certified rejection"
+                      : "Import exactly once"
                     : "Await verified evidence"}
             </text>
             <text
@@ -154,16 +156,16 @@ function TransferMap({
               className={styles.transferKicker}
             >
               {i === 0
-                ? "LOCAL CONSENSUS"
+                ? "LOCAL SETTLEMENT"
                 : i === 1
                   ? "ASYNCHRONOUS TRANSPORT"
-                  : "LOCAL CONSENSUS"}
+                  : "LOCAL SETTLEMENT"}
             </text>
           </g>
         );
       })}
       {selected === 1 && (
-        <g transform={`translate(${mobile ? 165 : 675},${mobile ? 389 : 178})`}>
+        <g transform={`translate(${mobile ? 165 : 675},${mobile ? 440 : 178})`}>
           <rect
             x="-23"
             y="-17"
@@ -189,7 +191,7 @@ function TransferMap({
         </g>
       )}
       {selected === 3 && (
-        <g transform={`translate(${mobile ? 40 : 510},${mobile ? 285 : 316})`}>
+        <g transform={`translate(${mobile ? 40 : 510},${mobile ? 330 : 316})`}>
           <circle r="15" fill="#fbf4e9" stroke="#b58d57" />
           <path
             d="M-6 0l4 4 8-9"
@@ -199,7 +201,7 @@ function TransferMap({
           />
           {!mobile && (
             <text y="28" textAnchor="middle" className={styles.transferSub}>
-              Receipt: information, not returned value
+              Rejection proof: recovery, not a timeout
             </text>
           )}
         </g>
@@ -275,10 +277,10 @@ export function TransferExplorer() {
         </div>
       </div>
       <p className={styles.transferCaption}>
-        This figure explains the candidate evidence lifecycle. Onward and return
-        payments are ordinary authorized transfers on the selected history.
-        Reorganization can reverse them. A returned receipt does not credit or
-        refund value. Implementation and physical-route qualification are
+        This figure explains the proposed authority-transfer lifecycle. Import
+        and permanent rejection are alternative destination decisions, not
+        sequential steps. Recovery requires rejection evidence. A carriage
+        receipt grants no balance, and physical-route qualification remains
         separate.
       </p>
     </div>

@@ -6,6 +6,7 @@ import { Expand, X, ZoomIn, ZoomOut } from "lucide-react";
 import styles from "./diagrams.module.css";
 
 const titles: Record<string, string> = {
+  "authority-transfer": "Transfer of spend authority",
   transaction: "Signature & value",
   blocks: "Connected state transitions",
   channel: "A payment channel",

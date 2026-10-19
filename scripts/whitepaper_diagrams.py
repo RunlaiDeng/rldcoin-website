@@ -277,7 +277,27 @@ def relay_networks():
     return d
 
 
+def authority_transfer():
+    d = Drawing(470, 250)
+    label(d, 235, 233, "ONE HOME AT A TIME; ONE DESTINATION DECISION", 8.3, bold=True)
+    box(d, 8, 150, 126, 65, "SOURCE A", ["consume spendable inputs", "final Exported(x, a)"])
+    box(d, 168, 150, 134, 65, "IN FLIGHT", ["recipient-bound certificate", "no source spending right"])
+    box(d, 336, 150, 126, 65, "DESTINATION B", ["verify accepted authority", "serialize J[x] once"])
+    arrow(d, 134, 181, 168)
+    arrow(d, 302, 181, 336)
+    box(d, 336, 60, 126, 60, "IMPORTED", ["recipient v + service fee", "onward local spending"])
+    box(d, 168, 60, 134, 60, "REJECTED", ["permanent no-import", "certified by B"])
+    box(d, 8, 60, 126, 60, "RECOVERY AT A", ["verify B's rejection", "credit a - r; fee r"])
+    path(d, [(399, 150), (399, 120)])
+    path(d, [(377, 150), (377, 135), (235, 135), (235, 120)])
+    path(d, [(168, 89), (134, 89)], dashed=True)
+    label(d, 235, 40, "Imported and Rejected exclude each other under the accepted quorum rules", 7.2)
+    label(d, 235, 18, "Silence, local timeouts and carriage receipts never restore source value", 7.4, bold=True)
+    return d
+
+
 FIGURES = {
+    "authority-transfer": authority_transfer,
     "transaction": transaction,
     "blocks": blocks,
     "channel": channel,
@@ -290,6 +310,7 @@ FIGURES = {
 }
 
 DESCRIPTIONS = {
+    "authority-transfer": "A source removes spend authority before sending a certificate. One destination imports or permanently rejects it; only certified rejection authorizes source recovery.",
     "transaction": "Two mature inputs authorize one transfer with recipient value, change and a fee.",
     "blocks": "Consecutive block headers commit to commands and replayed state, linked by a parent hash.",
     "channel": "Funded escrow, signed payment states, a stale-close challenge and settlement.",

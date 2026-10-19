@@ -6,10 +6,12 @@ export function NetworkStatusPanel() {
     <section className="live-panel" aria-label="Network development summary">
       <div className="live-panel-top">
         <div>
-          <span className="eyebrow plain">DEVELOPMENT / NO MONETARY VALUE</span>
+          <span className="eyebrow plain">
+            RESEARCH / NO MONETARY DEPLOYMENT
+          </span>
           <h2>No mainnet has launched.</h2>
         </div>
-        <div className="live-badge is-pending">Testnet only</div>
+        <div className="live-badge is-pending">Research design</div>
       </div>
       <div className="live-metrics">
         <div>
@@ -34,9 +36,10 @@ export function NetworkStatusPanel() {
         </div>
       </div>
       <p className="status-scope">
-        The Earth testnet and regional ground candidates have distinct
-        identities and evidence scopes. Same-host or same-controller results do
-        not establish independent operation, custody or sustained service.
+        The new paper is not a running protocol upgrade. Existing testnets and
+        ground candidates retain separate identities and evidence scopes. Their
+        observations do not demonstrate this architecture or independent
+        service.
       </p>
       <div className="live-panel-bottom">
         <p>

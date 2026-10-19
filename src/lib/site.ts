@@ -8,7 +8,7 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-19-standalone.json";
+  "/documents/rldcoin-whitepaper-release-2026-10-19-authority.json";
 export const CONTENT_REVIEW_DATE = "19 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
@@ -69,11 +69,11 @@ export const pages = {
   ],
   "how-it-works": [
     "How Rldcoin works",
-    "Open mining, local fast states and interstellar payments from authorization through one-way relay, verification and onward spending.",
+    "Local settlement, source export, one-time destination import and evidence-dependent recovery across delayed contacts.",
   ],
   "you-need-to-know": [
     "Safety & limits",
-    "Testnet limits, custody, rollback, payment states, privacy and conditions for future operation.",
+    "Validator assumptions, provenance, in-flight funds, certified recovery and the limits of a research architecture.",
   ],
   developers: [
     "Develop Rldcoin",
@@ -104,54 +104,58 @@ export const pages = {
 export const faqs = [
   [
     "What is Rldcoin?",
-    "Rldcoin is a peer-to-peer payment design combining open mining, a single currency, reversible local payments and authenticated delayed carriage. A capable surviving full node can keep attempting mining without a founder or committee. The white paper describes required behavior, not completed qualification.",
+    "Rldcoin is a research architecture for interstellar peer-to-peer payments. Each spendable output has one authoritative home domain. Communities settle locally; certified exports relocate authority through delayed contacts. The paper gives conditional safety arguments, not a claim that the architecture is already implemented.",
   ],
   [
     "Can I buy or use RLD today?",
-    "No mainnet has launched. Testnets and separate ground candidates have no monetary value. There is no token sale or qualified consumer wallet offered here. Test balances and keys never become mainnet assets or authority.",
+    "No mainnet has launched and this website offers no token sale or consumer transaction service. Existing test assets have no monetary value. The new architecture does not require a mandatory new token and does not migrate test balances or keys.",
   ],
   [
-    "How can local payments work while distant regions are disconnected?",
-    "Each capable full node validates and can mine its retained history without a quorum. Disconnected branches may both include payments. When histories meet, actual cumulative work and a deterministic tie rule select one; losing payments and rewards can roll back.",
+    "How can communities pay while separated?",
+    "They use distinct funds already homed in their respective domains. A responsive local quorum can finalize local payments without a distant vote. A minority partition of the same domain must wait; it cannot spend a second copy of that domain's balance.",
   ],
   [
-    "How does an interstellar payment reach someone who is offline?",
-    "The owner signs the exact payment and retains its input reservation. Willing relays store and forward that authorization with the history needed to verify it through later contacts. Sender and recipient need not be online together. On arrival, the recipient independently validates the currency and selected history, then checks inclusion and unspent value. Receipt of bytes alone is not receipt of spendable money.",
+    "What moves between worlds?",
+    "An owner-authorized export certificate, its exact recipient and destination, and the evidence needed to authenticate the source authority. The source first removes that value from local spendability. Ordinary carriers move bytes without becoming monetary validators.",
   ],
   [
-    "Can the recipient spend onward without a message back to Earth?",
-    "Yes in the proposed ordinary payment mechanism, once valid inclusion produces an unspent output on the recipient's selected history. The recipient signs a new payment; that spend needs ordinary mining and independent verification. A return acknowledgment is optional. A later stronger valid history may reverse both payments. This mechanism is distinct from an operational interstellar service, which is not available today.",
+    "When can the recipient spend?",
+    "After the destination verifies the ticket and atomically finalizes one import with the recipient's output. The recipient can then pay locally without a return message to the source. A custody receipt or a submitted import request is not settlement.",
   ],
   [
-    "Do fast local payments make stellar delivery instant?",
-    "No. The paper separates a proposed funded fast layer from base mining and ordinary interstellar carriage. Fast use needs enforceable backing, liquidity, responsive peers and safe dispute and exit rules, including a funded miner fee on every payment. Stellar delivery still needs real contacts and causal propagation. Seconds-scale local use and one hundred million daily payments remain design targets, not measured capabilities.",
+    "Can stronger distant mining reverse a local payment?",
+    "The new architecture has no global greatest-work history that overwrites a local finalized prefix. Its guarantee instead depends on the accepted domain and provenance validator assumptions, secure keys, correct consensus and durable state. Threshold compromise remains a security failure.",
   ],
   [
-    "Is there a guaranteed confirmation time?",
-    "No. Mining is probabilistic and transport depends on real contacts. The candidate's timestamp-based recovery rule permits easier attempts, not a four-hour deadline. Ordinary outputs can be spent in a later block; rewards become eligible at height h+100. Neither condition makes payment irreversible.",
+    "Can a missing payment be refunded after a timeout?",
+    "No. A delayed copy may still be imported. The destination must permanently finalize rejection, excluding import of that ticket. Only an authenticated rejection allows the source to recover once. If the destination never returns, the exported value can remain stranded.",
   ],
   [
-    "Does a delivered message mean a completed payment?",
-    "No. Byte custody, independently validated history, selected-chain inclusion and local spendability are distinct. A destination receipt does not mint or import money. The recipient verifies the same currency's history; payments may later be reorganized.",
+    "Is the system trust-free or universally permissionless?",
+    "No. Anyone may create a domain or offer carriage, but users explicitly accept monetary authorities. The baseline has 3f + 1 admitted validators and tolerates at most f Byzantine validators per relevant configuration. New public keys do not automatically gain trust or issuance rights.",
   ],
   [
-    "Does the revision permit refunds after a timeout?",
-    "No. Silence, expiry and a transport receipt cannot refund or revoke a released signature. An owner can explicitly authorize a conflicting transfer from still-valid inputs, but selection determines which history includes it; a replacement is not a guaranteed refund.",
+    "Why does provenance matter?",
+    "Value retains the authority histories on which its backing depends. Importing through another domain does not erase earlier trust. Two balances with the same denomination and different provenance may have different acceptance or market value.",
   ],
   [
-    "Will a new node extend the network?",
-    "A useful new contact can extend a path. The design requires ordinary nodes to discover authenticated neighbors and durably relay admitted evidence without a compulsory Earth directory. A first real contact or carried archive is still needed. Advertised routes and ground prototypes do not establish an operating physical interstellar service.",
+    "Does the paper guarantee seconds or one hundred million payments a day?",
+    "No measured performance is claimed. Local latency depends on quorum communication, verification and durable storage. Aggregate capacity can scale across separate local domains, with explicit transfer and archive costs. Stellar arrival still depends on physical contacts and propagation.",
   ],
   [
-    "Are the historical Earth rules universal?",
-    "No. Survivor-1 is an incompatible new candidate with explicit work, encoding, maturity and recovery rules. Old regional BFT and unanimous-checkpoint fixtures retain their original scope and are not migrated or upgraded by the new paper.",
+    "Does the design require mining?",
+    "The new architecture does not require a universal proof-of-work contest or an automatic subsidy. Asset issuance and local service funding have explicit policies. Earlier mining candidates retain their historical scope and are not upgraded by publication.",
   ],
   [
-    "Does Rldcoin guarantee a hundred million years of operation?",
-    "No. That horizon is a continuity objective for successive generations. Contact, funding, institutions, key succession, archives and cryptographic renewal remain conditional. No protocol can remove every future risk or guarantee purchasing power, delivery or recovery after permanent loss.",
+    "What happens if a domain loses its validators?",
+    "The baseline can stop. A safe handoff needs the previously authorized succession rule and retained complete state. A single survivor cannot grant itself replacement authority. Prepositioning funds and independent validation capacity is part of preparing an autonomous community.",
   ],
   [
-    "What would authorize a future mainnet?",
-    "An exact protocol profile must satisfy the white paper’s applicable specification, risk and acceptance obligations with independent evidence. A future mainnet then requires fresh signed zero-issuance genesis and verified release adoption. Ground results, website publication and test assets cannot substitute for this authority. Physical routes need separate qualification.",
+    "Does the paper guarantee a hundred million years of operation?",
+    "No. Every cryptographic and archival profile has finite assumptions. Long journeys require authenticated key succession, explicit treatment of historical key compromise, sustained storage and real contacts. Lost state and destroyed authorities cannot be recreated by a guarantee.",
+  ],
+  [
+    "What would be needed before an actual network?",
+    "An exact executable profile, independent protocol analysis, durable implementation and custody qualification, explicit asset rules, governance and authenticated adoption. Existing no-value fixtures and website publication do not supply these. No new monetary genesis or physical stellar route is activated here.",
   ],
 ] as const;

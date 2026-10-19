@@ -12,7 +12,7 @@ import { pageMetadata, REPOSITORY, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments",
-  "Open mining, fast local payment design and authenticated interstellar carriage. Follow payment from authorization to receipt, onward spending and delayed reconciliation. No mainnet has launched.",
+  "Local settlement and asynchronous transfer of exclusive spend authority. Explore an interstellar payment architecture with explicit trust and recovery rules. No mainnet has launched.",
   "/",
 );
 
@@ -29,7 +29,7 @@ export default function Home() {
             url: SITE,
             inLanguage: "en",
             description:
-              "A peer-to-peer payment design combining open mining, local fast states and delayed interstellar carriage. No mainnet or physical interstellar service is qualified.",
+              "An interstellar payment architecture with local settlement and destination-bound transfer of spend authority. Research only; no mainnet or physical stellar service is qualified.",
           }),
         }}
       />
@@ -49,8 +49,8 @@ export default function Home() {
             <span>For humanity’s future.</span>
           </h1>
           <p className="cinematic-lead">
-            Open mining. Fast local payment design. Signed payments carried
-            between worlds through successive contacts.
+            Local economies. One home for every spend. Certified payments
+            carried between worlds through successive contacts.
           </p>
           <div className="cinematic-actions">
             <Link className="cinematic-button" href="/about">
@@ -85,27 +85,27 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              One currency, independently verified. Local interaction and
-              interstellar delivery follow different clocks, while ownership,
-              miner fees and conservation follow the same rules.
+              Settle against local funds while distant worlds are offline.
+              Cross-domain payment first surrenders source spending authority,
+              then creates one destination claim under explicit trust rules.
             </p>
           </div>
           <div className="home-basics">
             {[
               {
                 icon: KeyRound,
-                title: "Open mining",
-                text: "Ordinary computers can validate and attempt proof of work without a founder service or compulsory pool. Participation is open; income and profitable CPU mining are not guaranteed.",
+                title: "Settle locally",
+                text: "A community finalizes payments through its accepted local validator rules. Reconnection does not itself overwrite its history; quorum, key and provenance assumptions remain essential.",
               },
               {
                 icon: Globe2,
-                title: "Fast local interaction",
-                text: "The proposed fast layer exchanges signed claims against locked funds, with a positive miner fee for every payment. Safe enforcement and exit are essential; its speed and capacity remain design targets.",
+                title: "One home at a time",
+                text: "The source removes exported value from spendability before releasing a recipient-bound certificate. The destination records one import or one permanent rejection, preventing duplicate credit under the stated assumptions.",
               },
               {
                 icon: Code2,
                 title: "Interstellar carriage",
-                text: "Relays carry the exact signed payment and verification history through one-way or delayed contacts. The recipient verifies inclusion before spending onward; a return message is optional and later reorganization remains possible.",
+                text: "Carriers move authenticated evidence through delayed or one-way contacts. After a final import, the recipient can pay locally without a return message. Missing receipts never authorize a source refund.",
               },
             ].map(({ icon: Icon, title, text }) => (
               <article key={title}>
@@ -130,16 +130,16 @@ export default function Home() {
               across delayed regions.
             </h2>
             <p className="section-lead">
-              The payment mechanism, miner incentives and security assumptions
-              explained together.
+              The payment mechanism, authority boundaries and security
+              assumptions explained together.
             </p>
           </div>
           <div className="prose">
             <p>
-              Follow a payment from Earth to a distant recipient: authorize,
-              retain, relay, verify and spend onward. The paper explains offline
-              participants, missing receipts, conflicting histories and why
-              local speed cannot remove stellar communication delay.
+              Follow exclusive spend authority from source export to one-time
+              import and onward payment. The paper gives a conservation argument
+              and explains permanent rejection, recovery, provenance and the
+              cost of value stranded between worlds.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>
@@ -167,8 +167,9 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              The design, implementation and qualification are distinct. Current
-              testnets and ground candidates have no monetary value.
+              The new paper is a research architecture. Existing source,
+              testnets and ground candidates have separate identities and no
+              monetary value.
             </p>
           </div>
           <div className="progress-grid">

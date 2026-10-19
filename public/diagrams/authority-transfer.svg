@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="470" height="278" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 278" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Rldcoin: transfer of spend authority</title>
+	<desc>A source removes spend authority before sending a certificate. One destination imports or permanently rejects it; only certified rejection authorizes source recovery.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="470" height="278"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-278)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="470" height="278" rx="6" ry="6" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<g transform=" matrix(1,0,0,1,0,14)">
+				<text x="128.47365" y="233" style="font-family: Helvetica-Bold; font-size: 8.3px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,466) scale(1,-1)">ONE HOME AT A TIME; ONE DESTINATION DECISION</text>
+				<rect x="8" y="150" width="126" height="65" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="48.83239999999999" y="198" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">SOURCE A</text>
+				<text x="28.177999999999997" y="183" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,366) scale(1,-1)">consume spendable inputs</text>
+				<text x="40.7888" y="171" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,342) scale(1,-1)">final Exported(x, a)</text>
+				<rect x="168" y="150" width="134" height="65" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="214.4662" y="198" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">IN FLIGHT</text>
+				<text x="193.7836" y="183" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,366) scale(1,-1)">recipient-bound certificate</text>
+				<text x="195.57999999999998" y="171" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,342) scale(1,-1)">no source spending right</text>
+				<rect x="336" y="150" width="126" height="65" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="366.3324" y="198" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">DESTINATION B</text>
+				<text x="359.9832" y="183" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,366) scale(1,-1)">verify accepted authority</text>
+				<text x="370.3908" y="171" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,342) scale(1,-1)">serialize J[x] once</text>
+				<path d="M 134,181 L 161,181 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="163 178.5, 168 181, 163 183.5" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 302,181 L 329,181 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="331 178.5, 336 181, 331 183.5" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<rect x="336" y="60" width="126" height="60" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="376.8324" y="103" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,206) scale(1,-1)">IMPORTED</text>
+				<text x="361.0848" y="88" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,176) scale(1,-1)">recipient v + service fee</text>
+				<text x="363.1836" y="76" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,152) scale(1,-1)">onward local spending</text>
+				<rect x="168" y="60" width="134" height="60" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="212.5972" y="103" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,206) scale(1,-1)">REJECTED</text>
+				<text x="201.5884" y="88" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,176) scale(1,-1)">permanent no-import</text>
+				<text x="214.192" y="76" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,152) scale(1,-1)">certified by B</text>
+				<rect x="8" y="60" width="126" height="60" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+				<text x="36.46339999999999" y="103" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,206) scale(1,-1)">RECOVERY AT A</text>
+				<text x="41.904799999999994" y="88" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,176) scale(1,-1)">verify B's rejection</text>
+				<text x="45.5912" y="76" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,152) scale(1,-1)">credit a - r; fee r</text>
+				<path d="M 399,150 L 399,120 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="395 127, 399 120, 403 127" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 377,150 L 377,135 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 377,135 L 235,135 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<path d="M 235,135 L 235,120 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
+				<polygon points="231 127, 235 120, 239 127" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<path d="M 168,89 L 134,89 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+				<polygon points="141 85, 134 89, 141 93" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+				<text x="113.338" y="40" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,80) scale(1,-1)">Imported and Rejected exclude each other under the accepted quorum rules</text>
+				<text x="108.7338" y="18" style="font-family: Helvetica-Bold; font-size: 7.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,36) scale(1,-1)">Silence, local timeouts and carriage receipts never restore source value</text>
+			</g>
+		</g>
+	</g>
+</svg>

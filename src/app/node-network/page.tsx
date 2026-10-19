@@ -48,16 +48,16 @@ export default function NodeNetwork() {
           <p>
             Sender and recipient need not be online at the same time. Relays
             carry an unchanged owner authorization and the history needed to
-            validate it. The recipient checks the selected history and valid
-            inclusion before spending onward. A missing dependency leaves the
-            payment unverified; a hash or a custody receipt cannot supply it.
+            validate it. The recipient domain verifies the source commit and
+            authority chain, then finalizes one import before onward local
+            spending. A missing dependency leaves the ticket unverified; a
+            custody receipt cannot supply monetary authority.
           </p>
           <p>
             A return message can take another path or never arrive. Silence does
-            not cancel a released signature or refund its inputs. Later
-            reconnection can expose a stronger valid branch and reverse payments
-            dependent on the losing one. Places receive no separate issuance
-            rights.
+            not restore exported value. Only a permanent destination rejection
+            can authorize source recovery. Reconnection does not itself replace
+            a finalized local ledger under the accepted fault assumptions.
           </p>
           <h2>A contact must have resources</h2>
           <p>
@@ -75,11 +75,11 @@ export default function NodeNetwork() {
             and failure outcomes; long-term continuity is not a guarantee of
             uninterrupted service.
           </p>
-          <TextLink href="/whitepaper#9-interstellar-communication">
+          <TextLink href="/whitepaper#10-transport-and-durable-evidence">
             Read the interstellar communication mechanism
           </TextLink>
           <p>
-            <TextLink href="/whitepaper#10-interstellar-payment-lifecycle">
+            <TextLink href="/whitepaper#8-an-interstellar-payment-and-local-autonomy">
               Follow an interstellar payment through onward spending
             </TextLink>
           </p>
