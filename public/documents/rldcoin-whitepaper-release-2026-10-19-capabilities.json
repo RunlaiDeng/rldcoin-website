@@ -1,0 +1,149 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-RESEARCH-REVISION-RECORD",
+  "status": "OWNER_AUTHORIZED_CAPABILITIES_COMPACT_EXECUTION_RESEARCH_PUBLICATION",
+  "document_date": "2026-10-19",
+  "publication_version_label": null,
+  "title": "Rldcoin: Interstellar Peer-to-Peer Payments",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "15755afbfca8512c662826c8efa95555dc1f5da14139931c3fc299e197b003b9",
+    "bytes": 70243
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "b2b4662b8852cd7e4fd83d1fd24fbb76f63d1c307d515b79f66aa2845cc12641",
+    "bytes": 69442,
+    "pages": 17
+  },
+  "figures": [
+    {
+      "path": "public/diagrams/authority-transfer.svg",
+      "sha256": "3c281acaab48e83baf4337c51d44a4a57ef977fd7ef1a56e16e1d679684c5cdc",
+      "bytes": 8136
+    },
+    {
+      "path": "public/diagrams/issuance-strands.svg",
+      "sha256": "08df46b9e78ab3008ffc0e48b100a03cd70ad42c05dcb3183edf7174245a014c",
+      "bytes": 6250
+    }
+  ],
+  "authorization_scope": "Owner requests resolving issuance-permission invalidation, per-payment preparation and component/history scale; revising the paper/PDF and synchronizing the official website. Research mechanisms only, without protocol runtime or launch.",
+  "native_currency": {
+    "name": "runlai",
+    "ticker": "RLD",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "only_native_payment_currency": true,
+    "all_protocol_fees_in_RLD": true,
+    "currency_identity": "C_RLD binds one common authenticated genesis and monetary policy."
+  },
+  "issuance": {
+    "cap_RLD": "21000000",
+    "cap_atomic": "21000000000000000000000000000000",
+    "atomic_units_per_RLD": "1000000000000000000000000",
+    "budget_roots": 4096,
+    "slots_per_root": 1000000,
+    "reward_RLD": "0.005126953125",
+    "reward_atomic": "5126953125000000000000",
+    "total_slots": 4096000000,
+    "genesis_spendable_RLD": "0",
+    "all_preallocations_RLD": "0",
+    "all_Mint_rewards_to_work_author": true,
+    "placement": "Public proportional-work ClaimRange detaches any 1..256 still-unconsumed slots within a stable allocation generation, under a generic single-source receiving capability. Mint advances a separate cursor/anchor; source splits atomically into exact detached range and disjoint residuals. Final range exports are immutable under subsequent Mint.",
+    "single_home_per_interval": true,
+    "split_preserves_unique_root_slot_identity": true,
+    "claim_issues_RLD": false,
+    "merge_operation": false,
+    "bootstrap": "D_0 is an explicitly accepted initial quorum and availability dependency; no claim of Sybil-free equal distribution or trust-free consensus.",
+    "retarget": false,
+    "halving": false,
+    "tail_emission": false,
+    "lost_or_retired_reissue": false,
+    "calendar_completion_guarantee": false
+  },
+  "work_profile": {
+    "algorithm": "Argon2id",
+    "version": 19,
+    "memory_KiB": 65536,
+    "passes": 3,
+    "lanes": 1,
+    "output_bytes": 32,
+    "base_target": "2^240 - 1",
+    "Mint_weight": 1,
+    "ClaimRange_weight": "number of detached slots",
+    "target": "floor(base_target / weight)",
+    "purpose": "Public issuance/distribution only; not validator votes or global monetary history selection. Claim work earns no RLD and does not replace Mint.",
+    "benchmarked_or_economically_optimal": false
+  },
+  "mechanisms": [
+    "Stable placement generation/anchor distinct from mutable Mint cursor/anchor; selected-slot local conflicts still refuse.",
+    "Advance finite ReceiveCapability families bind exactly one source, recipient/use policy, fees, object/amount limits and funded proof/current-data/decision capacity; actual inputs and source head are unspecified.",
+    "Per-source S[p] exclusive export/authorized closure and destination R[p]/J[x] exclusive import/rejection/source-certified closure; no timeout refund.",
+    "Exact normalized exposure-set classes coalesce amounts from different Mint origins; unequal risks remain separate. Issuance identities still checked uniquely in execution.",
+    "Candidate execution receipt binds a header; its current PBFT QC is separate. The next recursive step verifies the predecessor receipt and QC. Full current material is retained before onward credit.",
+    "Proof-ready export before final debit; local head changes retry with the same unused capability, without payment-specific stellar permission."
+  ],
+  "proof_reference": {
+    "backend": "RISC Zero zkVM 3.0.6 SuccinctReceipt (recursive STARK)",
+    "required_monetary_binding": "Exact trusted verifier/control root, hash/parameters, guest image IDs, successful unconditional claim, full journal codec and resource limits must be authenticated by the monetary descriptor.",
+    "RLD_guest_implemented_by_this_publication": false,
+    "RLD_guest_image_IDs": null,
+    "RLD_proof_generated_or_benchmarked": false,
+    "independent_security_qualified": false,
+    "must_reject": [
+      "fake/development receipts",
+      "unknown program or control root",
+      "unsupported verifier/hash parameters",
+      "unsuccessful execution",
+      "unresolved composition assumptions",
+      "unbound/pruned journal",
+      "missing current data",
+      "known incompatible certified execution"
+    ],
+    "primary_references": [
+      "https://docs.rs/risc0-zkvm/3.0.6/risc0_zkvm/struct.SuccinctReceipt.html",
+      "https://dev.risczero.com/api/zkvm/composition"
+    ]
+  },
+  "conservation": {
+    "equations": [
+      "U + F = I - Z",
+      "I + B + Q = C",
+      "U + F + B + Q + Z = C"
+    ],
+    "conditions": "Correct monetary execution/guest, sound unconditional recursive receipts, accepted exclusive PBFT histories, authentic finite keys, current-data availability and durable permanent decisions. Validity does not establish absence of unseen individually valid quorum forks."
+  },
+  "predecessor": {
+    "receipt": "rldcoin-whitepaper-release-2026-10-19-prepared-payments.json",
+    "receipt_sha256": "af935839ad7157e0137852408de8d26d1993d91ccf557cf48a80a7d64df0bca2",
+    "website_commit": "8e09c8d4818824413e3232770ec4e7cc4d96a91d",
+    "canonical_markdown": {
+      "path": "public/documents/rldcoin-whitepaper.md",
+      "sha256": "2b9ea85b7bcbca9290dfc7551ceb60cdcbbeec986b19af5bb54e30308582b589",
+      "bytes": 57473
+    },
+    "pdf": {
+      "path": "public/documents/rldcoin-whitepaper.pdf",
+      "sha256": "d82eddf269e3262852ca7a0d5de7ac137cd66f75a87bdd9f75e6d293108e58b5",
+      "bytes": 58505,
+      "pages": 14
+    }
+  },
+  "mechanism_review": {
+    "path": "docs/WHITEPAPER_CAPABILITIES_REVIEW.md",
+    "sha256": "0ca961ae72be2f366be79c743ea0d6064aa620dc8d32ad58bf5434f3b26fb20d",
+    "bytes": 7501,
+    "scope": "Completed author source/counterexample review, not an independent security audit or executed monetary proof."
+  },
+  "claims": "Mechanism-level correction and conditional composition/conservation analysis. No completed RLD proof program, achieved latency/volume, qualified cryptographic custody, physical service or guaranteed impact.",
+  "limitations": [
+    "Unknown source/destination or exhausted coupon inventory still requires setup; coupons are never wildcard multi-source capacity.",
+    "Local selected-slot consumption or generation splits can invalidate uncommitted work; no extra stellar approval is required for a replacement within unchanged coupon terms.",
+    "Proving, including Argon2 work checks, may be expensive; backend facilities alone establish no RLD program correctness or practical performance.",
+    "Complete current class/tag/state data is required. Different exposures, permanent decisions and contracted historical archives retain storage costs.",
+    "Proof validity cannot exclude an unseen valid quorum fork; arbitrary authorities are not automatically accepted.",
+    "Destroyed authorities, unavailable state or lost use keys may strand value/capacity. Finite reserves and crypto do not guarantee perpetual service.",
+    "Public work remains hardware-weighted and can concentrate or intentionally strand issuance. No CPU-profitability, equal-human-allocation or calendar guarantee."
+  ],
+  "implementation_boundary": "No protocol/node source, live network, monetary genesis, keys, asset balances, test-value migration or adoption policy is changed. Prior receipts and implementation obligations retain their original scope.",
+  "body_revisions_require_explicit_owner_decision": true
+}

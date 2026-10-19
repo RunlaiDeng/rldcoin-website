@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "runlai (RLD), capped at 21 million: verified execution, reserved receiving capacity, one-time import and conserved public-work issuance.",
+  "runlai (RLD), capped at 21 million: recursive execution receipts, advance receiving capacity, one-time import and conserved public-work issuance.",
   "/whitepaper",
 );
 
@@ -79,11 +79,12 @@ export default function Whitepaper() {
           <p className="whitepaper-context">
             runlai (RLD) is the sole native payment and fee currency. Each
             spendable output has one authoritative home. A destination reserves
-            its receiving obligation before export and verifies the supporting
-            monetary execution before import. Separate amount components retain
-            their actual dependencies. Divisible public-work entitlements keep
-            lifetime issuance within 21 million RLD, under explicit ordering,
-            custody and cryptographic assumptions.
+            source-bound capacity before actual inputs are chosen. Recursive
+            receipts summarize execution; complete current data enables onward
+            spending. Equal exposure classes coalesce without hiding risk.
+            Stable-generation public-work entitlements keep lifetime issuance
+            within 21 million RLD, under explicit ordering, custody and
+            cryptographic assumptions.
           </p>
         </div>
       </section>

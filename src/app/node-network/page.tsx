@@ -47,12 +47,12 @@ export default function NodeNetwork() {
           <h2>One-way carriage, independent verification</h2>
           <p>
             Sender and recipient need not be online at the same time. Relays
-            carry an unchanged owner authorization and the history needed to
-            validate it. The recipient domain verifies the source commit and
-            authority chain and complete monetary execution against its reserved
-            receiving terms, then finalizes one import before onward local
-            spending. A missing dependency leaves the ticket unverified; a
-            custody receipt cannot supply monetary authority.
+            carry unchanged owner authorization, a source-bound coupon, a
+            recursive execution receipt and complete current monetary data. The
+            recipient checks the proof, matching source commit and every
+            accepted exposure class, then durably installs data and imports once
+            before onward local spending. Missing current material leaves the
+            ticket pending; a custody receipt cannot supply monetary authority.
           </p>
           <p>
             A return message can take another path or never arrive. Silence does
@@ -63,10 +63,12 @@ export default function NodeNetwork() {
           <h2>A contact must have resources</h2>
           <p>
             A relay retains accepted bytes durably before acknowledging custody.
-            Bounded batches can carry a long dependency history over several
-            contacts. Storage exhaustion can refuse new material, while existing
-            obligations remain explicit. Ground prototypes and conceptual routes
-            do not establish a qualified physical service.
+            Bounded batches carry receipts and current material over successive
+            contacts. Compact historical proofs do not remove current-data or
+            permanent-decision storage obligations. Storage exhaustion can
+            refuse new material, while existing obligations remain explicit.
+            Ground prototypes and conceptual routes do not establish a qualified
+            physical service.
           </p>
           <h2>Distance still sets the pace</h2>
           <p>

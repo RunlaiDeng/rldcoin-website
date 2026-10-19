@@ -4,7 +4,7 @@
   'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
 <svg width="470" height="294" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 294" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<title>Rldcoin: issuance strands</title>
-	<desc>Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Public claims detach bounded ranges; verified Mint consumes each slot once.</desc>
+	<desc>Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Stable-generation claims detach bounded unconsumed ranges. Mint cursors advance independently; exported ranges do not change.</desc>
 	<clipPath id="clip">
 		<rect x="0" y="0" width="470" height="294"/>
 	</clipPath>
@@ -18,21 +18,21 @@
 				<text x="164.95479999999998" y="196" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,392) scale(1,-1)">4,096 budget roots x 1,000,000 unique slots</text>
 				<text x="160.3612" y="184" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,368) scale(1,-1)">each finalized Mint pays 0.005126953125 RLD</text>
 				<rect x="30" y="113" width="410" height="45" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
-				<text x="133.0324" y="141" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,282) scale(1,-1)">PUBLIC CLAIM: CONSUME ONE EXACT INTERVAL</text>
-				<text x="140.554" y="126" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,252) scale(1,-1)">detach up to 256 next slots; preserve the disjoint remainder</text>
+				<text x="129.54219999999998" y="141" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,282) scale(1,-1)">PUBLIC CLAIM: DETACH AN UNCONSUMED RANGE</text>
+				<text x="138.3544" y="126" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,252) scale(1,-1)">stable generation; up to 256 slots; preserve disjoint residuals</text>
 				<path d="M 235,178 L 235,158 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
 				<polygon points="231 165, 235 158, 239 165" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
 				<rect x="8" y="35" width="134" height="58" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
 				<text x="30.433799999999998" y="76" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,152) scale(1,-1)">SOURCE REMAINDER</text>
-				<text x="39.9828" y="61" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">same root, next range</text>
-				<text x="37.5816" y="49" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,98) scale(1,-1)">no copied slot identities</text>
+				<text x="36.382799999999996" y="61" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">new disjoint generations</text>
+				<text x="30.586799999999997" y="49" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,98) scale(1,-1)">Mint advances local cursors</text>
 				<rect x="168" y="35" width="134" height="58" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
 				<text x="199.5352" y="76" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,152) scale(1,-1)">CARRIED RANGE</text>
-				<text x="202.9852" y="61" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">typed export / install</text>
-				<text x="203.392" y="49" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,98) scale(1,-1)">or certified recovery</text>
+				<text x="199.1872" y="61" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">immutable after export</text>
+				<text x="192.7792" y="49" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,98) scale(1,-1)">later Mint cannot change it</text>
 				<rect x="328" y="35" width="134" height="58" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
 				<text x="357.8972" y="76" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,152) scale(1,-1)">PREPARED HOME</text>
-				<text x="356.3864" y="61" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">work consumes one slot</text>
+				<text x="351.98" y="61" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">install exact detached slots</text>
 				<text x="354.5864" y="49" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,98) scale(1,-1)">local Mint during isolation</text>
 				<path d="M 75,113 L 75,93 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
 				<polygon points="71 100, 75 93, 79 100" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>

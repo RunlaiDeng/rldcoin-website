@@ -87,9 +87,9 @@ export default function Home() {
             <p>
               Pay in runlai (RLD) while distant worlds are offline. Principal
               and protocol fees use the same currency across every domain. A
-              destination reserves receipt before source debit. Complete
-              monetary evidence then supports one destination decision under
-              explicit ordering and custody assumptions.
+              destination preissues source-bound capacity; the payer chooses
+              actual inputs later. Certified execution and complete current data
+              support one destination decision.
             </p>
           </div>
           <div className="home-basics">
@@ -101,8 +101,8 @@ export default function Home() {
               },
               {
                 icon: Globe2,
-                title: "Prepare the receiver",
-                text: "An exact receiving permit commits fees, proof bounds and decision capacity before export. The source surrenders spendability; the prepared destination imports or permanently rejects once.",
+                title: "Choose inputs later",
+                text: "Advance receiving coupons commit fees, accepted risks and funded capacity for one source. Choose inputs locally, prepare the proof and send forward without payment-specific stellar approval.",
               },
               {
                 icon: Code2,
@@ -138,13 +138,13 @@ export default function Home() {
           </div>
           <div className="prose">
             <p>
-              Follow reserved receipt, complete monetary verification and
-              one-time import through delayed contacts. Amount-specific
-              components retain their actual dependencies without automatic risk
-              mixing. A 21 million RLD lifetime cap and publicly claimable,
-              disjoint work entitlements define issuance without a global
-              payment-branch contest. Ordering failures and stranded value
-              remain explicit boundaries.
+              Follow advance receiving capacity, recursive execution receipts
+              and one-time import through delayed contacts. Equal exposure
+              classes coalesce without hiding different risks; complete current
+              data supports onward spending. A 21 million RLD lifetime cap and
+              publicly claimable, disjoint work entitlements define issuance
+              without a global payment-branch contest. Ordering failures and
+              stranded value remain explicit boundaries.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>

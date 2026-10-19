@@ -279,15 +279,15 @@ def relay_networks():
 
 def authority_transfer():
     d = Drawing(470, 288)
-    label(d, 235, 271, "PREPARE THE RECEIVER; TRANSFER AUTHORITY ONCE", 8.3, bold=True)
-    box(d, 40, 218, 390, 34, "DESTINATION RESERVATION", ["exact intent, fees, evidence bounds and retained decision capacity"])
-    box(d, 8, 130, 126, 66, "SOURCE A", ["verify permit and owners", "debit + mark permit used"])
-    box(d, 168, 130, 134, 66, "IN FLIGHT", ["ticket + complete execution", "no source spending right"])
-    box(d, 336, 130, 126, 66, "DESTINATION B", ["replay money + check order", "consume reserved permit"])
+    label(d, 235, 271, "PREISSUE CAPACITY; CHOOSE INPUTS LOCALLY", 8.3, bold=True)
+    box(d, 40, 207, 390, 48, "SOURCE-BOUND CAPABILITY", ["future inputs unspecified; limits, fees and funded decision capacity"])
+    box(d, 8, 130, 126, 66, "SOURCE A", ["choose inputs; prepare proof", "debit + consume coupon"])
+    box(d, 168, 130, 134, 66, "IN FLIGHT", ["ticket + receipt / QC / data", "no source spending right"])
+    box(d, 336, 130, 126, 66, "DESTINATION B", ["verify proof + current data", "one import or rejection"])
     arrow(d, 134, 162, 168)
     arrow(d, 302, 162, 336)
     box(d, 336, 42, 126, 58, "IMPORTED", ["principal + bound RLD fees", "onward local spending"])
-    box(d, 168, 42, 134, 58, "REJECTED", ["permanent no-import", "complete decision evidence"])
+    box(d, 168, 42, 134, 58, "REJECTED", ["permanent no-import", "certified decision + data"])
     box(d, 8, 42, 126, 58, "RECOVERY AT A", ["verify B's exact rejection", "one credit; original fee"])
     path(d, [(399, 130), (399, 100)])
     path(d, [(377, 130), (377, 114), (235, 114), (235, 100)])
@@ -302,13 +302,13 @@ def issuance_strands():
     box(d, 30, 178, 410, 50, "GENESIS: ZERO SPENDABLE RLD",
         ["4,096 budget roots x 1,000,000 unique slots",
          "each finalized Mint pays 0.005126953125 RLD"])
-    box(d, 30, 113, 410, 45, "PUBLIC CLAIM: CONSUME ONE EXACT INTERVAL",
-        ["detach up to 256 next slots; preserve the disjoint remainder"])
+    box(d, 30, 113, 410, 45, "PUBLIC CLAIM: DETACH AN UNCONSUMED RANGE",
+        ["stable generation; up to 256 slots; preserve disjoint residuals"])
     path(d, [(235, 178), (235, 158)])
     for x, title, lines in (
-        (8, "SOURCE REMAINDER", ["same root, next range", "no copied slot identities"]),
-        (168, "CARRIED RANGE", ["typed export / install", "or certified recovery"]),
-        (328, "PREPARED HOME", ["work consumes one slot", "local Mint during isolation"]),
+        (8, "SOURCE REMAINDER", ["new disjoint generations", "Mint advances local cursors"]),
+        (168, "CARRIED RANGE", ["immutable after export", "later Mint cannot change it"]),
+        (328, "PREPARED HOME", ["install exact detached slots", "local Mint during isolation"]),
     ):
         box(d, x, 35, 134, 58, title, lines)
     path(d, [(75, 113), (75, 93)])
@@ -333,8 +333,8 @@ FIGURES = {
 }
 
 DESCRIPTIONS = {
-    "issuance-strands": "Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Public claims detach bounded ranges; verified Mint consumes each slot once.",
-    "authority-transfer": "A destination reserves an exact receiving obligation before source debit. Complete execution is checked before import or permanent rejection; only rejection evidence permits recovery.",
+    "issuance-strands": "Twenty-one million RLD is conserved across disjoint slot intervals from 4096 budget roots. Stable-generation claims detach bounded unconsumed ranges. Mint cursors advance independently; exported ranges do not change.",
+    "authority-transfer": "Advance source-bound capacity leaves future inputs unspecified. A proof-ready export carries a receipt, matching certificate and current data; only certified rejection permits recovery.",
     "transaction": "Two mature inputs authorize one transfer with recipient value, change and a fee.",
     "blocks": "Consecutive block headers commit to commands and replayed state, linked by a parent hash.",
     "channel": "Funded escrow, signed payment states, a stale-close challenge and settlement.",

@@ -6,27 +6,27 @@ import styles from "./diagrams.module.css";
 
 const steps = [
   {
-    title: "Reserve and export",
-    label: "01 / PREPARE BEFORE SOURCE DEBIT",
-    text: "The destination reserves an exact receiving obligation: intent, RLD fees, acceptance policy, proof bounds and decision capacity. The source verifies that permit and owner authorizations, then atomically consumes inputs, marks the permit used and finalizes export. A new pair may need advance communication to obtain its permit.",
+    title: "Choose and export",
+    label: "01 / ADVANCE CAPACITY, LOCAL INPUTS",
+    text: "A preissued coupon names one source, recipient policy, fees, accepted risks and funded resource bounds. Actual inputs are chosen later. The source prepares the candidate receipt and current data before finalizing debit and consuming the coupon. Input changes retry locally without payment-specific stellar permission.",
     icon: LockKeyhole,
   },
   {
-    title: "Carry the certificate",
+    title: "Carry the capsule",
     label: "02 / SUCCESSIVE CONTACTS",
-    text: "Carriers retain the exact ticket, receiving reservation and complete causal monetary execution, including issuance and authenticated ordering evidence. Prepared payments can use one-way contacts. Duplicate delivery and custody receipts create no additional balance.",
+    text: "Carriers retain the exact ticket, source-bound coupon, unconditional execution receipt, matching PBFT certificate and complete current spend data. History is folded into the proof rather than replayed from every Mint origin. After coupon setup, the payment can use one-way contacts.",
     icon: Radio,
   },
   {
     title: "Import and spend",
     label: "03 / ONE DESTINATION DECISION",
-    text: "The destination independently replays the supporting money, checks the reserved terms and accepted ordering history, and atomically consumes the permit and records one import. Actual amount dependencies remain separately attributable. The recipient can spend locally without a source reply; threshold equivocation remains a security failure.",
+    text: "The destination checks proof, certified ordering, every exposure class and the original coupon terms, then durably installs current data and imports once. Equal-risk amounts coalesce; different risks remain separate. The recipient spends locally without a source reply. Proof soundness and accepted exclusive ordering remain assumptions.",
     icon: Fingerprint,
   },
   {
     title: "Recover on rejection",
     label: "04 / POSITIVE REJECTION EVIDENCE",
-    text: "The destination may instead consume the reservation with permanent rejection, excluding import. Complete authenticated rejection execution allows one source recovery under the original rule. Timeouts cannot refund. A permit reduces avoidable processing surprises but cannot rescue funds from a destroyed authority.",
+    text: "Permanent destination rejection excludes import. Its certified execution receipt and exact decision allow one source recovery under the original rule. Silence and timeouts cannot refund. A coupon limits avoidable processing surprises but cannot rescue funds from a destroyed authority.",
     icon: Check,
   },
 ];
@@ -277,11 +277,11 @@ export function TransferExplorer() {
         </div>
       </div>
       <p className={styles.transferCaption}>
-        After a receiving obligation is prepared, complete payment evidence can
-        travel forward without a return receipt. Import and permanent rejection
-        are alternative decisions, not sequential stages. A carriage receipt
-        grants no balance. Accepted ordering assumptions and actual physical
-        contacts remain necessary.
+        After a source-bound coupon is available, inputs can be chosen locally
+        and a payment capsule can travel forward without a permission round
+        trip. Import and permanent rejection are alternative decisions, not
+        sequential stages. A carriage receipt grants no balance. Accepted
+        ordering assumptions and actual physical contacts remain necessary.
       </p>
     </div>
   );

@@ -65,65 +65,61 @@ function About() {
       <PageHero
         eyebrow="About Rldcoin"
         title="Local economies. Connected worlds."
-        description="One native currency, independently verified money and prepared payments across long or intermittent contacts."
+        description="One native currency, independent monetary verification and prepared payments across delayed contacts."
       />
       <section className="section">
         <div className="container narrow prose">
           <h2>Settle where the funds are usable</h2>
           <p>
-            A community uses locally homed RLD without waiting for a distant
-            world's vote. Owners authorize exact payments; accepted PBFT
-            validators order competing spends. Reconnection does not itself
-            replace a finalized local history. A ship prepares its domain and
-            balances before departure.
+            Locally homed RLD circulates without a distant vote. Owners
+            authorize exact payments; accepted PBFT validators order competing
+            spends. Reconnection does not itself replace a finalized local
+            history. A ship prepares its domain and balances before departure.
           </p>
-          <h2>Verify money before accepting it</h2>
+          <h2>Prepare capacity before choosing inputs</h2>
           <p>
-            Receiving nodes reconstruct the causal monetary execution, including
-            issuance work, ownership, amounts, source debit and unique import. A
-            signed balance or a downloaded state root cannot replace that
-            verification. Exclusive ordering still relies on accepted validator
-            fault assumptions: replay cannot reveal an unseen conflicting valid
-            branch signed by a compromised quorum.
+            A destination preissues finite receiving coupons naming one source,
+            recipient policy, amount limits, fees and funded processing
+            capacity. The payer chooses actual inputs later. With a compatible
+            coupon in hand, payment needs one forward journey and no
+            payment-specific permission round trip. Unknown sources and depleted
+            inventories still require setup.
           </p>
-          <h2>Prepare receipt before sending</h2>
+          <h2>Verify history without carrying every event</h2>
           <p>
-            The destination reserves an exact receiving obligation with agreed
-            fees, evidence limits and retained decision capacity. The source
-            verifies this permit before surrendering spendability. Complete
-            evidence then travels through contacts to one import or permanent
-            rejection. After import the recipient can spend locally without a
-            return receipt. A new pair may need advance communication to prepare
-            its permit.
+            Recursive execution receipts summarize monetary validity; matching
+            PBFT certificates establish the accepted ordering. Complete current
+            class tables, exposure sets and state access data still accompany
+            the payment so the recipient can spend onward independently. A proof
+            cannot reveal an unseen valid fork from a compromised quorum.
           </p>
           <h2>One currency. A fixed 21 million RLD cap.</h2>
           <p>
-            runlai (RLD) is the sole currency for native payments, fees and
-            funded service escrows. One RLD equals 10^24 atomic units. Genesis
-            creates zero spendable RLD and no founder, investor, treasury or
-            validator allocation. Cross-domain transfer neither wraps RLD nor
-            creates a second supply.
+            runlai (RLD) is the sole native payment, fee and service currency.
+            One RLD equals 10^24 atomic units. Genesis creates zero spendable
+            RLD, with no founder, investor, treasury or validator allocation.
+            Import moves existing money without wrapping or duplicating it.
           </p>
           <p>
-            There are 4,096 budget roots of 1 million work slots each, paying
-            0.005126953125 RLD per successful Mint. Public placement work
-            detaches up to 256 next slots into a prepared home and leaves a
-            disjoint remainder. Each slot pays once. No private eligibility list
-            or discretionary award replaces that rule; bootstrap authority,
-            censorship risk and unequal hardware remain explicit.
+            There are 4,096 budget roots of 1 million work slots, paying
+            0.005126953125 RLD per successful Mint. Public ClaimRange work
+            detaches at most 256 unconsumed slots and leaves disjoint residuals.
+            Stable placement generations are separate from Mint cursors:
+            subsequent mining cannot change an exported range. Claiming pays no
+            reward; every slot still requires its own Mint work.
           </p>
           <p>
-            An isolated community can mine after an authenticated interval
-            arrives. There is no fixed completion date, halving, tail emission
-            or lost-coin replacement. Mining distributes supply and grants no
-            validator vote. Funded service fees and archival renewal must
-            sustain operations independently of future issuance.
+            Installed ranges support mining during isolation. There is no
+            halving, tail emission, lost-coin replacement or promised completion
+            date. Bootstrap trust, unequal hardware and censorship remain
+            boundaries; fees and funded renewal must sustain operations.
           </p>
           <Note title="Research and operation are separate">
-            The paper develops a mechanism under stated assumptions. Existing
-            no-value implementations have separate identities. Publication does
-            not demonstrate the new design's implementation, measured capacity,
-            independent security or a physical interstellar service.
+            The RLD proof program, exact cryptographic bindings, proving cost,
+            custody and independent operations require implementation and
+            analysis. Publication establishes no measured capacity, mainnet or
+            physical interstellar service. Existing no-value code keeps its
+            separate identity.
           </Note>
           <div className="guide-next-links">
             <Button href="/how-it-works">Follow a payment</Button>
@@ -142,29 +138,29 @@ function HowItWorks() {
     <>
       <PageHero
         eyebrow="How it works"
-        title="Prepare. Verify. Settle."
-        description="Reserve the receiving obligation before debit. Carry complete execution to one destination decision, then spend locally."
+        title="Prepare capacity. Choose locally. Send forward."
+        description="Source-bound coupons leave future inputs unspecified. A proof-ready export reaches one destination decision."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Local authority, independent monetary verification</h2>
+          <h2>Local ordering, independent validity</h2>
           <p>
-            Owners authorize actual inputs, recipients, component allocations
-            and RLD fees. PBFT orders their operations under the accepted 3f + 1
-            validator model and at most f Byzantine faults. Full replay
-            separately checks the money, from work entitlements and issuance
-            through each debit and credit. A quorum signature cannot make an
-            invalid transition acceptable.
+            Owners authorize actual inputs, class allocations and RLD fees. PBFT
+            orders operations with at most f Byzantine validators among 3f + 1.
+            The monetary program checks issuance, ownership, conservation and
+            unique import. Recursive execution receipts carry those checks
+            forward without requiring a cold recipient to replay all mining
+            events.
           </p>
           <p>
-            A verified local output is usable in the next local transition.
-            Neither a remote mining branch nor a stellar receipt is required. A
-            minority partition waits, and threshold compromise can still produce
-            conflicting valid histories: independent execution is not automatic
-            trust in every new domain.
+            Proof validity and exclusive ordering remain different assumptions.
+            A compromised quorum can certify two individually valid branches.
+            Current spend data must also be available: a proof alone is not an
+            onward-spendable balance. Local latency and proving cost are not
+            established by this design.
           </p>
           <TextLink href="/whitepaper#4-local-settlement-and-its-meaning">
-            Read the local settlement model
+            Read the execution and settlement model
           </TextLink>
         </div>
       </section>
@@ -173,46 +169,55 @@ function HowItWorks() {
           <div className="section-heading">
             <div>
               <Eyebrow>THE PAYMENT</Eyebrow>
-              <h2>Reserve receipt. Export once.</h2>
+              <h2>Advance capacity. One exact export.</h2>
             </div>
             <p>
-              A conceptual payment journey under the paper's stated assumptions.
-              It is not an available transaction service.
+              A conceptual journey under stated assumptions, not an available
+              transaction service.
             </p>
           </div>
           <TransferExplorer />
           <div className="prose payment-explanation">
-            <h3>A receiving obligation comes first</h3>
+            <h3>An invoice can arrive before the payer owns the inputs</h3>
             <p>
-              Bob's destination commits to an exact draft, acceptance policy,
-              fees, proof bounds and decision capacity. Alice's source verifies
-              that permit before debit. A new pair may need a returning permit;
-              with preparation complete, the payment itself can use one-way
-              contacts. Unused capacity cannot be released until the source
-              permanently closes its permission to export.
+              Bob sends a coupon naming Alice’s source domain and committing to
+              fees, acceptance and resource bounds. Alice may receive funds
+              later, select inputs locally and authorize a conforming payment.
+              No draft-specific stellar approval is needed. Each coupon names
+              exactly one source so two domains cannot race for one slot. Unused
+              release requires authorized, source-certified closure.
             </p>
-            <h3>Full evidence, one terminal decision</h3>
+            <h3>Prepare the proof before the debit</h3>
             <p>
-              The destination replays the supporting monetary execution and
-              consumes the permit together with one import or permanent
-              rejection. Duplicate delivery adds no balance. Import lets Bob pay
-              locally without a reply to Alice. Only authenticated rejection
-              permits one source recovery; silence cannot refund the payment.
+              The source prepares the candidate execution receipt and complete
+              current material, then finalizes their matching header. Local head
+              conflicts retry without renewing the coupon across space. The
+              destination checks the receipt, matching PBFT certificate and all
+              current data, then imports or permanently rejects once. Bob can
+              spend locally after import without replying to Alice.
             </p>
-            <h3>Keep actual dependencies separate</h3>
+            <h3>Group equal risks, preserve different ones</h3>
             <p>
-              Accepted components totaling 100 RLD need not inherit an unrelated
-              1 RLD portion's history merely because a wallet shows both.
-              Explicit per-component allocations preserve real dependencies,
-              keep change attributable and let invoices select accepted funds.
-              This reduces accidental risk mixing without guaranteeing equal
-              market value.
+              Rewards from different Mint events can share one amount entry when
+              their exact authority-exposure sets match. Unequal sets stay
+              separate. Every consumed class is conserved through recipients,
+              change and fees. Real trust exposure is never discarded, and
+              distinct classes or permanent decisions can still grow.
+            </p>
+            <h3>Separate placement identity from mining progress</h3>
+            <p>
+              A generic issuance coupon does not bind a changing Mint cursor.
+              Claim work names a stable allocation generation and selected
+              unconsumed range. Finalization detaches it atomically; mining in
+              residual ranges cannot invalidate its in-flight ticket. A local
+              claim still loses if another operation consumes its selected slots
+              first.
             </p>
             <p>
-              Source, destination and archive services receive explicit funded
-              RLD fees. Custody receipts attest retained bytes; they grant no
-              payment finality. Physical propagation, available quorums and
-              preserved evidence remain necessary.
+              Only permanent certified rejection permits source recovery.
+              Silence cannot refund. Principal and positive service fees use
+              RLD; funded capacity, accepted quorums, available data and actual
+              physical contacts remain necessary.
             </p>
           </div>
           <div className="guide-next-links">
@@ -235,77 +240,80 @@ function Safety() {
       <PageHero
         eyebrow="Safety & limits"
         title="Verify the money. Know the assumptions."
-        description="Independent execution narrows validator trust to exclusive ordering. Preparation reduces avoidable failures; it cannot eliminate destroyed authorities or causal delay."
+        description="Compact validity proofs, current data and exclusive ordering have distinct obligations. Advance capacity cannot eliminate authority loss or causal delay."
       />
       <section className="section">
         <div className="container narrow prose">
-          <h2>Execution and exclusive ordering are different</h2>
+          <h2>Proofs do not establish an unseen fork’s absence</h2>
           <p>
-            Complete monetary replay rejects invalid ownership, issuance or
-            amounts even with quorum signatures. Accepted PBFT authorities must
-            still avoid certifying two individually valid conflicting spends. An
-            unseen remote fork cannot be discovered from silence. The design
-            does not claim universal permissionless consensus.
+            Correct reference execution or a sound receipt rejects invalid
+            ownership, work and amounts. Accepted PBFT authorities must still
+            avoid certifying two individually valid competing histories. A
+            remote hidden certificate cannot be discovered from silence.
           </p>
-          <h2>
-            Reservations are obligations, not guarantees against destruction
-          </h2>
+          <h2>A proof backend is not a completed monetary program</h2>
           <p>
-            A destination commits to funded capacity, fees and a particular
-            acceptance predicate before export. Ordinary later policy changes
-            cannot revoke a conforming reservation. Destroyed quorums, missing
-            archives or broken cryptographic assumptions can still stop
-            progress. Unused permits also need certified closure to release
-            capacity safely.
+            The proposed RISC Zero zkVM 3.0.6 SuccinctReceipt adapter requires
+            an exact RLD guest, trusted program and verifier commitments,
+            successful execution and resolved recursive assumptions. Fake,
+            conditional or unsupported receipts refuse. Program correctness,
+            backend soundness, Argon2 proving cost and implementation resources
+            still need independent analysis; no RLD proof benchmark is claimed.
           </p>
-          <h2>No automatic refund or unfunded replacement</h2>
+          <h2>Compact history still needs available current data</h2>
           <p>
-            Only permanent destination rejection permits source recovery. A
-            missing return receipt may hide an already completed import, so
-            elapsed time cannot restore the old balance. Optional insurance
-            spends separately funded RLD under explicit finite terms; it neither
-            mints replacement money nor reverses a ticket.
+            Recipients must retain full current class tables, exposure sets and
+            authenticated state access data before onward-spendable credit.
+            Equal-risk grouping removes obligatory per-Mint components, but
+            genuinely different exposures, permanent decisions and audit
+            archives retain real costs. Small roots do not supply missing bytes.
           </p>
-          <h2>One denomination, separately attributable risks</h2>
+          <h2>Coupons are finite funded obligations</h2>
           <p>
-            Component allocations prevent unrelated funds automatically sharing
-            every dependency through merging. Real authority histories remain,
-            and acceptance or price may differ. Incidents can suspend acceptance
-            of dependent components; they do not make distant losses vanish or
-            erase unrelated settled histories.
+            A coupon binds one source, fixed acceptance terms and bounded
+            capacity. Ordinary policy changes cannot revoke a conforming unused
+            coupon, and time cannot release it. Authorized source-certified
+            closure prevents an export before capacity is freed. A failed source
+            or destination can still strand money or unused capacity.
           </p>
-          <h2>Open placement is not equal opportunity</h2>
+          <h2>No timeout refund or unfunded replacement</h2>
           <p>
-            Public ClaimRange rules remove discretionary beneficiary selection
-            from valid placement. The initial D_0 quorum is still a bootstrap
-            dependency, and hardware advantage or censorship can concentrate
-            issuance. The 21 million cap applies to valid exclusive histories;
-            it is not protection against every accepted quorum failure.
+            Only certified permanent rejection allows one source recovery.
+            Missing receipts can hide a completed import. Optional insurance
+            spends already issued RLD under finite terms; it cannot mint a
+            replacement or reverse a ticket. Different exposure classes can
+            still have different acceptance and value.
           </p>
-          <h2>Finite keys, funded archives and real contacts</h2>
+          <h2>Public work is not equal opportunity</h2>
           <p>
-            The proposed per-height key schedule depends on secure erasure,
-            current custody heads and authenticated renewal before exhaustion.
-            Ordinary disk deletion or old secret backups do not prove these
-            conditions. Full replay and permanent decisions have continuing
-            storage costs. Finite reserves and cryptographic profiles cannot
-            guarantee endless service or create a missing physical route.
+            ClaimRange removes discretionary beneficiary awards, not bootstrap
+            trust, hardware advantage or censorship. Stable placement identity
+            avoids invalidation by unrelated Mint; it does not prevent local
+            conflicts or maliciously stranded ranges. The 21 million cap remains
+            conditional on valid exclusive histories and proof soundness.
+          </p>
+          <h2>Finite keys, archives and physical contacts</h2>
+          <p>
+            The proposed per-height key schedule needs secure erasure, durable
+            custody heads and authenticated renewal. Historical proof renewal
+            must occur while predecessor assumptions remain trustworthy. Finite
+            reserves cannot guarantee endless storage or create a missing
+            physical route.
           </p>
           <Note title="No mainnet or qualified consumer service">
-            The paper is research. Existing test assets have no monetary value
-            and never migrate into a new network. This website offers no token
-            sale, wallet connection or transaction service. New mechanisms
-            require independent analysis and implementation qualification.
+            This is a research revision. Existing test assets have no monetary
+            value and never migrate into a future network. The website offers no
+            token sale, wallet connection or transaction service.
           </Note>
           <div className="guide-next-links">
             <Button href="/whitepaper#12-conservation-and-safety-argument">
               Safety argument
             </Button>
             <Button
-              href="/whitepaper#13-configuration-keys-and-long-journeys"
+              href="/whitepaper#4-3-validity-current-data-and-ordering"
               secondary
             >
-              Keys and succession
+              Proof and availability boundaries
             </Button>
           </div>
         </div>
@@ -397,12 +405,12 @@ function Network() {
         <div className="container narrow prose">
           <h2>What the paper changes</h2>
           <p>
-            The paper combines local PBFT ordering with independently replayed
-            money, reserved receiving obligations, one-time import or rejection,
-            separate dependency components and public placement of disjoint work
-            entitlements. runlai (RLD) is the sole native currency, capped at 21
-            million with zero initial allocation. Domain creation cannot create
-            money or replace an unavailable authority.
+            The paper combines local PBFT ordering with recursive execution
+            receipts, advance source-bound capabilities, complete current spend
+            data, exact exposure classes and stable-generation issuance ranges.
+            runlai (RLD) is the sole native currency, capped at 21 million with
+            zero initial allocation. Domain creation cannot create money or
+            replace an unavailable authority.
           </p>
           <h2>What publication establishes</h2>
           <p>
