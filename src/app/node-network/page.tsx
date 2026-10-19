@@ -44,13 +44,28 @@ export default function NodeNetwork() {
             travel-time scales. Earth–Proxima Centauri–Andromeda is an
             illustrative topology, not an operational payment route.
           </Note>
-          <h2>Ground transport and full protocol operation are distinct</h2>
+          <h2>One-way carriage, independent verification</h2>
           <p>
-            The published contact-spool prototype is a separately started
-            supplemental process. Regional ground candidates have their own
-            runtime and adoption scope. Neither establishes default discovery on
-            an adopted release, independent operation or a real physical
-            adapter.
+            Sender and recipient need not be online at the same time. Relays
+            carry an unchanged owner authorization and the history needed to
+            validate it. The recipient checks the selected history and valid
+            inclusion before spending onward. A missing dependency leaves the
+            payment unverified; a hash or a custody receipt cannot supply it.
+          </p>
+          <p>
+            A return message can take another path or never arrive. Silence does
+            not cancel a released signature or refund its inputs. Later
+            reconnection can expose a stronger valid branch and reverse payments
+            dependent on the losing one. Places receive no separate issuance
+            rights.
+          </p>
+          <h2>A contact must have resources</h2>
+          <p>
+            A relay retains accepted bytes durably before acknowledging custody.
+            Bounded batches can carry a long dependency history over several
+            contacts. Storage exhaustion can refuse new material, while existing
+            obligations remain explicit. Ground prototypes and conceptual routes
+            do not establish a qualified physical service.
           </p>
           <h2>Distance still sets the pace</h2>
           <p>
@@ -63,6 +78,11 @@ export default function NodeNetwork() {
           <TextLink href="/whitepaper#9-interstellar-communication">
             Read the interstellar communication mechanism
           </TextLink>
+          <p>
+            <TextLink href="/whitepaper#10-interstellar-payment-lifecycle">
+              Follow an interstellar payment through onward spending
+            </TextLink>
+          </p>
           <div className="guide-next-links">
             <Button href="/how-it-works" secondary>
               Payment lifecycle

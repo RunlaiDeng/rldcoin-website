@@ -1,13 +1,12 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import Link from "next/link";
 import { TechnicalFigure } from "@/components/technical-figure";
 import { Download } from "lucide-react";
-import { pageMetadata, WHITEPAPER_RELEASE } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Interstellar peer-to-peer payments white paper",
-  "Open mining, conserved transfers, local fast-payment accounting and interstellar evidence carriage, with security and scaling analysis.",
+  "A standalone mechanism paper covering open mining, one-way interstellar payment, recipient verification, onward spending and delayed reconciliation.",
   "/whitepaper",
 );
 
@@ -77,14 +76,11 @@ export default function Whitepaper() {
           </div>
           <p className="whitepaper-context">
             Open proof of work, owner-authorized payments, miner incentives and
-            authenticated evidence carried across delayed contacts. The paper
-            explains local fast-payment accounting and its unresolved enforcement
-            questions, then analyzes security, communication and scaling costs.
-          </p>
-          <p className="whitepaper-context">
-            Implementation requirements and qualification are maintained
-            separately. See <Link href="/network">network &amp; development</Link>
-            {" "}and the <Link href={WHITEPAPER_RELEASE}>revision record</Link>.
+            authenticated evidence carried across delayed contacts. Follow an
+            interstellar payment from an offline sender through successive
+            relays to independent receipt, onward spending and later
+            reconciliation. Local fast states, miner fees and security
+            assumptions are explained separately.
           </p>
         </div>
       </section>

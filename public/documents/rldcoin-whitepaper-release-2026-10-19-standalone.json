@@ -1,0 +1,93 @@
+{
+  "format": "RLDCOIN-WHITEPAPER-RESEARCH-REVISION-RECORD",
+  "status": "OWNER_AUTHORIZED_RESEARCH_PUBLICATION",
+  "document_date": "2026-10-19",
+  "publication_version_label": null,
+  "title": "Rldcoin: Interstellar Peer-to-Peer Payments",
+  "canonical_markdown": {
+    "path": "public/documents/rldcoin-whitepaper.md",
+    "sha256": "cb1ec30c8782699a57ea62dfaccf9f7ff7796d45edcaada7adca507be0c96335",
+    "bytes": 39231
+  },
+  "pdf": {
+    "path": "public/documents/rldcoin-whitepaper.pdf",
+    "sha256": "4fe36b93441dc349801229ae1e31317f7d139914ff30263c0745915975b4987c",
+    "bytes": 37040,
+    "pages": 9
+  },
+  "predecessor": {
+    "receipt": "rldcoin-whitepaper-release-2026-10-18-mechanism.json",
+    "website_commit": "9e06820a6864a6ddd467cace1dab19bac49e14dc",
+    "canonical_markdown": {
+      "path": "public/documents/rldcoin-whitepaper.md",
+      "sha256": "9064f8b8d31fdc99cc740977364b3fdea72c0edc554230d2c87f4179e269a7af",
+      "bytes": 32277
+    },
+    "pdf": {
+      "path": "public/documents/rldcoin-whitepaper.pdf",
+      "sha256": "4b6fdc36d1b099c5b4dc23d3ba1d8228ed91263673544b15563784d61ab538c4",
+      "bytes": 33387,
+      "pages": 8
+    }
+  },
+  "authorization_scope": "Owner explicitly requested a whitepaper independent of the Rldcoin GitHub repository, complete exposition of interstellar payments, and corresponding updates to the official website.",
+  "editorial_separation": "The paper has no repository URLs, implementation profile identifiers, source paths, engineering gate identifiers, local test results or release checklists. Repository bindings and preserved acceptance obligations belong to this separate publication record and engineering documents. Mechanism definitions and monetary parameters remain in the paper.",
+  "interstellar_exposition": [
+    "Offline sender and recipient; no mandatory Earth service",
+    "Immutable owner authorization and separately refreshable verification evidence",
+    "Authenticated, bounded, durable store-carry-forward over successive one-way or two-way contacts",
+    "Dependency assembly and complete independent history validation",
+    "Selected-history inclusion, unchanged-intent resubmission where valid, and actual onward-spend mechanism",
+    "Duplicate and fragment safety; resource refusal and custody obligations",
+    "Optional receipts, missing evidence, permanent data loss and no timeout refund",
+    "Cumulative-work reconciliation, lost backing and dependent payment reversal",
+    "Physical contact, bandwidth, cryptographic continuity and causal propagation assumptions"
+  ],
+  "specification": {
+    "profile": "RLD-SURVIVOR-1",
+    "commit": "cf37a9e576f2f6ca581bff0201ce21c9c06cc3ab",
+    "manifest_sha256": "a770c35b52e70c7d8a97ac9c0c04d14417ca322e01249445d3cbfe2fa0686806",
+    "url": "https://github.com/RunlaiDeng/rldcoin/tree/cf37a9e576f2f6ca581bff0201ce21c9c06cc3ab/docs/protocol/survivor-v1"
+  },
+  "additional_requirements": {
+    "path": "docs/protocol/INTERSTELLAR_OPEN_PAYMENT_REQUIREMENTS.md",
+    "sha256": "505bedf20ebab61f6a8c6b9856e41450297e53fa55d3aac02bd541607bddc9f4",
+    "bytes": 15463,
+    "commit": "725a5392135862b94446bbb7767699bde7d2f6c4",
+    "url": "https://github.com/RunlaiDeng/rldcoin/blob/725a5392135862b94446bbb7767699bde7d2f6c4/docs/protocol/INTERSTELLAR_OPEN_PAYMENT_REQUIREMENTS.md",
+    "scope": "D01-D06 product requirements and D-T01-D-T08 conformance. No consensus, monetary or implemented capsule-codec change."
+  },
+  "fast_payment_requirements": {
+    "path": "docs/protocol/LOCAL_FAST_PAYMENT_REQUIREMENTS.md",
+    "sha256": "632dc2d0cba226256a30ddd6b6a780fcbc38c4323de007f808e31f8f554804b1",
+    "bytes": 13952,
+    "commit": "fe3e993457a11bbf805dea42d00f5a47418871c1",
+    "url": "https://github.com/RunlaiDeng/rldcoin/blob/fe3e993457a11bbf805dea42d00f5a47418871c1/docs/protocol/LOCAL_FAST_PAYMENT_REQUIREMENTS.md",
+    "scope": "F01-F06, F-T01-F-T08 and mandatory G9-G11. Design and acceptance requirements for a separately versioned noncustodial fast layer; no baseline consensus or issuance change."
+  },
+  "design_targets": {
+    "local_usable_receipt": {
+      "p95_max_seconds": 3,
+      "p99_max_seconds": 5,
+      "scope": "Each predeclared normal local communication/load cohort; original payer authorization/submission through independently verified durable funded recipient state permitting onward payment. No irreversible global or interstellar seconds-finality claim."
+    },
+    "daily_payments": {
+      "minimum_distinct_completed_payments": 100000000,
+      "continuous_wall_clock_seconds": 86400,
+      "composition": "Same campaign must meet local latency with genuine signatures, durable funded states, per-payment miner-fee entitlements and declared resource/exit limits; independent reproduction required."
+    },
+    "miner_fees": {
+      "every_payment": true,
+      "positive_owner_authorized_fee": true,
+      "all_protocol_payment_fees_to_miners": true,
+      "funded_verifiable_entitlement": true,
+      "actual_settlement_and_maturity_required": true,
+      "reward_maturity_blocks": 100
+    },
+    "ordinary_cpu_permissionless_mining_preserved": true,
+    "asynchronous_interstellar_payment_preserved": true
+  },
+  "acceptance": "The implementation plan, acceptance mapping and pinned interstellar/fast-payment requirement contracts retain every prior gate and threshold. Their removal from the paper body is editorial, never a pass, waiver or weakening of the implementation target. Removing concrete candidate block caps from the scientific capacity example changes no enforced limit or acceptance requirement. No base consensus, issuance, signature language or adopted currency is changed.",
+  "qualification": "Mechanism exposition under explicit assumptions, not a complete executable specification, proof of liveness or implementation qualification. All G1-G11, T01-T22, D-T01-D-T08 and F-T01-F-T08 remain mandatory. Fast-state enforcement, every-payment fee completeness and safe mass exit need their own construction. No achieved speed or volume, irreversible stellar finality, physical route, independent review or mainnet is certified.",
+  "body_revisions_require_explicit_owner_decision": true
+}

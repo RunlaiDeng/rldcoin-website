@@ -8,8 +8,8 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-18-mechanism.json";
-export const CONTENT_REVIEW_DATE = "18 October 2026";
+  "/documents/rldcoin-whitepaper-release-2026-10-19-standalone.json";
+export const CONTENT_REVIEW_DATE = "19 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
 export const navigation = [
@@ -69,7 +69,7 @@ export const pages = {
   ],
   "how-it-works": [
     "How Rldcoin works",
-    "Open mining, reversible payments and evidence carried across successive contacts under the Survivor-1 candidate.",
+    "Open mining, local fast states and interstellar payments from authorization through one-way relay, verification and onward spending.",
   ],
   "you-need-to-know": [
     "Safety & limits",
@@ -115,6 +115,18 @@ export const faqs = [
     "Each capable full node validates and can mine its retained history without a quorum. Disconnected branches may both include payments. When histories meet, actual cumulative work and a deterministic tie rule select one; losing payments and rewards can roll back.",
   ],
   [
+    "How does an interstellar payment reach someone who is offline?",
+    "The owner signs the exact payment and retains its input reservation. Willing relays store and forward that authorization with the history needed to verify it through later contacts. Sender and recipient need not be online together. On arrival, the recipient independently validates the currency and selected history, then checks inclusion and unspent value. Receipt of bytes alone is not receipt of spendable money.",
+  ],
+  [
+    "Can the recipient spend onward without a message back to Earth?",
+    "Yes in the proposed ordinary payment mechanism, once valid inclusion produces an unspent output on the recipient's selected history. The recipient signs a new payment; that spend needs ordinary mining and independent verification. A return acknowledgment is optional. A later stronger valid history may reverse both payments. This mechanism is distinct from an operational interstellar service, which is not available today.",
+  ],
+  [
+    "Do fast local payments make stellar delivery instant?",
+    "No. The paper separates a proposed funded fast layer from base mining and ordinary interstellar carriage. Fast use needs enforceable backing, liquidity, responsive peers and safe dispute and exit rules, including a funded miner fee on every payment. Stellar delivery still needs real contacts and causal propagation. Seconds-scale local use and one hundred million daily payments remain design targets, not measured capabilities.",
+  ],
+  [
     "Is there a guaranteed confirmation time?",
     "No. Mining is probabilistic and transport depends on real contacts. The candidate's timestamp-based recovery rule permits easier attempts, not a four-hour deadline. Ordinary outputs can be spent in a later block; rewards become eligible at height h+100. Neither condition makes payment irreversible.",
   ],
@@ -128,7 +140,7 @@ export const faqs = [
   ],
   [
     "Will a new node extend the network?",
-    "That is a required target capability: ordinary full-node startup must enable signed neighbor discovery and durable multi-hop relay. A first reachable contact is still needed. The separate contact-spool prototype is supplemental transport, not evidence that default native discovery or a physical interstellar route is operating.",
+    "A useful new contact can extend a path. The design requires ordinary nodes to discover authenticated neighbors and durably relay admitted evidence without a compulsory Earth directory. A first real contact or carried archive is still needed. Advertised routes and ground prototypes do not establish an operating physical interstellar service.",
   ],
   [
     "Are the historical Earth rules universal?",

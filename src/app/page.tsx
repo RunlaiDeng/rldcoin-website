@@ -11,8 +11,8 @@ import { HeroVideo } from "@/components/hero-video";
 import { pageMetadata, REPOSITORY, SITE } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "Peer-to-peer payments across delayed regions",
-  "Rldcoin is a peer-to-peer payment design for humanity’s interstellar future. Learn the architecture, read the white paper and explore development source. No mainnet has launched.",
+  "Interstellar peer-to-peer payments",
+  "Open mining, fast local payment design and authenticated interstellar carriage. Follow payment from authorization to receipt, onward spending and delayed reconciliation. No mainnet has launched.",
   "/",
 );
 
@@ -29,7 +29,7 @@ export default function Home() {
             url: SITE,
             inLanguage: "en",
             description:
-              "A peer-to-peer payment design across delayed regions. Development uses no-value testnets; no mainnet or physical interstellar service is qualified.",
+              "A peer-to-peer payment design combining open mining, local fast states and delayed interstellar carriage. No mainnet or physical interstellar service is qualified.",
           }),
         }}
       />
@@ -49,8 +49,8 @@ export default function Home() {
             <span>For humanity’s future.</span>
           </h1>
           <p className="cinematic-lead">
-            A payment design for communities separated by long or intermittent
-            communication.
+            Open mining. Fast local payment design. Signed payments carried
+            between worlds through successive contacts.
           </p>
           <div className="cinematic-actions">
             <Link className="cinematic-button" href="/about">
@@ -85,27 +85,27 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              The white paper sets out a single currency across independently
-              validating nodes. These are required capabilities, with
-              explicit conditions for safety, delivery and continued operation.
+              One currency, independently verified. Local interaction and
+              interstellar delivery follow different clocks, while ownership,
+              miner fees and conservation follow the same rules.
             </p>
           </div>
           <div className="home-basics">
             {[
               {
                 icon: KeyRound,
-                title: "Authorized by the owner",
-                text: "Payments require valid authority, mature inputs and exact accounting. Copying a record does not create a second spendable balance.",
+                title: "Open mining",
+                text: "Ordinary computers can validate and attempt proof of work without a founder service or compulsory pool. Participation is open; income and profitable CPU mining are not guaranteed.",
               },
               {
                 icon: Globe2,
-                title: "Validated by each node",
-                text: "A capable full node can attempt mining and validate authorized payments without another participant. Local inclusion remains conditional and may roll back when a different valid history wins.",
+                title: "Fast local interaction",
+                text: "The proposed fast layer exchanges signed claims against locked funds, with a positive miner fee for every payment. Safe enforcement and exit are essential; its speed and capacity remain design targets.",
               },
               {
                 icon: Code2,
-                title: "Carried with evidence",
-                text: "Ordinary nodes must synchronize and relay authenticated evidence. The recipient validates the same currency's complete history; transport custody is separate from payment inclusion.",
+                title: "Interstellar carriage",
+                text: "Relays carry the exact signed payment and verification history through one-way or delayed contacts. The recipient verifies inclusion before spending onward; a return message is optional and later reorganization remains possible.",
               },
             ].map(({ icon: Icon, title, text }) => (
               <article key={title}>
@@ -136,10 +136,10 @@ export default function Home() {
           </div>
           <div className="prose">
             <p>
-              Open mining, conserved payments, reversible wallet state, durable
-              relay and recoverable history must work together.
-              Communication still takes time; a transport receipt is not ledger
-              acceptance.
+              Follow a payment from Earth to a distant recipient: authorize,
+              retain, relay, verify and spend onward. The paper explains offline
+              participants, missing receipts, conflicting histories and why
+              local speed cannot remove stellar communication delay.
             </p>
             <div className="guide-next-links">
               <Button href="/whitepaper">Read online</Button>

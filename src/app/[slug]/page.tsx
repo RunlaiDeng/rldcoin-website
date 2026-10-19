@@ -91,14 +91,16 @@ function About() {
             return payments spend valid outputs on the selected history.
             Competing branch balances are never added together.
           </p>
-          <h2>A specification and an open implementation</h2>
+          <h2>A standalone paper and an open implementation</h2>
           <p>
             The <Link href="/whitepaper">white paper</Link> explains the
-            architecture, monetary rules and security assumptions. The{" "}
-            <a href={REPOSITORY}>protocol repository</a> contains development
-            source. Testnets and separately scoped ground candidates have no
-            monetary value. No mainnet or physical interstellar payment route
-            has been qualified.
+            mechanisms, monetary rules and security assumptions without relying
+            on repository documents. Its interstellar lifecycle covers offline
+            parties, one-way relay, independent receipt, onward spending and
+            reconciliation. The <a href={REPOSITORY}>protocol repository</a>{" "}
+            contains development source. Testnets and separately scoped ground
+            candidates have no monetary value. No mainnet or physical
+            interstellar payment route has been qualified.
           </p>
           <Note title="A long-term objective with finite conditions">
             Continuity requires maintained cryptography, keys, archives,
@@ -124,7 +126,7 @@ function HowItWorks() {
       <PageHero
         eyebrow="How it works"
         title="Mine locally. Verify every payment."
-        description="Survivor-1 combines open mining, conditional payments and authenticated evidence carried over delayed contacts."
+        description="Open mining selects history. Funded fast states serve connected peers. Authenticated carriage moves ordinary payments between distant recipients."
       />
       <section className="section">
         <div className="container narrow prose">
@@ -155,6 +157,34 @@ function HowItWorks() {
           </TextLink>
         </div>
       </section>
+      <section className="section soft-section" id="local-fast-payments">
+        <div className="container narrow prose">
+          <h2>Fast locally, causal between worlds</h2>
+          <p>
+            The proposed local fast layer exchanges signed states against
+            existing locked funds. It aims to remove a new block wait from each
+            purchase, while preserving a funded positive miner fee on every
+            payment. The recipient needs enforceable backing, usable liquidity
+            and an independent exit if a peer disappears.
+          </p>
+          <p>
+            This requires a separate fund and settlement construction; the
+            ordinary single-owner transfer cannot enforce it by itself. Safe
+            disputes and mass exit must fit the underlying chain. Seconds-scale
+            local use and one hundred million completed payments a day remain
+            design targets, with no achieved-performance claim.
+          </p>
+          <p>
+            An interstellar transfer uses the ordinary delayed evidence path. It
+            does not require a fast channel, a return acknowledgment or a
+            continuously connected path across the stellar gap. It still needs
+            physical contacts, complete evidence and valid inclusion.
+          </p>
+          <TextLink href="/whitepaper#6-local-fast-payments">
+            Read the local fast-payment mechanism
+          </TextLink>
+        </div>
+      </section>
       <section className="section soft-section" id="payment-states">
         <div className="container">
           <div className="section-heading">
@@ -167,6 +197,14 @@ function HowItWorks() {
               or an observed physical route.
             </p>
           </div>
+          <div className="prose payment-explanation">
+            <p>
+              Alice signs a payment on Earth, reserves its inputs and gives
+              willing relays the exact authorization and its dependencies. She
+              can then go offline. Bob can be offline too while successive
+              contacts carry the evidence toward him.
+            </p>
+          </div>
           <TransferExplorer />
           <div className="prose payment-explanation">
             <p>
@@ -177,12 +215,22 @@ function HowItWorks() {
               block h+100.
             </p>
             <p>
+              If the selected history has not included Alice&apos;s transfer but
+              preserves its valid inputs, Bob can submit her unchanged
+              authorization for mining. After valid inclusion, he can sign an
+              onward payment to Carol without contacting Alice or Earth. Carol
+              independently checks that payment and its full history.
+            </p>
+            <p>
               Relays retain and forward authenticated bytes. A destination
               receipt proves custody of those bytes, not ledger acceptance.
               Silence and elapsed time never refund a transaction. A valid
               winning history may later remove a payment that was previously
               included and spent onward.
             </p>
+            <TextLink href="/whitepaper#10-interstellar-payment-lifecycle">
+              Follow the complete interstellar payment lifecycle
+            </TextLink>
           </div>
         </div>
       </section>
@@ -193,8 +241,8 @@ function HowItWorks() {
             Exact accounting, complete validation, durable wallet intent, honest
             rollback displays and bounded storage must compose through the
             ordinary node lifecycle. The candidate does not include
-            independently final regional ledgers, bridge mints, native channels
-            or an administrator recovery key.
+            independently final regional ledgers, bridge mints, an enforced fast
+            layer or an administrator recovery key.
           </p>
           <p>
             Cryptography, archives, independent security review and physical
@@ -263,10 +311,13 @@ function Safety() {
             experiments remain historical and do not qualify Survivor-1.
           </p>
           <div className="guide-next-links">
-            <Button href="/whitepaper#11-security-and-scaling-analysis">
+            <Button href="/whitepaper#12-security-and-scaling-analysis">
               Threats and limitations
             </Button>
-            <Button href="https://github.com/RunlaiDeng/rldcoin/blob/main/docs/WHITEPAPER_IMPLEMENTATION_ACCEPTANCE.md" secondary>
+            <Button
+              href="https://github.com/RunlaiDeng/rldcoin/blob/main/docs/WHITEPAPER_IMPLEMENTATION_ACCEPTANCE.md"
+              secondary
+            >
               Acceptance conditions
             </Button>
           </div>
@@ -370,10 +421,14 @@ function Network() {
             own evidence.
           </p>
           <p>
-            The 16 October paper replaces the former regional quorum-finality
-            and seconds-scale final-spendability target. Earlier ground
-            observations below retain their original profiles and dates; they
-            are not Survivor-1 acceptance evidence.
+            The current paper separates reversible base payments, a proposed
+            noncustodial fast layer and asynchronous interstellar carriage.
+            Local usable receipt at p95 of at most 3 seconds and p99 of at most
+            5 seconds, at least 100 million completed payments per continuous 24
+            hours, and a positive funded miner fee on every payment remain
+            engineering obligations. They are not achieved results or
+            irreversible stellar finality. Earlier ground observations retain
+            their original profiles and dates.
           </p>
           <TextLink href="https://github.com/RunlaiDeng/rldcoin/blob/main/docs/WHITEPAPER_IMPLEMENTATION_ACCEPTANCE.md">
             Read the acceptance contract
@@ -401,7 +456,7 @@ function Resources() {
       items: [
         [
           "Read online",
-          "The mechanism paper: transactions, mining, incentives, interstellar communication and security analysis.",
+          "The standalone mechanism paper, including the complete delayed-payment lifecycle and its security assumptions.",
           "/whitepaper",
         ],
         [
@@ -563,7 +618,7 @@ function Privacy() {
             erase information already disclosed or hide required verification
             history from validating nodes. Anonymity and qualified privacy
             mechanisms are not offered by this website. Read{" "}
-            <Link href="/whitepaper#11-security-and-scaling-analysis">
+            <Link href="/whitepaper#12-security-and-scaling-analysis">
               the threats and limitations
             </Link>
             .

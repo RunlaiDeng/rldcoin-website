@@ -8,24 +8,24 @@ const steps = [
   {
     title: "Authorize the payment",
     label: "01 / SOURCE AUTHORIZATION",
-    text: "The owner signs exact inputs, outputs, fees and expiry. Inclusion consumes inputs only on that selected history. Disconnected nodes can have competing histories; a signed intent or local inclusion is not irreversible settlement.",
+    text: "The owner authenticates the recipient key and currency, signs exact inputs, outputs, fee and expiry, and durably reserves the inputs before release. After a willing relay accepts custody, the sender can go offline. Inclusion remains conditional on the selected history.",
     icon: LockKeyhole,
   },
   {
     title: "Carry the proof",
     label: "02 / SUCCESSIVE CONTACTS",
-    text: "Signed packets carry the transaction and required history through available contacts. A relay stores exact bytes before acknowledging custody. Acknowledgment does not establish selected-chain inclusion or spendable value.",
+    text: "Signed packets carry the unchanged authorization and required history through successive contacts, including one-way links. Sender and recipient need not be online together. Relays retain exact bytes before acknowledging custody; that acknowledgment grants no spending authority.",
     icon: Radio,
   },
   {
     title: "Verify and receive",
     label: "03 / LOCAL ACCEPTANCE",
-    text: "The recipient validates complete history for the same currency and applies cumulative-work selection. Selected unspent outputs can support a later authorized payment. A stronger valid branch may subsequently remove that value.",
+    text: "The recipient independently validates the same currency's history and selects by cumulative work. Missing inclusion can be sought by mining the original intent only if its inputs remain valid. After inclusion, the recipient can sign an onward payment without a reply to the sender. Stronger later work can reverse both payments.",
     icon: Fingerprint,
   },
   {
-    title: "Return the receipt",
-    label: "04 / RETURNED INFORMATION",
+    title: "Optional return receipt",
+    label: "04 / INDEPENDENT RETURN PATH",
     text: "A signed destination receipt reports custody of exact packet bytes. It can return through other contacts and does not create money or certify inclusion. Missing receipts and elapsed time never authorize a refund.",
     icon: Check,
   },
@@ -226,7 +226,7 @@ export function TransferExplorer() {
       <div
         className={styles.transferTabs}
         role="tablist"
-        aria-label="Stages of a cross-Zone transfer"
+        aria-label="Stages of an interstellar payment"
       >
         {steps.map((step, index) => (
           <button
