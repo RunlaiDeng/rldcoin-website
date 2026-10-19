@@ -8,7 +8,7 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-19-issuance.json";
+  "/documents/rldcoin-whitepaper-release-2026-10-19-21m.json";
 export const CONTENT_REVIEW_DATE = "19 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
@@ -112,7 +112,7 @@ export const faqs = [
   ],
   [
     "What is the supply and initial allocation?",
-    "The proposed lifetime cap is 1,000,000,000,000 RLD. Genesis issues and allocates zero spendable RLD. All issuance goes through 4,096 conserved strands, each with 1,000,000 slots paying 244.140625 RLD to the successful work author. There is no founder reserve, presale allocation, halving, tail emission or replacement issuance for lost or retired coins.",
+    "The proposed lifetime cap is 21,000,000 RLD. Genesis issues and allocates zero spendable RLD. All issuance goes through 4,096 conserved strands, each with 1,000,000 slots paying 0.005126953125 RLD to the successful work author. There is no founder reserve, presale allocation, halving, tail emission or replacement issuance for lost or retired coins.",
   ],
   [
     "Can an isolated community issue RLD?",

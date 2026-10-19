@@ -298,13 +298,13 @@ def authority_transfer():
 
 def issuance_strands():
     d = Drawing(470, 266)
-    label(d, 235, 248, "ONE LIFETIME BUDGET: 1,000,000,000,000 RLD", 8.4, bold=True)
+    label(d, 235, 248, "ONE LIFETIME BUDGET: 21,000,000 RLD", 8.4, bold=True)
     box(d, 30, 172, 410, 58, "GENESIS: ZERO SPENDABLE RLD",
         ["4,096 public issuance strands; no private reserve owner",
          "one home and 1,000,000 work slots per strand"])
     label(d, 235, 57, "certified whole-strand relocation; never copy or reset", 7.4)
     for x, title, lines in (
-        (8, "HOME A: strand 0", ["public work consumes slot k", "reward: 244.140625 RLD"]),
+        (8, "HOME A: strand 0", ["public work consumes slot k", "reward: 0.005126953125 RLD"]),
         (168, "HOME B: strand 1", ["local work during isolation", "same counter after a move"]),
         (328, "OTHER STRANDS", ["numbers 2 through 4095", "existing or future homes"]),
     ):
@@ -330,7 +330,7 @@ FIGURES = {
 }
 
 DESCRIPTIONS = {
-    "issuance-strands": "One trillion RLD of lifetime issuance is conserved across 4096 single-home strands. Public work consumes successive slots; relocation preserves the counter and remaining budget.",
+    "issuance-strands": "Twenty-one million RLD of lifetime issuance is conserved across 4096 single-home strands. Public work consumes successive slots; relocation preserves the counter and remaining budget.",
     "authority-transfer": "A source removes spend authority before sending a certificate. One destination imports or permanently rejects it; only certified rejection authorizes source recovery.",
     "transaction": "Two mature inputs authorize one transfer with recipient value, change and a fee.",
     "blocks": "Consecutive block headers commit to commands and replayed state, linked by a parent hash.",

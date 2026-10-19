@@ -99,11 +99,11 @@ function About() {
             replace it with a wrapped or domain-issued token.
           </p>
           <p>
-            The proposed lifetime cap is 1 trillion RLD, with zero spendable
+            The proposed lifetime cap is 21 million RLD, with zero spendable
             genesis supply and no founder allocation. All issuance uses 4,096
             conserved public-work strands, each with 1 million slots paying
-            244.140625 RLD. Moving a whole strand preserves its remaining slots;
-            creating a domain grants no issuance right.
+            0.005126953125 RLD. Moving a whole strand preserves its remaining
+            slots; creating a domain grants no issuance right.
           </p>
           <p>
             An isolated community can mine after an authenticated strand

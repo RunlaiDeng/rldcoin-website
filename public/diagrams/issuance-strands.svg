@@ -4,7 +4,7 @@
   'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
 <svg width="470" height="294" preserveAspectRatio="xMinYMin meet" viewBox="0 0 470 294" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<title>Rldcoin: conserved issuance strands</title>
-	<desc>One trillion RLD of lifetime issuance is conserved across 4096 single-home strands. Public work consumes successive slots; relocation preserves the counter and remaining budget.</desc>
+	<desc>Twenty-one million RLD of lifetime issuance is conserved across 4096 single-home strands. Public work consumes successive slots; relocation preserves the counter and remaining budget.</desc>
 	<clipPath id="clip">
 		<rect x="0" y="0" width="470" height="294"/>
 	</clipPath>
@@ -12,7 +12,7 @@
 		<g transform="">
 			<rect x="0" y="0" width="470" height="294" rx="6" ry="6" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
 			<g transform=" matrix(1,0,0,1,0,14)">
-				<text x="139.303" y="248" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,496) scale(1,-1)">ONE LIFETIME BUDGET: 1,000,000,000,000 RLD</text>
+				<text x="153.31419999999997" y="248" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,496) scale(1,-1)">ONE LIFETIME BUDGET: 21,000,000 RLD</text>
 				<rect x="30" y="172" width="410" height="58" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
 				<text x="165.22539999999998" y="213" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">GENESIS: ZERO SPENDABLE RLD</text>
 				<text x="145.9612" y="198" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">4,096 public issuance strands; no private reserve owner</text>
@@ -21,7 +21,7 @@
 				<rect x="8" y="66" width="134" height="64" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
 				<text x="39.2958" y="113" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,226) scale(1,-1)">HOME A: strand 0</text>
 				<text x="30.187199999999997" y="98" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,196) scale(1,-1)">public work consumes slot k</text>
-				<text x="34.7808" y="86" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,172) scale(1,-1)">reward: 244.140625 RLD</text>
+				<text x="26.774399999999993" y="86" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,172) scale(1,-1)">reward: 0.005126953125 RLD</text>
 				<path d="M 75,172 L 75,130 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.9;"/>
 				<polygon points="71 137, 75 130, 79 137" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
 				<rect x="168" y="66" width="134" height="64" rx="4" ry="4" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
