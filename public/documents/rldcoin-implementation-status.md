@@ -1,6 +1,6 @@
 # Rldcoin — Publication and implementation scope
 
-Reviewed 20 October 2026. The current [white paper](https://rldcoin.com/whitepaper), dated 19 October 2026, is bound by the [controller-mechanism publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json).
+Reviewed 20 October 2026. The current [white paper](https://rldcoin.com/whitepaper), dated 20 October 2026, is bound by the [prefix-root amendment publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-20-prefix.json).
 
 ## What is specified
 
@@ -24,7 +24,7 @@ The old overview, editorial-separation record, superseded publication receipts, 
 
 - [Canonical Markdown](https://rldcoin.com/documents/rldcoin-whitepaper.md)
 - [Canonical PDF](https://rldcoin.com/documents/rldcoin-whitepaper.pdf)
-- [Publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json)
+- [Publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-20-prefix.json)
 - [Developer resources](https://rldcoin.com/developers)
 - [Protocol repository](https://github.com/RunlaiDeng/rldcoin)
 - [Website repository](https://github.com/RunlaiDeng/rldcoin-website)

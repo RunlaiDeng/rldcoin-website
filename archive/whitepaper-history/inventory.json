@@ -156,6 +156,24 @@
       "archive_path": "archive/whitepaper-history/diagrams/transaction.svg",
       "bytes": 9922,
       "sha256": "90ae98970c35db13b391e1090741756ed4b1fb140547f0dfbe5815563f8cf832"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper.md",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-2026-10-19-controllers.md",
+      "bytes": 81945,
+      "sha256": "252a280044856a599c4a7fb1e7913d08776aa79f172db64275339be760662639"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper.pdf",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-2026-10-19-controllers.pdf",
+      "bytes": 79762,
+      "sha256": "2bc2d3158d0ca5fc4ea6ab00c6683b25d79a0b2ca59d1d0babcf33ae6dcaa720"
+    },
+    {
+      "previous_public_path": "/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json",
+      "archive_path": "archive/whitepaper-history/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json",
+      "bytes": 10077,
+      "sha256": "c07f65b87ad8a1869775fba24db2d1aa32e5dac74863b580214d9954e6fa75bb"
     }
   ]
 }

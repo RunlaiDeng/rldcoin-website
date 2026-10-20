@@ -8,7 +8,7 @@ export const TESTNET = `${REPOSITORY}/blob/main/docs/operations/EARTH_FRESH_TEST
 export const DEVELOPER_FORUM =
   "https://forum.rldcoin.com/category/4/nodes-development";
 export const WHITEPAPER_RELEASE =
-  "/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json";
+  "/documents/rldcoin-whitepaper-release-2026-10-20-prefix.json";
 export const CONTENT_REVIEW_DATE = "20 October 2026";
 export const EVIDENCE_REVIEW_DATE = "4 October 2026";
 
@@ -166,6 +166,10 @@ export const faqs = [
   [
     "Will every community accept the same RLD?",
     "Not automatically. Acceptance covers define finite authority families and security rules a recipient accepts. Two balances can share the RLD denomination but differ in exposure and acceptance. Signed broadening requires verified inclusion; narrowing needs additional ancestry evidence. An incident can quarantine the entire covered portion.",
+  ],
+  [
+    "How does the state commitment grow?",
+    "Counted binary prefix trees commit exact keys and values, branch positions and child counts. Updates share unchanged branches; the root depends on the records, not their insertion order. Membership and adjacent-neighbor absence proofs retain a 64-branch limit. Complete current data, permanent decisions and funded history custody remain necessary; a smaller proof does not supply missing data or establish throughput.",
   ],
   [
     "What do recursive execution receipts prove?",

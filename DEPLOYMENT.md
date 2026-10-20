@@ -54,7 +54,7 @@ The white paper has no numbered publication label. A body revision requires an
 explicit owner decision. Production provides only the current publication.
 Earlier artifact bytes and immutable receipts remain recoverable from Git
 history and the byte-preserved `archive/whitepaper-history/` directory, outside
-the public tree. Never rewrite that history. The [successor record](public/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json)
+the public tree. Never rewrite that history. The [successor record](public/documents/rldcoin-whitepaper-release-2026-10-20-prefix.json)
 must distinguish candidate, review and publication status and bind the exact
 new source, PDF, predecessor and applicable audit commit. A pending model or
 publication review blocks release.

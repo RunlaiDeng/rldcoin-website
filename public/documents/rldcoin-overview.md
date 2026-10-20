@@ -1,6 +1,6 @@
 # Rldcoin — Current mechanism overview
 
-Reviewed 20 October 2026 against [Rldcoin: Interstellar Peer-to-Peer Payments](https://rldcoin.com/whitepaper), dated 19 October 2026. The [current publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-19-controllers.json) binds the canonical Markdown, PDF and two figures. This guide summarizes that construction; it is not an implementation or performance certificate.
+Reviewed 20 October 2026 against [Rldcoin: Interstellar Peer-to-Peer Payments](https://rldcoin.com/whitepaper), dated 20 October 2026. The [current publication record](https://rldcoin.com/documents/rldcoin-whitepaper-release-2026-10-20-prefix.json) binds the canonical Markdown, PDF and two figures. This guide summarizes that construction; it is not an implementation or performance certificate.
 
 ## One RLD currency and a finite issuance budget
 
@@ -54,3 +54,7 @@ Normal node operation includes bounded authenticated discovery and store-carry-f
 - [Implementation summary](https://rldcoin.com/documents/rldcoin-implementation-status.md)
 
 Earlier public artifacts are preserved byte-for-byte in the website repository's separate historical archive and Git history. They are not current mechanism authority. Existing test assets have no monetary value and never migrate into a monetary genesis. No active mainnet or operational interstellar payment route is established by this publication.
+
+## Counted state commitments
+
+State collections use counted compressed binary prefix trees. Branches bind the first differing key bit, common prefix, ordered child hashes and counts. Persistent updates retain unchanged branches; membership and ordered-neighbor absence proofs keep a finite 64-branch admission bound. Roots commit permanent monetary decisions and counters. This reduces root recomputation work without replacing complete current material, funded archives or authenticated execution, and establishes no measured throughput.
